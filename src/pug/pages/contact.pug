@@ -1,0 +1,15 @@
+extends ../layouts/page-layout.pug
+include ./../mixins/*.pug
+
+block variables
+	- var title = 'Контакты';
+	- var pageClass= "ui";
+	- var pageFileName= "contact.html";
+
+block content
+	header
+		include ../sections/navigation.pug
+	main
+		include ../sections/contact.pug
+	footer
+		include ../sections/footer.pug

@@ -1,0 +1,8 @@
+mixin card(link, img, alt, title, subtitle)
+    a(href= link).card.white-color
+        .card__img
+            img(src="./img/card/" + img, alt= alt)
+        .card__text
+            h4.card__title #{title}
+            p.card__subtitle #{subtitle} 
+            

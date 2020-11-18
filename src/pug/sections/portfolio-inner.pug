@@ -1,0 +1,45 @@
+section.portfolio
+    .container
+        .portfolio-wrap
+            .portfolio__title Портфолио
+            .portfolio__nav
+                input#all.checkbox-all(type='radio' name='checkbox' checked='')
+                label(for='all') Все работы
+                input#html.checkbox-html(type='radio' name='checkbox')
+                label(for='html') HTML/CSS
+                input#react.checkbox-less(type='radio' name='checkbox')
+                label(for='react') HTML/LESS
+                input#angular.checkbox-scss(type='radio' name='checkbox')
+                label(for='angular') HTML/SCSS
+                input#vue.checkbox-pug(type='radio' name='checkbox')
+                label(for='vue') PUG/SCSS
+                input#js.checkbox-js(type='radio' name='checkbox')
+                label(for='js') javascript
+                .seperator
+                // project cards
+                .portfolio__card-inner
+                    .project.pug.js
+                        +card("travel-blog.html", "08.jpg", "08.jpg", "Верстка “Travel Blog”", "Верстка одностраничного сайта.")
+                    .project.pug.js
+                        +card("realhome.html", "02.jpg", "02.jpg", "Верстка “RealHome”", "Верстка одностраничного сайта.")
+                    .project.pug.js
+                        +card("LiziLizkaLab.html", "04.jpg", "04.jpg", "Верстка “LiziLizka Lab”", "Верстка одностраничного сайта.")
+                    .project.scss.js
+                        +card("quantum.html", "03.jpg", "03.jpg", "Магазин “Quantum”", "Верстка одностраничного сайта.")
+                    .project.scss.js
+                        +card("dhl.html", "06.jpg", "06.jpg", "Верстка “DHL”", "Верстка одностраничного сайта.")
+                    .project.scss.js
+                        +card("amazing.html", "13.jpg", "13.jpg", "Верстка “Amazing”", "Верстка одностраничного сайта.")
+                    .project.pug.js
+                        +card("comand-web.html", "07.jpg", "07.jpg", "Верстка “Digital Nomad”", "Верстка многостраничного сайта.")
+                    .project.less.js
+                        +card("surfing.html", "09.jpg", "09.jpg", "Верстка “Surfing Website”", "Верстка одностраничного сайта.")
+                    .project.html
+                        +card("forest-travel.html", "10.jpg", "10.jpg", "Верстка “Forest Travel”", "Верстка многостраничного сайта.")
+                    .project.pug.js
+                        +card("muncak.html", "12.jpg", "12.jpg", "Верстка “Muncak”", "Верстка одностраничного сайта.")
+                    .project.less.js
+                        +card("unit.html", "11.jpg", "11.jpg", "Верстка “Unit”", "Верстка одностраничного сайта.")
+
+
+

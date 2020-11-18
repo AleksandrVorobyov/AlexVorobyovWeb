@@ -1,0 +1,6 @@
+mixin nav(link, title)
+    li
+        if pageFileName === link
+            a(class="nav nav--active" href= link data-hover= title) #{title}
+        else
+            a(class="nav" href= link  data-hover= title) #{title}

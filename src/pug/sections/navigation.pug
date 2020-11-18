@@ -1,0 +1,23 @@
+section.navigation
+    .big-container
+        div(id="nightSun" class="night-sun" data-title="Включить темную тему")
+            i(class="fa fa-3x fa-moon-o" aria-hidden="true")
+        nav.navigation-wrap
+            .navigation__logo
+                +logo("index.html")
+            .navigation__link-nav
+                ul
+                    +nav("index.html", "Главная", "Главная")
+                    +nav("portfolio.html", "Работы", "Работы")
+                    +nav("contact.html", "Контакты", "Контакты")
+            .navigation__social
+                a(href="https://vk.com/id65683827" target="_blank" class="social-vk")
+                    i(class="fa fa-vk fa-2x" aria-hidden="true")
+                a(href="https://wa.me/+79253215539" target="_blank" class="social-facebook")
+                    i(class="fa fa-whatsapp fa-2x" aria-hidden="true")
+                a(href="mailto:sasha89253215539@yandex.ru" target="_blank" class="social-email")
+                    i(class="fa fa-envelope fa-2x" aria-hidden="true")
+                a(href="https://telegram.im/@Voojaxx" target="_blank" class="social-telegram")
+                    i(class="fa fa-telegram fa-2x" aria-hidden="true")
+                a(href="https://github.com/AleksandrVorobyov" target="_blank" class="social-github")
+                    i(class="fa fa-github fa-2x" aria-hidden="true")

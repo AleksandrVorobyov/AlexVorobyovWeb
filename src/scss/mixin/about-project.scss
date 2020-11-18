@@ -1,0 +1,30 @@
+.about-project {
+  margin-bottom: 50px;
+}
+
+.about-project__title {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-size: 44px;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  line-height: 1.2;
+  border-bottom: 8px solid rgb(251, 220, 77);
+
+  @media (min-width: 1170px) {
+    font-size: 26px;
+  }
+}
+
+.about-project p {
+  margin: 0;
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(22, 22, 22);
+  line-height: 1.5;
+
+  @media (min-width: 1170px) {
+    font-size: 16px;
+  }
+}

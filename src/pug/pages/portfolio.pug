@@ -1,0 +1,15 @@
+extends ../layouts/page-layout.pug
+include ./../mixins/*.pug
+
+block variables
+	- var title = 'Портфолио';
+	- var pageClass= "ui";
+	- var pageFileName= "portfolio.html";
+
+block content
+	header
+		include ../sections/navigation.pug
+	main
+		include ../sections/portfolio-inner.pug
+	footer
+		include ../sections/footer-inner.pug

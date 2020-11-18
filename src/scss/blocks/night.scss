@@ -1,0 +1,344 @@
+.night-sun {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 15;
+  height: 100px;
+  width: 100px;
+  right: 60px;
+  top: 150px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 35%;
+  transition: 0.5s ease-in-out;
+  animation-name: spin1;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  &:hover {
+    animation: none;
+    background-color: rgb(230, 221, 221);
+  }
+
+  i:hover {
+    display: inline-block;
+    color: #039be5;
+    transition: 0.5s ease-in-out;
+  }
+
+  @media (min-width: 1170px) {
+    right: 150px;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.night-sun:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  left: -35px;
+  right: 0;
+  bottom: -70px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  width: 150px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+
+  @media (min-width: 1170px) {
+    font-size: 12px;
+    bottom: -50px;
+    width: 100px;
+  }
+}
+
+.night-sun:hover::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 0;
+  bottom: -30px;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #000000;
+  transition: 0.5s ease-in-out;
+
+  @media (min-width: 1170px) {
+    left: 10px;
+  }
+}
+
+.night {
+  background: radial-gradient(
+      ellipse at bottom left,
+      rgba(104, 128, 138, 0.4) 10%,
+      rgba(138, 114, 76, 0) 40%
+    ),
+    linear-gradient(to bottom, rgba(57, 173, 219, 0.25), rgba(42, 60, 87, 0.4)),
+    linear-gradient(135deg, #670d10, #092756);
+}
+
+.night {
+  .navigation {
+    background: transparent;
+    
+    &:after {
+      content: none;
+    }
+    
+    @media (min-width: 1170px) {
+      border-top: 10px solid rgb(255, 255, 255);
+      border-bottom: 10px solid rgb(255, 255, 255);
+    }
+  }
+
+  .navigation-wrap {
+    border-top: 10px solid rgb(255, 255, 255);
+    border-bottom: 10px solid rgb(255, 255, 255);
+
+    @media (min-width: 1170px) {
+      border: none;
+    }
+  }
+
+  .header {
+    background: transparent;
+    border-bottom: 10px solid rgb(255, 255, 255);
+  }
+
+  .logo {
+    color: white;
+
+    &:hover {
+      color: #ea736d;
+    }
+  }
+
+  .nav {
+    color: white;
+
+    &:hover {
+      color: #ea736d;
+    }
+  }
+
+  .night-sun {
+    color: white;
+  }
+
+  .social-vk {
+    color: #fff;
+    &:hover {
+      color: #039be5;
+    }
+  }
+
+  .social-facebook {
+    color: #fff;
+    &:hover {
+      color: #7cea6d;
+    }
+  }
+
+  .social-email {
+    color: #fff;
+    &:hover {
+      color: #ea736d;
+    }
+  }
+
+  .social-telegram {
+    color: #fff;
+    &:hover {
+      color: #039be5;
+    }
+  }
+
+  .social-github {
+    color: #fff;
+    &:hover {
+      color: #7cea6d;
+    }
+  }
+}
+
+.night {
+  .header__text-title {
+    color: white;
+  }
+
+  .header__text-subtitle p {
+    color: rgb(219, 201, 219);
+  }
+
+  .header__bg-title,
+  .header__bg-title {
+    color: white;
+  }
+
+  .header__bg-skills li {
+    color: rgb(219, 201, 219);
+  }
+
+  .header__bg-email {
+    color: white;
+
+    &:hover {
+      color: #039be5;
+    }
+
+    &:active {
+      color: #ea736d;
+    }
+  }
+
+  .header__bg-img {
+    background-image: url("../img/header/03.jpg");
+    border: 5px solid #fbdc4d;
+    &::after {
+      background: transparent;
+    }
+    &::before {
+      background: transparent;
+    }
+  }
+
+  .header__bg-item {
+    background-color: #7e90b9;
+    border-radius: 5px;
+    padding: 10px;
+
+    @media (min-width: 1170px) {
+      background: transparent;
+    }
+  }
+}
+
+.night .portfolio {
+  &::after {
+    height: 0;
+  }
+  &::before {
+    height: 0;
+  }
+
+  .portfolio__title,
+  .portfolio__nav-item {
+    color: #fff;
+    transition: 0.5s ease-in-out;
+  }
+
+  .portfolio__nav-item:hover {
+    color: #ea736d;
+  }
+}
+
+.night .timeline {
+  border-top: 10px solid rgb(255, 255, 255);
+  border-bottom: 10px solid rgb(255, 255, 255);
+  background: transparent;
+
+  .timeline__title,
+  .timeline__column-title,
+  .timeline__column-desc {
+    color: #fff;
+  }
+
+  .timeline__column-subtitle {
+    color: rgb(219, 201, 219);
+  }
+}
+
+.night .contact {
+  background: linear-gradient(#50505080, #50505080),
+    url("../img/contact/01.jpg") top left / cover no-repeat;
+
+  .contact-title,
+  .timeline__column-title,
+  .timeline__column-desc {
+    color: #fff;
+  }
+
+  .contact__info-desc {
+    color: rgb(219, 201, 219);
+  }
+
+  .contact__info::after {
+    content: none;
+  }
+}
+
+.night .footer {
+  border-top: 10px solid rgb(255, 255, 255);
+  background: transparent;
+}
+
+.night .footer-inner {
+  border-top: 10px solid rgb(255, 255, 255);
+
+  .footer-inner__title,
+  p {
+    color: white;
+  }
+
+}
+
+.night .card-post {
+  .footer-inner__title,
+  p,
+  h2,
+  h3,
+  h4,
+  svg {
+    color: white;
+    fill: white;
+  }
+
+  input {
+    background-color: #fff;
+    color: black;
+  }
+}
+
+.night .header::after {
+  content: none;
+}
+
+.night .link-project-item i {
+  color: #fff;
+}
+
+.night label {
+  color: #fff;
+}
+
+.fa-3x {
+  font-size: 6em !important;
+
+  @media (min-width: 1170px) {
+    font-size: 3em !important;
+  }
+}
+
+.night .timeline__column-item-text {
+  background: #7e90b9;
+
+  &::after {
+    background: #7e90b9;
+  }
+  &::before {
+    background: #7e90b9;
+  }
+}

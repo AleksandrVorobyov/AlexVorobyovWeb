@@ -1,0 +1,24 @@
+.contact-answer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+  top: calc(50% - 100px);
+  left: calc(50% - 250px);
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.contact-answer h2 {
+  font-size: 32px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.contact-answer .button-01 {
+    margin-left: auto;
+    margin-right: auto;
+}

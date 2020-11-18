@@ -1,0 +1,77 @@
+.social-vk:hover {
+  color: #039be5;
+  z-index: 5;
+}
+
+.social-facebook:hover {
+  color: #7cea6d;
+  z-index: 5;
+}
+
+.social-email:hover {
+  z-index: 5;
+  color: #ea736d;
+}
+
+.social-telegram:hover {
+  z-index: 5;
+  color: #039be5;
+}
+
+.social-github:hover {
+  z-index: 5;
+  color: #7cea6d;
+}
+
+.social-vk::after,
+.social-facebook::after,
+.social-email::after,
+.social-telegram::after,
+.social-github::after {
+  position: absolute;
+  display: none;
+  content: "";
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(200, 211, 221, 0.5);
+  z-index: -1;
+}
+
+.social-vk:hover::after,
+.social-facebook:hover::after,
+.social-email:hover::after,
+.social-telegram:hover::after,
+.social-github:hover::after {
+  display: block;
+  z-index: -1;
+}
+
+.social-vk::after {
+  left: -6px;
+  top: -9px;
+}
+
+.social-facebook::after {
+  left: -11px;
+  top: -9px;
+}
+
+.social-email::after {
+  left: -9px;
+  top: -9px;
+}
+
+.social-telegram::after {
+  left: -9px;
+  top: -9px;
+}
+
+.social-github::after {
+  left: -11px;
+  top: -9px;
+}
+
+
+
+

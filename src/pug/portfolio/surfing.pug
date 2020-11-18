@@ -1,0 +1,31 @@
+section.card-post
+    .container
+        .card-post__nav
+            h2.card-post__nav-desc Верстка интернет магазина
+            h3.card-post__nav-title “Surfing website”
+            .card-post__nav-meta 
+                span.meta-html HTML
+                span.meta-less LESS
+                span.meta-js JS
+                span.meta-bootstrap Bootstrap
+                span.meta-jquery jQuery
+                span.meta-php PHP
+        .card-post__content
+            .card-post__content-desc
+                +link-project("https://aleksandrvorobyov.github.io/surfing/", "https://github.com/AleksandrVorobyov/surfing")
+                +about-project()
+                    p Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.
+                +detals("Учебный проект", "Учебный проект", "Ссылка на сайт", "https://aleksandrvorobyov.github.io/surfing/", "Адаптивная верстка, HTML5, CSS3, Bootstrap grid, JavaScript, jQuery.", "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм")
+            .card-post__content-carousel
+                .carousel-project.owl-carousel
+                    .owl-carousel-item
+                        img(src="./img/portfolio/surfing/01.jpg", alt="01.jpg")
+                    .owl-carousel-item
+                        img(src="./img/portfolio/surfing/02.jpg", alt="02.jpg")
+                    .owl-carousel-item
+                        img(src="./img/portfolio/surfing/03.jpg", alt="03.jpg")
+                    .owl-carousel-item
+                        img(src="./img/portfolio/surfing/04.jpg", alt="04.jpg")
+
+        .card-post__pagination
+            +pagination-card("amazing.html", "forest-travel.html")

@@ -1,0 +1,60 @@
+section.header
+	.container
+		.header-wrap
+			.header__text
+				.header__text-title Александр
+				.header__text-title Воробьев
+
+				.header__text-subtitle
+					p Верстальщик сайтов, Frontend-разработчик. Оперативная верстка. Работаю с соблюдением сроков и выполнением ТЗ. 
+				.header__text-button
+					+button-01("#scrolltarget", "Познакомиться")
+					+button-02("contact.html", "Контакты")
+			.header__avatar
+				.header__avatar_css
+					h4.avatar__title CSS
+					.avatar-css__img
+				.header__avatar_html
+					h4.avatar__title HTML
+					.avatar-html__img
+				.header__avatar_js
+					h4.avatar__title JS
+					.avatar-js__img
+				img(src="./img/header/master.jpg", alt="master.jpg")
+	.big-container
+		.header__bg-img
+			.header__carousel
+				.header-owl-carousel.owl-carousel
+					.owl-carousel-item
+						img(src="./img/header/cert/html.png", alt="")
+					.owl-carousel-item
+						img(src="./img/header/cert/html-pro.png", alt="")
+					.owl-carousel-item
+						img(src="./img/header/cert/js.png", alt="")
+	.container
+		.header__bg-wrap
+			.header__bg-item
+				.header__bg-title Что я умею:
+				.header__bg-skills
+					ul
+						li — Html/Pug, Css/Scss/Less, Javascript/Typescript
+						li — pixel perfect, полное соответствие макету.
+						li — верстаю с сеткой или без.
+						li — адаптивная верстка под мобильные устройства.
+						li — с Bootstrap и без него.
+				.header__bg-button
+					+button-01("portfolio.html", "Смотреть работы")
+			.header__bg-item
+				.header__bg-title На связи:
+				.header__bg-social
+					a(href="https://vk.com/id65683827", target="_blank", class="social-vk")
+						i(class="fa fa-vk fa-2x", aria-hidden="true")
+					a(href="https://wa.me/+79253215539", target="_blank", class="social-facebook")
+						i(class="fa fa-whatsapp fa-2x", aria-hidden="true")
+					a(href="mailto:sasha89253215539@yandex.ru", target="_blank", class="social-email")
+						i(class="fa fa-envelope fa-2x", aria-hidden="true")
+					a(href="https://telegram.im/@Voojaxx", target="_blank", class="social-telegram")
+						i(class="fa fa-telegram fa-2x", aria-hidden="true")
+					a(href="https://github.com/AleksandrVorobyov", target="_blank", class="social-github")
+						i(class="fa fa-github fa-2x", aria-hidden="true")
+				a(href="mailto:sasha89253215539@yandex.ru").header__bg-email sasha89253215539@yandex.ru
