@@ -14,6 +14,7 @@ body {
     position: relative;
     color: #000;
     line-height: 1;
+    user-select: none;
 }
 
 /* fix for top margin collapsing and vertical scroll prevent for body tag, when body height = 100% */
@@ -137,7 +138,8 @@ hr,
 }
 
 .big-container {
-    max-width: 1446px;
+    max-width: 1470px;
+    padding: 0 15px;
     margin: auto;
 }
 

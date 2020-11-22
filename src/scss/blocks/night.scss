@@ -118,20 +118,12 @@
     border-bottom: 10px solid rgb(255, 255, 255);
   }
 
-  .logo {
-    color: white;
-
-    &:hover {
-      color: #ea736d;
-    }
-  }
-
   .nav {
-    color: white;
-
-    &:hover {
-      color: #ea736d;
-    }
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #fff), color-stop(0.4, #fff));
+    background-image: gradient( linear, color-stop(0, #fff), color-stop(0.4, #fff));
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   .night-sun {
@@ -172,15 +164,22 @@
       color: #7cea6d;
     }
   }
+
+  .avatar__title {
+    color: #fff;
+    font-weight: 400;
+  }
 }
 
+
+
 .night {
-  .header__text-title {
-    color: white;
+  .header__text-subtitle p {
+    color: rgb(255, 255, 255);
   }
 
-  .header__text-subtitle p {
-    color: rgb(219, 201, 219);
+  .header__text-title {
+    color: #fff;
   }
 
   .header__bg-title,
@@ -189,7 +188,7 @@
   }
 
   .header__bg-skills li {
-    color: rgb(219, 201, 219);
+    color: rgb(255, 255, 255);
   }
 
   .header__bg-email {
@@ -206,7 +205,8 @@
 
   .header__bg-img {
     background-image: url("../img/header/03.jpg");
-    border: 5px solid #fbdc4d;
+    border: 5px solid $yellowcolor;
+
     &::after {
       background: transparent;
     }
@@ -257,7 +257,7 @@
   }
 
   .timeline__column-subtitle {
-    color: rgb(219, 201, 219);
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -272,7 +272,7 @@
   }
 
   .contact__info-desc {
-    color: rgb(219, 201, 219);
+    color: rgb(255, 255, 255);
   }
 
   .contact__info::after {

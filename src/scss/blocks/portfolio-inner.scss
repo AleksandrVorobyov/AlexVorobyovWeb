@@ -48,7 +48,7 @@
 
   &:hover {
     color: #e74c3c;
-    border-bottom-color: rgb(251, 220, 77);
+    border-bottom-color: #fbdc4d;
   }
 
   @media (min-width: 1170px) {
@@ -117,7 +117,7 @@
   border-width: 0;
   width: 0;
   // height: 0;
-  // display: none;
+  display: none;
 }
 
 .checkbox-all:checked ~ .portfolio__card-inner .project.js,
@@ -131,7 +131,7 @@
 .checkbox-pug:checked ~ .portfolio__card-inner .project.pug,
 .checkbox-scss:checked ~ .portfolio__card-inner .project.scss {
   opacity: 1;
-  // display: inline-block;
+  display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 35px;

@@ -32,10 +32,15 @@
   display: none;
   content: "";
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 85px;
+  height: 85px;
   background-color: rgba(200, 211, 221, 0.5);
   z-index: -1;
+
+  @media (min-width: 1170px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .social-vk:hover::after,
@@ -53,23 +58,39 @@
 }
 
 .social-facebook::after {
-  left: -11px;
+  left: -14px;
   top: -9px;
+
+  @media (min-width: 1170px) {
+    left: -11px;
+  }
 }
 
 .social-email::after {
-  left: -9px;
+  left: -11px;
   top: -9px;
+
+  @media (min-width: 1170px) {
+    left: -9px;
+  }
 }
 
 .social-telegram::after {
-  left: -9px;
+  left: -10px;
   top: -9px;
+
+  @media (min-width: 1170px) {
+    left: -9px;
+  }
 }
 
 .social-github::after {
-  left: -11px;
+  left: -15px;
   top: -9px;
+
+  @media (min-width: 1170px) {
+    left: -11px;
+  }
 }
 
 

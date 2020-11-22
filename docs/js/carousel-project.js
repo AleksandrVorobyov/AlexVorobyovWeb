@@ -10,14 +10,22 @@ $(document).ready(function(){
     });
   });
 
-$(document).ready(function(){
+  $(document).ready(function(){
     $(".header-owl-carousel").owlCarousel({
-      items: 3,
       nav:false,
-      autoplay: false,
-      loop: false,
-      margin: 0,
+      autoplay: true,
+      autoplayTimeout: 10000,
+      loop: true,
       margin: 20,
+      responsive: {
+        0 : {
+          items: 2
+        },
+        1140 : {
+          items: 3
+        }
+      }
       });
   });
+
 
