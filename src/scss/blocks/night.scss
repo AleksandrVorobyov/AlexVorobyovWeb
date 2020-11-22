@@ -93,24 +93,17 @@
 .night {
   .navigation {
     background: transparent;
-    
+    border-top: 10px solid rgb(255, 255, 255);
+    border-bottom: 10px solid rgb(255, 255, 255);
+
     &:after {
       content: none;
     }
     
-    @media (min-width: 1170px) {
-      border-top: 10px solid rgb(255, 255, 255);
-      border-bottom: 10px solid rgb(255, 255, 255);
-    }
   }
 
   .navigation-wrap {
-    border-top: 10px solid rgb(255, 255, 255);
-    border-bottom: 10px solid rgb(255, 255, 255);
-
-    @media (min-width: 1170px) {
-      border: none;
-    }
+    
   }
 
   .header {
