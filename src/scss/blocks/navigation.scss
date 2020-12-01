@@ -125,10 +125,6 @@
     background-clip: text;
   }
 
-  &:hover:after {
-    max-width: 100%;
-  }
-
   &:active:after {
     width: 100%;
   }
@@ -149,6 +145,10 @@
   @media (min-width: 1170px) {
     margin-bottom: 0;
   }
+}
+
+.nav:not(.nav--active):hover:after {
+  max-width: 100%;
 }
 
 .navigation__link-nav ul {
