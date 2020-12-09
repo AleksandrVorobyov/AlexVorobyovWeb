@@ -59,7 +59,7 @@ gulp.task("pug:pages", function(callback) {
                 })
             )
             .pipe(htmlbeautify(htmlbeautifyOptions))
-            .pipe(gulp.dest("./build/"))
+            .pipe(gulp.dest("./docs/"))
             .pipe(browserSync.stream())
     );
     callback();

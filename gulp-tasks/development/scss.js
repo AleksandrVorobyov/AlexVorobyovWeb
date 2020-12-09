@@ -38,7 +38,7 @@ gulp.task("scss", function(callback) {
             })
         )
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest("./build/css/"))
+        .pipe(gulp.dest("./docs/css/"))
         .pipe(browserSync.stream());
     callback();
 });

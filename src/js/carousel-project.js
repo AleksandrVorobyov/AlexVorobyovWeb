@@ -6,6 +6,8 @@ $(document).ready(function(){
       autoplayTimeout: 10000,
       smartSpeed:1500,
       loop: true,
+      mouseDrag: false,
+      touchDrag: false,
       margin: 10
     });
   });
