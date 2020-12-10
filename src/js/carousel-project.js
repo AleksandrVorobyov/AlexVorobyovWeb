@@ -7,7 +7,6 @@ $(document).ready(function(){
       smartSpeed:1500,
       loop: true,
       mouseDrag: false,
-      touchDrag: false,
       margin: 10
     });
   });
