@@ -1,5 +1,5 @@
 section.card-post
-    .container
+    .container.card-post-wrap
         .card-post__nav
             h2.card-post__nav-desc Верстка интернет магазина
             h3.card-post__nav-title “Muncak”
@@ -26,3 +26,15 @@ section.card-post
                         img(src="./img/portfolio/muncak/03.jpg", alt="01.jpg")
         .card-post__pagination
             +pagination-card("realhome.html", "unit.html")
+    .full-page
+        .container.full-page-wrapper
+            .full-page-wrap
+                .full-page__desc
+                    .full-page__logo
+                        +logo("index.html")
+                    .full-page__title
+                        h2 Верстка интернет магазина 
+                            span “Muncak”
+                    .full-page__exit
+                .full-page__img
+                    img(src="./img/fullpage/muncak.png", alt="")

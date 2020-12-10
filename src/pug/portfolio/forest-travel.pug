@@ -1,5 +1,5 @@
 section.card-post
-    .container
+    .container.card-post-wrap
         .card-post__nav
             h2.card-post__nav-desc Верстка интернет магазина
             h3.card-post__nav-title “Forest Travel”
@@ -31,3 +31,15 @@ section.card-post
 
         .card-post__pagination
             +pagination-card("comand-web.html", "travel-blog.html")
+    .full-page
+        .container.full-page-wrapper
+            .full-page-wrap
+                .full-page__desc
+                    .full-page__logo
+                        +logo("index.html")
+                    .full-page__title
+                        h2 Верстка интернет магазина 
+                            span “Forest Travel”
+                    .full-page__exit
+                .full-page__img
+                    img(src="./img/fullpage/forest.png", alt="")

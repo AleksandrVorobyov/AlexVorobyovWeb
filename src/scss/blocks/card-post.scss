@@ -305,3 +305,7 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
+
+.full-page__img + .full-page__img {
+  border-top: 10px solid #fbdc4d;
+}
