@@ -1,7 +1,7 @@
 section.portfolio
     .container
         .portfolio-wrap
-            .portfolio__title Портфолио
+            .portfolio__title.neon.wow.animated.lightSpeedIn По<span>рт</span>фо<span>ли</span>о
             .portfolio__nav
                 input#all.checkbox-all(type='radio' name='checkbox' checked='')
                 label(for='all') Все работы
@@ -17,7 +17,7 @@ section.portfolio
                 label(for='js') javascript
                 .seperator
                 // project cards
-                .portfolio__card-inner
+                .portfolio__card-inner.wow.animated.shake
                     .project.pug.js
                         +card("travel-blog.html", "08.jpg", "08.jpg", "Верстка “Travel Blog”", "Верстка одностраничного сайта.")
                     .project.scss.js

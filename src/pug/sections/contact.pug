@@ -2,9 +2,9 @@ section.contact
     canvas#pretty-bg
     .container
         .contact-title-wrapper
-            h3.contact-title Контакты
+            h3.contact-title.neon.wow.animated.lightSpeedIn <span>К</span>он<span>так</span>т<span>ы</span>
         .contact-wrap
-            .contact__info
+            .contact__info.wow.animated.fadeInUp
                 p.contact__info-desc Если вы ищите специалиста по верстке сайтов, front-end разработчика в команду или для работы над проектом —  напишите мне.
                 .contact__info-table
                     ol.rounded
@@ -36,7 +36,7 @@ section.contact
                         i(class="fa fa-telegram fa-2x" aria-hidden="true")
                     a(href="https://github.com/AleksandrVorobyov" target="_blank" class="social-github")
                         i(class="fa fa-github fa-2x" aria-hidden="true")
-            form(class='contact__form' data-card="1" id="form-contact" )
+            form(class='contact__form' data-card="1" id="form-contact" ).wow.animated.fadeInUp
                 input(data-question type="email" class="form-input-email" placeholder="Ваш Email:" form='form-contact' name="email-contact")
                 input(data-question type="text" class="form-input-theme" placeholder="Тема письма:" form='form-contact' name="theme-contact")
                 textarea(data-question name="comment-contact", cols="30", rows="5" class="form-textarea-text" placeholder="Сообщение:" form='form-contact')

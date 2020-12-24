@@ -1,16 +1,16 @@
-section.navigation
+section.navigation#navigation
     .big-container
-        div(id="nightSun" class="night-sun" data-title="Включить темную тему")
+        div(id="nightSun" class="night-sun" data-title="Включить белую тему")
             i(class="fa fa-3x fa-moon-o" aria-hidden="true")
         nav.navigation-wrap
-            .navigation__logo
+            .navigation__logo.wow.animated.slideInDown
                 +logo("index.html")
-            .navigation__link-nav
+            .navigation__link-nav.wow.animated.slideInDown
                 ul
                     +nav("index.html", "Главная", "Главная")
                     +nav("portfolio.html", "Работы", "Работы")
                     +nav("contact.html", "Контакты", "Контакты")
-            .navigation__social
+            .navigation__social.wow.animated.slideInDown
                 a(href="https://vk.com/id65683827" target="_blank" class="social-vk")
                     i(class="fa fa-vk fa-2x" aria-hidden="true")
                 a(href="https://wa.me/+79253215539" target="_blank" class="social-facebook")

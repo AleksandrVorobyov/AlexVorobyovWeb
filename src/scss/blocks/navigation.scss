@@ -1,24 +1,42 @@
 .navigation {
   position: relative;
   padding-top: 75px;
-  background-color: #f4f8f9;
+  background-color: rgba(244, 248, 249, 0.5);
+  z-index: 4;
 
   @media (min-width: 1170px) {
     background-color: transparent;
     padding: 75px 0px;
   }
 
-  &:after {
-    position: absolute;
-    bottom: -50px;
+  &::before {
     content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 150px;
     width: 100%;
-    height: 50px;
     background: linear-gradient(
       0deg,
-      rgba(255, 255, 255, 1) 30%,
-      rgba(251, 220, 77, 0.8) 100%
+      rgba(255, 255, 255, 0) 30%,
+      #000 100%
     );
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(253, 109, 253, 1) 100%
+    );
+    z-index: -1;
   }
 }
 
@@ -27,6 +45,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px 0;
+  z-index: 10;
   
   @media (min-width: 1170px) {
     padding: 0;
@@ -47,82 +66,72 @@
   display: inline-block;
   font-size: 82px;
   font-weight: 400;
-  font-family: "Lobster", cursive;
-  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d));
-  background-image: gradient( linear, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d));
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  font-family: 'Neoneon';
+  color: #fff;
   text-decoration: none;
   transition: 0.8s ease-in-out;
   z-index: 5;
   margin-bottom: 50px;
-
+  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
+  
   &:hover {
-      transition: 0.8s ease-in-out;
-      background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #26e2e2), color-stop(0.4, #f52516cd), color-stop(.8, #eca03d));
-      background-image: gradient( linear, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d));
-    &::after {
-      transform: rotatex(180deg);
-    }
+    text-shadow: 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 120px #fd6dfd, 0 0 150px #fd6dfd, 0 0 180px #fd6dfd, 0 0 200px #fd6dfd;
   }
 
   &::after {
     position: absolute;
     content: "";
-    clear: both;
-    background-color: $yellowcolor;
+    bottom: -7px;
+    left: -3px;
     width: 100%;
-    height: 10px;
-    bottom: -6px;
-    left: 0;
-    z-index: -1;
-    transition: 0.5s ease-in-out;
-
-    @media (min-width: 1170px) {
-      width: 67px;
-    }
+    border-bottom: 7px solid #fd6dfd;
   }
   
   @media (min-width: 1170px) {
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Neoneon';
     margin-bottom: 0px;
     font-size: 52px;
   }
+}
+
+.logo:hover span {
+  transition: all .5s linear;
+  display: inline-block;
+  transform: rotate(15deg) translate(8px, 4px);
+  color: #0b3960;
 }
 
 .nav {
   display: inline-block;
   position: relative;
   font-size: 20px;
-  font-family: "Open Sans", sans-serif;
-  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #000), color-stop(0.4, #000));
-  background-image: gradient( linear, color-stop(0, #000), color-stop(0.4, #000));
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  font-family: 'Neoneon';
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
-  transition: border 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border-bottom: 5px solid transparent;
   z-index: 5;
   margin-bottom: 50px;
+  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
 
   &:after {
     position: absolute;
-    content: attr(data-hover);
-    overflow: hidden;
-    top: 0px;
-    left: 0;
-    max-width: 0;
-    border-bottom: 7px solid #fbdc4d;
+    content: "";
+    bottom: -7px;
+    left: -1px;
+    width: 0;
+    border-bottom: 7px solid #fd6dfd;
     transition: 0.5s linear;
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d));
-    background-image: gradient( linear, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d));
-    color:transparent !important;
-    -webkit-background-clip: text;
-    background-clip: text;
+  }
+
+  &:hover {
+    color: #73ebeb;
+  }
+
+  &:hover:after {
+    width: 100%;
   }
 
   &:active:after {
@@ -130,12 +139,8 @@
   }
 
   &--active {
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d)) !important;
-    background-image: gradient( linear, color-stop(0, #2bb0af), color-stop(0.4, #ff5549cd), color-stop(.8, #e0bc8d)) !important;
-    color:transparent !important;
-    -webkit-background-clip: text;
-    background-clip: text;
-    border-bottom: 7px solid #fbdc4d;
+    color: #73ebeb;
+    border-bottom: 7px solid #fd6dfd;
 
     &:after {
       width: 100%;
@@ -170,6 +175,7 @@
 
 .navigation__link-nav a {
   font-size: 36px;
+  z-index: 5;
 
   @media (min-width: 1170px) {
     font-size: 22px;
@@ -185,7 +191,7 @@
   z-index: 5;
 
   @media (min-width: 1170px) {
-    border-bottom: 5px solid rgb(251, 220, 77);
+    border-bottom: 5px solid #fd6dfd;
   }
 
   a {
@@ -206,9 +212,16 @@
 
   .fa-2x {
     font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
+    transition: 0.8s ease-in-out;
 
     @media (min-width: 1170px) {
       font-size: 2em;
+    }
+
+    &:hover {
+      color: #73ebeb;
     }
   }
 }

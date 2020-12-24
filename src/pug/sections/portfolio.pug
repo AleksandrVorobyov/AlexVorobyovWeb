@@ -1,8 +1,8 @@
 section(class='portfolio' id='portfolio')
     .container
         .portfolio-wrap
-            .portfolio__title Портфолио
-            .portfolio__card
+            .portfolio__title.neon.wow.animated.lightSpeedIn По<span>рт</span>фо<span>ли</span>о
+            .portfolio__card.wow.animated.shake
                     +card("travel-blog.html", "08.jpg", "08.jpg", "Верстка “Travel Blog”", "Верстка одностраничного сайта.")
                     +card("lookshop.html", "14.jpg", "14.jpg", "Верстка “Lookshop”", "Верстка многостраничного сайта.")
                     +card("LiziLizkaLab.html", "04.jpg", "04.jpg", "Верстка “LiziLizka Lab”", "Верстка одностраничного сайта.")
@@ -13,11 +13,12 @@ section(class='portfolio' id='portfolio')
                     +card("realhome.html", "02.jpg", "02.jpg", "Верстка “RealHome”", "Верстка одностраничного сайта.")
                     +card("muncak.html", "12.jpg", "12.jpg", "Верстка “Muncak”", "Верстка одностраничного сайта.")
         .portfolio__nav-bottom
-            .portfolio__color-circle
+            .portfolio__color-circle.wow.animated.fadeInUp
                 div(class="color-item color-yellow" data-color='linear-gradient(0deg, rgba(248,255,128,1) 0%, rgba(252,223,89,1) 100%)')
                 div(class="color-item color-green" data-color='aqua')
                 div(class="color-item color-white color-item--active" data-color='white')
                 div(class="color-item color-white-red" data-color='#f35858')
                 div(class="color-item color-blue" data-color='repeating-linear-gradient(45deg, rgba(255, 176, 176, 0.9) 0, rgba(245, 227, 68, 0.9) 5px, white 5px, white 10px)')
-            +button-01("./portfolio.html", "Все работы")
-
+            .wow.animated.fadeInUp
+                +button-01("./portfolio.html", "Все работы")
+    .portfolio__background

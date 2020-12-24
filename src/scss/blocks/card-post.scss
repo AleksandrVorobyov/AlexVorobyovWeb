@@ -1,6 +1,34 @@
 .card-post {
   position: relative;
   padding: 30px 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(253, 109, 253, 1) 100%
+    );
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(253, 109, 253, 1) 100%
+    );
+  }
 }
 
 .card-post__nav {
@@ -11,13 +39,14 @@
   margin-right: auto;
 }
 
-.card-post__nav-title, .card-post__nav-desc {
+.card-post__nav-title,
+.card-post__nav-desc {
   position: relative;
   display: inline-block;
   margin-bottom: 40px;
   font-size: 48px;
-  font-family: "Open Sans", sans-serif;
-  color: rgb(0, 0, 0);
+  font-family: "Neoneon";
+  color: #fff;
   font-weight: bold;
   line-height: 1.2;
   z-index: 4;
@@ -25,14 +54,13 @@
   &::after {
     position: absolute;
     content: "";
-    background-color: rgb(251, 220, 77);
+    background-color: #fd6dfd;
     height: 12px;
     width: 100%;
     bottom: 5px;
     left: 0;
     z-index: -2;
   }
-
 }
 
 .card-post__nav-meta span {
@@ -76,7 +104,7 @@
   padding: 10px;
   height: 750px;
   width: 700px;
-  background-color: rgb(251, 220, 77);
+  background-color: #fd6dfd;
   box-shadow: 19px 19px 100px 0px rgb(196, 219, 233);
   margin: auto;
   margin-bottom: 50px;
@@ -145,11 +173,11 @@
     padding-right: 3px;
     width: 80px;
     height: 80px;
-    transition: .4s linear;
-    
+    transition: 0.4s linear;
+
     &:hover {
-      color: rgb(255, 238, 0);
-      border-color: rgb(234, 115, 109);
+      color: #73ebeb;
+      border-color: #73ebeb;
       background-color: #6e343454;
     }
   }
@@ -175,11 +203,11 @@
     padding-left: 3px;
     width: 80px;
     height: 80px;
-    transition: .4s linear;
+    transition: 0.4s linear;
 
     &:hover {
-      color: rgb(255, 238, 0);
-      border-color: rgb(234, 115, 109);
+      color: #73ebeb;
+      border-color: #73ebeb;
       background-color: #6e343454;
     }
   }
@@ -192,13 +220,54 @@
   form:first-child {
     margin-right: 30px;
   }
+}
 
-  form {
-    width: 100%;
+.card-post__pagination form {
+  position: relative;
+  width: 100%;
+  transition: all 0.5s linear;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 100%;
+    background-color: #73ebeb;
+    z-index: 5;
+    transition: all 0.5s linear;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    right: 50%;
+    width: 0%;
+    height: 100%;
+    background-color: #73ebeb;
+    z-index: 3;
+    transition: all 0.5s linear;
+  }
+
+  &:hover {
+    box-shadow: 0px 28px 100px 10px #73ebeb;
+  }
+
+  &:hover::before {
+    width: 50%;
+  }
+
+  &:hover::after {
+    width: 50%;
   }
 }
 
 .pagination {
+  position: relative;
   width: 100%;
   height: 95px;
   font-size: 30px;
@@ -207,13 +276,16 @@
   color: rgb(255, 255, 255);
   line-height: 1.455;
   text-align: center;
-  background-color: rgb(51, 51, 51);
+  background-color: rgba(51, 51, 51, 0.418);
   cursor: pointer;
   outline: none;
-  transition: 0.3s ease-in;
+  transition: all 0.5s ease-in;
+  border-radius: 0px;
+  border: 3px dashed #fd6dfd;
+  z-index: 5;
 
-  &:hover {
-    opacity: 0.9;
+  &:hover::before {
+    width: 100%;
   }
 
   @media (min-width: 1170px) {
@@ -246,12 +318,12 @@
   align-items: center;
 }
 
-.full-page-wrap{
+.full-page-wrap {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   padding: 10px;
-  background-color: #fbdc4d;
+  background-color: #fd6dfd;
 }
 
 .full-page__desc {
@@ -260,7 +332,7 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(187, 187, 187);
-  border-bottom: 10px solid #fbdc4d;
+  border-bottom: 10px solid #fd6dfd;
 }
 
 .full-page__title h2 {
@@ -271,7 +343,7 @@
   text-decoration: none;
 
   span {
-    color: #fbdc4d;
+    color: #fd6dfd;
   }
 }
 
@@ -283,7 +355,7 @@
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 50%;
     left: 50%;
     width: 50px;
@@ -295,7 +367,7 @@
 
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     top: 50%;
     left: 50%;
     width: 50px;
@@ -307,5 +379,5 @@
 }
 
 .full-page__img + .full-page__img {
-  border-top: 10px solid #fbdc4d;
+  border-top: 10px solid #fd6dfd;
 }

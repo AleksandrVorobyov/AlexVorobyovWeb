@@ -37,18 +37,19 @@
   padding-right: 12px;
   letter-spacing: 3px;
   cursor: pointer;
+  color: #fff;
   line-height: 30px;
   font-size: 34px;
   text-transform: uppercase;
   font-weight: 700;
   border-bottom: 5px solid transparent;
   transition: all 0.2s ease;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Neoneon';
   margin-bottom: 20px;
 
   &:hover {
-    color: #e74c3c;
-    border-bottom-color: #fbdc4d;
+    color: #73ebeb;
+    border-bottom-color: #fd6dfd;
   }
 
   @media (min-width: 1170px) {
@@ -63,7 +64,7 @@
   border-radius: 2px;
   height: 20px;
   padding: 5px;
-  color: #e74c3c;
+  color: #73ebeb;
   position: absolute;
   bottom: 0;
   left: 6px;
@@ -89,8 +90,8 @@
 .checkbox-scss:checked + label,
 .checkbox-pug:checked + label,
 .checkbox-js:checked + label {
-  color: #e74c3c;
-  border-bottom-color: rgb(251, 220, 77);
+  color: #73ebeb;
+  border-bottom-color: #fd6dfd;
 }
 
 .seperator {

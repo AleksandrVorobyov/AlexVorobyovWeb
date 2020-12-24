@@ -8,10 +8,11 @@ function addNightMode() {
     // Если класс есть, то при клике он пропадает
     if(body.classList.contains('night')) {
         body.classList.remove('night');
-        night.dataset.title = "Включить ночной режим";
+        night.dataset.title = "Включить белую тему";
     // Если класса нет, то при клике он появляется
     } else {
         body.classList.add('night');
-        night.dataset.title = "Выключить ночной режим";
+        night.dataset.title = "Выключить белую тему";
     }
 };
+
