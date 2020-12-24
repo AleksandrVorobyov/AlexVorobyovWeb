@@ -65,3 +65,9 @@ img {
 .relative {
   position: relative;
 }
+
+@media (max-width: 1170px) {
+  .animated {
+    animation: none;
+  }
+}

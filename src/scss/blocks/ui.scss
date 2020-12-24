@@ -279,6 +279,7 @@
 
 .page__link {
   position: fixed;
+  display: none;
   bottom: 150px;
   left: 60px;
   z-index: 50;
@@ -287,6 +288,10 @@
   animation: rocket 10s linear 1s infinite alternate;
   opacity: 0;
   transition: opacity 0.5s linear;
+
+  @media (min-width: 1170px) {
+    display: block;
+  }
 
   @media (min-width: 1400px) {
     bottom: 80px;
