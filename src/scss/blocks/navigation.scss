@@ -16,11 +16,7 @@
     right: 0;
     height: 150px;
     width: 100%;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0) 30%,
-      #000 100%
-    );
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 30%, #000 100%);
     z-index: -1;
   }
 
@@ -46,7 +42,7 @@
   justify-content: center;
   padding: 15px 0;
   z-index: 10;
-  
+
   @media (min-width: 1170px) {
     padding: 0;
     align-items: center;
@@ -66,16 +62,21 @@
   display: inline-block;
   font-size: 82px;
   font-weight: 400;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   color: #fff;
   text-decoration: none;
   transition: 0.8s ease-in-out;
   z-index: 5;
   margin-bottom: 50px;
-  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
-  
+  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
+    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
+    0 0 150px #fd6dfd;
+  overflow-x: hidden;
+
   &:hover {
-    text-shadow: 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 120px #fd6dfd, 0 0 150px #fd6dfd, 0 0 180px #fd6dfd, 0 0 200px #fd6dfd;
+    text-shadow: 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd,
+      0 0 80px #fd6dfd, 0 0 120px #fd6dfd, 0 0 150px #fd6dfd, 0 0 180px #fd6dfd,
+      0 0 200px #fd6dfd;
   }
 
   &::after {
@@ -86,17 +87,17 @@
     width: 100%;
     border-bottom: 7px solid #fd6dfd;
   }
-  
+
   @media (min-width: 1170px) {
     font-weight: 700;
-    font-family: 'Neoneon';
+    font-family: "Neoneon";
     margin-bottom: 0px;
     font-size: 52px;
   }
 }
 
 .logo:hover span {
-  transition: all .5s linear;
+  transition: all 0.5s linear;
   display: inline-block;
   transform: rotate(15deg) translate(8px, 4px);
   color: #0b3960;
@@ -106,7 +107,7 @@
   display: inline-block;
   position: relative;
   font-size: 20px;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   color: #fff;
   font-weight: bold;
   text-decoration: none;
@@ -114,7 +115,9 @@
   border-bottom: 5px solid transparent;
   z-index: 5;
   margin-bottom: 50px;
-  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
+  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
+    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
+    0 0 150px #fd6dfd;
 
   &:after {
     position: absolute;
@@ -204,7 +207,7 @@
     @media (min-width: 1170px) {
       margin-right: 20px;
     }
-  
+
     &:last-child {
       margin-right: 0;
     }
@@ -213,7 +216,9 @@
   .fa-2x {
     font-size: 4em;
     color: #fff;
-    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
+    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
+      0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
+      0 0 150px #fd6dfd;
     transition: 0.8s ease-in-out;
 
     @media (min-width: 1170px) {

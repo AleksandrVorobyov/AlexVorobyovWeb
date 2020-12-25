@@ -3,7 +3,8 @@
   padding: 120px 30px;
   background: linear-gradient(#f4f8f980, #f4f8f998),
     url("../img/contact/01.jpg") top left / cover no-repeat;
-    background-blend-mode: hue;
+  background-blend-mode: hue;
+  overflow-x: hidden;
 
   @media (min-width: 1170px) {
     padding: 120px 15px;
@@ -32,7 +33,7 @@
   display: inline-block;
   margin-bottom: 70px;
   font-size: 72px;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
   z-index: 5;

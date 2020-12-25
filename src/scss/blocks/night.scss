@@ -510,3 +510,8 @@
     border-top-color: $yellowcolor;
   }
 }
+
+
+.night .page__link::before {
+  border-left-color: #000;
+}

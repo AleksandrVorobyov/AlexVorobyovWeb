@@ -1,6 +1,8 @@
 .card-post {
   position: relative;
   padding: 30px 15px;
+  overflow-x: hidden;
+
 
   &::before {
     content: "";

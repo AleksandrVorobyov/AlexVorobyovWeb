@@ -1,6 +1,7 @@
 .timeline {
   position: relative;
   padding: 120px 15px 150px;
+  overflow-x: hidden;
 
   &::before {
     content: "";

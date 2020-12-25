@@ -1,6 +1,7 @@
 .portfolio {
   position: relative;
   padding: 120px 15px;
+  overflow-x: hidden;
 
   &::before {
     content: "";
