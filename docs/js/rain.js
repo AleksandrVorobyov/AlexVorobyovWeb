@@ -52,4 +52,4 @@ window.addEventListener('resize', function() {
 function rand(min=0, max=1) {
   return min + (max-min)*Math.random();
 }
-img.src = "../img/body/rain.png";
+img.src = "../img/body/rain01.png";
