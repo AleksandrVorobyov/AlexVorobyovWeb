@@ -7,8 +7,8 @@
 	<title>Главная страница</title>
 	<meta name="keywords" />
 	<meta name="description" />
-	<link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon" /><!-- build:css2 css/styles.css -->
-	<link rel="stylesheet" href="./css/main.css" /><!-- endbuild -->
+	<link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="./css/main.css" />
 	<link rel="stylesheet" href="./libs/font-awesome/css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -19,7 +19,9 @@
 <body class="ui">
 	<div class="page">
 		<div class="page__background">
-			<div class="page__background-wrap"><img class="layer" src="./img/body/01.png" data-speed="-5" /><img class="layer" src="./img/body/02.png" data-speed="5" /><img class="layer" src="./img/body/03.png" data-speed="-2" /><img class="layer" src="./img/body/04.png" data-speed="4" /><img class="layer" src="./img/body/05.png" data-speed="6" /></div>
+			<div class="page__background-wrap"><img class="layer" src="./img/body/01.png" data-speed="-5" /><img class="layer" src="./img/body/02.png" data-speed="5" /><img class="layer" src="./img/body/03.png" data-speed="-2" /><img class="layer" src="./img/body/04.png" data-speed="4" /><img class="layer" src="./img/body/05.png" data-speed="6" />
+				<canvas id="rain"></canvas>
+			</div>
 			<div class="page__background-wrap-bg"></div>
 		</div>
 		<div class="page__link" id="page-link"><a href="#navigation">Вверх</a></div>
@@ -285,15 +287,11 @@
 				</div>
 			</div>
 		</footer>
-	</div><!-- build:js1 js/jquery.js -->
+	</div>
 	<script src="./js/jquery-3.3.1.min.js"></script>
-	<!-- endbuild -->
-	<!-- build:js2 js/vendor.js -->
+	<script src="./libs/tweenmax/tweenmax.js"></script>
 	<script src="./js/header.js"></script>
-	<!-- endbuild -->
-	<!-- build:js3 js/main.js -->
 	<script src="./js/main.js"></script>
-	<!-- endbuild -->
 	<script src="./js/night-mode.js"></script>
 	<script src="./js/change-color.js"></script>
 	<script src="./js/carousel-project.js"></script>
@@ -302,6 +300,7 @@
 	<script src="./js/full-page.js"></script>
 	<script src="./js/parallax.js"></script>
 	<script src="./js/btnup.js"></script>
+	<script src="./js/rain.js"></script>
 	<script>
 		jQuery(document).ready(function($) {
 			new WOW().init();
