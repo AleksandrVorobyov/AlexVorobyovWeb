@@ -11,10 +11,11 @@ Particle = function() {
   this.alpha = rand(0.1, 0.4);
   this.size = rand(60, 70);
   this.draw = function() {
-  ctx.globalAlpha = this.alpha;
-  ctx.drawImage(img, this.x, this.y, this.size, this.size);
+    ctx.globalAlpha = this.alpha;
+    ctx.drawImage(img, this.x, this.y, this.size, this.size);
   }
 };
+img.src = "../img/body/rain1.png";
 function setParticle(p) {
   particleNumber++;
   var _dur = rand(duration/2, duration),
@@ -52,4 +53,3 @@ window.addEventListener('resize', function() {
 function rand(min=0, max=1) {
   return min + (max-min)*Math.random();
 }
-img.src = "../img/body/rain1.png";
