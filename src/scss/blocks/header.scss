@@ -110,6 +110,10 @@
     margin-right: 30px;
   }
 
+  a + a {
+    margin-left: 15px;
+  }
+
   @media (min-width: 1170px) {
     justify-content: start;
   }

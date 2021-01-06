@@ -159,12 +159,20 @@
       background-color: #f8ce42;
       border: 4px solid #f8ce42;
     }
+
+    &::after, &::before {
+      content: none;
+    }
   }
 
   .button-02 {
     font-family: "Open Sans", sans-serif;
     color: rgb(0, 0, 0);
     border: 4px solid #000;
+
+    &::after, &::before {
+      content: none;
+    }
   }
 
   .card {
