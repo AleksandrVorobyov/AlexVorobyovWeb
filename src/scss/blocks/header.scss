@@ -106,16 +106,12 @@
   display: flex;
   justify-content: center;
 
-  a:first-child {
-    margin-right: 30px;
-  }
-
-  a + a {
-    margin-left: 15px;
+  * + * {
+    margin-left: 60px;
   }
 
   @media (min-width: 1170px) {
-    justify-content: start;
+    justify-content: flex-start;
   }
 }
 

@@ -23,6 +23,10 @@
     0 0 160px #fc93fc;
   }
 
+  span {
+    z-index: 25;
+  }
+
   &::before {
     position: absolute;
     top: 50%;
@@ -34,7 +38,7 @@
     border-radius: 40px;
     background: #fd6dfd;
     box-shadow: 8px -8px 0px #fd6dfd, 8px 8px 0px #fd6dfd;
-    z-index: -50;
+    z-index: -1;
     transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
     transition-delay: 1s, 0.5s, 0s, 0s;
   }
@@ -58,7 +62,7 @@
     border-radius: 40px;
     background: #fd6dfd;
     box-shadow: -8px -8px 0px #fd6dfd, -8px 8px 0px #fd6dfd;
-    z-index: -50;
+    z-index: -1;
     transition: width 0.5s, right 0.5s, height 0.5s, box-shadow 0.5s;
     transition-delay: 1s, 0.5s, 0s, 0s;
   }
