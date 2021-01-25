@@ -117,7 +117,7 @@
   visibility: hidden;
   border-width: 0;
   width: 0;
-  // height: 0;
+  height: 0;
   display: none;
 }
 
@@ -141,6 +141,7 @@
   transition: all 1.5s linear;
   width: 560px;
   height: 488px;
+  animation: cards-anim 1.5s ease-in-out forwards;
 
   @media (min-width: 1020px) {
     width: 480px;

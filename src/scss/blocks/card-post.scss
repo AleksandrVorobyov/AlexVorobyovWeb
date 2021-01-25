@@ -3,13 +3,12 @@
   padding: 30px 15px;
   overflow-x: hidden;
 
-
   &::before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
-    height: 150px;
+    height: 100px;
     width: 100%;
     background: linear-gradient(
       0deg,
@@ -23,7 +22,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 150px;
+    height: 100px;
     width: 100%;
     background: linear-gradient(
       180deg,
