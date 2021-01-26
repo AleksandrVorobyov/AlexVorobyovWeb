@@ -266,11 +266,11 @@
 							<div class="contact__info-social header__bg-social"><a class="social-vk" href="https://vk.com/id65683827" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a><a class="social-facebook" href="https://wa.me/+79253215539" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a><a class="social-email" href="mailto:sasha89253215539@yandex.ru" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a><a class="social-telegram" href="https://telegram.im/@Voojaxx" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a><a class="social-github" href="https://github.com/AleksandrVorobyov" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
 						</div>
 						<form class="contact__form wow animated fadeInUp" data-card="1" id="form-contact">
-							<input class="form-input-email" data-question="data-question" type="email" placeholder="Ваш Email:" form="form-contact" name="email-contact" />
-							<input class="form-input-theme" data-question="data-question" type="text" placeholder="Тема письма:" form="form-contact" name="theme-contact" />
-							<textarea class="form-textarea-text" data-question="data-question" name="comment-contact" cols="30" rows="5" placeholder="Сообщение:" form="form-contact"></textarea>
+							<input class="form-input-email" id="email-form" type="email" placeholder="Ваш Email:" form="form-contact" name="email-contact" />
+							<input class="form-input-theme" id="theme-form" type="text" placeholder="Тема письма:" form="form-contact" name="theme-contact" />
+							<textarea class="form-textarea-text" id="text-form" name="comment-contact" cols="30" rows="5" placeholder="Сообщение:" form="form-contact"></textarea>
 							<div class="contact__form-button">
-								<button class="button-01" type="submit" name="button-contact" form="form-contact">Отправить</button>
+								<button class="button-01" id="button-form" type="submit" name="button-contact" form="form-contact">Отправить</button>
 							</div>
 						</form>
 					</div>
@@ -292,6 +292,7 @@
 	<script src="./libs/tweenmax/tweenmax.js"></script>
 	<script src="./js/header.js"></script>
 	<script src="./js/main.js"></script>
+	<script src="./js/form.js"></script>
 	<script src="./js/night-mode.js"></script>
 	<script src="./js/change-color.js"></script>
 	<script src="./js/carousel-project.js"></script>

@@ -68,14 +68,12 @@
   transition: 0.8s ease-in-out;
   margin-bottom: 50px;
   text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
-    0 0 150px #fd6dfd;
+    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd;
   z-index: 10;
 
   &:hover {
     text-shadow: 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd,
-      0 0 80px #fd6dfd, 0 0 120px #fd6dfd, 0 0 150px #fd6dfd, 0 0 180px #fd6dfd,
-      0 0 200px #fd6dfd;
+      0 0 80px #fd6dfd, 0 0 120px #fd6dfd, 0 0 150px #fd6dfd;
   }
 
   &::after {
@@ -116,8 +114,7 @@
   z-index: 5;
   margin-bottom: 50px;
   text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
-    0 0 150px #fd6dfd;
+    0 0 40px #fd6dfd;
 
   &:after {
     position: absolute;

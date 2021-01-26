@@ -37,8 +37,8 @@ section.contact
                     a(href="https://github.com/AleksandrVorobyov" target="_blank" class="social-github")
                         i(class="fa fa-github fa-2x" aria-hidden="true")
             form(class='contact__form' data-card="1" id="form-contact" ).wow.animated.fadeInUp
-                input(data-question type="email" class="form-input-email" placeholder="Ваш Email:" form='form-contact' name="email-contact")
-                input(data-question type="text" class="form-input-theme" placeholder="Тема письма:" form='form-contact' name="theme-contact")
-                textarea(data-question name="comment-contact", cols="30", rows="5" class="form-textarea-text" placeholder="Сообщение:" form='form-contact')
+                input(id='email-form' type="email" class="form-input-email" placeholder="Ваш Email:" form='form-contact' name="email-contact")
+                input(id='theme-form' type="text" class="form-input-theme" placeholder="Тема письма:" form='form-contact' name="theme-contact")
+                textarea(id='text-form' name="comment-contact", cols="30", rows="5" class="form-textarea-text" placeholder="Сообщение:" form='form-contact')
                 .contact__form-button
-                    button(class="button-01" type="submit" name="button-contact"  form='form-contact') Отправить
+                    button(id='button-form' class="button-01" type="submit" name="button-contact"  form='form-contact') Отправить

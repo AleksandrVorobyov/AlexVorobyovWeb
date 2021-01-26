@@ -3,17 +3,17 @@ section.portfolio
         .portfolio-wrap
             .portfolio__title.neon.wow.animated.lightSpeedIn По<span>рт</span>фо<span>ли</span>о
             .portfolio__nav
-                input#all.checkbox-all(type='radio' name='checkbox' checked='')
-                label(for='all') Все работы
-                input#html.checkbox-html(type='radio' name='checkbox')
+                input#project.checkbox-all(type='radio' name='checkbox' checked='' data-menu = 'project')
+                label(for='project') Все работы
+                input#html.checkbox-html(type='radio' name='checkbox' data-menu = 'html')
                 label(for='html') HTML/CSS
-                input#react.checkbox-less(type='radio' name='checkbox')
-                label(for='react') HTML/LESS
-                input#angular.checkbox-scss(type='radio' name='checkbox')
-                label(for='angular') HTML/SCSS
-                input#vue.checkbox-pug(type='radio' name='checkbox')
-                label(for='vue') PUG/SCSS
-                input#js.checkbox-js(type='radio' name='checkbox')
+                input#less.checkbox-less(type='radio' name='checkbox' data-menu = 'less')
+                label(for='less') HTML/LESS
+                input#scss.checkbox-scss(type='radio' name='checkbox' data-menu = 'scss')
+                label(for='scss') HTML/SCSS
+                input#pug.checkbox-pug(type='radio' name='checkbox' data-menu = 'pug')
+                label(for='pug') PUG/SCSS
+                input#js.checkbox-js(type='radio' name='checkbox' data-menu = 'js')
                 label(for='js') javascript
                 .seperator
                 // project cards
