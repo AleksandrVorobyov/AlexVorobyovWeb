@@ -1,56 +1,58 @@
-var n = 700,
-c = document.getElementById("rain"),
-ctx = c.getContext("2d"),
-cw = (c.width = c.offsetWidth);
-ch = (c.height = 500);
-duration = ch/350,  
-img = new Image(),
-particles = [],
-particleNumber = 0,
-Particle = function() {
-  this.alpha = rand(0.1, 0.4);
-  this.size = rand(60, 70);
-  this.draw = function() {
-    ctx.globalAlpha = this.alpha;
-    ctx.drawImage(img, this.x, this.y, this.size, this.size);
-  }
-};
-function setParticle(p) {
-  particleNumber++;
-  var _dur = rand(duration/2, duration),
-  _tl = new TimelineMax()
-  .fromTo(p, _dur, {
-  x:rand(-p.size, cw+ch/2),
-  y:-p.size
-  },{
-  x:'-='+rand(ch/2-50,ch/2),  
-  y:ch+p.size,
-  ease:Power0.easeNone,
-  onComplete:function(){ setParticle(p); }
-  });
-  if (particleNumber<n) _tl.seek(_dur*rand());
-}
-for (var i=0; i<n; i++) {
-  particles.push(new Particle());
-  setParticle(particles[i]);  
-}
-TweenMax.ticker.addEventListener("tick", function(){
-  ctx.clearRect(0, 0, cw, ch);
-  for (var i=0; i<n; i++) {
-  particles[i].draw();
-  }
-});
-window.addEventListener('resize', function() {
-  particleNumber = 0;  
+if (window.screen.availWidth > 1170) {
+  var n = 700,
+  c = document.getElementById("rain"),
+  ctx = c.getContext("2d"),
   cw = (c.width = c.offsetWidth);
   ch = (c.height = 500);
-  for (var i=0; i<n; i++) {
-  TweenMax.killTweensOf(particles[i]);
-  setParticle(particles[i]);
+  duration = ch/350,  
+  img = new Image(),
+  particles = [],
+  particleNumber = 0,
+  Particle = function() {
+    this.alpha = rand(0.1, 0.4);
+    this.size = rand(60, 70);
+    this.draw = function() {
+      ctx.globalAlpha = this.alpha;
+      ctx.drawImage(img, this.x, this.y, this.size, this.size);
+    }
+  };
+  function setParticle(p) {
+    particleNumber++;
+    var _dur = rand(duration/2, duration),
+    _tl = new TimelineMax()
+    .fromTo(p, _dur, {
+    x:rand(-p.size, cw+ch/2),
+    y:-p.size
+    },{
+    x:'-='+rand(ch/2-50,ch/2),  
+    y:ch+p.size,
+    ease:Power0.easeNone,
+    onComplete:function(){ setParticle(p); }
+    });
+    if (particleNumber<n) _tl.seek(_dur*rand());
   }
-});
-function rand(min=0, max=1) {
-  return min + (max-min)*Math.random();
+  for (var i=0; i<n; i++) {
+    particles.push(new Particle());
+    setParticle(particles[i]);  
+  }
+  TweenMax.ticker.addEventListener("tick", function(){
+    ctx.clearRect(0, 0, cw, ch);
+    for (var i=0; i<n; i++) {
+    particles[i].draw();
+    }
+  });
+  window.addEventListener('resize', function() {
+    particleNumber = 0;  
+    cw = (c.width = c.offsetWidth);
+    ch = (c.height = 500);
+    for (var i=0; i<n; i++) {
+    TweenMax.killTweensOf(particles[i]);
+    setParticle(particles[i]);
+    }
+  });
+  function rand(min=0, max=1) {
+    return min + (max-min)*Math.random();
+  }
+  img.src = "./img/body/rain1.png";
+  img.alt = "rain1.png";
 }
-img.src = "./img/body/rain1.png";
-img.alt = "rain1.png";
