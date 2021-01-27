@@ -90,10 +90,11 @@
   display: inline-block;
   text-decoration: none;
   box-shadow: 10px 14px 16px -3px rgba(34, 60, 80, 0.3);
-  border-radius: 14px;
+  border-radius: 20px;
   border: 6px solid #fd6dfd;
   transition: 0.3s linear, border .5s ease-in-out;
   background-color: #fff;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.1);
@@ -118,6 +119,7 @@
 .card__img {
   margin-bottom: 20px;
   border-bottom: 4px solid #fd6dfd;
+  transition: border .5s ease-in-out;
 
   img {
     width: 100%;

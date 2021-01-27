@@ -31,8 +31,8 @@ function validateEmail(email) {
         background = '#' + r.toString(16) + g.toString(16) + b.toString(16);
 
         item.style.borderColor = background;
-        item.style.boxShadow =`'10px 14px 16px' + ${background}`;
+        item.querySelector('.card__img').style.borderBottom = `4px solid ${background}`;
       })
-      }, 5000 * (i + 1));
+      }, 6000 * (i + 1));
   }
 }
