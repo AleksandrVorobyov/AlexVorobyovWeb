@@ -10,7 +10,7 @@
           background = '#' + r.toString(16) + g.toString(16) + b.toString(16);
   
           item.style.borderColor = background;
-          item.querySelector('.card__img').style.borderBottom = `4px solid ${background}`;
+          item.querySelector('.card__text').style.borderTop = `6px solid ${background}`;
         })
         }, 6000 * (i + 1));
     }

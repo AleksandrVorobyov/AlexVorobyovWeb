@@ -1,7 +1,12 @@
 mixin card(link, img, alt, title, subtitle)
-    a(href= link).card.white-color
-        .card__img
-            img(src="./img/card/" + img, alt= alt)
+    .card.white-color
+        a(href= link).card__btn Подробнее
+        .card__img-wrap
+            .card__img
+                figure.card__img-front
+                    img(src="./img/card/" + img, alt= alt)
+                figure.card__img-back
+                    img(src="./img/card/" + img, alt= alt)
         .card__text
             h4.card__title #{title}
-            p.card__subtitle #{subtitle} 
+            p.card__subtitle #{subtitle}
