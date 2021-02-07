@@ -19,7 +19,7 @@
 <body class="ui">
 	<div class="page">
 		<div class="page__background">
-			<div class="page__background-wrap"><img class="layer" src="./img/body/01.png" data-speed="-5" /><img class="layer" src="./img/body/02.png" data-speed="5" /><img class="layer" src="./img/body/03.png" data-speed="-2" /><img class="layer" src="./img/body/04.png" data-speed="4" /><img class="layer" src="./img/body/05.png" data-speed="6" />
+			<div class="page__background-wrap"><img class="layer" src="./img/body/01.png" alt="01.png" data-speed="-5" /><img class="layer" src="./img/body/02.png" alt="02.png" data-speed="5" /><img class="layer" src="./img/body/03.png" alt="03.png" data-speed="-2" /><img class="layer" src="./img/body/04.png" alt="04.png" data-speed="4" /><img class="layer" src="./img/body/05.png" alt="05.png" data-speed="6" />
 				<canvas id="rain"></canvas>
 			</div>
 			<div class="page__background-wrap-bg"></div>
@@ -29,10 +29,10 @@
 			<section class="navigation" id="navigation">
 				<div class="big-container">
 					<div class="night-sun" id="nightSun" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
-					<nav class="navigation-wrap">
-						<div class="navigation__logo wow animated slideInDown"><a class="logo" href="index.html">А<span>В</span></a>
-						</div>
-						<div class="navigation__link-nav wow animated slideInDown">
+					<div class="navigation-wrap">
+						<h1 class="navigation__logo wow animated slideInDown"><a class="logo" href="index.html">А<span>В</span></a>
+						</h1>
+						<nav class="navigation__link-nav wow animated slideInDown">
 							<ul>
 								<li><a class="nav nav--active" href="index.html" data-hover="Главная">Главная</a>
 								</li>
@@ -41,17 +41,17 @@
 								<li><a class="nav" href="contact.html" data-hover="Контакты">Контакты</a>
 								</li>
 							</ul>
-						</div>
+						</nav>
 						<div class="navigation__social wow animated slideInDown"><a class="social-vk" href="https://vk.com/id65683827" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a><a class="social-facebook" href="https://wa.me/+79253215539" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a><a class="social-email" href="mailto:sasha89253215539@yandex.ru" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a><a class="social-telegram" href="https://telegram.im/@Voojaxx" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a><a class="social-github" href="https://github.com/AleksandrVorobyov" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
-					</nav>
+					</div>
 				</div>
 			</section>
 			<section class="header">
 				<div class="container">
 					<div class="header-wrap">
 						<div class="header__text wow animated fadeInUp">
-							<div class="header__text-title neon"><span>Ал</span>ексан<span>д</span>р</div>
-							<div class="header__text-title neon">Вор<span>обь</span>ев</div>
+							<h2 class="header__text-title neon"><span>Ал</span>ексан<span>д</span>р</h2>
+							<h2 class="header__text-title neon">Вор<span>обь</span>ев</h2>
 							<div class="header__text-subtitle">
 								<p>Верстальщик сайтов, Frontend-разработчик. Оперативная верстка. Работаю с соблюдением сроков и выполнением ТЗ. </p>
 							</div>
@@ -113,8 +113,8 @@
 			<section class="portfolio" id="portfolio">
 				<div class="container">
 					<div class="portfolio-wrap">
-						<div class="portfolio__title neon wow animated lightSpeedIn">По<span>рт</span>фо<span>ли</span>о</div>
-						<div class="portfolio__card wow animated shake">
+						<h3 class="portfolio__title neon wow animated lightSpeedIn">По<span>рт</span>фо<span>ли</span>о</h3>
+						<nav class="portfolio__card wow animated shake">
 							<div class="card white-color"><a class="card__btn" href="healthy-food.html">Подробнее</a>
 								<div class="card__img-wrap">
 									<div class="card__img">
@@ -223,7 +223,7 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-						</div>
+						</nav>
 					</div>
 					<div class="portfolio__nav-bottom">
 						<div class="portfolio__color-circle wow animated fadeInUp">
@@ -242,7 +242,7 @@
 			<section class="timeline" id="scrolltarget">
 				<div class="container">
 					<div class="timeline-wrap">
-						<div class="timeline__title neon wow animated lightSpeedIn">К<span>ак</span> я р<span>або</span>таю</div>
+						<h3 class="timeline__title neon wow animated lightSpeedIn">К<span>ак</span> я р<span>або</span>таю</h3>
 						<div class="timeline__column">
 							<div class="timeline__column-item wow animated slideInLeft">
 								<div class="timeline__column-item-img"><img src="./img/svg/layers-01.png" alt="layers-01.png" /></div>
@@ -292,7 +292,7 @@
 					<div class="contact-wrap">
 						<div class="contact__info wow animated fadeInUp">
 							<p class="contact__info-desc">Если вы ищите специалиста по верстке сайтов, front-end разработчика в команду или для работы над проектом — напишите мне.</p>
-							<div class="contact__info-table">
+							<table class="contact__info-table">
 								<ol class="rounded">
 									<li>
 										<div class="rounded-row">
@@ -316,7 +316,7 @@
 									</li>
 								</ol>
 								<ol></ol>
-							</div>
+							</table>
 							<div class="contact__info-social header__bg-social"><a class="social-vk" href="https://vk.com/id65683827" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a><a class="social-facebook" href="https://wa.me/+79253215539" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a><a class="social-email" href="mailto:sasha89253215539@yandex.ru" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a><a class="social-telegram" href="https://telegram.im/@Voojaxx" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a><a class="social-github" href="https://github.com/AleksandrVorobyov" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
 						</div>
 						<form class="contact__form wow animated fadeInUp" data-card="1" id="form-contact">
