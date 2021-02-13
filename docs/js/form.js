@@ -15,10 +15,8 @@ if (formContact !== null) {
   })
 }
 
-
 // Функция для проверки email
 function validateEmail(email) {
   var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
   return pattern.test(email);
 }
-

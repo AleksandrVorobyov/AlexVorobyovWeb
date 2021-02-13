@@ -382,3 +382,7 @@
 .full-page__img + .full-page__img {
   border-top: 10px solid #fd6dfd;
 }
+
+.carousel-project.owl-carousel .owl-carousel-item {
+  cursor: pointer;
+}
