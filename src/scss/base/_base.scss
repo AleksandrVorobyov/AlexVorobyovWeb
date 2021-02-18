@@ -85,3 +85,35 @@ img {
 img {
   pointer-events: none;
 }
+
+::-webkit-scrollbar-button {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 5px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: #633363;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fd6dfd;
+}
+
+::-webkit-resizer {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}

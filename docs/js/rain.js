@@ -1,5 +1,5 @@
 if (window.screen.availWidth > 1170) {
-  var n = 700,
+  var n = 600,
   c = document.getElementById("rain"),
   ctx = c.getContext("2d"),
   cw = (c.width = c.offsetWidth);
