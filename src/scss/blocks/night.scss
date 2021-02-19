@@ -47,7 +47,8 @@
   color: #fff;
   text-align: center;
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   width: 150px;
   padding: 5px 10px;
   border: 1px solid #333;
@@ -86,7 +87,6 @@
   .night-sun {
     color: white;
   }
-
 }
 
 .night {
@@ -105,7 +105,8 @@
 
   .logo {
     text-shadow: none;
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     color: black;
 
     &:hover {
@@ -119,7 +120,8 @@
 
   .nav {
     text-shadow: none;
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     color: black;
 
     &:after {
@@ -150,7 +152,8 @@
 
 .night {
   .button-01 {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     background-color: $yellowcolor;
     border: 4px solid $yellowcolor;
 
@@ -160,17 +163,20 @@
       border: 4px solid #f8ce42;
     }
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: none;
     }
   }
 
   .button-02 {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     color: rgb(0, 0, 0);
     border: 4px solid #000;
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: none;
     }
   }
@@ -203,7 +209,8 @@
   }
 
   .header__text-title {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     color: rgb(0, 0, 0);
 
     &::after {
@@ -213,7 +220,8 @@
 
   .header__bg-title,
   .header__bg-title {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     color: rgb(0, 0, 0);
   }
 
@@ -289,7 +297,8 @@
   .portfolio__title,
   .portfolio__nav-item {
     color: rgb(0, 0, 0);
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
     transition: 0.5s ease-in-out;
   }
 
@@ -302,23 +311,24 @@
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     color: rgb(0, 0, 0);
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
 
     &:hover {
       color: #73ebeb;
       border-bottom-color: $yellowcolor;
     }
-}
+  }
 
-.checkbox-all:checked + label,
-.checkbox-html:checked + label,
-.checkbox-less:checked + label,
-.checkbox-scss:checked + label,
-.checkbox-pug:checked + label,
-.checkbox-js:checked + label {
-  color: #73ebeb;
-  border-bottom-color: $yellowcolor;
-}
+  .checkbox-all:checked + label,
+  .checkbox-html:checked + label,
+  .checkbox-less:checked + label,
+  .checkbox-scss:checked + label,
+  .checkbox-pug:checked + label,
+  .checkbox-js:checked + label {
+    color: #73ebeb;
+    border-bottom-color: $yellowcolor;
+  }
 }
 
 .night .timeline {
@@ -341,7 +351,8 @@
   .timeline__column-title,
   .timeline__column-desc {
     color: rgb(0, 0, 0);
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
   }
 
   .timeline__column-subtitle {
@@ -362,10 +373,11 @@
 
 .night .contact {
   background: linear-gradient(#50505080, #50505080),
-    url("../img/contact/01.jpg") top left / cover no-repeat;
+    url("../img/contact/01.webp") top left / cover no-repeat;
 
   .contact-title {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
 
     &::after {
       background-color: $yellowcolor;
@@ -419,7 +431,6 @@
   .footer-inner-column {
     height: 300px;
   }
-  
 
   .footer-inner__title,
   p {
@@ -428,7 +439,6 @@
 }
 
 .night .card-post {
-
   &::after {
     display: none;
   }
@@ -458,7 +468,8 @@
 
   .card-post__nav-title,
   .card-post__nav-desc {
-    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
 
     &::after {
       background-color: $yellowcolor;
@@ -518,7 +529,6 @@
     border-top-color: $yellowcolor;
   }
 }
-
 
 .night .page__link::before {
   border-left-color: #000;

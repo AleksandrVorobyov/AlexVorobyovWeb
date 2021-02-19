@@ -79,7 +79,8 @@
 
 .contact__info-desc {
   font-size: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   color: rgb(255, 255, 255);
   line-height: 1.4;
   text-align: left;
@@ -93,7 +94,8 @@
 .rounded {
   counter-reset: li;
   list-style: none;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   font-size: 24px;
   padding: 0;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -149,7 +151,7 @@
 
 .rounded-row p {
   font-size: 28px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
@@ -161,7 +163,7 @@
 
 .rounded-row span {
   font-size: 28px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "L890-Roman-Bold";
   font-weight: bold;
   line-height: 1.2;
   color: rgb(0, 0, 0);
@@ -173,7 +175,8 @@
 
 .rounded-row a {
   font-size: 28px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-family: "L890-Roman-Bold";
   color: rgb(3, 155, 229);
   line-height: 1.2;
   text-decoration: none;
@@ -222,7 +225,8 @@
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
   font-size: 28px;
-  font-family: "Open Sans", sans-serif;
+	font-family: 'L890-Roman-Bold';
+  font-weight: 700;
   color: rgb(0, 0, 0);
   font-weight: bold;
   transition: ease-in 0.5s;
@@ -249,7 +253,7 @@
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
   font-size: 28px;
-  font-family: "Open Sans", sans-serif;
+	font-family: 'L890-Roman-Bold';
   color: rgb(0, 0, 0);
   font-weight: bold;
   transition: ease-in 0.5s;

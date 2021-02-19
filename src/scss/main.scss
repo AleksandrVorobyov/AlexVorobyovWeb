@@ -1,8 +1,6 @@
-$redcolor: #e74c3c;
-$yellowcolor: #fbdc4d;
-
 // Vars
 @import "./vars/variables";
+@import "./utils/utils";
 
 // Base
 @import "./base/base";
@@ -10,6 +8,3 @@ $yellowcolor: #fbdc4d;
 // Blocks, sections, layouts
 @import "./blocks/**/*.scss";
 @import "./mixin/**/*.scss";
-
-// Utils
-@import "./utils/utils";

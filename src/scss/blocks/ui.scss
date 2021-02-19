@@ -211,7 +211,7 @@
 
 .card__title {
   font-size: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
 
@@ -222,7 +222,8 @@
 
 .card__subtitle {
   font-size: 26px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   color: rgb(0, 0, 0);
 
   @media (min-width: 1170px) {

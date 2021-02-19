@@ -4,7 +4,6 @@
   padding-top: 50px;
   overflow-x: hidden;
 
-
   &::before {
     content: "";
     position: absolute;
@@ -65,7 +64,7 @@
   margin-bottom: 20px;
   padding-bottom: 5px;
   font-size: 90px;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   font-weight: 400;
   color: #fff;
   line-height: 1.2;
@@ -74,7 +73,7 @@
 
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     clear: both;
     background: #fd6dfd;
     width: 10%;
@@ -86,15 +85,12 @@
     animation: nameLogo 6s ease-in-out 0s infinite;
     border-radius: 10px 0;
   }
-
-  @media (min-width: 1170px) {
-    // text-decoration: none;
-  }
 }
 
 .header__text-subtitle p {
   font-size: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   color: #fff;
   line-height: 1.5;
   margin: 0;
@@ -149,7 +145,7 @@
   &:hover {
     transform: translateY(-15px);
 
-    .avatar__title  {
+    .avatar__title {
       color: #fd6dfd;
       text-shadow: 1px 1px 2px #000000;
     }
@@ -167,11 +163,11 @@
 
   &:hover {
     transform: translate(-100%, -15px);
-    
-  .avatar__title  {
-    color: #fd6dfd;
-    text-shadow: 1px 1px 2px #000000;
-  }
+
+    .avatar__title {
+      color: #fd6dfd;
+      text-shadow: 1px 1px 2px #000000;
+    }
   }
 }
 
@@ -187,7 +183,7 @@
   &:hover {
     transform: translate(-50%, -15px);
 
-    .avatar__title  {
+    .avatar__title {
       color: #fd6dfd;
       text-shadow: 1px 1px 2px #000000;
     }
@@ -195,7 +191,7 @@
 }
 
 .avatar__title {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "L890-Roman-Bold";
   text-align: center;
   color: #fff;
   font-size: 26px;
@@ -260,7 +256,11 @@
   }
 
   @media (min-width: 1170px) {
-    background: radial-gradient(circle, rgba(253,109,253,0.5130427170868348) 0%, rgba(0,0,0,0.3533788515406162) 100%);
+    background: radial-gradient(
+      circle,
+      rgba(253, 109, 253, 0.5130427170868348) 0%,
+      rgba(0, 0, 0, 0.3533788515406162) 100%
+    );
     box-shadow: 0px 28px 100px 0px #fd6dfd;
 
     &::before {
@@ -270,7 +270,7 @@
     &::after {
       content: none;
     }
-  } 
+  }
 }
 
 .header__bg-img span {
@@ -324,7 +324,7 @@
 .header__bg-title {
   margin-bottom: 50px;
   font-size: 54px;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   color: #fff;
   font-weight: 700;
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
@@ -340,7 +340,8 @@
   margin-bottom: 30px;
   list-style-type: none;
   font-size: 34px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: "L890-Roman-Regular";
   color: #fff;
   line-height: 1.2;
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
@@ -374,7 +375,9 @@
 
   .fa-2x {
     font-size: 4em;
-    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd, 0 0 150px #fd6dfd;
+    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
+      0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
+      0 0 150px #fd6dfd;
     transition: 0.5s ease-in-out;
 
     @media (min-width: 1170px) {
@@ -389,7 +392,8 @@
 
 .header__bg-email {
   font-size: 34px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'L890-Roman-Regular';
+  font-weight: 400;
   color: #fff;
   text-decoration: underline;
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
