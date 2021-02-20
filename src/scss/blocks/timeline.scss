@@ -40,7 +40,7 @@
   margin-bottom: 150px;
   position: relative;
   display: inline-block;
-  font-size: 72px;
+  font-size: 50px;
   font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -57,6 +57,10 @@
     left: -3px;
     z-index: -1;
     transition: 0.5s ease-in-out;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 72px;
   }
 
   @media (min-width: 1170px) {
@@ -213,11 +217,15 @@
 
 .timeline__column-title {
   display: inline;
-  font-size: 36px;
+  font-size: 28px;
   font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
   border-bottom: 4px solid rgb(251, 220, 77);
+
+  @media (min-width: 600px) {
+    font-size: 36px;
+  }
 
   @media (min-width: 1170px) {
     font-size: 26px;
@@ -225,11 +233,15 @@
 }
 
 .timeline__column-subtitle {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: rgb(0, 0, 0);
   line-height: 1.2;
+
+  @media (min-width: 600px) {
+    font-size: 26px;
+  }
 
   @media (min-width: 1170px) {
     font-size: 18px;

@@ -1,12 +1,16 @@
 .detals-title {
   display: inline-block;
   margin-bottom: 30px;
-  font-size: 44px;
+  font-size: 32px;
   font-family: "L890-Roman-Bold";
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
   border-bottom: 8px solid #fd6dfd;
+
+  @media (min-width: 600px) {
+    font-size: 44px;
+  }
 
   @media (min-width: 1170px) {
     font-size: 26px;
@@ -30,7 +34,7 @@
 
 .detals-description-item p {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: rgb(255, 255, 255);
@@ -43,6 +47,10 @@
     @media (min-width: 1170px) {
       width: 293px;
     }
+  }
+
+  @media (min-width: 600px) {
+    font-size: 28px;
   }
 
   @media (min-width: 1170px) {

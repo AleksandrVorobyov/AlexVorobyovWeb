@@ -1,10 +1,14 @@
 .contact {
   position: relative;
-  padding: 120px 30px;
+  padding: 60px 30px;
   background: linear-gradient(#f4f8f980, #f4f8f998),
     url("../img/contact/01.webp") top left / cover no-repeat;
   background-blend-mode: hue;
   overflow-x: hidden;
+
+  @media (min-width: 600px) {
+    padding: 120px 30px;
+  }
 
   @media (min-width: 1170px) {
     padding: 120px 15px;
@@ -26,17 +30,21 @@
 
 .contact-title-wrapper {
   text-align: center;
+  margin-bottom: 70px;
 }
 
 .contact-title {
   position: relative;
   display: inline-block;
-  margin-bottom: 70px;
-  font-size: 72px;
+  font-size: 50px;
   font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
   z-index: 5;
+
+  @media (min-width: 600px) {
+    font-size: 72px;
+  }
 
   &::after {
     position: absolute;
@@ -78,7 +86,8 @@
 }
 
 .contact__info-desc {
-  font-size: 30px;
+  margin-top: 0;
+  font-size: 24px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: rgb(255, 255, 255);
@@ -86,8 +95,19 @@
   text-align: left;
   text-shadow: 0 0 5px rgb(26, 26, 26);
 
+  @media (min-width: 600px) {
+    font-size: 30px;
+  }
+
   @media (min-width: 1170px) {
     font-size: 20px;
+  }
+}
+
+.contact__info-table {
+  margin-left: 15px;
+  @media (min-width: 900px) {
+    margin-left: 0;
   }
 }
 
@@ -150,11 +170,15 @@
 }
 
 .rounded-row p {
-  font-size: 28px;
+  font-size: 24px;
   font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
+
+  @media (min-width: 600px) {
+    font-size: 28px;
+  }
 
   @media (min-width: 1170px) {
     font-size: 20px;
@@ -162,11 +186,15 @@
 }
 
 .rounded-row span {
-  font-size: 28px;
+  font-size: 24px;
   font-family: "L890-Roman-Bold";
   font-weight: bold;
   line-height: 1.2;
   color: rgb(0, 0, 0);
+
+  @media (min-width: 600px) {
+    font-size: 28px;
+  }
 
   @media (min-width: 1170px) {
     font-size: 20px;
@@ -174,12 +202,16 @@
 }
 
 .rounded-row a {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   font-family: "L890-Roman-Bold";
   color: rgb(3, 155, 229);
   line-height: 1.2;
   text-decoration: none;
+
+  @media (min-width: 600px) {
+    font-size: 28px;
+  }
 
   &:hover {
     color: #ea736d;
@@ -208,24 +240,29 @@
   flex-direction: column;
   margin: 20px;
   padding: 60px;
+  max-width: 550px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 28px 100px 0px #fd6dfd;
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
   z-index: 5;
+
+  @media (min-width: 768px) {
+    min-width: 500px;
+  }
 }
 
 .form-input-email,
 .form-input-theme {
-  width: 395px;
+  width: 100%;
   padding: 20px;
   margin-bottom: 15px;
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
   font-size: 28px;
-	font-family: 'L890-Roman-Bold';
+  font-family: "L890-Roman-Bold";
   font-weight: 700;
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -246,14 +283,14 @@
 }
 
 .form-textarea-text {
-  width: 395px;
+  width: 100%;
   margin-bottom: 15px;
   padding: 30px 20px 30px 20px;
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
   font-size: 28px;
-	font-family: 'L890-Roman-Bold';
+  font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
   transition: ease-in 0.5s;
