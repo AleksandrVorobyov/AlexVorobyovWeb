@@ -18,6 +18,10 @@ body {
   user-select: none;
 }
 
+body.hidden {
+  overflow: hidden;
+}
+
 body::before {
   content: "";
   display: block;

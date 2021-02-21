@@ -54,11 +54,15 @@
   position: relative;
   display: inline-block;
   margin-bottom: 70px;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
   z-index: 5;
+
+  @media (min-width: 480px) {
+    font-size: 50px;
+  }
 
   @media (min-width: 600px) {
     font-size: 72px;

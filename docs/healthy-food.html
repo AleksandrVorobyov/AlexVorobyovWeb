@@ -26,7 +26,7 @@
 		<header>
 			<section class="navigation" id="navigation">
 				<div class="big-container">
-					<div class="night-sun" id="nightSun" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
+					<div class="night-sun" id="nightSun" data-night="data-night" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
 					<div class="navigation-wrap">
 						<h1 class="navigation__logo wow animated slideInDown"><a class="logo" href="index.html">А<span>В</span></a>
 						</h1>
@@ -45,6 +45,23 @@
 					</div>
 				</div>
 			</section>
+			<aside class="sidebar" id="sidebar">
+				<div class="sidebar-wrap">
+					<h2 class="sidebar__title">Меню</h2>
+					<div class="sidebar-wrap-bg"><img src="./img/sidebar/sidebar-bg.jpg" alt="sidebar-bg" /></div>
+					<div class="sidebar__links">
+						<ul class="sidebar__links-col">
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Главная</span></a></li>
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Работы</span></a></li>
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Контакты</span></a></li>
+						</ul>
+					</div>
+					<div class="sidebar__social"><a class="social-vk" href="https://vk.com/id65683827" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a><a class="social-facebook" href="https://wa.me/+79253215539" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a><a class="social-email" href="mailto:sasha89253215539@yandex.ru" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-telegram" href="https://telegram.im/@Voojaxx" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><a class="social-github" href="https://github.com/AleksandrVorobyov" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+					<div class="sidebar__btn">
+						<div class="night-sun" id="nightSun-sidebar" data-night="data-night" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
+					</div>
+				</div>
+			</aside>
 		</header>
 		<main>
 			<section class="card-post">
@@ -149,6 +166,7 @@
 	<script src="./js/contact.js"></script>
 	<script src="./libs/tweenmax/tweenmax.js"></script>
 	<script src="./js/full-page.js"></script>
+	<script src="./js/sidebar.js"></script>
 	<script src="./js/btnup.js"></script>
 	<script src="./js/rain.js"></script>
 	<script>

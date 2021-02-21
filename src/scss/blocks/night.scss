@@ -89,6 +89,20 @@
   }
 }
 
+.night .navigation .navigation__burger {
+  &::before {
+    background: rgb(0, 0, 0);
+  }
+
+  &::after {
+    background: rgb(0, 0, 0);
+  }
+
+  span::before {
+    background: rgb(0, 0, 0);
+  }
+}
+
 .night {
   .page__background {
     display: none;
@@ -532,4 +546,29 @@
 
 .night .page__link::before {
   border-left-color: #000;
+}
+
+.night .sidebar {
+  .sidebar-wrap {
+    background: rgb(126, 144, 185);
+  }
+
+  .sidebar-wrap-bg {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar__title {
+    font-weight: 700;
+    font-family: "L890-Roman-Bold";
+  }
+
+  .sidebar__links-item-link {
+    background: #000;
+    font-family: "L890-Roman-Bold";
+  }
+
+  .sidebar__links-item {
+    box-shadow: 0px 0px 10px rgb(251, 220, 77), 0px 0px 20px rgb(251, 220, 77), 0px 0px 30px rgb(251, 220, 77);
+  }
 }

@@ -26,7 +26,7 @@
 		<header>
 			<section class="navigation" id="navigation">
 				<div class="big-container">
-					<div class="night-sun" id="nightSun" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
+					<div class="night-sun" id="nightSun" data-night="data-night" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
 					<div class="navigation-wrap">
 						<h1 class="navigation__logo wow animated slideInDown"><a class="logo" href="index.html">А<span>В</span></a>
 						</h1>
@@ -80,6 +80,10 @@
 							<div class="owl-carousel-item"><img src="./img/header/cert/html-pro.webp" alt="cert-html-pro" /></div>
 							<div class="owl-carousel-item"><img src="./img/header/cert/js.webp" alt="cert-js" /></div>
 						</div>
+						<div class="header__carousel-row-btn">
+							<button class="header__carousel-btn header__carousel-btn-prev" type="button" id="header-carousel-prev"><span></span></button>
+							<button class="header__carousel-btn header__carousel-btn-next" type="button" id="header-carousel-next"><span></span></button>
+						</div>
 					</div>
 				</div>
 				<div class="container">
@@ -105,6 +109,23 @@
 					</div>
 				</div>
 			</section>
+			<aside class="sidebar" id="sidebar">
+				<div class="sidebar-wrap">
+					<h2 class="sidebar__title">Меню</h2>
+					<div class="sidebar-wrap-bg"><img src="./img/sidebar/sidebar-bg.jpg" alt="sidebar-bg" /></div>
+					<div class="sidebar__links">
+						<ul class="sidebar__links-col">
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Главная</span></a></li>
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Работы</span></a></li>
+							<li class="sidebar__links-item"> <a class="sidebar__links-item-link" href="#"><span>Контакты</span></a></li>
+						</ul>
+					</div>
+					<div class="sidebar__social"><a class="social-vk" href="https://vk.com/id65683827" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a><a class="social-facebook" href="https://wa.me/+79253215539" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a><a class="social-email" href="mailto:sasha89253215539@yandex.ru" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-telegram" href="https://telegram.im/@Voojaxx" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><a class="social-github" href="https://github.com/AleksandrVorobyov" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+					<div class="sidebar__btn">
+						<div class="night-sun" id="nightSun-sidebar" data-night="data-night" data-title="Включить белую тему"><i class="fa fa-3x fa-moon-o" aria-hidden="true"></i></div>
+					</div>
+				</div>
+			</aside>
 		</header>
 		<main>
 			<section class="portfolio" id="portfolio">
@@ -112,8 +133,8 @@
 					<div class="portfolio-wrap">
 						<h3 class="portfolio__title neon wow animated lightSpeedIn">По<span>рт</span>фо<span>ли</span>о</h3>
 						<nav class="portfolio__card wow animated shake">
-							<div class="card white-color"><a class="card__btn" href="lemon.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="lemon.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/18.webp" alt="18.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/18.webp" alt="18.webp" /></figure>
@@ -124,8 +145,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="healthy-food.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="healthy-food.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/16.webp" alt="16.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/16.webp" alt="16.webp" /></figure>
@@ -136,8 +157,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="travel-blog.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="travel-blog.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/08.webp" alt="08.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/08.webp" alt="08.webp" /></figure>
@@ -148,8 +169,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="lookshop.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="lookshop.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/14.webp" alt="14.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/14.webp" alt="14.webp" /></figure>
@@ -160,8 +181,8 @@
 									<p class="card__subtitle">Верстка многостраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="LiziLizkaLab.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="LiziLizkaLab.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/04.webp" alt="04.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/04.webp" alt="04.webp" /></figure>
@@ -172,8 +193,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="amz-tatoo.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="amz-tatoo.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/15.webp" alt="15.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/15.webp" alt="15.webp" /></figure>
@@ -184,8 +205,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="dhl.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="dhl.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/06.webp" alt="06.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/06.webp" alt="06.webp" /></figure>
@@ -196,8 +217,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="charger.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="charger.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/17.webp" alt="17.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/17.webp" alt="17.webp" /></figure>
@@ -208,8 +229,8 @@
 									<p class="card__subtitle">Верстка одностраничного сайта.</p>
 								</div>
 							</div>
-							<div class="card white-color"><a class="card__btn" href="muncak.html">Подробнее</a>
-								<div class="card__img-wrap">
+							<div class="card white-color">
+								<div class="card__img-wrap"><a class="card__btn" href="muncak.html">Подробнее</a>
 									<div class="card__img">
 										<figure class="card__img-front"><img src="./img/card/12.webp" alt="12.webp" /></figure>
 										<figure class="card__img-back"><img src="./img/card/12.webp" alt="12.webp" /></figure>
@@ -352,6 +373,7 @@
 	<script src="./js/contact.js"></script>
 	<script src="./libs/tweenmax/tweenmax.js"></script>
 	<script src="./js/full-page.js"></script>
+	<script src="./js/sidebar.js"></script>
 	<script src="./js/btnup.js"></script>
 	<script src="./js/rain.js"></script>
 	<script>

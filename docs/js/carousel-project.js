@@ -20,6 +20,7 @@ $(document).ready(function(){
       smartSpeed:2500,
       loop: true,
       margin: 20,
+      mouseDrag: false,
       responsive: {
         0 : {
           items: 1
@@ -32,6 +33,13 @@ $(document).ready(function(){
         }
       }
       });
+
+      $('.header__carousel-btn-next').click(function() {
+        $(".header__carousel").trigger('next.owl.carousel', [2500]);
+    })
+    $('.header__carousel-btn-prev').click(function() {
+        $(".header__carousel").trigger('prev.owl.carousel', [2500]);
+    })
   });
 
 

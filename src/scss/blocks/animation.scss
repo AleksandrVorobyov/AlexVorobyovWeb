@@ -168,3 +168,13 @@
     width: 10%;
   }
 }
+
+@keyframes sidebar-bg {
+  from {
+      left: 0;
+  }
+
+  to {
+      left: -150%;
+  }
+}

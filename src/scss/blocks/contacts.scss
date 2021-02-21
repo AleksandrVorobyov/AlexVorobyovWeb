@@ -36,11 +36,15 @@
 .contact-title {
   position: relative;
   display: inline-block;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
   z-index: 5;
+
+  @media (min-width: 480px) {
+    font-size: 50px;
+  }
 
   @media (min-width: 600px) {
     font-size: 72px;
@@ -105,7 +109,12 @@
 }
 
 .contact__info-table {
-  margin-left: 15px;
+  z-index: 10;
+
+  @media (min-width: 600px) {
+    margin-left: 15px;
+  }
+
   @media (min-width: 900px) {
     margin-left: 0;
   }
@@ -125,22 +134,25 @@
   }
 }
 
-.rounded li {
-  margin-bottom: 20px;
-}
-
 .rounded .rounded-row {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4em 2em 0.4em 2em;
-  margin: 0.5em 0;
+  flex-direction: column;
+  padding: 6px 32px 6px 32px;
+  margin: 40px 0;
   background: #ffffff;
   color: #444;
   text-decoration: none;
-  border-radius: 0.3em;
+  border-radius: 12px;
   transition: 0.3s ease-out;
+  z-index: 10;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    margin: 20px 0;
+  }
 }
 
 .rounded .rounded-row:hover {
@@ -155,8 +167,9 @@
   content: counter(li);
   counter-increment: li;
   position: absolute;
-  left: -1.3em;
-  top: 50%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
   margin-top: -1.3em;
   background: #fd6dfd;
   height: 2em;
@@ -167,14 +180,24 @@
   font-weight: bold;
   border-radius: 2em;
   transition: all 0.3s ease-out;
+
+  @media (min-width: 600px) {
+    left: -1.3em;
+    top: 50%;
+    transform: translateX(0%);
+  }
 }
 
 .rounded-row p {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 1.2;
+
+  @media (min-width: 480px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;
@@ -186,11 +209,15 @@
 }
 
 .rounded-row span {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "L890-Roman-Bold";
   font-weight: bold;
   line-height: 1.2;
   color: rgb(0, 0, 0);
+
+  @media (min-width: 480px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;
@@ -202,12 +229,16 @@
 }
 
 .rounded-row a {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   font-family: "L890-Roman-Bold";
   color: rgb(3, 155, 229);
   line-height: 1.2;
   text-decoration: none;
+
+  @media (min-width: 480px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;
@@ -225,6 +256,8 @@
 .contact__info-social {
   justify-content: center;
   margin-bottom: 0px !important;
+  z-index: 5;
+
   @media (min-width: 1170px) {
     margin-bottom: 30px !important;
     float: right;
@@ -239,14 +272,18 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  padding: 60px;
+  padding: 30px;
   max-width: 550px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 28px 100px 0px #fd6dfd;
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
-  z-index: 5;
+  z-index: 15;
+
+  @media (min-width: 600px) {
+    padding: 60px;
+  }
 
   @media (min-width: 768px) {
     min-width: 500px;
@@ -256,12 +293,12 @@
 .form-input-email,
 .form-input-theme {
   width: 100%;
-  padding: 20px;
+  padding: 30px 20px;
   margin-bottom: 15px;
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
-  font-size: 28px;
+  font-size: 22px;
   font-family: "L890-Roman-Bold";
   font-weight: 700;
   color: rgb(0, 0, 0);
@@ -271,6 +308,10 @@
   &:hover,
   &:focus {
     border-bottom: 1px solid rgb(251, 220, 77);
+  }
+
+  @media (min-width: 600px) {
+    font-size: 28px;
   }
 
   @media (min-width: 1170px) {
@@ -289,7 +330,7 @@
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
-  font-size: 28px;
+  font-size: 22px;
   font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -302,6 +343,10 @@
 
   &::placeholder {
     color: #000;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 28px;
   }
 
   @media (min-width: 1170px) {
