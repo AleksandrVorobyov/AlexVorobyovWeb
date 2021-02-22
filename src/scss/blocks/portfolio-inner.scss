@@ -39,17 +39,21 @@
   cursor: pointer;
   color: #fff;
   line-height: 30px;
-  font-size: 34px;
+  font-size: 26px;
   text-transform: uppercase;
   font-weight: 700;
   border-bottom: 5px solid transparent;
   transition: all 0.2s ease;
-  font-family: 'Neoneon';
+  font-family: "Neoneon";
   margin-bottom: 20px;
 
   &:hover {
     color: #73ebeb;
     border-bottom-color: $redCyber;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 34px;
   }
 
   @media (min-width: 1170px) {
@@ -133,8 +137,6 @@
 .checkbox-scss:checked ~ .portfolio__card-inner .project.scss {
   opacity: 1;
   display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
   margin-bottom: 35px;
   visibility: visible;
   transform: scale(1);
@@ -143,11 +145,15 @@
   height: auto;
   animation: cards-anim 1.5s ease-in-out forwards;
 
+  @media (min-width: 400px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   @media (min-width: 1020px) {
     width: 480px;
     height: 408px;
   }
-
 
   @media (min-width: 1170px) {
     width: 360px;

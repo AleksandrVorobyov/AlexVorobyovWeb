@@ -122,8 +122,16 @@
   color: #0b3960;
 }
 
-.nav {
+.navigation__link-nav {
   display: none;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+  }
+}
+
+.nav {
+  display: inline-block;
   position: relative;
   font-size: 20px;
   font-family: "Neoneon";
@@ -166,10 +174,6 @@
     &:after {
       width: 100%;
     }
-  }
-
-  @media (min-width: 768px) {
-    display: inline-block;
   }
 
   @media (min-width: 1170px) {
@@ -274,7 +278,7 @@
     height: 4px;
     width: 100%;
     content: "";
-    background: $redCyber;
+    background: $white;
     border-radius: 3px;
   }
 
@@ -285,7 +289,7 @@
     height: 4px;
     width: 100%;
     content: "";
-    background: $redCyber;
+    background: $white;
     border-radius: 3px;
   }
 
@@ -297,7 +301,7 @@
     width: 100%;
     content: "";
     transform: translateY(-50%);
-    background: $redCyber;
+    background: $white;
     border-radius: 3px;
   }
 

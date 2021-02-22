@@ -5,12 +5,16 @@
 .about-project__title {
   display: inline-block;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 26px;
   font-family: "L890-Roman-Bold";
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
   border-bottom: 8px solid $redCyber;
+
+  @media (min-width: 400px) {
+    font-size: 32px;
+  }
 
   @media (min-width: 600px) {
     font-size: 44px;
@@ -23,11 +27,15 @@
 
 .about-project p {
   margin: 0;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: rgb(255, 255, 255);
   line-height: 1.5;
+
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;

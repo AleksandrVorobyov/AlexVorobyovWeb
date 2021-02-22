@@ -1,10 +1,14 @@
 .contact {
   position: relative;
-  padding: 60px 30px;
+  padding: 60px 15px;
   background: linear-gradient(#f4f8f980, #f4f8f998),
     url("../img/contact/01.webp") top left / cover no-repeat;
   background-blend-mode: hue;
   overflow-x: hidden;
+
+  @media (min-width: 400px) {
+    padding: 60px 30px;
+  }
 
   @media (min-width: 600px) {
     padding: 120px 30px;
@@ -36,11 +40,15 @@
 .contact-title {
   position: relative;
   display: inline-block;
-  font-size: 40px;
+  font-size: 32px;
   font-family: "Neoneon";
   color: rgb(255, 255, 255);
   font-weight: bold;
   z-index: 5;
+
+  @media (min-width: 400px) {
+    font-size: 40px;
+  }
 
   @media (min-width: 480px) {
     font-size: 50px;
@@ -91,13 +99,17 @@
 
 .contact__info-desc {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: rgb(255, 255, 255);
   line-height: 1.4;
   text-align: left;
   text-shadow: 0 0 5px rgb(26, 26, 26);
+
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 30px;
@@ -140,7 +152,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 6px 32px 6px 32px;
+  padding: 6px 6px 6px 6px;
   margin: 40px 0;
   background: #ffffff;
   color: #444;
@@ -148,6 +160,10 @@
   border-radius: 12px;
   transition: 0.3s ease-out;
   z-index: 10;
+
+  @media (min-width: 400px) {
+    padding: 6px 32px 6px 32px;
+  }
 
   @media (min-width: 600px) {
     flex-direction: row;
@@ -272,7 +288,7 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  padding: 30px;
+  padding: 15px;
   max-width: 550px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 28px 100px 0px $redCyber;
@@ -280,6 +296,10 @@
   margin-left: auto;
   margin-right: auto;
   z-index: 15;
+
+  @media (min-width: 400px) {
+    padding: 30px;
+  }
 
   @media (min-width: 600px) {
     padding: 60px;
@@ -298,7 +318,7 @@
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "L890-Roman-Bold";
   font-weight: 700;
   color: rgb(0, 0, 0);
@@ -308,6 +328,10 @@
   &:hover,
   &:focus {
     border-bottom: 1px solid rgb(251, 220, 77);
+  }
+
+  @media (min-width: 400px) {
+    font-size: 22px;
   }
 
   @media (min-width: 600px) {
@@ -330,7 +354,7 @@
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "L890-Roman-Bold";
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -345,6 +369,10 @@
     color: #000;
   }
 
+  @media (min-width: 400px) {
+    font-size: 22px;
+  }
+
   @media (min-width: 600px) {
     font-size: 28px;
   }
@@ -356,6 +384,11 @@
 
 .contact__form-button {
   display: flex;
+  justify-content: center;
+
+  @media (min-width: 400px) {
+    justify-content: start;
+  }
 }
 
 .contact__form input:focus::placeholder {

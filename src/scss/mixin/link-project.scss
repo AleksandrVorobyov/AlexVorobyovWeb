@@ -5,12 +5,16 @@
 .link-project-title {
   display: inline-block;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   font-family: "L890-Roman-Bold";
   color: rgb(255, 255, 255);
   line-height: 1.2;
   border-bottom: 8px solid $redCyber;
+
+  @media (min-width: 400px) {
+    font-size: 32px;
+  }
 
   @media (min-width: 600px) {
     font-size: 44px;
@@ -48,13 +52,17 @@
 }
 
 .link-project-item a {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: $yellowcolor;
   text-decoration: underline;
   line-height: 1.2;
   transition: 0.3s ease-in-out;
+
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;

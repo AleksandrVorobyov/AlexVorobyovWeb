@@ -398,7 +398,10 @@
     }
   }
 
-  .contact-title,
+  .contact-title {
+    color: $white;
+  }
+
   .timeline__column-title,
   .timeline__column-desc {
     color: rgb(0, 0, 0);
@@ -569,6 +572,10 @@
   }
 
   .sidebar__links-item {
-    box-shadow: 0px 0px 10px rgb(251, 220, 77), 0px 0px 20px rgb(251, 220, 77), 0px 0px 30px rgb(251, 220, 77);
+    box-shadow: 0px 0px 10px rgb(251, 220, 77), 0px 0px 20px rgb(251, 220, 77), 0px 0px 40px rgb(251, 220, 77);
+  }
+
+  .sidebar__social .fa {
+    text-shadow: 0px 0px 10px rgb(251, 220, 77), 0px 0px 20px rgb(251, 220, 77), 0px 0px 40px rgb(251, 220, 77);
   }
 }

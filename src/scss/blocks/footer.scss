@@ -35,12 +35,16 @@
 
 .footer__title {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   font-family: "L890-Roman-Bold";
   color: rgb(255, 255, 255);
   line-height: 1.2;
   text-align: center;
+
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 28px;
@@ -53,12 +57,16 @@
 }
 
 .footer__subtitle {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
   color: #ffffff;
   line-height: 1.2;
   text-align: center;
+
+  @media (min-width: 400px) {
+    font-size: 22px;
+  }
 
   @media (min-width: 600px) {
     font-size: 26px;
@@ -129,12 +137,16 @@
 .footer-inner__subtitle {
   margin: 0;
   margin-bottom: 40px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
   font-family: "L850-Slab-Light";
   color: rgb(255, 255, 255);
   text-align: center;
   line-height: 1.5;
+
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
 
   @media (min-width: 600px) {
     font-size: 30px;

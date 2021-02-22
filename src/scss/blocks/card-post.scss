@@ -45,7 +45,7 @@
   position: relative;
   display: inline-block;
   margin-bottom: 40px;
-  font-size: 36px;
+  font-size: 28px;
   font-family: "Neoneon";
   color: #fff;
   font-weight: bold;
@@ -61,6 +61,10 @@
     bottom: -8px;
     left: 0;
     z-index: -2;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 36px;
   }
 
   @media (min-width: 600px) {
@@ -120,7 +124,7 @@
   display: block;
   position: relative;
   padding: 10px;
-  height: 750px;
+  height: 500px;
   max-width: 700px;
   width: 100%;
   background-color: $redCyber;
@@ -130,6 +134,10 @@
 
   img {
     width: 100%;
+  }
+
+  @media (min-width: 400px) {
+    height: 750px;
   }
 
   @media (min-width: 1170px) {
@@ -142,25 +150,22 @@
 .carousel-project {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .carousel-project.owl-carousel .owl-carousel-item {
   width: 100%;
-  display: block;
+  height: 500px;
+
+  @media (min-width: 400px) {
+    height: 750px;
+  }
 
   img {
-    height: 730px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-
-    @media (min-width: 1170px) {
-      height: 786px;
-    }
   }
-}
-
-.carousel-project {
-  height: 750px;
-  width: 700px;
 }
 
 .carousel-project .owl-carousel-item img {
@@ -249,7 +254,7 @@
   line-height: 60px;
   text-align: center;
   letter-spacing: 2px;
-  transition: all 0.5s ease-in-out .6s, box-shadow .4s ease-out .6s;
+  transition: all 0.5s ease-in-out 0.6s, box-shadow 0.4s ease-out 0.6s;
   z-index: 50;
   overflow: hidden;
   cursor: pointer;
