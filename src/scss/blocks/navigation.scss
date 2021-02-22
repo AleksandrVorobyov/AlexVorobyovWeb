@@ -6,6 +6,7 @@
 
   @media (min-width: 768px) {
     padding-top: 75px;
+    height: auto;
   }
 
   @media (min-width: 1170px) {
@@ -34,7 +35,7 @@
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 30%,
-      rgba(253, 109, 253, 1) 100%
+      $redCyber 100%
     );
     z-index: -1;
   }
@@ -73,19 +74,19 @@
 .logo {
   position: relative;
   display: inline-block;
-  font-size: 82px;
+  font-size: 72px;
   font-weight: 400;
   font-family: "Neoneon";
   color: #fff;
   text-decoration: none;
   transition: 0.8s ease-in-out;
-  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-    0 0 40px #fd6dfd, 0 0 80px #fd6dfd;
+  text-shadow: 0 0 5px $redCyber, 0 0 10px $redCyber, 0 0 20px $redCyber,
+    0 0 40px $redCyber, 0 0 80px $redCyber;
   z-index: 10;
 
   &:hover {
-    text-shadow: 0 0 10px #fd6dfd, 0 0 20px #fd6dfd, 0 0 40px #fd6dfd,
-      0 0 80px #fd6dfd, 0 0 120px #fd6dfd;
+    text-shadow: 0 0 10px $redCyber, 0 0 20px $redCyber, 0 0 40px $redCyber,
+      0 0 80px $redCyber, 0 0 120px $redCyber;
   }
 
   &::after {
@@ -94,8 +95,12 @@
     bottom: -7px;
     left: -3px;
     width: 100%;
-    border-bottom: 7px solid #fd6dfd;
+    border-bottom: 7px solid $redCyber;
     z-index: -1;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 82px;
   }
 
   @media (min-width: 768px) {
@@ -129,8 +134,8 @@
   border-bottom: 5px solid transparent;
   z-index: 5;
   margin-bottom: 50px;
-  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-    0 0 40px #fd6dfd;
+  text-shadow: 0 0 5px $redCyber, 0 0 10px $redCyber, 0 0 20px $redCyber,
+    0 0 40px $redCyber;
 
   &:after {
     position: absolute;
@@ -138,7 +143,7 @@
     bottom: -7px;
     left: -1px;
     width: 0;
-    border-bottom: 7px solid #fd6dfd;
+    border-bottom: 7px solid $redCyber;
     transition: 0.5s linear;
   }
 
@@ -156,7 +161,7 @@
 
   &--active {
     color: #73ebeb;
-    border-bottom: 7px solid #fd6dfd;
+    border-bottom: 7px solid $redCyber;
 
     &:after {
       width: 100%;
@@ -216,7 +221,7 @@
   }
 
   @media (min-width: 1170px) {
-    border-bottom: 5px solid #fd6dfd;
+    border-bottom: 5px solid $redCyber;
     margin-bottom: 0;
   }
 
@@ -239,8 +244,8 @@
   .fa-2x {
     font-size: 4em;
     color: #fff;
-    text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-      0 0 40px #fd6dfd, 0 0 80px #fd6dfd;
+    text-shadow: 0 0 5px $redCyber, 0 0 10px $redCyber, 0 0 20px $redCyber,
+      0 0 40px $redCyber, 0 0 80px $redCyber;
     transition: 0.8s ease-in-out;
 
     @media (min-width: 1170px) {
@@ -269,7 +274,7 @@
     height: 4px;
     width: 100%;
     content: "";
-    background: rgb(253, 109, 253);
+    background: $redCyber;
     border-radius: 3px;
   }
 
@@ -280,7 +285,7 @@
     height: 4px;
     width: 100%;
     content: "";
-    background: rgb(253, 109, 253);
+    background: $redCyber;
     border-radius: 3px;
   }
 
@@ -292,7 +297,7 @@
     width: 100%;
     content: "";
     transform: translateY(-50%);
-    background: rgb(253, 109, 253);
+    background: $redCyber;
     border-radius: 3px;
   }
 

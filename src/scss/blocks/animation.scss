@@ -178,3 +178,14 @@
       left: -150%;
   }
 }
+
+
+@keyframes pixelBtn {
+  0% {
+    background-position-y: 0;
+  }
+
+  100% {
+    background-position-y: -480px;
+  }
+}

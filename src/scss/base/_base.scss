@@ -104,11 +104,11 @@ img {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background: #633363;
+  background: $redCyber50;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fd6dfd;
+  background: $redCyber;
 }
 
 ::-webkit-resizer {

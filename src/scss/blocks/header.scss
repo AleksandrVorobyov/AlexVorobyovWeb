@@ -14,7 +14,7 @@
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0) 30%,
-      rgba(253, 109, 253, 1) 100%
+      $redCyber 100%
     );
   }
 
@@ -28,7 +28,7 @@
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 30%,
-      rgba(253, 109, 253, 1) 100%
+      $redCyber 100%
     );
   }
 }
@@ -52,7 +52,7 @@
   margin: auto;
   margin-top: 30px;
   text-align: center;
-  max-width: 585px;
+  max-width: 530px;
 
   @media (min-width: 1170px) {
     margin-top: 0;
@@ -77,7 +77,7 @@
     position: absolute;
     content: "";
     clear: both;
-    background: #fd6dfd;
+    background: $redCyber;
     width: 10%;
     height: 10px;
     bottom: 0px;
@@ -147,7 +147,7 @@
   border-radius: 50%;
   z-index: 5;
   padding: 10px;
-  background-color: #fd6dfd;
+  background-color: $redCyber;
   margin: 0 auto;
 
   @media (min-width: 600px) {
@@ -180,7 +180,7 @@
     transform: translateY(-15px);
 
     .avatar__title {
-      color: #fd6dfd;
+      color: $redCyber;
       text-shadow: 1px 1px 2px #000000;
     }
   }
@@ -202,7 +202,7 @@
     transform: translateY(-15px);
 
     .avatar__title {
-      color: #fd6dfd;
+      color: $redCyber;
       text-shadow: 1px 1px 2px #000000;
     }
   }
@@ -221,7 +221,7 @@
     transform: translate(-50%, -15px);
 
     .avatar__title {
-      color: #fd6dfd;
+      color: $redCyber;
       text-shadow: 1px 1px 2px #000000;
     }
   }
@@ -284,7 +284,7 @@
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 30%,
-      rgba(253, 109, 253, 1) 100%
+      $redCyber 100%
     );
   }
 
@@ -298,17 +298,17 @@
     background: linear-gradient(
       270deg,
       rgba(255, 255, 255, 0) 30%,
-      rgba(253, 109, 253, 1) 100%
+      $redCyber 100%
     );
   }
 
   @media (min-width: 1170px) {
     background: radial-gradient(
       circle,
-      rgba(253, 109, 253, 0.5130427170868348) 0%,
+      $redCyber50 0%,
       rgba(0, 0, 0, 0.3533788515406162) 100%
     );
-    box-shadow: 0px 28px 100px 0px #fd6dfd;
+    box-shadow: 0px 28px 100px 0px $redCyber;
 
     &::before {
       content: none;
@@ -441,9 +441,9 @@
 
 .header__bg-social .fa-2x {
   font-size: 48px;
-  text-shadow: 0 0 5px #fd6dfd, 0 0 10px #fd6dfd, 0 0 20px #fd6dfd,
-    0 0 40px #fd6dfd, 0 0 80px #fd6dfd, 0 0 90px #fd6dfd, 0 0 100px #fd6dfd,
-    0 0 150px #fd6dfd;
+  text-shadow: 0 0 5px $redCyber, 0 0 10px $redCyber, 0 0 20px $redCyber,
+    0 0 40px $redCyber, 0 0 80px $redCyber, 0 0 90px $redCyber, 0 0 100px $redCyber,
+    0 0 150px $redCyber;
   transition: 0.5s ease-in-out;
 
   @media (min-width: 600px) {
@@ -556,5 +556,5 @@
 
 .header__carousel-btn:hover {
   opacity: 1;
-  box-shadow: 0px 0px 10px #fd6dfd, 0px 0px 20px #fd6dfd, 0px 0px 30px #fd6dfd;
+  box-shadow: 0px 0px 10px $redCyber, 0px 0px 20px $redCyber, 0px 0px 30px $redCyber;
 }

@@ -6,7 +6,7 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
-  border-bottom: 8px solid #fd6dfd;
+  border-bottom: 8px solid $redCyber;
 
   @media (min-width: 600px) {
     font-size: 44px;
@@ -40,12 +40,15 @@
   color: rgb(255, 255, 255);
   line-height: 1.5;
   text-align: left;
+  flex: 1;
 
   &:last-child {
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
 
     @media (min-width: 1170px) {
-      width: 293px;
+      max-width: 293px;
+      width: 100%;
     }
   }
 
@@ -63,15 +66,17 @@
   font-size: 28px;
   font-weight: 400;
   font-family: "L890-Roman-Regular";
-  color: #fd6dfd;
+  color: $yellowcolor;
   text-decoration: underline;
   line-height: 1.5;
   text-align: left;
-  width: 293px;
+  max-width: 293px;
+  width: 100%;
   transition: 0.3s ease-in-out;
+  flex: 1;
 
   &:hover {
-    color: #ea736d;
+    color: $blueCyber;
   }
 
   @media (min-width: 1170px) {

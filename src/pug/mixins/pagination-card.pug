@@ -1,5 +1,5 @@
-mixin pagination-card(link1, link2)
-    form(action= link1)
-        input(type="submit", value="Предыдущий проект" class="pagination")
-    form(action= link2)
-        input(type="submit", value="Следующий проект" class="pagination")
+mixin pagination-card(linkPrev, linkNext)
+    a(href= linkPrev).pagination
+        span Предыдущий проект 
+    a(href= linkNext).pagination
+        span Следующий проект 
