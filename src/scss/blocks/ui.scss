@@ -390,6 +390,7 @@
   background-blend-mode: color;
   overflow: hidden;
   z-index: 20;
+  filter: blur(3px);
 }
 
 .page__background-wrap {
