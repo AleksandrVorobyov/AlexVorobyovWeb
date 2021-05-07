@@ -106,7 +106,7 @@
   margin: 0;
   margin-bottom: 30px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     font-size: 24px;
   }
 
@@ -311,6 +311,7 @@
   position: relative;
   width: 100%;
   height: auto;
+  padding: 50px;
   max-height: 900px;
   border-radius: 15px;
   margin-bottom: 50px;
@@ -323,6 +324,8 @@
     right: -15px;
     height: 100%;
     width: 150px;
+    pointer-events: none;
+    z-index: -10;
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 30%,
@@ -337,6 +340,8 @@
     left: -15px;
     height: 100%;
     width: 150px;
+    pointer-events: none;
+    z-index: -10;
     background: linear-gradient(
       270deg,
       rgba(255, 255, 255, 0) 30%,
@@ -367,7 +372,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 50px;
   z-index: 40;
   overflow: hidden;
 
@@ -377,6 +381,10 @@
     max-height: 800px;
     object-fit: contain;
   }
+}
+
+.header__carousel .owl-carousel-item {
+  cursor: pointer;
 }
 
 .header__bg-wrap {
@@ -448,7 +456,7 @@
   line-height: 1.2;
   text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     font-size: 24px;
   }
 
@@ -557,7 +565,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
-  z-index: 80;
+  z-index: -1;
 }
 
 .header__carousel-btn {

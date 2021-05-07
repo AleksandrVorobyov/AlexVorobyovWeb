@@ -63,7 +63,7 @@
     z-index: -2;
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     font-size: 36px;
   }
 
@@ -136,7 +136,7 @@
     width: 100%;
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 600px) {
     height: 750px;
   }
 
@@ -156,7 +156,7 @@
   width: 100%;
   height: 500px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 600px) {
     height: 750px;
   }
 
@@ -300,97 +300,4 @@
 .pagination:hover::after {
   width: 100%;
   height: 100%;
-}
-
-.full-page {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000a1;
-  z-index: 300;
-}
-
-.full-page--active {
-  display: block;
-}
-
-.full-page-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.full-page-wrap {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding: 10px;
-  background-color: $redCyber;
-}
-
-.full-page__desc {
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(187, 187, 187);
-  border-bottom: 10px solid $redCyber;
-}
-
-.full-page__title h2 {
-  font-size: 28px;
-  font-family: "L890-Roman-Bold";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  text-decoration: none;
-
-  span {
-    color: $redCyber;
-  }
-}
-
-.full-page__exit {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-}
-
-.full-page__img + .full-page__img {
-  border-top: 10px solid $redCyber;
-}
-
-.carousel-project.owl-carousel .owl-carousel-item {
-  cursor: pointer;
 }

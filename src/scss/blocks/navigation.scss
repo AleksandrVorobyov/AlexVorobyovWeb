@@ -286,6 +286,7 @@
     background: $white;
     border-radius: 3px;
     transition: top 0.4s linear 0s, transform 0.4s linear 0s;
+    pointer-events: none;
   }
 
   &::after {
@@ -298,6 +299,7 @@
     background: $white;
     border-radius: 3px;
     transition: bottom 0.4s linear 0s, transform 0.4s linear 0s;
+    pointer-events: none;
   }
 
   span::before {
@@ -311,6 +313,7 @@
     background: $white;
     border-radius: 3px;
     transition: opacity 0.4s linear 0s;
+    pointer-events: none;
   }
 
   @media (min-width: 768px) {
@@ -320,13 +323,17 @@
 
 .navigation__burger.navigation__burger--active {
   &::before {
-    top: auto;
-    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
   }
 
   &::after {
-    bottom: auto;
-    transform: rotate(-45deg);
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    transform-origin: center;
   }
 
   span::before {

@@ -18,6 +18,29 @@
   z-index: 5;
 }
 
+.social-vk,
+.social-facebook,
+.social-email,
+.social-telegram,
+.social-github {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  @media (min-width: 420px) {
+    width: 55px;
+    height: 55px;
+  }
+
+  @media (min-width: 1170px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .social-vk::after,
 .social-facebook::after,
 .social-email::after,
@@ -27,10 +50,18 @@
   display: none;
   content: "";
   border-radius: 50%;
-  width: 85px;
-  height: 85px;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
   background-color: rgba(200, 211, 221, 0.5);
   z-index: -1;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: 420px) {
+    width: 70px;
+    height: 70px;
+  }
 
   @media (min-width: 1170px) {
     width: 50px;
@@ -46,48 +77,3 @@
   display: block;
   z-index: -1;
 }
-
-.social-vk::after {
-  left: -6px;
-  top: -9px;
-}
-
-.social-facebook::after {
-  left: -14px;
-  top: -9px;
-
-  @media (min-width: 1170px) {
-    left: -11px;
-  }
-}
-
-.social-email::after {
-  left: -11px;
-  top: -9px;
-
-  @media (min-width: 1170px) {
-    left: -9px;
-  }
-}
-
-.social-telegram::after {
-  left: -10px;
-  top: -9px;
-
-  @media (min-width: 1170px) {
-    left: -9px;
-  }
-}
-
-.social-github::after {
-  left: -15px;
-  top: -9px;
-
-  @media (min-width: 1170px) {
-    left: -11px;
-  }
-}
-
-
-
-
