@@ -123,11 +123,11 @@
 .card-post__content-carousel {
   display: block;
   position: relative;
-  padding: 10px;
+  border: 10px double $redCyber;
   height: 500px;
   max-width: 700px;
   width: 100%;
-  background-color: $redCyber;
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 19px 19px 100px 0px rgb(196, 219, 233);
   margin: auto;
   margin-bottom: 50px;

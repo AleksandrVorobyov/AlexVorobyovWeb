@@ -1,6 +1,6 @@
 section.card-post
     .container.card-post-wrap
-        .card-post__nav
+        .card-post__nav.wow.animated.fadeInUp
             h2.card-post__nav-desc Верстка интернет магазина
             h3.card-post__nav-title “Muncak”
             .card-post__nav-meta 
@@ -10,12 +10,12 @@ section.card-post
                 span.meta-bootstrap Bootstrap
                 span.meta-jquery jQuery
         .card-post__content
-            .card-post__content-desc
+            .card-post__content-desc.wow.animated.bounceInLeft
                 +link-project("https://aleksandrvorobyov.github.io/muncak/", "https://github.com/AleksandrVorobyov/muncak")
                 +about-project()
                     p Верстка одностроничного веб-сайта. Это реальный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как модальные окна, адаптивное меню, а также форма отправки данных на почту с помощью ajax. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.
                 +detals("Учебный проект", "Учебный проект", "Ссылка на сайт", "https://aleksandrvorobyov.github.io/muncak/", "Адаптивная верстка, HTML5, CSS3, Bootstrap grid, JavaScript, jQuery.", "Мобильная навигация, карусель OwlCarousel, ajax форма, предпросмотр товара, валидация форм, анимации, подключены кнопки мессенджеров и виджеты.")
-            .card-post__content-carousel
+            .card-post__content-carousel.wow.animated.bounceInRight
                 .carousel-project.owl-carousel
                     .owl-carousel-item
                         img(src="./img/portfolio/muncak/01.jpg", alt="01.jpg")
@@ -23,5 +23,5 @@ section.card-post
                         img(src="./img/portfolio/muncak/02.jpg", alt="01.jpg")
                     .owl-carousel-item
                         img(src="./img/portfolio/muncak/03.jpg", alt="01.jpg")
-        .card-post__pagination
+        .card-post__pagination.wow.animated.fadeInUp
             +pagination-card("realhome.html", "amazing.html")

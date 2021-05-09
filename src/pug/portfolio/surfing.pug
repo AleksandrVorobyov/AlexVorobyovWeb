@@ -1,6 +1,6 @@
 section.card-post
     .container.card-post-wrap
-        .card-post__nav
+        .card-post__nav.wow.animated.fadeInUp
             h2.card-post__nav-desc Верстка интернет магазина
             h3.card-post__nav-title “Surfing website”
             .card-post__nav-meta 
@@ -10,12 +10,12 @@ section.card-post
                 span.meta-bootstrap Bootstrap
                 span.meta-jquery jQuery
         .card-post__content
-            .card-post__content-desc
+            .card-post__content-desc.wow.animated.bounceInLeft
                 +link-project("https://aleksandrvorobyov.github.io/surfing/", "https://github.com/AleksandrVorobyov/surfing")
                 +about-project()
                     p Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.
                 +detals("Учебный проект", "Учебный проект", "Ссылка на сайт", "https://aleksandrvorobyov.github.io/surfing/", "Адаптивная верстка, HTML5, CSS3, Bootstrap grid, JavaScript, jQuery.", "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм")
-            .card-post__content-carousel
+            .card-post__content-carousel.wow.animated.bounceInRight
                 .carousel-project.owl-carousel
                     .owl-carousel-item
                         img(src="./img/portfolio/surfing/01.jpg", alt="01.jpg")
@@ -25,6 +25,5 @@ section.card-post
                         img(src="./img/portfolio/surfing/03.jpg", alt="03.jpg")
                     .owl-carousel-item
                         img(src="./img/portfolio/surfing/04.jpg", alt="04.jpg")
-
-        .card-post__pagination
+        .card-post__pagination.wow.animated.fadeInUp
             +pagination-card("amazing.html", "quantum.html")

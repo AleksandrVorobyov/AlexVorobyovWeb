@@ -150,8 +150,8 @@
   transition: 1.2s ease-in-out;
   border-radius: 50%;
   z-index: 5;
-  padding: 10px;
-  background-color: $redCyber;
+  border: 10px double $redCyber;
+  background-color: rgba(255, 255, 255, 0.5);
   margin: 0 auto;
 
   @media (min-width: 400px) {
@@ -384,7 +384,7 @@
 }
 
 .header__carousel .owl-carousel-item {
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 .header__bg-wrap {
