@@ -15,9 +15,13 @@ section.portfolio
                 label(for='pug') PUG/SCSS
                 input#js.checkbox-js(type='radio' name='checkbox' data-menu = 'js')
                 label(for='js') javascript
+                input#vue.checkbox-vue(type='radio' name='checkbox' data-menu = 'vue')
+                label(for='vue') Vue
                 .seperator
                 // project cards
                 .portfolio__card-inner.wow.animated.shake
+                    .project.pug.js.vue
+                        +card("movee.html", "21.jpg", "21.jpg", "Верстка “Movee”", "Верстка одностраничного сайта.")
                     .project.pug.js
                         +card("takeme.html", "20.jpg", "20.jpg", "Верстка “TakeMe”", "Верстка одностраничного сайта.")
                     .project.pug.js

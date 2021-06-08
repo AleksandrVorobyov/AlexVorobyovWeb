@@ -93,6 +93,7 @@
 .checkbox-less:checked + label,
 .checkbox-scss:checked + label,
 .checkbox-pug:checked + label,
+.checkbox-vue:checked + label,
 .checkbox-js:checked + label {
   color: #73ebeb;
   border-bottom-color: $redCyber;
@@ -113,6 +114,7 @@
 .project.html,
 .project.less,
 .project.pug,
+.project.vue,
 .project.scss {
   opacity: 0;
   transform: scale(0);
@@ -126,11 +128,13 @@
 }
 
 .checkbox-all:checked ~ .portfolio__card-inner .project.js,
+.checkbox-all:checked ~ .portfolio__card-inner .project.vue,
 .checkbox-all:checked ~ .portfolio__card-inner .project.html,
 .checkbox-all:checked ~ .portfolio__card-inner .project.less,
 .checkbox-all:checked ~ .portfolio__card-inner .project.pug,
 .checkbox-all:checked ~ .portfolio__card-inner .project.scss,
 .checkbox-js:checked ~ .portfolio__card-inner .project.js,
+.checkbox-vue:checked ~ .portfolio__card-inner .project.vue,
 .checkbox-html:checked ~ .portfolio__card-inner .project.html,
 .checkbox-less:checked ~ .portfolio__card-inner .project.less,
 .checkbox-pug:checked ~ .portfolio__card-inner .project.pug,
