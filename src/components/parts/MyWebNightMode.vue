@@ -183,6 +183,7 @@ export default {
     font-weight: 700;
     font-family: var(--fontRomanBold);
     color: var(--black);
+    background: var(--bgSidebarNight);
 
     &:after {
       border-bottom: 7px solid var(--yellowcolor);
@@ -207,7 +208,8 @@ export default {
   .navigation__social .fa-2x,
   .header__bg-social .fa-2x {
     color: var(--black);
-    text-shadow: none;
+    text-shadow: 0 0 5px var(--white), 0 0 10px var(--white),
+      0 0 20px var(--white), 0 0 40px var(--white);
   }
 }
 
@@ -402,6 +404,23 @@ export default {
       color: var(--blueLinkHover);
       border-bottom-color: var(--yellowcolor);
     }
+  }
+
+  .portfolio__dropdown-active {
+    color: var(--yellowcolor);
+    border-bottom: 5px solid var(--yellowcolor);
+
+    &::before {
+      color: var(--yellowcolor);
+    }
+  }
+
+  .portfolio__dropdown-item {
+    border: 5px solid var(--yellowcolor);
+  }
+
+  .portfolio__dropdown-item + .portfolio__dropdown-item {
+    border-top: 0px solid #000;
   }
 
   .checkbox-all:checked + label,

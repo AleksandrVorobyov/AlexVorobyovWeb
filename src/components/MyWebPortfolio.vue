@@ -76,7 +76,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       0deg,
@@ -90,7 +90,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       180deg,

@@ -113,7 +113,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       0deg,
@@ -127,7 +127,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       180deg,
@@ -557,9 +557,7 @@ export default {
 .header__bg-social .fa-2x {
   font-size: 34px;
   text-shadow: 0 0 5px var(--redCyber), 0 0 10px var(--redCyber),
-    0 0 20px var(--redCyber), 0 0 40px var(--redCyber), 0 0 80px var(--redCyber),
-    0 0 90px var(--redCyber), 0 0 100px var(--redCyber),
-    0 0 150px var(--redCyber);
+    0 0 20px var(--redCyber), 0 0 40px var(--redCyber), 0 0 80px var(--redCyber);
   transition: 0.5s ease-in-out;
 
   @media (min-width: 400px) {

@@ -60,11 +60,6 @@ export default {
   }
 
   @media (min-width: 1170px) {
-    background: linear-gradient(
-        90deg,
-        hsla(0, 0%, 20%, 0.3),
-        hsla(0, 0%, 40%, 0.5)
-      );
     padding: 75px 0px;
   }
 
@@ -75,7 +70,11 @@ export default {
     right: 0;
     height: 100px;
     width: 100%;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 30%, var(--var(--black)) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 30%,
+      var(--var(--black)) 100%
+    );
     z-index: -1;
   }
 
@@ -84,7 +83,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       180deg,
@@ -188,30 +187,31 @@ export default {
 .nav {
   display: inline-block;
   position: relative;
+  padding: 15px 30px;
   font-size: 20px;
   font-family: var(--fontNeon);
   color: var(--white);
   font-weight: bold;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
-  border-bottom: 5px solid transparent;
+  background: var(--redCyber);
+  border-radius: 10px;
   z-index: 5;
-  margin-bottom: 50px;
-  text-shadow: 0 0 5px var(--redCyber), 0 0 10px var(--redCyber),
-    0 0 20px var(--redCyber), 0 0 40px var(--redCyber);
+  overflow: hidden;
 
   &:after {
     position: absolute;
     content: "";
-    bottom: -7px;
-    left: -1px;
+    bottom: 0px;
+    left: 0px;
     width: 0;
-    border-bottom: 7px solid var(--redCyber);
+    height: 7px;
+    background: var(--blueCyber);
     transition: 0.5s linear;
   }
 
   &:hover {
-    color: var( --blueCyber);
+    color: var(--blueCyber);
   }
 
   &:hover:after {
@@ -221,15 +221,10 @@ export default {
   &:active:after {
     width: 100%;
   }
-
-  @media (min-width: 1170px) {
-    margin-bottom: 0;
-  }
 }
 
 .router-link-active.nav {
-  color: var( --blueCyber);
-  border-bottom: 7px solid var(--redCyber);
+  color: var(--blueCyber);
 
   &:after {
     width: 100%;
@@ -244,17 +239,16 @@ export default {
   display: flex;
   justify-content: center;
   transform: translateY(5px);
-  margin: 0;
+  margin-bottom: 50px;
+  list-style-type: none;
+
+  @media (min-width: 1170px) {
+    margin-bottom: 0;
+  }
 }
 
-.navigation__link-nav li {
-  margin-right: 70px;
-  list-style-type: none;
-  transition: 0.5s ease-in-out;
-
-  &:last-child {
-    margin-right: 0;
-  }
+.navigation__link-nav ul li + li {
+  margin-left: 35px;
 }
 
 .navigation__link-nav a {
@@ -313,7 +307,7 @@ export default {
     }
 
     &:hover {
-      color: var( --blueCyber);
+      color: var(--blueCyber);
     }
   }
 }

@@ -8,8 +8,8 @@ section#timeline.timeline
         transition(
           v-for="(item, idx) in timelineItems",
           :key="item",
-          :name="item.animSide"
-          appear
+          :name="item.animSide",
+          appear,
           mode="out-in"
         )
           .timeline__column-item
@@ -44,7 +44,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       0deg,
@@ -58,7 +58,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       180deg,
@@ -328,9 +328,11 @@ export default {
   height: 74px;
   z-index: 7;
   transform: translate(-50%);
+  box-shadow: 0px 0px 6px #0008;
 
   @media (min-width: 1170px) {
     top: -95px;
+    box-shadow: 0px 0px 0px #0008;
   }
 
   @media (min-width: 1260px) {
