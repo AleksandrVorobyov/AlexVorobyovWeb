@@ -59,10 +59,6 @@ export default {
   z-index: 200;
   min-height: 80vh;
 
-  @media (min-width: 400px) {
-    padding: 60px 30px;
-  }
-
   @media (min-width: 600px) {
     padding: 120px 30px;
   }

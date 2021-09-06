@@ -62,7 +62,8 @@ export default {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: url('https://firebasestorage.googleapis.com/v0/b/myportfolio-92ca1.appspot.com/o/snow-bg.jpg?alt=media&token=2bfb19e2-88fb-4b03-8b35-9dc50127aeb7') top left /cover no-repeat;
+  background: url("https://firebasestorage.googleapis.com/v0/b/myportfolio-92ca1.appspot.com/o/snow-bg.jpg?alt=media&token=2bfb19e2-88fb-4b03-8b35-9dc50127aeb7")
+    top left / cover no-repeat;
 
   @media (min-width: 1170px) {
     &::before {
@@ -111,7 +112,11 @@ export default {
         rgba(255, 255, 255, 0) 30%,
         var(--black) 100%
       );
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, var(--black) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 30%,
+        var(--black) 100%
+      );
       z-index: 50;
     }
   }
@@ -130,17 +135,20 @@ export default {
 
 .page__link {
   position: fixed;
-  display: none;
-  bottom: 150px;
-  left: 60px;
+  right: 30px;
+  bottom: 100px;
   z-index: 500;
   transform: rotate(-90deg);
   animation: rocket 10s linear 1s infinite alternate;
-  opacity: 0;
   transition: opacity 0.5s linear;
 
+  @media (min-width: 720px) {
+    right: 60px;
+    bottom: 150px;
+  }
+
   @media (min-width: 1170px) {
-    display: block;
+    left: 60px;
   }
 
   @media (min-width: 1400px) {
@@ -159,6 +167,11 @@ export default {
     background-color: var(--blueCyber);
     transition: color 0.4s linear;
     z-index: 15;
+    opacity: 0.5;
+
+    @media (min-width: 720px) {
+      opacity: 1;
+    }
   }
 
   a:hover {
@@ -170,12 +183,17 @@ export default {
     bottom: -9px;
     right: -145%;
     content: "";
-    border-left: 36px solid var(--white);
+    border-left: 36px solid var(--yellowcolor);
     border-top: 36px solid transparent;
     border-bottom: 36px solid transparent;
     border-right: 36px solid transparent;
     transform: translateX(-100%);
     z-index: 10;
+    opacity: 0.5;
+
+    @media (min-width: 720px) {
+      opacity: 1;
+    }
   }
 
   &::after {
@@ -190,6 +208,11 @@ export default {
     border-right: 20px solid transparent;
     transform: rotate(90deg) translate(-7px, -3px);
     z-index: -1;
+    opacity: 0.5;
+
+    @media (min-width: 720px) {
+      opacity: 1;
+    }
   }
 }
 </style>

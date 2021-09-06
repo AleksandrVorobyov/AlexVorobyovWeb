@@ -10,7 +10,7 @@ aside#sidebar.sidebar
     .sidebar__links
       ul.sidebar__links-col
         li.sidebar__links-item(v-for="item in sidebarLinks", :key="item") 
-          router-link.sidebar__links-item-link(:to="item.link")
+          router-link.sidebar__links-item-link(:to="item.link" @click="burgerActiveMet(), showDialog()")
             span {{ item.text }}
     .sidebar__social
       my-web-social-icon
@@ -35,7 +35,12 @@ export default {
     ...mapGetters(["sidebarLinks", "sidebarTitle", "sidebarBg"]),
   },
   methods: {
-
+    showDialog() {
+      this.$store.commit('showDialog')
+    },
+    burgerActiveMet() {
+      this.$store.commit('burgerActiveMet')
+    }
   },
   mounted() {
     window.addEventListener("scroll", () => {
@@ -58,7 +63,7 @@ export default {
   z-index: 500;
   background: rgba(0, 0, 0, 0.5);
   overflow: auto;
-  transition: left 2s ease-in-out 0s;
+  transition: left 2s ease 0s;
 }
 
 .sidebar--active {

@@ -35,6 +35,7 @@ section.card-post
             splide-slide(
               v-for="item in activeCard.card.projectSlides",
               :key="item",
+              @click="fullPageAdd($event)",
               @mousedown="mousedownSlide",
               @mouseup="mouseupSlide"
             )
@@ -97,6 +98,9 @@ export default {
     slideUpdate() {
       this.$store.commit("slideUpdate");
     },
+    fullPageAdd(event) {
+      this.$store.commit("fullPageAdd", event);
+    },
   },
   beforeMount() {
     if (this.localActive) {
@@ -126,7 +130,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       0deg,
@@ -140,7 +144,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
     background: linear-gradient(
       180deg,
