@@ -1,0 +1,1624 @@
+{
+  "cardsAll" : [
+    {
+      "cardId": "card-project-22",
+      "allMenuClass": ["pug", "js", "vue"],
+      "cardLink": "",
+      "cardSrc": "card/22.jpg",
+      "cardAlt": "22.jpg",
+      "cardTitle": "Верстка “Delivery Shop”",
+      "cardText": "Верстка многостраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://delivery-shop-dff2c.web.app/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, Vue 3 cli, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель на Vue, валидация форм, Vuex и Vue router."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка Многостраничного веб-сайта. Это реальный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Vue, библиотеки Vuex и Vue Router. В верстке используются файлы HTML, Css, js, Sсss, Vue. На сайте можно увидеть такие компоненты как модальные окна, адаптивное меню, а также форма отправки данных на почту с помощью ajax. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://delivery-shop-dff2c.web.app/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/delivery-website",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Delivery Shop”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-vue",
+              "text": "Vue"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/delivery-shop/01.jpg",
+              "alt": "delivery-shop-01"
+            },
+            {
+              "src": "portfolio/delivery-shop/02.jpg",
+              "alt": "delivery-shop-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-21",
+      "allMenuClass": ["pug", "js", "vue"],
+      "cardLink": "",
+      "cardSrc": "card/21.jpg",
+      "cardAlt": "21.jpg",
+      "cardTitle": "Верстка “Movee”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/movee/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, Vue 3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм"
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/movee/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/movee",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Movee”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-vue",
+              "text": "Vue"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/movee/01.jpg",
+              "alt": "movee-01"
+            },
+            {
+              "src": "portfolio/movee/02.jpg",
+              "alt": "movee-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-20",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/20.jpg",
+      "cardAlt": "20.jpg",
+      "cardTitle": "Верстка “TakeMe”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/TakeMe/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/TakeMe/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/TakeMe",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“TakeMe”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/takeme/01.jpg",
+              "alt": "takeme-01"
+            },
+            {
+              "src": "portfolio/takeme/02.jpg",
+              "alt": "takeme-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-18",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/18.jpg",
+      "cardAlt": "18.jpg",
+      "cardTitle": "Верстка “Lemon”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/Lemon/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/Lemon/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/Lemon",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Lemon”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/lemon/01.jpg",
+              "alt": "lemon-01"
+            },
+            {
+              "src": "portfolio/lemon/02.jpg",
+              "alt": "lemon-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-16",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/16.jpg",
+      "cardAlt": "16.jpg",
+      "cardTitle": "Верстка “Healthy Food”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/healthyfood/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/healthyfood/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/healthyfood",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Healthy Food”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/healthy-food/01.jpg",
+              "alt": "healthy-food-01"
+            },
+            {
+              "src": "portfolio/healthy-food/02.jpg",
+              "alt": "healthy-food-02"
+            },
+            {
+              "src": "portfolio/healthy-food/03.jpg",
+              "alt": "healthy-food-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-08",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/08.jpg",
+      "cardAlt": "08.jpg",
+      "cardTitle": "Верстка “Travel Blog”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/travel-blog/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностроничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/travel-blog/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/travel-blog",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Travel Blog”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/travel-blog/01.jpg",
+              "alt": "travel-blog-01"
+            },
+            {
+              "src": "portfolio/travel-blog/02.jpg",
+              "alt": "travel-blog-02"
+            },
+            {
+              "src": "portfolio/travel-blog/03.jpg",
+              "alt": "travel-blog-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-14",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/14.jpg",
+      "cardAlt": "14.jpg",
+      "cardTitle": "Верстка “Lookshop”",
+      "cardText": "Верстка многостраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/lookshop/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка многостраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/lookshop/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/lookshop",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Lookshop”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/lookshop/01.jpg",
+              "alt": "lookshop-01"
+            },
+            {
+              "src": "portfolio/lookshop/02.jpg",
+              "alt": "lookshop-02"
+            },
+            {
+              "src": "portfolio/lookshop/03.jpg",
+              "alt": "lookshop-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-04",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/04.jpg",
+      "cardAlt": "04.jpg",
+      "cardTitle": "Верстка “LiziLizka Lab”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/lizilizka/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/lizilizka/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/lizilizka",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“LiziLizka Lab”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/lizilab/01.jpg",
+              "alt": "lizilab-01"
+            },
+            {
+              "src": "portfolio/lizilab/02.jpg",
+              "alt": "lizilab-02"
+            },
+            {
+              "src": "portfolio/lizilab/03.jpg",
+              "alt": "lizilab-03"
+            },
+            {
+              "src": "portfolio/lizilab/04.jpg",
+              "alt": "lizilab-04"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-15",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/15.jpg",
+      "cardAlt": "15.jpg",
+      "cardTitle": "Верстка “Amz-Tatoo”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/Amz-tatoo/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/Amz-tatoo/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/Amz-tatoo",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Amz-Tatoo”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/amz-tatoo/01.jpg",
+              "alt": "amz-tatoo-01"
+            },
+            {
+              "src": "portfolio/amz-tatoo/02.jpg",
+              "alt": "amz-tatoo-02"
+            },
+            {
+              "src": "portfolio/amz-tatoo/03.jpg",
+              "alt": "amz-tatoo-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-19",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/19.jpg",
+      "cardAlt": "19.jpg",
+      "cardTitle": "Верстка “Sound Shop”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/sound-shop/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/sound-shop/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/sound-shop",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Sound Shop”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/sound-shop/01.jpg",
+              "alt": "sound-shop-01"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-06",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/06.jpg",
+      "cardAlt": "06.jpg",
+      "cardTitle": "Верстка “DHL”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/DHL/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/DHL/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/DHL",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“DHL”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/dhl/01.jpg",
+              "alt": "dhl-01"
+            },
+            {
+              "src": "portfolio/dhl/02.jpg",
+              "alt": "dhl-02"
+            },
+            {
+              "src": "portfolio/dhl/03.jpg",
+              "alt": "dhl-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-17",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/17.jpg",
+      "cardAlt": "17.jpg",
+      "cardTitle": "Верстка “Charger”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/charger/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/charger/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/charger",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Charger”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/charger/01.jpg",
+              "alt": "charger-01"
+            },
+            {
+              "src": "portfolio/charger/02.jpg",
+              "alt": "charger-02"
+            },
+            {
+              "src": "portfolio/charger/03.jpg",
+              "alt": "charger-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-13",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/13.jpg",
+      "cardAlt": "13.jpg",
+      "cardTitle": "Верстка “Amazing”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/Amazing/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/Amazing/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/Amazing",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Amazing”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/amazing/01.jpg",
+              "alt": "amazing-01"
+            },
+            {
+              "src": "portfolio/amazing/02.jpg",
+              "alt": "amazing-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-02",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/02.jpg",
+      "cardAlt": "02.jpg",
+      "cardTitle": "Верстка “RealHome”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/RealHome/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/RealHome/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/Realhome",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“RealHome”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/realhome/01.jpg",
+              "alt": "realhome-01"
+            },
+            {
+              "src": "portfolio/realhome/02.jpg",
+              "alt": "realhome-03"
+            },
+            {
+              "src": "portfolio/realhome/02.jpg",
+              "alt": "realhome-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-12",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/12.jpg",
+      "cardAlt": "12.jpg",
+      "cardTitle": "Верстка “Muncak”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/muncak/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/muncak/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/muncak",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Muncak”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/muncak/01.jpg",
+              "alt": "muncak-01"
+            },
+            {
+              "src": "portfolio/muncak/02.jpg",
+              "alt": "muncak-02"
+            },
+            {
+              "src": "portfolio/muncak/03.jpg",
+              "alt": "muncak-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-09",
+      "allMenuClass": ["less", "js"],
+      "cardLink": "",
+      "cardSrc": "card/09.jpg",
+      "cardAlt": "09.jpg",
+      "cardTitle": "Верстка “Surfing Website”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/surfing/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка Многостраничного веб-сайта. Это реальный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Vue, библиотеки Vuex и Vue Router. В верстке используются файлы HTML, Css, js, Sсss, Vue. На сайте можно увидеть такие компоненты как модальные окна, адаптивное меню, а также форма отправки данных на почту с помощью ajax. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/surfing/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/surfing",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Surfing Website”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-less",
+              "text": "LESS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/surfing/01.jpg",
+              "alt": "surfing-01"
+            },
+            {
+              "src": "portfolio/surfing/02.jpg",
+              "alt": "surfing-02"
+            },
+            {
+              "src": "portfolio/surfing/03.jpg",
+              "alt": "surfing-03"
+            },
+            {
+              "src": "portfolio/surfing/04.jpg",
+              "alt": "surfing-04"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-03",
+      "allMenuClass": ["scss", "js"],
+      "cardLink": "",
+      "cardSrc": "card/03.jpg",
+      "cardAlt": "03.jpg",
+      "cardTitle": "Верстка “Quantum”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/Quantum/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/Quantum/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/Quantum",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Quantum”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-less",
+              "text": "LESS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/quantum/01.jpg",
+              "alt": "quantum-01"
+            },
+            {
+              "src": "portfolio/quantum/02.jpg",
+              "alt": "quantum-02"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-11",
+      "allMenuClass": ["less", "js"],
+      "cardLink": "",
+      "cardSrc": "card/11.jpg",
+      "cardAlt": "11.jpg",
+      "cardTitle": "Верстка “Unit”",
+      "cardText": "Верстка одностраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/unit/"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка одностраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/unit/",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/unit",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Unit”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-less",
+              "text": "LESS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/unit/01.jpg",
+              "alt": "unit-01"
+            },
+            {
+              "src": "portfolio/unit/02.jpg",
+              "alt": "unit-02"
+            },
+            {
+              "src": "portfolio/unit/03.jpg",
+              "alt": "unit-03"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-07",
+      "allMenuClass": ["pug", "js"],
+      "cardLink": "",
+      "cardSrc": "card/07.jpg",
+      "cardAlt": "07.jpg",
+      "cardTitle": "Верстка “Digital Nomad”",
+      "cardText": "Верстка многостраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/comand-work/main.html"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка многостраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/comand-work/main.html",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/comand-work",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Digital Nomad”",
+          "cardPostMeta": [
+            {
+              "class": "meta-pug",
+              "text": "Pug"
+            },
+            {
+              "class": "meta-scss",
+              "text": "SCSS"
+            },
+            {
+              "class": "meta-js",
+              "text": "JS"
+            },
+            {
+              "class": "meta-jquery",
+              "text": "jQuery"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/digital-nomad/01.jpg",
+              "alt": "digital-nomad-01"
+            },
+            {
+              "src": "portfolio/digital-nomad/02.jpg",
+              "alt": "digital-nomad-02"
+            },
+            {
+              "src": "portfolio/digital-nomad/03.jpg",
+              "alt": "digital-nomad-03"
+            },
+            {
+              "src": "portfolio/digital-nomad/04.jpg",
+              "alt": "digital-nomad-04"
+            }
+          ]
+      }
+    },
+    {
+      "cardId": "card-project-10",
+      "allMenuClass": ["html"],
+      "cardLink": "",
+      "cardSrc": "card/10.jpg",
+      "cardAlt": "10.jpg",
+      "cardTitle": "Верстка “Forest Travel”",
+      "cardText": "Верстка многостраничного сайта.",
+      "card" : {
+          "detalsTitle" : "Детали",
+          "detalsDescItems" : [
+            {
+              "text" : ["Клиент:", "Учебный проект"]
+            },
+            {
+              "text" : ["Проект:", "Учебный проект"]
+            },
+            {
+              "text" : ["Сайт:", "https://aleksandrvorobyov.github.io/forest-travel/index.html"]
+            },
+            {
+              "text" : ["Верстка:", "Адаптивная верстка, HTML5, CSS3, JavaScript."]
+            },
+            {
+              "text" : [
+                "Особенности:",
+                "Мобильная навигация, карусель OwlCarousel, предпросмотр товара,валидация форм."
+              ]
+            }
+          ],
+          "cardAboutTitle": "О проекте",
+          "cardAboutText":
+            "Верстка многостраничного веб-сайта. Это учебный проект и доступен для просмотра по ссылке выше. Сделан с использованием фреймворка Bootstrap, библиотеки animate и Jquery. В верстке используются файлы HTML, Css, js, Sсss , Pug и конечно Gulp. На сайте можно увидеть такие компоненты как карусели, адаптивное меню. Сайт полностью адаптирован под любое разрешение экрана. Верстка прошла проверку на валидность.",
+          "linkProjectTitle": "Ссылки на проект",
+          "linkProjectItem": [
+            {
+              "class": "fa-desktop",
+              "link": "https://aleksandrvorobyov.github.io/forest-travel/index.html",
+              "text": "Смотреть демо онлайн"
+            },
+            {
+              "class": "fa-github",
+              "link": "https://github.com/AleksandrVorobyov/forest-travel",
+              "text": "Код проекта на GitHub"
+            }
+          ],
+          "cardPostTitle": "Верстка интернет магазина",
+          "cardPostName": "“Forest Travel”",
+          "cardPostMeta": [
+            {
+              "class": "meta-html",
+              "text": "HTML"
+            },
+            {
+              "class": "meta-css",
+              "text": "CSS"
+            }
+          ],
+          "projectSlides": [
+            {
+              "src": "portfolio/forest-travel/01.jpg",
+              "alt": "forest-travel-01"
+            },
+            {
+              "src": "portfolio/forest-travel/02.jpg",
+              "alt": "forest-travel-02"
+            },
+            {
+              "src": "portfolio/forest-travel/03.jpg",
+              "alt": "forest-travel-03"
+            },
+            {
+              "src": "portfolio/forest-travel/04.jpg",
+              "alt": "forest-travel-04"
+            },
+            {
+              "src": "portfolio/forest-travel/05.jpg",
+              "alt": "forest-travel-05"
+            }
+          ]
+      }
+    }
+  ]
+}
