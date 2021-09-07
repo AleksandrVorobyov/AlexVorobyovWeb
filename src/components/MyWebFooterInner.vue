@@ -18,7 +18,11 @@ export default {
     MyWebSocialIcon,
   },
   computed: {
-    ...mapGetters(['footerInnerTitle', 'footerInnerSubTitle', 'footerInnerLink'])
+    ...mapGetters([
+      "footerInnerTitle",
+      "footerInnerSubTitle",
+      "footerInnerLink",
+    ]),
   },
 };
 </script>
@@ -29,29 +33,26 @@ export default {
   height: 600px;
   background: url("../assets/img/footer/bg-footer.png") top center no-repeat;
   z-index: 200;
+  overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -50px;
     right: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: -webkit-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: linear-gradient(0deg, #ffffff00 30%, var(--black) 100%);
+    box-shadow: 0px 10px 15px var(--redCyber);
   }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
-    height: 150px;
+    height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
-    background: -webkit-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
-    background: linear-gradient(180deg, #ffffff00 30%, var(--black) 100%);
+    box-shadow: 0px -10px 35px var(--black);
   }
 }
 

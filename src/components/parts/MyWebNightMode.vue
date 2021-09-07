@@ -660,10 +660,6 @@ export default {
   }
 }
 
-.night .page__link::before {
-  border-left-color: var(--black);
-}
-
 .night .sidebar {
   .sidebar-wrap {
     background: var(--bgSidebarNight);
@@ -699,13 +695,7 @@ export default {
   background: var(--bgSidebarNight);
 }
 
-.night .page__link {
-  &::after {
-    border-bottom: 40px solid var(--yellowcolor);
-  }
-
-  a {
-    font-family: var(--fontRomanBold);
-  }
+.night .page__link button {
+  border: 2px solid var(--yellowcolor);
 }
 </style>

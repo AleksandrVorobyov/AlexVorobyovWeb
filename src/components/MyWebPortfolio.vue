@@ -63,7 +63,7 @@ export default {
 .portfolio {
   position: relative;
   padding: 80px 15px;
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 80vh;
   z-index: 200;
 
@@ -74,37 +74,21 @@ export default {
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -50px;
     right: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(top, #ffffff00 30%, var(--redCyber) 100%);
-    background: -webkit-linear-gradient(
-      top,
-      #ffffff00 30%,
-      var(--redCyber) 100%
-    );
-    background: linear-gradient(0deg, #ffffff00 30%, var(--redCyber) 100%);
+    box-shadow: 0px 10px 15px var(--redCyber);
   }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(
-      bottom,
-      #ffffff00 30%,
-      var(--redCyber) 100%
-    );
-    background: -webkit-linear-gradient(
-      bottom,
-      #ffffff00 30%,
-      var(--redCyber) 100%
-    );
-    background: linear-gradient(180deg, #ffffff00 30%, var(--redCyber) 100%);
+    box-shadow: 0px -10px 15px var(--redCyber);
   }
 }
 
@@ -114,12 +98,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#dfdbdb48, #fa9d9d70),
-    url("../assets/img/portfolio/bg.webp") top center/ cover no-repeat;
-  background-attachment: fixed;
-  background-blend-mode: hue;
+  background: url("../assets/img/portfolio/portfolio-mob.jpg") top center/ cover no-repeat;
   z-index: -1;
   opacity: 0.8;
+
+  @media (min-width: 720px) {
+    background: linear-gradient(#dfdbdb48, #fa9d9d70),
+      url("../assets/img/portfolio/bg.webp") top center/ cover no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: hue;
+  }
 }
 
 .portfolio-wrap {

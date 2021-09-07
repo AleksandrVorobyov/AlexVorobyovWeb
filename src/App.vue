@@ -180,35 +180,28 @@ img {
 
 .page {
   position: relative;
+  overflow: hidden;
 }
 
 .page::before {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
   content: "";
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0) 30%,
-    var(--black) 100%
-  );
+  top: -50px;
+  right: 0;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0px 10px 15px var(--black);
   z-index: 1000;
 }
 
 .page::after {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
   content: "";
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 30%,
-    var(--black) 100%
-  );
+  bottom: -50px;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0px -10px 15px var(--black);
   z-index: 1000;
 }
 

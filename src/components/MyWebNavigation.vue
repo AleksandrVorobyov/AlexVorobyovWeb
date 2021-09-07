@@ -53,6 +53,7 @@ export default {
   padding-top: 50px;
   height: 200px;
   z-index: 500;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     padding-top: 75px;
@@ -63,37 +64,14 @@ export default {
     padding: 75px 0px;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100px;
-    width: 100%;
-    background: -moz-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: -webkit-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: linear-gradient(0deg, #ffffff00 30%, var(--black) 100%);
-    z-index: -1;
-  }
-
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(
-      bottom,
-      #ffffff00 30%,
-      var(--redCyber) 100%
-    );
-    background: -webkit-linear-gradient(
-      bottom,
-      #ffffff00 30%,
-      var(--redCyber) 100%
-    );
-    background: linear-gradient(180deg, #ffffff00 30%, var(--redCyber) 100%);
+    box-shadow: 0px -10px 15px var(--redCyber);
     z-index: -1;
   }
 }

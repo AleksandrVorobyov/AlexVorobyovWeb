@@ -10,9 +10,9 @@
 import { mapGetters } from "vuex";
 
 export default {
-computed: {
-  ...mapGetters(['footerTitle', 'footerSubTitle'])
-},
+  computed: {
+    ...mapGetters(["footerTitle", "footerSubTitle"]),
+  },
 };
 </script>
 
@@ -21,31 +21,17 @@ computed: {
   position: relative;
   padding: 30px 15px 40px;
   background-color: rgba(51, 51, 51, 0.5);
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 200;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -50px;
     right: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: -webkit-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
-    background: linear-gradient(0deg, #ffffff00 30%, var(--black) 100%);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 50px;
-    width: 100%;
-    background: -moz-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
-    background: -webkit-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
-    background: linear-gradient(180deg, #ffffff00 30%, var(--black) 100%);
+    box-shadow: 0px 10px 15px var(--black);
   }
 }
 

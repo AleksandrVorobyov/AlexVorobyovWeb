@@ -139,12 +139,12 @@ export default {
 .page__link {
   position: fixed;
   right: 30px;
-  bottom: 100px;
+  bottom: 60px;
   z-index: 500;
-  animation: rocket 10s linear 1s infinite alternate;
   transition: opacity 0.5s linear;
 
   @media (min-width: 720px) {
+    animation: rocket 10s linear 1s infinite alternate;
     transform: rotate(-90deg);
     right: 60px;
     bottom: 150px;
@@ -173,7 +173,6 @@ export default {
     background: #80808080;
     transition: color 0.4s linear;
     z-index: 15;
-    transform: rotate(90deg);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -182,7 +181,6 @@ export default {
 
     @media (min-width: 720px) {
       display: inline-block;
-      transform: rotate(0deg);
       width: auto;
       height: auto;
       border-radius: 0%;
