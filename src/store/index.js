@@ -8,14 +8,19 @@ import MyWebPortfolio from './modules/MyWebPortfolio'
 import MyWebTimeline from './modules/MyWebTimeline'
 import MyWebContact from './modules/MyWebContact'
 import MyWebFooter from './modules/MyWebFooter'
+import smoothScroll from 'smoothscroll'
 
 export default createStore({
   state: {
   },
   mutations: {
     scrollToTop() {
-      behavior: 'smooth'
-      window.scrollTo(0,0);
+      const page = document.getElementById('page');
+      smoothScroll(page, 100, 1500)
+    },
+    scrollToTimeline() {
+      const smoothScrollTimeline = document.getElementById('timeline');
+      smoothScroll(smoothScrollTimeline, 100, 1500)
     },
     fullPageAdd(_, event) {
       document.querySelector(".full-page").classList.add("active");

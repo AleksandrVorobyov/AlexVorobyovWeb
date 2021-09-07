@@ -9,8 +9,7 @@ section.header
           .header__text-subtitle
             p {{ mySkillsSub }}
           .header__text-button
-            a.button-01(href="#timeline")
-              span Познакомиться
+            my-web-btn-one(link="#timeline" text="Познакомиться" @click="scrollToTimeline()")
             my-web-btn-two(
               :link="'/contact'",
               text="Контакты",
@@ -67,6 +66,7 @@ import MyWebBtnTwo from "./parts/MyWebBtnTwo.vue";
 import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import { mapGetters } from "vuex";
+
 export default {
   components: {
     MyWebBtnOne,
@@ -95,6 +95,9 @@ export default {
     },
     fullPageAdd(event) {
       this.$store.commit("fullPageAdd", event);
+    },
+    scrollToTimeline() {
+      this.$store.commit("scrollToTimeline");
     },
   },
 };
