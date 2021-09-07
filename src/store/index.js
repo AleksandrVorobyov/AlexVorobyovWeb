@@ -14,6 +14,7 @@ export default createStore({
   },
   mutations: {
     scrollToTop() {
+      behavior: 'smooth'
       window.scrollTo(0,0);
     },
     fullPageAdd(_, event) {

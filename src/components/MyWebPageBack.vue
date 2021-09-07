@@ -3,7 +3,7 @@
 .page__background
   canvas#snow
 #page-link.page__link
-  a(href="#navigation") {{ up }}
+  button(@click="scrollToTop()", v-html="up")
 </template>
 
 <script>
@@ -35,6 +35,9 @@ export default {
   methods: {
     createBg() {
       this.$store.dispatch("createBg");
+    },
+    scrollToTop() {
+      this.$store.commit("scrollToTop");
     },
   },
 };
@@ -138,17 +141,18 @@ export default {
   right: 30px;
   bottom: 100px;
   z-index: 500;
-  transform: rotate(-90deg);
   animation: rocket 10s linear 1s infinite alternate;
   transition: opacity 0.5s linear;
 
   @media (min-width: 720px) {
+    transform: rotate(-90deg);
     right: 60px;
     bottom: 150px;
   }
 
   @media (min-width: 1170px) {
     left: 60px;
+    right: auto;
   }
 
   @media (min-width: 1400px) {
@@ -156,21 +160,35 @@ export default {
     left: 40px;
   }
 
-  a {
-    display: inline-block;
-    font-size: 24px;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
     font-weight: 700;
     font-family: var(--fontNeon);
-    color: var(--var(--white));
+    color: var(--white);
     text-decoration: none;
     padding: 15px;
-    background-color: var(--blueCyber);
+    background: #80808080;
     transition: color 0.4s linear;
     z-index: 15;
-    opacity: 0.5;
+    transform: rotate(90deg);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--redCyber);
+    cursor: pointer;
 
     @media (min-width: 720px) {
-      opacity: 1;
+      display: inline-block;
+      transform: rotate(0deg);
+      width: auto;
+      height: auto;
+      border-radius: 0%;
+      font-size: 24px;
+      background: var(--blueCyber);
+      border: 0px solid var(--grayBg);
     }
   }
 
@@ -180,6 +198,7 @@ export default {
 
   &::before {
     position: absolute;
+    display: none;
     bottom: -9px;
     right: -145%;
     content: "";
@@ -189,15 +208,16 @@ export default {
     border-right: 36px solid transparent;
     transform: translateX(-100%);
     z-index: 10;
-    opacity: 0.5;
+    cursor: pointer;
 
     @media (min-width: 720px) {
-      opacity: 1;
+      display: block;
     }
   }
 
   &::after {
     position: absolute;
+    display: none;
     bottom: 0;
     left: -50%;
     content: "";
@@ -208,10 +228,10 @@ export default {
     border-right: 20px solid transparent;
     transform: rotate(90deg) translate(-7px, -3px);
     z-index: -1;
-    opacity: 0.5;
+    cursor: pointer;
 
     @media (min-width: 720px) {
-      opacity: 1;
+      display: block;
     }
   }
 }

@@ -32,7 +32,11 @@ export default {
   },
   getters: {
     up(state) {
-      return state.up;
+      if (window.screen.width >= 720) {
+        return state.up = "Вверх";
+      } else {
+        return state.up = "&#8657;"
+      }
     },
     pageBackImg(state) {
       return state.pageBackImg;

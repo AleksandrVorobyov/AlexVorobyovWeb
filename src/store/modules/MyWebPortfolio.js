@@ -4,6 +4,7 @@ export default {
     activeCard: {},
     projectSlide: {
       perPage: 1,
+      rewind: true,
       speed: 800,
       classes: {
         arrows: "splide__arrows your-class-arrows",

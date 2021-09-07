@@ -49,13 +49,17 @@ export default {
 }
 
 .detals-description-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.detals-description-item + .detals-description-item {
+  margin-top: 20px;
 }
 
 .detals-description-item p {

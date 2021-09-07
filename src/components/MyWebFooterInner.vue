@@ -37,11 +37,9 @@ export default {
     right: 0;
     height: 50px;
     width: 100%;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0) 30%,
-      var(--redCyber) 100%
-    );
+    background: -moz-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
+    background: -webkit-linear-gradient(top, #ffffff00 30%, var(--black) 100%);
+    background: linear-gradient(0deg, #ffffff00 30%, var(--black) 100%);
   }
 
   &::after {
@@ -51,11 +49,9 @@ export default {
     left: 0;
     height: 150px;
     width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 30%,
-      rgb(0, 0, 0) 100%
-    );
+    background: -moz-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
+    background: -webkit-linear-gradient(bottom, #ffffff00 30%, var(--black) 100%);
+    background: linear-gradient(180deg, #ffffff00 30%, var(--black) 100%);
   }
 }
 
@@ -100,11 +96,11 @@ export default {
   }
 
   a {
-    color: #73ebeb;
+    color: var(--blueCyber);
   }
 
   a:hover {
-    color: #ea736d;
+    color: var(--redcolor);
     transition: 0.5s ease-in-out;
   }
 }

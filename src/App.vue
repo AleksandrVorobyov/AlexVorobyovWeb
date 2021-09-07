@@ -15,7 +15,7 @@ export default {
   components: {
     myWebPageBack,
     MyWebPreloader,
-    MyWebNotification
+    MyWebNotification,
   },
 };
 </script>
@@ -75,7 +75,6 @@ body {
   line-height: 1;
   font-size: 16px;
   font-weight: 400;
-  user-select: none;
 }
 
 body.hidden {
@@ -190,7 +189,11 @@ img {
   width: 100%;
   height: 30px;
   content: "";
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 30%, var(--black) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 30%,
+    var(--black) 100%
+  );
   z-index: 1000;
 }
 
@@ -201,7 +204,11 @@ img {
   width: 100%;
   height: 30px;
   content: "";
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, var(--black) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 30%,
+    var(--black) 100%
+  );
   z-index: 1000;
 }
 
