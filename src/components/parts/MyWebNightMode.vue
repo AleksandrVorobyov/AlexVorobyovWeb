@@ -694,8 +694,4 @@ export default {
 .night .navigation__burger {
   background: var(--bgSidebarNight);
 }
-
-.night .page__link button {
-  border: 2px solid var(--yellowcolor);
-}
 </style>

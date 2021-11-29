@@ -146,6 +146,9 @@ export default {
         "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
       );
       state.portfolioAll = await res.json();
+      state.portfolioAll.forEach((item, index) => {
+        item.idx = index
+      })
     },
     getCheck(_, event) {
       const navPort = document.querySelector(".portfolio__nav");
@@ -178,28 +181,28 @@ export default {
       state.activeCard = JSON.parse(localStorage.getItem("activeCard"));
     },
     prevProject(state) {
-      const thisCard = state.activeCard.index;
+      const thisCard = state.activeCard.idx;
       if (thisCard > 0) {
         const newCard = state.portfolioAll.find(
-          (e) => e.index === thisCard - 1
+          (e) => e.idx === thisCard - 1
         );
         return (state.activeCard = newCard);
       } else {
         const newCard = state.portfolioAll.find(
-          (e) => e.index === state.portfolioAll.length - 1
+          (e) => e.idx === state.portfolioAll.length - 1
         );
         return (state.activeCard = newCard);
       }
     },
     nextProject(state) {
-      const thisCard = state.activeCard.index;
+      const thisCard = state.activeCard.idx;
       if (state.portfolioAll.length > thisCard + 1) {
         const newCard = state.portfolioAll.find(
-          (e) => e.index === thisCard + 1
+          (e) => e.idx === thisCard + 1
         );
         return (state.activeCard = newCard);
       } else {
-        const newCard = state.portfolioAll.find((e) => e.index === 0);
+        const newCard = state.portfolioAll.find((e) => e.idx === 0);
         return (state.activeCard = newCard);
       }
     },

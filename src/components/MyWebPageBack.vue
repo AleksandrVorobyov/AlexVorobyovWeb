@@ -197,7 +197,7 @@ export default {
   &::before {
     position: absolute;
     display: none;
-    bottom: -9px;
+    bottom: -10px;
     right: -145%;
     content: "";
     border-left: 36px solid var(--yellowcolor);
@@ -222,9 +222,9 @@ export default {
     height: 0;
     width: 40px;
     border-bottom: 40px solid var(--redCyber);
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    transform: rotate(90deg) translate(-7px, -3px);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(90deg) translate(-5px, -6px);
     z-index: -1;
     cursor: pointer;
 

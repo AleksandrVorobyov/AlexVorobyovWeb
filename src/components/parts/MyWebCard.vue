@@ -4,9 +4,9 @@
     router-link.card__btn(@click="findCard($event), scrollToTop(), pushInServeActiveCard()" :to="'/project/card'") Подробнее
     .card__img
       figure.card__img-front
-        img(:src="require('@/assets/img/' + src)", :alt="alt")
+        img(:src="src", :alt="alt")
       figure.card__img-back
-        img(:src="require('@/assets/img/' + src)", :alt="alt")
+        img(:src="src", :alt="alt")
   .card__text
     h4.card__title {{ title }}
     p.card__subtitle {{ text }}
