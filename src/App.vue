@@ -1,8 +1,8 @@
 <template lang="pug">
 #page.page
-  my-web-notification
   my-web-preloader
   my-web-page-back
+  my-web-notification
   router-view
 </template>
 
@@ -113,6 +113,16 @@ h6 {
 img {
   display: block;
   max-width: 100%;
+}
+
+img[lazy="loading"] {
+  background: url("./assets/img/loading/loading.gif") top left / contain
+      no-repeat,
+    linear-gradient(0deg, #343434, #343434);
+}
+img[lazy="error"] {
+  background: url("./assets/img/error/404.jpg") top left / cover no-repeat,
+    linear-gradient(0deg, #f72727, #f72727);
 }
 
 .big-container {

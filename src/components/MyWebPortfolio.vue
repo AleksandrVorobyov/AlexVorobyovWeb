@@ -2,22 +2,19 @@
 section#portfolio.portfolio
   .container
     .portfolio-wrap
-      transition(name="fade", mode="out-in", appear)
-        h3.portfolio__title.neon(v-html="neonPortfolioTitle")
-      transition(name="shake", mode="out-in", appear)
-        nav.portfolio__card
-          my-web-card(
-            v-for="item in firstPortfolioCards",
-            :key="item",
-            :link="item.cardLink",
-            :src="item.cardSrc",
-            :alt="item.cardAlt",
-            :title="item.cardTitle",
-            :text="item.cardText",
-            :card-id="item.cardId"
-          )
-    .portfolio__nav-bottom
-      transition(name="fade", mode="out-in", appear)
+      h3.portfolio__title.neon(v-html="neonPortfolioTitle")
+      .portfolio__card
+        my-web-card(
+          v-for="item in firstPortfolioCards",
+          :key="item",
+          :link="item.cardLink",
+          :src="item.cardSrc",
+          :alt="item.cardAlt",
+          :title="item.cardTitle",
+          :text="item.cardText",
+          :card-id="item.cardId"
+        )
+      .portfolio__nav-bottom
         my-web-btn-one(
           :link="'./project'",
           :text="'Все работы'",
@@ -47,14 +44,18 @@ export default {
   },
   methods: {
     scrollToTop() {
-      this.$store.commit("scrollToTop");
+      this.$store.dispatch("scrollToTop");
     },
     loadCards() {
       this.$store.commit("loadCards");
     },
+    portfolioSectionAnim() {
+      this.$store.dispatch("portfolioSectionAnim");
+    },
   },
   mounted() {
     this.loadCards();
+    this.portfolioSectionAnim();
   },
 };
 </script>

@@ -8,7 +8,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { gsap } from "gsap";
 
 export default {
   data() {
@@ -17,10 +16,13 @@ export default {
   computed: {
     ...mapGetters(["up", "pageBackImg", "nightMode"]),
   },
-  mounted() {
-    if (!this.nightMode) {
-      this.createBg();
-    }
+  methods: {
+    createBg() {
+      this.$store.dispatch("createBg");
+    },
+    scrollToTop() {
+      this.$store.dispatch("scrollToTop");
+    },
   },
   created() {
     window.onscroll = function pageLinkScroll() {
@@ -32,13 +34,10 @@ export default {
       }
     };
   },
-  methods: {
-    createBg() {
-      this.$store.dispatch("createBg");
-    },
-    scrollToTop() {
-      this.$store.commit("scrollToTop");
-    },
+  mounted() {
+    if (!this.nightMode) {
+      this.createBg();
+    }
   },
 };
 </script>

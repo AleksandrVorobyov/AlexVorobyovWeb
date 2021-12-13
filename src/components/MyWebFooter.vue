@@ -13,6 +13,14 @@ export default {
   computed: {
     ...mapGetters(["footerTitle", "footerSubTitle"]),
   },
+  methods: {
+    footerSectionAnim() {
+      this.$store.dispatch("footerSectionAnim");
+    },
+  },
+  mounted() {
+    this.footerSectionAnim();
+  },
 };
 </script>
 

@@ -26,8 +26,8 @@ export default {
   font-weight: bold;
   text-decoration: none;
   transition: 0.5s;
-  cursor: pointer;
   outline: none;
+  cursor: pointer;
 
   &:hover {
     transition-delay: 1.5s;

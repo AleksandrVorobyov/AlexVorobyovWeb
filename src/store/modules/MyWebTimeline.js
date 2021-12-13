@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
     state: {
         timelineItems: [
@@ -40,6 +42,47 @@ export default {
         },
         neonTimelineTitle(state) {
             return state.neonTimelineTitle;
-        }
+        },
+    },
+    actions: {
+        timelineSectionAnim() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.timeline',
+                    toggleActions: "restart pause play pause",
+                },
+            });
+
+            let timelineItems = document.querySelectorAll('.timeline__column-item-text')
+
+            gsap.from('.timeline__title', {
+                opacity: 0,
+                ease: "elastic",
+                duration: 1.5,
+                y: 30,
+                scrollTrigger: {
+                    trigger: '.timeline',
+                    toggleActions: "restart pause play pause",
+                },
+            })
+
+            timelineItems.forEach((item, index) => {
+                tl.from(item, {
+                    opacity: 0,
+                    ease: "elastic",
+                    duration: 1,
+                    x: () => {
+                        if (index % 2 !== 0) {
+                            return 100
+                        } else {
+                            return -100
+                        }
+                    },
+                });
+            })
+
+        },
     }
 }

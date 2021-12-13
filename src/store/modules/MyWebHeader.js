@@ -1,3 +1,6 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+
 export default {
   state: {
     mySkills: [
@@ -51,18 +54,18 @@ export default {
       }
     },
     certSlides: [
-        {
-            alt: 'cert-html',
-            src: 'header/cert/html.webp',
-        },
-        {
-            alt: 'cert-html-pro',
-            src: 'header/cert/html-pro.webp',
-        },
-        {
-            alt: 'cert-js',
-            src: 'header/cert/js.webp',
-        },
+      {
+        alt: 'cert-html',
+        src: 'header/cert/html.webp',
+      },
+      {
+        alt: 'cert-html-pro',
+        src: 'header/cert/html-pro.webp',
+      },
+      {
+        alt: 'cert-js',
+        src: 'header/cert/js.webp',
+      },
     ],
     neonHeaderTitleFirst: "<span>Ал</span>ексан<span>д</span>р",
     neonHeaderTitleSecond: "Вор<span>обь</span>ев",
@@ -101,5 +104,69 @@ export default {
       return state.neonHeaderTitleBgSecond;
     },
   },
-  mutations: {}
+  actions: {
+    headerSectionAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.header__text',
+          toggleActions: "restart pause play pause",
+        },
+      });
+
+      let headerTextItems = document.querySelectorAll('.header__text > *')
+
+      tl.from(headerTextItems[0], {
+        opacity: 0,
+        y: 100,
+        duration: .5,
+      })
+      .from(headerTextItems[1], {
+        opacity: 0,
+        y: 100,
+        duration: .5,
+      })
+      .from(headerTextItems[2], {
+        opacity: 0,
+        y: 100,
+        duration: .5,
+      })
+      .from(headerTextItems[3], {
+        opacity: 0,
+        y: 100,
+        duration: .5,
+      })
+
+      gsap.from('.header__avatar', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: '.header__avatar',
+          toggleActions: "restart pause play pause",
+        },
+      })
+
+      gsap.from('.header__slide', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: '.header__slide',
+          toggleActions: "restart pause play pause",
+        },
+      })
+
+      gsap.from('.header__bg-item', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: '.header__bg-item',
+          toggleActions: "restart pause play pause",
+        },
+      })
+    },
+  }
 };

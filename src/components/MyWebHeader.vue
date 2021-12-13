@@ -2,62 +2,62 @@
 section.header
   .container
     .header-wrap
-      transition(name="fade", mode="out-in", appear)
-        .header__text
-          h2.header__text-title.neon(v-html="neonHeaderTitleFirst")
-          h2.header__text-title.neon(v-html="neonHeaderTitleSecond")
-          .header__text-subtitle
-            p {{ mySkillsSub }}
-          .header__text-button
-            my-web-btn-one(link="#timeline" text="Познакомиться" @click="scrollToTimeline()")
-            my-web-btn-two(
-              :link="'/contact'",
-              text="Контакты",
-              @click="scrollToTop"
+      .header__text
+        h2.header__text-title.neon(v-html="neonHeaderTitleFirst")
+        h2.header__text-title.neon(v-html="neonHeaderTitleSecond")
+        .header__text-subtitle
+          p {{ mySkillsSub }}
+        .header__text-button
+          my-web-btn-one(
+            link="#timeline",
+            text="Познакомиться",
+            @click="scrollToTimeline()"
+          )
+          my-web-btn-two(
+            :link="'/contact'",
+            text="Контакты",
+            @click="scrollToTop"
+          )
+      .header__avatar
+        div(
+          v-for="item in mySkillsAvatar",
+          :key="item",
+          :class="item.classItem"
+        )
+          h4.avatar__title {{ item.text }}
+          .avatar-css__img
+            img(
+              :src="require('@/assets/img/header/' + item.src)",
+              :alt="item.alt"
             )
-      transition(name="fade", mode="out-in", appear)
-        .header__avatar
-          div(
-            v-for="item in mySkillsAvatar",
-            :key="item",
-            :class="item.classItem"
-          )
-            h4.avatar__title {{ item.text }}
-            .avatar-css__img
-              img(
-                :src="require('@/assets/img/header/' + item.src)",
-                :alt="item.alt"
-              )
-          img(src="../assets/img/header/master.jpg", alt="master")
+        img(src="@/assets/img/header/master.jpg", alt="master")
   .big-container
-    transition(name="fade", mode="out-in", appear)
-      .header__slide
-        splide(:options="cert")
-          splide-slide(
-            v-for="item in certSlides",
-            :key="item",
-            @click="fullPageAdd($event)"
-          )
-            img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
+    .header__slide
+      splide(:options="cert")
+        splide-slide(
+          v-for="item in certSlides",
+          :key="item",
+          @click="fullPageAdd($event)"
+        )
+          img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
   .container
     .header__bg-wrap
-      transition(name="fade", mode="out-in", appear)
-        .header__bg-item
-          .header__bg-title.neon(v-html="neonHeaderTitleBgFirst")
-          .header__bg-skills
-            ul
-              li(v-for="item in mySkills") {{ item }}
-          .header__bg-button
-            my-web-btn-one(
-              :link="'/project'",
-              text="Смотреть работы",
-              @click="scrollToTop"
-            )
-      transition(name="fade", mode="out-in", appear)
-        .header__bg-item
-          .header__bg-title.neon(v-html="neonHeaderTitleBgSecond")
+      .header__bg-item
+        .header__bg-title.neon(v-html="neonHeaderTitleBgFirst")
+        .header__bg-skills
+          ul
+            li(v-for="item in mySkills") {{ item }}
+        .header__bg-button
+          my-web-btn-one(
+            :link="'/project'",
+            text="Смотреть работы",
+            @click="scrollToTop"
+          )
+      .header__bg-item
+        .header__bg-title.neon(v-html="neonHeaderTitleBgSecond")
+        .header__bg-social
           my-web-social-icon
-          a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
+        a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
 </template>
 
 <script>
@@ -91,14 +91,20 @@ export default {
   },
   methods: {
     scrollToTop() {
-      this.$store.commit("scrollToTop");
+      this.$store.dispatch("scrollToTop");
     },
     fullPageAdd(event) {
       this.$store.commit("fullPageAdd", event);
     },
     scrollToTimeline() {
-      this.$store.commit("scrollToTimeline");
+      this.$store.dispatch("scrollToTimeline");
     },
+    headerSectionAnim() {
+      this.$store.dispatch("headerSectionAnim");
+    },
+  },
+  mounted() {
+    this.headerSectionAnim();
   },
 };
 </script>
@@ -246,7 +252,6 @@ export default {
   box-shadow: 10px 14px 16px -3px rgba(34, 60, 80, 0.18);
   height: 280px;
   width: 280px;
-  transition: 1.2s ease-in-out;
   border-radius: 50%;
   z-index: 5;
   border: 10px double var(--redCyber);
@@ -532,44 +537,6 @@ export default {
 
 .header__bg-social {
   margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  transition: 0.5s ease-in-out;
-  z-index: 5;
-
-  a {
-    position: relative;
-    margin-right: 20px;
-    color: var(--white);
-    transition: 0.5s ease-in-out;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-.header__bg-social .fa-2x {
-  font-size: 34px;
-  text-shadow: 0 0 5px var(--redCyber), 0 0 10px var(--redCyber),
-    0 0 20px var(--redCyber), 0 0 40px var(--redCyber), 0 0 80px var(--redCyber);
-  transition: 0.5s ease-in-out;
-
-  @media (min-width: 400px) {
-    font-size: 48px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 64px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 32px;
-  }
-
-  &:hover {
-    color: #73ebeb;
-  }
 }
 
 .header__bg-email {

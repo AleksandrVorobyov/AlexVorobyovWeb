@@ -4,9 +4,9 @@
     router-link.card__btn(@click="findCard($event), scrollToTop(), pushInServeActiveCard()" :to="'/project/card'") Подробнее
     .card__img
       figure.card__img-front
-        img(:src="src", :alt="alt")
+        img(v-lazy="{ src: src }", :alt="alt")
       figure.card__img-back
-        img(:src="src", :alt="alt")
+        img(v-lazy="{ src: src }", :alt="alt")
   .card__text
     h4.card__title {{ title }}
     p.card__subtitle {{ text }}
@@ -15,25 +15,29 @@
 <script>
 export default {
   props: ["link", "src", "alt", "title", "text", "cardId"],
-  mounted() {
-  },
   methods: {
     randColor(event) {
       this.$store.commit("randColor", {
-        item: event.target
+        item: event.target,
       });
     },
     scrollToTop() {
-      this.$store.commit("scrollToTop");
+      this.$store.dispatch("scrollToTop");
     },
     pushInServeActiveCard() {
       this.$store.commit("pushInServeActiveCard");
     },
     findCard(event) {
       this.$store.commit("findCard", {
-        cardId: event.target.closest('.card').id
+        cardId: event.target.closest(".card").id,
       });
     },
+    cardAnim() {
+      this.$store.dispatch("cardAnim");
+    },
+  },
+  mounted() {
+    this.cardAnim();
   },
 };
 </script>
@@ -48,13 +52,11 @@ export default {
   box-shadow: 10px 14px 16px -3px rgba(34, 60, 80, 0.3);
   border-radius: 44px;
   border: 6px solid var(--redCyber);
-  transition: 0.3s linear, border 0.5s ease-in-out, transform 1.2s linear;
+  transition: border 0.5s ease-in-out;
   background: var(--white);
   z-index: 30;
 
   &:hover {
-    transform: scale(1.1);
-
     .card__title {
       transition: 1s linear;
       color: var(--redCyber);
@@ -177,8 +179,8 @@ export default {
   -webkit-box-reflect: below 10px
     linear-gradient(transparent, rgba(0, 0, 17, 0.288));
   transition-delay: 0.6s;
-  box-shadow: 0 0 10px var(--blueLinkHover), 0 0 20px var(--blueLinkHover), 0 0 40px var(--blueLinkHover),
-    0 0 60px var(--blueLinkHover);
+  box-shadow: 0 0 10px var(--blueLinkHover), 0 0 20px var(--blueLinkHover),
+    0 0 40px var(--blueLinkHover), 0 0 60px var(--blueLinkHover);
   border: none;
 
   @media (min-width: 440px) {

@@ -1,52 +1,48 @@
 <template lang="pug">
 section.card-post
   .container.card-post-wrap
-    transition(name="fade", mode="out-in", appear)
-      .card-post__nav
-        h2.card-post__nav-desc {{ activeCard.card.cardPostTitle }}
-        h3.card-post__nav-title {{ activeCard.card.cardPostName }}
-        .card-post__nav-meta 
-          span(
-            v-for="item in activeCard.card.cardPostMeta",
-            :key="item",
-            :class="item.class"
-          ) {{ item.text }}
+    .card-post__nav
+      h2.card-post__nav-desc {{ activeCard.card.cardPostTitle }}
+      h3.card-post__nav-title {{ activeCard.card.cardPostName }}
+      .card-post__nav-meta 
+        span(
+          v-for="item in activeCard.card.cardPostMeta",
+          :key="item",
+          :class="item.class"
+        ) {{ item.text }}
     .card-post__content
-      transition(name="fade", mode="out-in", appear)
-        .card-post__content-desc
-          my-web-card-link(
-            :linkProjectTitle="activeCard.card.linkProjectTitle",
-            :linkProjectItem="activeCard.card.linkProjectItem"
-          )
-          my-web-card-about(
-            :cardAboutTitle="activeCard.card.cardAboutTitle",
-            :cardAboutText="activeCard.card.cardAboutText"
-          )
-          my-web-card-detals(
-            :detalsTitle="activeCard.card.detalsTitle",
-            :detalsDescItems="activeCard.card.detalsDescItems"
-          )
-      transition(name="fade", mode="out-in", appear)
-        .card-post__content-carousel
-          splide.carousel-project(
-            :options="projectSlide",
-            :key="'slideCardKey' + slideCardKey"
-          )
-            splide-slide(
-              v-for="item in activeCard.card.projectSlides",
-              :key="item",
-              @click="fullPageAdd($event)",
-              @mousedown="mousedownSlide",
-              @mouseup="mouseupSlide"
-            )
-              img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
-    transition(name="fade", mode="out-in", appear)
-      .card-post__pagination
-        my-web-pagination(
-          :paginationPrev="paginationPrev",
-          :paginationNext="paginationNext",
-          @clickAction="scrollToTop(), pushInServeActiveCard(), slideUpdate()"
+      .card-post__content-desc
+        my-web-card-link(
+          :linkProjectTitle="activeCard.card.linkProjectTitle",
+          :linkProjectItem="activeCard.card.linkProjectItem"
         )
+        my-web-card-about(
+          :cardAboutTitle="activeCard.card.cardAboutTitle",
+          :cardAboutText="activeCard.card.cardAboutText"
+        )
+        my-web-card-detals(
+          :detalsTitle="activeCard.card.detalsTitle",
+          :detalsDescItems="activeCard.card.detalsDescItems"
+        )
+      .card-post__content-carousel
+        splide.carousel-project(
+          :options="projectSlide",
+          :key="'slideCardKey' + slideCardKey"
+        )
+          splide-slide(
+            v-for="item in activeCard.card.projectSlides",
+            :key="item",
+            @click="fullPageAdd($event)",
+            @mousedown="mousedownSlide",
+            @mouseup="mouseupSlide"
+          )
+            img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
+    .card-post__pagination
+      my-web-pagination(
+        :paginationPrev="paginationPrev",
+        :paginationNext="paginationNext",
+        @clickAction="scrollToTop(), pushInServeActiveCard(), slideUpdate()"
+      )
 </template>
 
 <script>
@@ -90,7 +86,7 @@ export default {
       this.$store.commit("mouseupSlide", event);
     },
     scrollToTop() {
-      this.$store.commit("scrollToTop");
+      this.$store.dispatch("scrollToTop");
     },
     pushInServeActiveCard() {
       this.$store.commit("pushInServeActiveCard");
@@ -101,6 +97,9 @@ export default {
     fullPageAdd(event) {
       this.$store.commit("fullPageAdd", event);
     },
+    cardBodyAnim() {
+      this.$store.dispatch("cardBodyAnim");
+    },
   },
   beforeMount() {
     if (this.localActive) {
@@ -109,6 +108,7 @@ export default {
   },
   mounted() {
     this.loadCards();
+    this.cardBodyAnim();
   },
   watch: {
     slideCardKey() {

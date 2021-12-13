@@ -2,49 +2,47 @@
 section.portfolio
   .container
     .portfolio-wrap
-      transition(name="fade", mode="out-in", appear)
-        h3.portfolio__title.neon(v-html="neonPortfolioTitle")
-      transition(name="fade", mode="out-in", appear)
-        nav.portfolio__nav
-          label(
-            v-for="item in portfolioInnerMenu",
-            :key="item.id",
-            :class="item.labelClass",
-            @click="getCheck($event)"
-            v-if="portfolioNavHidden"
+      h3.portfolio__title.neon(v-html="neonPortfolioTitle")
+      nav.portfolio__nav
+        label(
+          v-for="item in portfolioInnerMenu",
+          :key="item.id",
+          :class="item.labelClass",
+          @click="getCheck($event)"
+          v-if="portfolioNavHidden"
+        )
+          input(
+            type="radio",
+            name="checkbox",
+            :id="item.id",
+            :class="item.class",
+            checked,
+            :data-menu="item.dataMenu"
           )
-            input(
-              type="radio",
-              name="checkbox",
-              :id="item.id",
-              :class="item.class",
-              checked,
+          span {{ item.text }}
+        .portfolio__dropdown.checked(:class="dropdownPortfolio.labelClass" v-if="!portfolioNavHidden")
+          .portfolio__dropdown-active(@click="dropdown($event)") {{ dropdownPortfolio.text }}
+          .portfolio__dropdown-list(v-if="!dropHidden")
+            .portfolio__dropdown-item(@click="dropdownOption($event)")(
+              v-for="item in portfolioInnerMenu",
+              :key="item.id",
+              :class="item.labelClass",
               :data-menu="item.dataMenu"
+            ) {{ item.text }}
+        .portfolio__card-inner
+          .project(
+            v-for="item in portfolioAll",
+            :key="item",
+            :class="item.allMenuClass"
+          )
+            my-web-card(
+              :link="'#'",
+              :src="item.cardSrc",
+              :alt="item.cardAlt",
+              :title="item.cardTitle",
+              :text="item.cardText",
+              :card-id="item.cardId"
             )
-            span {{ item.text }}
-          .portfolio__dropdown.checked(:class="dropdownPortfolio.labelClass" v-if="!portfolioNavHidden")
-            .portfolio__dropdown-active(@click="dropdown($event)") {{ dropdownPortfolio.text }}
-            .portfolio__dropdown-list(v-if="!dropHidden")
-              .portfolio__dropdown-item(@click="dropdownOption($event)")(
-                v-for="item in portfolioInnerMenu",
-                :key="item.id",
-                :class="item.labelClass",
-                :data-menu="item.dataMenu"
-              ) {{ item.text }}
-          .portfolio__card-inner
-            .project(
-              v-for="item in portfolioAll",
-              :key="item",
-              :class="item.allMenuClass"
-            )
-              my-web-card(
-                :link="'#'",
-                :src="item.cardSrc",
-                :alt="item.cardAlt",
-                :title="item.cardTitle",
-                :text="item.cardText",
-                :card-id="item.cardId"
-              )
   .portfolio__background
 </template>
 
@@ -83,9 +81,13 @@ export default {
     dropdownOption(event) {
       this.$store.commit("dropdownOption", event);
     },
+    portfolioInnerSectionAnim() {
+      this.$store.dispatch("portfolioInnerSectionAnim");
+    },
   },
   mounted() {
     this.loadCards();
+    this.portfolioInnerSectionAnim();
   },
 };
 </script>

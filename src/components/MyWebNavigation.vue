@@ -2,21 +2,20 @@
 section#navigation.navigation
   .big-container
     my-web-night-mode
-    transition(name="slide-down", mode="out-in", appear)
-      .navigation-wrap
-        h1.navigation__logo
-          router-link.logo(to="/") А<span>В</span>
-        nav.navigation__link-nav
-          ul
-            li(v-for="item in navLinks", :key="item")
-              router-link.nav(:to="item.link", :data-hover="item.text") {{ item.text }}
-        .navigation__social
-          my-web-social-icon
-        button#nav-burger-btn.navigation__burger(
-          type="button",
-          @click="burgerActiveMet(), showDialog()"
-        )
-          span
+    .navigation-wrap
+      h1.navigation__logo
+        router-link.logo(to="/") А<span>В</span>
+      nav.navigation__link-nav
+        ul
+          li(v-for="item in navLinks", :key="item")
+            router-link.nav(:to="item.link", :data-hover="item.text" @click="scrollToTop()") {{ item.text }}
+      .navigation__social
+        my-web-social-icon
+      button#nav-burger-btn.navigation__burger(
+        type="button",
+        @click="burgerActiveMet(), showDialog()"
+      )
+        span
 </template>
 
 <script>
@@ -35,7 +34,6 @@ export default {
   computed: {
     ...mapGetters(["navLinks"]),
   },
-  mounted() {},
   methods: {
     burgerActiveMet() {
       this.$store.commit("burgerActiveMet");
@@ -43,6 +41,15 @@ export default {
     showDialog() {
       this.$store.commit("showDialog");
     },
+    navSectionAnim() {
+      this.$store.dispatch("navSectionAnim");
+    },
+    scrollToTop() {
+      this.$store.dispatch("scrollToTop");
+    },
+  },
+  mounted() {
+    this.navSectionAnim();
   },
 };
 </script>
@@ -160,9 +167,16 @@ export default {
 
 .navigation__link-nav {
   display: none;
+  margin-bottom: 50px;
 
   @media (min-width: 768px) {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 1170px) {
+    margin-bottom: 0;
   }
 }
 
@@ -220,13 +234,8 @@ export default {
 .navigation__link-nav ul {
   display: flex;
   justify-content: center;
-  transform: translateY(5px);
-  margin-bottom: 50px;
   list-style-type: none;
-
-  @media (min-width: 1170px) {
-    margin-bottom: 0;
-  }
+  margin: 0;
 }
 
 .navigation__link-nav ul li + li {

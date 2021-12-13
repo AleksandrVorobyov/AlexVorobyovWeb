@@ -24,6 +24,14 @@ export default {
       "footerInnerLink",
     ]),
   },
+  methods: {
+    footerInnerSectionAnim() {
+      this.$store.dispatch("footerInnerSectionAnim");
+    },
+  },
+  mounted() {
+    this.footerInnerSectionAnim();
+  },
 };
 </script>
 

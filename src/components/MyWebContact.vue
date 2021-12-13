@@ -3,22 +3,19 @@ section.contact
   canvas#pretty-bg
   .container
     .contact-title-wrapper
-      transition(name="fade", mode="out-in", appear)
-        h3.contact-title.neon(v-html="neonContactTitle")
+      h3.contact-title.neon(v-html="neonContactTitle")
     .contact-wrap
-      transition(name="fade", mode="out-in", appear)
-        .contact__info
-          p.contact__info-desc {{ contactInfoDesc }}
-          .contact__info-table
-            ol.contact__info-table-rounded
-              li(v-for="item in contactTableList", :key="item") 
-                .contact__info-table-rounded-row
-                  p {{ item.text }}
-                  a(:href="item.linkTipy + item.link") {{ item.title }}
-          .contact__info-social.header__bg-social
-            my-web-social-icon
-      transition(name="fade", mode="out-in", appear)
-        my-web-form
+      .contact__info
+        p.contact__info-desc {{ contactInfoDesc }}
+        .contact__info-table
+          ol.contact__info-table-rounded
+            li(v-for="item in contactTableList", :key="item") 
+              .contact__info-table-rounded-row
+                p {{ item.text }}
+                a(:href="item.linkTipy + item.link") {{ item.title }}
+        .contact__info-social.header__bg-social
+          my-web-social-icon
+      my-web-form
 </template>
 
 <script>
@@ -41,9 +38,13 @@ export default {
     createContact() {
       this.$store.commit("createContact");
     },
+    contactSectionAnim() {
+      this.$store.dispatch("contactSectionAnim");
+    },
   },
   mounted() {
     this.createContact();
+    this.contactSectionAnim();
   },
 };
 </script>
@@ -68,16 +69,20 @@ export default {
   }
 }
 
+.contact > .container > .contact-wrap > * {
+  z-index: 5;
+}
+
 #pretty-bg {
   width: 0;
   height: 0;
+
   @media (min-width: 1260px) {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 2;
   }
 }
 
@@ -297,7 +302,7 @@ export default {
   color: var(--blueCyber);
   line-height: 1.2;
   text-decoration: none;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 
   @media (min-width: 480px) {
     font-size: 24px;

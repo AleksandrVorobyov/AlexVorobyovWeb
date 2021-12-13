@@ -2,32 +2,32 @@
 section#timeline.timeline
   .container
     .timeline-wrap
-      transition(name="fade", mode="out-in", appear)
-        h3.timeline__title.neon(v-html="neonTimelineTitle") 
+      h3.timeline__title.neon(v-html="neonTimelineTitle") 
       .timeline__column
-        transition(
+        .timeline__column-item(
           v-for="(item, idx) in timelineItems",
-          :key="item",
-          :name="item.animSide",
-          appear,
-          mode="out-in"
+          :key="item"
         )
-          .timeline__column-item
-            .timeline__column-item-img 
-              .timeline-icon(:class="'timeline-icon_' + (idx + 1)")
-            .timeline__column-item-text
-              h4.timeline__column-title {{ item.title }}
-              p.timeline__column-subtitle {{ item.subtitle }}
-              span.timeline__column-desc {{ item.desc }}
+          .timeline__column-item-img 
+            .timeline-icon(:class="'timeline-icon_' + (idx + 1)")
+          .timeline__column-item-text
+            h4.timeline__column-title {{ item.title }}
+            p.timeline__column-subtitle {{ item.subtitle }}
+            span.timeline__column-desc {{ item.desc }}
 </template>
 <script>
 import { mapGetters } from "vuex";
 export default {
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(["timelineItems", "neonTimelineTitle"]),
+  },
+  methods: {
+    timelineSectionAnim() {
+      this.$store.dispatch("timelineSectionAnim");
+    },
+  },
+  mounted() {
+    this.timelineSectionAnim();
   },
 };
 </script>

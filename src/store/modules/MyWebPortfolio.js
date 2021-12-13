@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
     portfolioAll: [],
@@ -229,5 +231,106 @@ export default {
       state.slideCardKey += 1;
     },
   },
-  actions: {},
+  actions: {
+    portfolioSectionAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to('.portfolio__title', {
+        keyframes: [
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0,
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+          }
+        ],
+        scrollTrigger: {
+          trigger: '.portfolio__title',
+          toggleActions: "restart pause play pause",
+        },
+      })
+
+      gsap.to('.portfolio__nav-bottom', {
+        keyframes: [
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0,
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+          }
+        ],
+        scrollTrigger: {
+          trigger: '.portfolio__nav-bottom',
+          toggleActions: "restart pause play pause",
+        },
+      })
+    },
+    portfolioInnerSectionAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to('.portfolio__title', {
+        keyframes: [
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0,
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+          }
+        ],
+        scrollTrigger: {
+          trigger: '.portfolio__title',
+          toggleActions: "restart pause play pause",
+        },
+      })
+
+      gsap.to('.portfolio__nav', {
+        keyframes: [
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0,
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+          }
+        ],
+        scrollTrigger: {
+          trigger: '.portfolio__nav',
+          toggleActions: "restart pause play pause",
+        },
+      })
+    },
+    cardAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll(".card").forEach((item, index) => {
+        gsap.to(item, {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: item,
+            toggleActions: "restart pause play pause",
+          },
+        });
+      })
+    },
+  },
 };

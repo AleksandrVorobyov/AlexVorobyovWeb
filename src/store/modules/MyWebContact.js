@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
     contactInfoDesc:
@@ -37,6 +39,48 @@ export default {
     formSuccessNotif: "Заявка успешно отправлена!",
     formDangerNotif: "Ошибка! Проверьте данные!",
     notification: true,
+  },
+  getters: {
+    validateEmail(state) {
+      var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+      return pattern.test(state.formAnswers.email);
+    },
+    neonContactTitle(state) {
+      return state.neonContactTitle;
+    },
+    contactInfoDesc(state) {
+      return state.contactInfoDesc;
+    },
+    contactTableList(state) {
+      return state.contactTableList;
+    },
+    formAnswers(state) {
+      return state.formAnswers;
+    },
+    formTheme(state) {
+      return state.formAnswers.theme;
+    },
+    formText(state) {
+      return state.formAnswers.text;
+    },
+    valideTheme(state) {
+      return state.formAnswers.theme.length > 5;
+    },
+    validEmail(state) {
+      return state.formAnswers.email;
+    },
+    validText(state) {
+      return state.formAnswers.text.length > 10;
+    },
+    notification(state) {
+      return state.notification;
+    },
+    formSuccessNotif(state) {
+      return state.formSuccessNotif;
+    },
+    formDangerNotif(state) {
+      return state.formDangerNotif;
+    },
   },
   mutations: {
     clearForm(state) {
@@ -166,11 +210,11 @@ export default {
           constructor(e, n) {
             if (
               ((this.uniforms = {}),
-              (this.program = t.createProgram()),
-              t.attachShader(this.program, e),
-              t.attachShader(this.program, n),
-              t.linkProgram(this.program),
-              !t.getProgramParameter(this.program, t.LINK_STATUS))
+                (this.program = t.createProgram()),
+                t.attachShader(this.program, e),
+                t.attachShader(this.program, n),
+                t.linkProgram(this.program),
+                !t.getProgramParameter(this.program, t.LINK_STATUS))
             )
               throw t.getProgramInfoLog(this.program);
             const r = t.getProgramParameter(this.program, t.ACTIVE_UNIFORMS);
@@ -187,16 +231,16 @@ export default {
           const r = t.createShader(e);
           if (
             (t.shaderSource(r, n),
-            t.compileShader(r),
-            !t.getShaderParameter(r, t.COMPILE_STATUS))
+              t.compileShader(r),
+              !t.getShaderParameter(r, t.COMPILE_STATUS))
           )
             throw t.getShaderInfoLog(r);
           return r;
         }
         const a = compileShader(
-            t.VERTEX_SHADER,
-            "\n    precision highp float;\n\n    attribute vec2 aPosition;\n    varying vec2 vUv;\n    varying vec2 vL;\n    varying vec2 vR;\n    varying vec2 vT;\n    varying vec2 vB;\n    uniform vec2 texelSize;\n\n    void main () {\n        vUv = aPosition * 0.5 + 0.5;\n        vL = vUv - vec2(texelSize.x, 0.0);\n        vR = vUv + vec2(texelSize.x, 0.0);\n        vT = vUv + vec2(0.0, texelSize.y);\n        vB = vUv - vec2(0.0, texelSize.y);\n        gl_Position = vec4(aPosition, 0.0, 1.0);\n    }\n"
-          ),
+          t.VERTEX_SHADER,
+          "\n    precision highp float;\n\n    attribute vec2 aPosition;\n    varying vec2 vUv;\n    varying vec2 vL;\n    varying vec2 vR;\n    varying vec2 vT;\n    varying vec2 vB;\n    uniform vec2 texelSize;\n\n    void main () {\n        vUv = aPosition * 0.5 + 0.5;\n        vL = vUv - vec2(texelSize.x, 0.0);\n        vR = vUv + vec2(texelSize.x, 0.0);\n        vT = vUv + vec2(0.0, texelSize.y);\n        vB = vUv - vec2(0.0, texelSize.y);\n        gl_Position = vec4(aPosition, 0.0, 1.0);\n    }\n"
+        ),
           u = compileShader(
             t.FRAGMENT_SHADER,
             "\n    precision mediump float;\n    precision mediump sampler2D;\n\n    varying highp vec2 vUv;\n    uniform sampler2D uTexture;\n    uniform float value;\n\n    void main () {\n        gl_FragColor = value * texture2D(uTexture, vUv);\n    }\n"
@@ -437,7 +481,7 @@ export default {
             N.bind(),
             t.uniform2f(N.uniforms.texelSize, 1 / E, 1 / S),
             i.supportLinearFiltering ||
-              t.uniform2f(N.uniforms.dyeTexelSize, 1 / E, 1 / S),
+            t.uniform2f(N.uniforms.dyeTexelSize, 1 / E, 1 / S),
             t.uniform1i(N.uniforms.uVelocity, _.read.texId),
             t.uniform1i(N.uniforms.uSource, _.read.texId),
             t.uniform1f(N.uniforms.dt, n),
@@ -446,7 +490,7 @@ export default {
             _.swap(),
             t.viewport(0, 0, D, y),
             i.supportLinearFiltering ||
-              t.uniform2f(N.uniforms.dyeTexelSize, 1 / D, 1 / y),
+            t.uniform2f(N.uniforms.dyeTexelSize, 1 / D, 1 / y),
             t.uniform1i(N.uniforms.uVelocity, _.read.texId),
             t.uniform1i(N.uniforms.uSource, A.read.texId),
             t.uniform1f(N.uniforms.dissipation, e.DENSITY_DISSIPATION),
@@ -503,9 +547,9 @@ export default {
               o = 1e3 * (Math.random() - 0.5);
             n &&
               ((r = canvas.width / 2),
-              (t = canvas.height / 2),
-              (i = 1e3 * (Math.random() - 0.5)),
-              (o = 1e3 * (Math.random() - 0.5))),
+                (t = canvas.height / 2),
+                (i = 1e3 * (Math.random() - 0.5)),
+                (o = 1e3 * (Math.random() - 0.5))),
               splat(r, t, i, o, e);
           }
         }
@@ -513,8 +557,8 @@ export default {
           (canvas.width == canvas.clientWidth &&
             canvas.height == canvas.clientHeight) ||
             ((canvas.width = canvas.clientWidth),
-            (canvas.height = canvas.clientHeight),
-            initFramebuffers());
+              (canvas.height = canvas.clientHeight),
+              initFramebuffers());
         }
         update();
         var my_dx = 0,
@@ -534,7 +578,7 @@ export default {
         function HSVtoRGB(e, n, r) {
           let t, i, o, a, u, v, l, f;
           switch (
-            ((v = r * (1 - n)),
+          ((v = r * (1 - n)),
             (l = r * (1 - (u = 6 * e - (a = Math.floor(6 * e))) * n)),
             (f = r * (1 - (1 - u) * n)),
             a % 6)
@@ -621,48 +665,6 @@ export default {
       state.notification = true
     },
   },
-  getters: {
-    validateEmail(state) {
-      var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-      return pattern.test(state.formAnswers.email);
-    },
-    neonContactTitle(state) {
-      return state.neonContactTitle;
-    },
-    contactInfoDesc(state) {
-      return state.contactInfoDesc;
-    },
-    contactTableList(state) {
-      return state.contactTableList;
-    },
-    formAnswers(state) {
-      return state.formAnswers;
-    },
-    formTheme(state) {
-      return state.formAnswers.theme;
-    },
-    formText(state) {
-      return state.formAnswers.text;
-    },
-    valideTheme(state) {
-      return state.formAnswers.theme.length > 5;
-    },
-    validEmail(state) {
-      return state.formAnswers.email;
-    },
-    validText(state) {
-      return state.formAnswers.text.length > 10;
-    },
-    notification(state) {
-      return state.notification;
-    },
-    formSuccessNotif(state) {
-      return state.formSuccessNotif;
-    },
-    formDangerNotif(state) {
-      return state.formDangerNotif;
-    },
-  },
   actions: {
     valideFormFunc({ commit, getters }) {
       if (getters.validEmail && getters.valideTheme && getters.validText) {
@@ -723,5 +725,27 @@ export default {
         }, 3000);
       }
     },
+    contactSectionAnim(state) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.contact-title', {
+        scrollTrigger: {
+          trigger: '.contact',
+          toggleActions: "restart pause play pause",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+      });
+
+      gsap.from('.contact-wrap', {
+        scrollTrigger: {
+          trigger: '.contact',
+          toggleActions: "restart pause play pause",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+      });
+    }
   },
 };
