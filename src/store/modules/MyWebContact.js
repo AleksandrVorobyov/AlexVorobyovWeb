@@ -729,8 +729,8 @@ export default {
       gsap.registerPlugin(ScrollTrigger);
       gsap.from('.contact-title', {
         scrollTrigger: {
-          trigger: '.contact',
-          toggleActions: "restart pause play pause",
+          trigger: '.contact-title',
+          toggleActions: "play pause play pause",
         },
         opacity: 0,
         y: 50,
@@ -739,8 +739,8 @@ export default {
 
       gsap.from('.contact-wrap', {
         scrollTrigger: {
-          trigger: '.contact',
-          toggleActions: "restart pause play pause",
+          trigger: '.contact-wrap',
+          toggleActions: "play pause play pause",
         },
         opacity: 0,
         y: 50,

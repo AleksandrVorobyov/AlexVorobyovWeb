@@ -1,14 +1,18 @@
 <template lang="pug">
-section#navigation.navigation
+section#navigation.navigation(ref="topDiv")
   .big-container
     my-web-night-mode
     .navigation-wrap
       h1.navigation__logo
-        router-link.logo(to="/") А<span>В</span>
+        router-link.logo(to="/", @click.native="scrollToTop()") А<span>В</span>
       nav.navigation__link-nav
         ul
           li(v-for="item in navLinks", :key="item")
-            router-link.nav(:to="item.link", :data-hover="item.text" @click="scrollToTop()") {{ item.text }}
+            router-link.nav(
+              :to="item.link",
+              :data-hover="item.text",
+              @click.native="scrollToTop()"
+            ) {{ item.text }}
       .navigation__social
         my-web-social-icon
       button#nav-burger-btn.navigation__burger(

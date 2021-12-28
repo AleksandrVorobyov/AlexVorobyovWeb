@@ -8,7 +8,6 @@ section.portfolio
           v-for="item in portfolioInnerMenu",
           :key="item.id",
           :class="item.labelClass",
-          @click="getCheck($event)"
           v-if="portfolioNavHidden"
         )
           input(
@@ -17,10 +16,14 @@ section.portfolio
             :id="item.id",
             :class="item.class",
             checked,
-            :data-menu="item.dataMenu"
+            :data-menu="item.dataMenu",
+            @click="getCheck($event), scrollToTop()"
           )
           span {{ item.text }}
-        .portfolio__dropdown.checked(:class="dropdownPortfolio.labelClass" v-if="!portfolioNavHidden")
+        .portfolio__dropdown.checked(
+          :class="dropdownPortfolio.labelClass",
+          v-if="!portfolioNavHidden"
+        )
           .portfolio__dropdown-active(@click="dropdown($event)") {{ dropdownPortfolio.text }}
           .portfolio__dropdown-list(v-if="!dropHidden")
             .portfolio__dropdown-item(@click="dropdownOption($event)")(
@@ -29,26 +32,26 @@ section.portfolio
               :class="item.labelClass",
               :data-menu="item.dataMenu"
             ) {{ item.text }}
-        .portfolio__card-inner
-          .project(
-            v-for="item in portfolioAll",
-            :key="item",
-            :class="item.allMenuClass"
+      .portfolio__card-inner(:data-portfolio-filter="portfolioInnerFilter")
+        .project(
+          v-for="item in portfolioAllFilter",
+          :key="item",
+          :class="item.allMenuClass"
+        )
+          my-web-card(
+            :link="'#'",
+            :src="item.cardSrc",
+            :alt="item.cardAlt",
+            :title="item.cardTitle",
+            :text="item.cardText",
+            :card-id="item.cardId"
           )
-            my-web-card(
-              :link="'#'",
-              :src="item.cardSrc",
-              :alt="item.cardAlt",
-              :title="item.cardTitle",
-              :text="item.cardText",
-              :card-id="item.cardId"
-            )
   .portfolio__background
 </template>
 
 <script>
 import MyWebCard from "./parts/MyWebCard.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   components: {
@@ -65,24 +68,29 @@ export default {
       "dropdownPortfolio",
       "dropHidden",
       "portfolioNavHidden",
+      "portfolioInnerFilter",
+      "portfolioAllFilter",
     ]),
   },
 
   methods: {
     loadCards() {
-      this.$store.commit("loadCards");
+      this.$store.dispatch("loadCards");
     },
     getCheck(event) {
-      this.$store.commit("getCheck", event);
+      this.$store.dispatch("getCheck", event);
     },
     dropdown(event) {
       this.$store.commit("dropdown", event);
     },
     dropdownOption(event) {
-      this.$store.commit("dropdownOption", event);
+      this.$store.dispatch("dropdownOption", event);
     },
     portfolioInnerSectionAnim() {
       this.$store.dispatch("portfolioInnerSectionAnim");
+    },
+    scrollToTop() {
+      this.$store.dispatch("scrollToTop");
     },
   },
   mounted() {
@@ -95,7 +103,13 @@ export default {
 <style lang="scss">
 .portfolio__nav {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
+  gap: 10px;
+  justify-content: space-evenly;
+  user-select: none;
+  z-index: 100;
 }
 
 .portfolio__card-inner {
@@ -103,6 +117,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 50px;
+  gap: 30px;
 
   @media (min-width: 1170px) {
     justify-content: start;
@@ -165,110 +180,12 @@ label.checked > [type="radio"] + span {
   border-bottom-color: var(--redCyber);
 }
 
-.project {
-  transition: all 0.3s linear;
-}
-
-.project.js,
-.project.html,
-.project.less,
-.project.pug,
-.project.vue,
-.project.scss {
-  opacity: 0;
-  transform: scale(0);
-  padding: 0;
-  margin: 0;
-  visibility: hidden;
-  border-width: 0;
-  width: 0;
-  height: 0;
-  display: none;
-}
-
-label.js.checked ~ .portfolio__card-inner .project.js,
-label.vue.checked ~ .portfolio__card-inner .project.vue,
-label.html.checked ~ .portfolio__card-inner .project.html,
-label.less.checked ~ .portfolio__card-inner .project.less,
-label.pug.checked ~ .portfolio__card-inner .project.pug,
-label.scss.checked ~ .portfolio__card-inner .project.scss,
-label.all.checked ~ .portfolio__card-inner .project.js,
-label.all.checked ~ .portfolio__card-inner .project.vue,
-label.all.checked ~ .portfolio__card-inner .project.html,
-label.all.checked ~ .portfolio__card-inner .project.less,
-label.all.checked ~ .portfolio__card-inner .project.pug,
-label.all.checked ~ .portfolio__card-inner .project.scss {
-  opacity: 1;
-  display: inline-block;
-  margin-bottom: 35px;
-  visibility: visible;
-  transform: scale(1);
-  transition: all 1.5s linear;
-  width: 100%;
-  height: auto;
-  animation: cards-anim 1.5s ease-in-out forwards;
-
-  @media (min-width: 400px) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  @media (min-width: 1020px) {
-    width: 480px;
-    height: 408px;
-  }
-
-  @media (min-width: 1170px) {
-    width: 360px;
-    height: 366px;
-  }
-}
-
-div.js.checked ~ .portfolio__card-inner .project.js,
-div.vue.checked ~ .portfolio__card-inner .project.vue,
-div.html.checked ~ .portfolio__card-inner .project.html,
-div.less.checked ~ .portfolio__card-inner .project.less,
-div.pug.checked ~ .portfolio__card-inner .project.pug,
-div.scss.checked ~ .portfolio__card-inner .project.scss,
-div.all.checked ~ .portfolio__card-inner .project.js,
-div.all.checked ~ .portfolio__card-inner .project.vue,
-div.all.checked ~ .portfolio__card-inner .project.html,
-div.all.checked ~ .portfolio__card-inner .project.less,
-div.all.checked ~ .portfolio__card-inner .project.pug,
-div.all.checked ~ .portfolio__card-inner .project.scss {
-  opacity: 1;
-  display: inline-block;
-  margin-bottom: 35px;
-  visibility: visible;
-  transform: scale(1);
-  transition: all 1.5s linear;
-  width: 100%;
-  height: auto;
-  animation: cards-anim 1.5s ease-in-out forwards;
-
-  @media (min-width: 400px) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  @media (min-width: 1020px) {
-    width: 480px;
-    height: 408px;
-  }
-
-  @media (min-width: 1170px) {
-    width: 360px;
-    height: 366px;
-  }
-}
-
 .portfolio__dropdown {
   position: relative;
   display: inline-block;
   min-width: 300px;
   min-height: 60px;
 }
-
 
 .portfolio__dropdown-active {
   padding: 15px 15px;
@@ -335,5 +252,18 @@ div.all.checked ~ .portfolio__card-inner .project.scss {
 
 .portfolio__dropdown-item:hover {
   background: var(--blueCyber);
+}
+
+.project {
+  transition: opacity 0.6s linear;
+
+  @media (max-width: 560px) {
+    width: 100%;
+  }
+}
+
+.project.hidden--on {
+  opacity: 0;
+  display: none;
 }
 </style>

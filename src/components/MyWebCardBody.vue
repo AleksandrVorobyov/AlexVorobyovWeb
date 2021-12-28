@@ -77,7 +77,7 @@ export default {
       this.$store.commit("loadActiveCard");
     },
     loadCards() {
-      this.$store.commit("loadCards");
+      this.$store.dispatch("loadCards");
     },
     mousedownSlide(event) {
       this.$store.commit("mousedownSlide", event);
@@ -89,7 +89,7 @@ export default {
       this.$store.dispatch("scrollToTop");
     },
     pushInServeActiveCard() {
-      this.$store.commit("pushInServeActiveCard");
+      this.$store.dispatch("pushInServeActiveCard");
     },
     slideUpdate() {
       this.$store.commit("slideUpdate");
@@ -109,11 +109,6 @@ export default {
   mounted() {
     this.loadCards();
     this.cardBodyAnim();
-  },
-  watch: {
-    slideCardKey() {
-      console.log("slideCardKey", this.slideCardKey);
-    },
   },
 };
 </script>

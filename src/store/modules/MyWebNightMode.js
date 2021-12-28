@@ -26,7 +26,4 @@ export default {
             console.log(state.nightMode);
         }
     },
-    modules: {
-
-      }
 }

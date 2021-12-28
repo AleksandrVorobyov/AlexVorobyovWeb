@@ -48,14 +48,7 @@ export default {
         timelineSectionAnim() {
             gsap.registerPlugin(ScrollTrigger);
 
-            var tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.timeline',
-                    toggleActions: "restart pause play pause",
-                },
-            });
-
-            let timelineItems = document.querySelectorAll('.timeline__column-item-text')
+            let timelineItems = gsap.utils.toArray('.timeline__column-item-text')
 
             gsap.from('.timeline__title', {
                 opacity: 0,
@@ -63,16 +56,20 @@ export default {
                 duration: 1.5,
                 y: 30,
                 scrollTrigger: {
-                    trigger: '.timeline',
-                    toggleActions: "restart pause play pause",
+                    trigger: '.timeline__title',
+                    toggleActions: "play pause play pause",
                 },
             })
 
             timelineItems.forEach((item, index) => {
-                tl.from(item, {
+                gsap.from(item, {
                     opacity: 0,
                     ease: "elastic",
-                    duration: 1,
+                    duration: 1.5,
+                    scrollTrigger: {
+                        trigger: item,
+                        toggleActions: "play pause play pause",
+                    },
                     x: () => {
                         if (index % 2 !== 0) {
                             return 100

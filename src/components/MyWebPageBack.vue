@@ -24,20 +24,21 @@ export default {
       this.$store.dispatch("scrollToTop");
     },
   },
-  created() {
+  mounted() {
+    if (!this.nightMode) {
+      this.createBg();
+    }
+
+    const pageLink = document.getElementById("page-link");
+    pageLink.style.opacity = "0";
+
     window.onscroll = function pageLinkScroll() {
-      const pageLink = document.getElementById("page-link");
       if (window.pageYOffset > 150) {
         pageLink.style.opacity = "1";
       } else {
         pageLink.style.opacity = "0";
       }
     };
-  },
-  mounted() {
-    if (!this.nightMode) {
-      this.createBg();
-    }
   },
 };
 </script>

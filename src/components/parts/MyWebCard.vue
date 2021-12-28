@@ -25,7 +25,7 @@ export default {
       this.$store.dispatch("scrollToTop");
     },
     pushInServeActiveCard() {
-      this.$store.commit("pushInServeActiveCard");
+      this.$store.dispatch("pushInServeActiveCard");
     },
     findCard(event) {
       this.$store.commit("findCard", {
@@ -55,6 +55,7 @@ export default {
   transition: border 0.5s ease-in-out;
   background: var(--white);
   z-index: 30;
+  user-select: none;
 
   &:hover {
     .card__title {
@@ -65,7 +66,7 @@ export default {
     }
   }
 
-  @media (min-width: 1020px) {
+  @media (min-width: 560px) {
     width: 480px;
   }
 
@@ -160,6 +161,7 @@ export default {
   padding-top: 20px;
   text-align: center;
   border-top: 6px solid var(--redCyber);
+  transition: border 0.5s ease-in-out;
 }
 
 .card__btn {

@@ -1,5 +1,5 @@
 <template lang="pug">
-section.header
+section.header#header
   .container
     .header-wrap
       .header__text

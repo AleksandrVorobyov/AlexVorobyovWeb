@@ -111,12 +111,11 @@ export default {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: '.header__text',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       });
 
-      let headerTextItems = document.querySelectorAll('.header__text > *')
-
+      let headerTextItems = gsap.utils.toArray('.header__text > *')
       tl.from(headerTextItems[0], {
         opacity: 0,
         y: 100,
@@ -144,7 +143,7 @@ export default {
         duration: 1.5,
         scrollTrigger: {
           trigger: '.header__avatar',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
 
@@ -154,7 +153,7 @@ export default {
         duration: 1.5,
         scrollTrigger: {
           trigger: '.header__slide',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
 
@@ -164,7 +163,7 @@ export default {
         duration: 1.5,
         scrollTrigger: {
           trigger: '.header__bg-item',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
     },

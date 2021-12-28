@@ -28,6 +28,7 @@ export default {
   transition: 0.5s;
   outline: none;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     transition-delay: 1.5s;

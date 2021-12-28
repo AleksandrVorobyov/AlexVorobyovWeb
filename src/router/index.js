@@ -24,7 +24,7 @@ const routes = [
         name: "Card",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/Card.vue"),
-          alias: '/project/card'
+        alias: '/project/card'
       },
     ],
   },

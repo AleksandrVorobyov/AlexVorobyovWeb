@@ -47,7 +47,7 @@ export default {
       this.$store.dispatch("scrollToTop");
     },
     loadCards() {
-      this.$store.commit("loadCards");
+      this.$store.dispatch("loadCards");
     },
     portfolioSectionAnim() {
       this.$store.dispatch("portfolioSectionAnim");
@@ -169,36 +169,11 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  @media (min-width: 1020px) {
-    flex-direction: row;
-  }
-}
-
-.portfolio__card .card {
+  gap: 30px;
   margin-bottom: 30px;
 
   @media (min-width: 1020px) {
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-left: 0;
-    &:nth-child(2n),
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 1170px) {
-    margin-right: 30px;
-    margin-bottom: 30px;
-    &:nth-child(3n) {
-      margin-right: 0 !important;
-    }
-
-    &:nth-child(2n),
-    &:last-child {
-      margin-right: 30px;
-    }
+    flex-direction: row;
   }
 }
 

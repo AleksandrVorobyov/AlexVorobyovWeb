@@ -35,7 +35,7 @@ export default {
       gsap.to('.navigation-wrap', {
         scrollTrigger: {
           trigger: '.navigation-wrap',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
         keyframes: [
           {

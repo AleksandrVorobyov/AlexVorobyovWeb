@@ -432,6 +432,25 @@ export default {
     color: var(--blueLinkHover);
     border-bottom-color: var(--yellowcolor);
   }
+
+  label > [type="radio"]:checked + span,
+  label > [type="radio"]:not(:checked) + span {
+    color: var(--black);
+    font-family: var(--fontRomanBold);
+    letter-spacing: 1px;
+
+    &:hover {
+      color: var(--blueLinkHover);
+      border-bottom-color: var(--yellowcolor);
+      text-shadow: 0px 0px 5px #313131;
+    }
+  }
+
+  label.checked > [type="radio"] + span {
+    color: var(--blueLinkHover);
+    border-bottom-color: var(--yellowcolor);
+    text-shadow: 0px 0px 5px #313131;
+  }
 }
 
 .night .timeline {

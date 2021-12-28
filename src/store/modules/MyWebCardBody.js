@@ -1,6 +1,19 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
+    state: {
+        slideCardKey: 0,
+    },
+    getters: {
+        slideCardKey(state) {
+            return state.slideCardKey;
+        },
+    },
+    mutations: {
+        slideUpdate(state) {
+            state.slideCardKey += 1;
+        },
+    },
     actions: {
         cardBodyAnim() {
             gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +31,7 @@ export default {
                 ],
                 scrollTrigger: {
                     trigger: '.card-post__nav',
-                    toggleActions: "restart pause play pause",
+                    toggleActions: "play pause play pause",
                 },
             });
             gsap.to('.card-post__content-desc', {
@@ -35,7 +48,7 @@ export default {
                 ],
                 scrollTrigger: {
                     trigger: '.card-post__content-desc',
-                    toggleActions: "restart pause play pause",
+                    toggleActions: "play pause play pause",
                 },
             });
             gsap.to('.card-post__content-carousel', {
@@ -52,7 +65,7 @@ export default {
                 ],
                 scrollTrigger: {
                     trigger: '.card-post__content-carousel',
-                    toggleActions: "restart pause play pause",
+                    toggleActions: "play pause play pause",
                 },
             });
             gsap.to('.card-post__pagination', {
@@ -69,7 +82,7 @@ export default {
                 ],
                 scrollTrigger: {
                     trigger: '.card-post__pagination',
-                    toggleActions: "restart pause play pause",
+                    toggleActions: "play pause play pause",
                 },
             });
         },

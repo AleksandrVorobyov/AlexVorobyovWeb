@@ -19,8 +19,7 @@ export default createStore({
   actions: {
     scrollToTop() {
       setTimeout(() => {
-        const page = document.getElementById('page');
-        smoothScroll(page, 100, 1500)
+        smoothScroll(document.getElementById('navigation'), 100, 1500)
       }, 300);
     },
     scrollToTimeline() {

@@ -31,7 +31,7 @@ export default {
           gsap.from('.footer-wrap', {
             scrollTrigger: {
               trigger: '.footer',
-              toggleActions: "restart pause play pause",
+              toggleActions: "play pause play pause",
             },
             opacity: 0,
             y: 50,
@@ -43,7 +43,7 @@ export default {
           gsap.from('.footer-inner-column', {
             scrollTrigger: {
               trigger: '.footer-inner',
-              toggleActions: "restart pause play pause",
+              toggleActions: "play pause play pause",
             },
             opacity: 0,
             y: 50,

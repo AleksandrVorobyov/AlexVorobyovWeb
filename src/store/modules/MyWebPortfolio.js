@@ -23,9 +23,10 @@ export default {
       {
         id: "project",
         class: "checkbox-all",
-        dataMenu: "project",
+        dataMenu: "all",
         text: "Все работы",
         labelClass: "checked all",
+        data: 'all',
       },
       {
         id: "html",
@@ -33,6 +34,7 @@ export default {
         dataMenu: "html",
         text: "HTML/CSS",
         labelClass: "html",
+        data: 'html',
       },
       {
         id: "less",
@@ -40,6 +42,7 @@ export default {
         dataMenu: "less",
         text: "HTML/LESS",
         labelClass: "less",
+        data: 'less',
       },
       {
         id: "scss",
@@ -47,6 +50,7 @@ export default {
         dataMenu: "scss",
         text: "HTML/SCSS",
         labelClass: "scss",
+        data: 'scss',
       },
       {
         id: "pug",
@@ -54,6 +58,7 @@ export default {
         dataMenu: "pug",
         text: "PUG/SCSS",
         labelClass: "pug",
+        data: 'pug',
       },
       {
         id: "js",
@@ -61,6 +66,7 @@ export default {
         dataMenu: "js",
         text: "JS",
         labelClass: "js",
+        data: 'js',
       },
       {
         id: "vue",
@@ -68,6 +74,7 @@ export default {
         dataMenu: "vue",
         text: "Vue",
         labelClass: "vue",
+        data: 'vue',
       },
     ],
     localActive: true,
@@ -80,7 +87,8 @@ export default {
     },
     dropHidden: true,
     portfolioNavHidden: true,
-    slideCardKey: 0,
+    portfolioInnerFilter: "all",
+    portfolioAllFilter: [],
   },
   getters: {
     localActive(state) {
@@ -120,8 +128,11 @@ export default {
         return state.portfolioNavHidden = false
       }
     },
-    slideCardKey(state) {
-      return state.slideCardKey;
+    portfolioInnerFilter(state) {
+      return state.portfolioInnerFilter;
+    },
+    portfolioAllFilter(state) {
+      return state.portfolioAllFilter;
     },
   },
   mutations: {
@@ -142,42 +153,6 @@ export default {
       );
       state.localActive = false;
       state.activeCard = newCard;
-    },
-    async loadCards(state) {
-      const res = await fetch(
-        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
-      );
-      state.portfolioAll = await res.json();
-      state.portfolioAll.forEach((item, index) => {
-        item.idx = index
-      })
-    },
-    getCheck(_, event) {
-      const navPort = document.querySelector(".portfolio__nav");
-      navPort.querySelectorAll("label").forEach((item) => {
-        item.classList.remove("checked");
-      });
-      event.target.closest("label").classList.add("checked");
-    },
-    async pushInServeActiveCard(state) {
-      const data = state.activeCard;
-      const url =
-        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/activeCard/0.json";
-      const responsedel = await fetch(url, {
-        method: "DELETE",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      localStorage.setItem("activeCard", JSON.stringify(data));
     },
     loadActiveCard(state, payload) {
       state.activeCard = JSON.parse(localStorage.getItem("activeCard"));
@@ -217,19 +192,22 @@ export default {
     dropdown(state, event) {
       state.dropHidden = !state.dropHidden;
     },
-    dropdownOption(state, event) {
-      const newDrop = event.target.getAttribute("data-menu");
-      const inner = state.portfolioInnerMenu.find(
-        (e) => e.dataMenu === newDrop
-      );
-      state.dropdownPortfolio.text = inner.text;
-      state.dropdownPortfolio.class = inner.class;
-      state.dropdownPortfolio.labelClass = inner.labelClass;
-      state.dropHidden = !state.dropHidden;
-    },
-    slideUpdate(state) {
-      state.slideCardKey += 1;
-    },
+    checkForFilter(state) {
+      state.portfolioAllFilter = []
+
+      if (state.portfolioInnerFilter != 'all') {
+        state.portfolioAll.forEach((item) => {
+          let thisItem = item;
+          item.allMenuClass.forEach((elem) => {
+            if (elem === state.portfolioInnerFilter) {
+              state.portfolioAllFilter.push(thisItem)
+            }
+          })
+        })
+      } else {
+        state.portfolioAllFilter = state.portfolioAll
+      }
+    }
   },
   actions: {
     portfolioSectionAnim() {
@@ -249,7 +227,7 @@ export default {
         ],
         scrollTrigger: {
           trigger: '.portfolio__title',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
 
@@ -267,7 +245,7 @@ export default {
         ],
         scrollTrigger: {
           trigger: '.portfolio__nav-bottom',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
     },
@@ -288,7 +266,7 @@ export default {
         ],
         scrollTrigger: {
           trigger: '.portfolio__title',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
 
@@ -306,31 +284,92 @@ export default {
         ],
         scrollTrigger: {
           trigger: '.portfolio__nav',
-          toggleActions: "restart pause play pause",
+          toggleActions: "play pause play pause",
         },
       })
     },
     cardAnim() {
       gsap.registerPlugin(ScrollTrigger);
-      document.querySelectorAll(".card").forEach((item, index) => {
-        gsap.to(item, {
-          keyframes: [
-            {
-              opacity: 0,
-              y: 50,
-              duration: 0,
-            }, {
-              opacity: 1,
-              y: 0,
-              duration: 1.5,
-            }
-          ],
-          scrollTrigger: {
-            trigger: item,
-            toggleActions: "restart pause play pause",
-          },
-        });
+      let allCards = gsap.utils.toArray('.card')
+      gsap.to(allCards, {
+        keyframes: [
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0,
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+          }
+        ],
+        scrollTrigger: {
+          trigger: allCards,
+          start: "-1000",
+          end: "500",
+        },
+      });
+    },
+    async loadCards({ state, commit }) {
+      const res = await fetch(
+        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
+      );
+      state.portfolioAll = await res.json();
+      state.portfolioAll.forEach((item, index) => {
+        item.idx = index
       })
+
+      commit('checkForFilter')
+
+      if (document.querySelector('.portfolio__nav')) {
+        document.querySelectorAll('.portfolio__nav label').forEach((item) => {
+          if (item.querySelector('input').getAttribute('data-menu') === state.portfolioInnerFilter) {
+            item.classList.add('checked')
+          } else {
+            item.classList.remove('checked')
+          }
+        })
+      }
+    },
+    async pushInServeActiveCard({ state }) {
+      const data = state.activeCard;
+      const url =
+        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/activeCard/0.json";
+      const responsedel = await fetch(url, {
+        method: "DELETE",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      localStorage.setItem("activeCard", JSON.stringify(data));
+    },
+    getCheck({ state, commit }, event) {
+      state.portfolioInnerFilter = event.target.getAttribute('data-menu');
+      document.querySelectorAll('.portfolio__nav label').forEach((item) => {
+        item.classList.remove('checked')
+      })
+      event.target.closest('label').classList.add('checked')
+      commit('checkForFilter')
+    },
+    dropdownOption({ state, commit }, event) {
+      const newDrop = event.target.getAttribute("data-menu");
+      const inner = state.portfolioInnerMenu.find(
+        (e) => e.dataMenu === newDrop
+      );
+      state.dropdownPortfolio.text = inner.text;
+      state.dropdownPortfolio.class = inner.class;
+      state.dropdownPortfolio.labelClass = inner.labelClass;
+      state.dropHidden = !state.dropHidden;
+      state.portfolioInnerFilter = inner.dataMenu;
+      commit('checkForFilter')
     },
   },
 };
