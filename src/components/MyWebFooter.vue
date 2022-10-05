@@ -24,13 +24,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .footer {
   position: relative;
-  padding: 30px 15px 40px;
+  padding: 20px 0;
   background-color: rgba(51, 51, 51, 0.5);
   overflow: hidden;
   z-index: 200;
+
+  @media (min-width: 768px) {
+    padding: 30px 15px 40px;
+  }
 
   &::before {
     content: "";
@@ -45,46 +49,42 @@ export default {
 
 .footer__title {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 26px;
   font-weight: 700;
   font-family: var(--fontRomanBold);
   color: var(--white);
-  line-height: 1.2;
   text-align: center;
 
-  @media (min-width: 400px) {
+  @media (min-width: 768px) {
     font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
+    line-height: 28px;
   }
 
   @media (min-width: 1170px) {
     text-align: left;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 26px;
   }
 }
 
 .footer__subtitle {
   font-size: 18px;
+  line-height: 22px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--white);
-  line-height: 1.2;
   text-align: center;
 
-  @media (min-width: 400px) {
+  @media (min-width: 768px) {
     font-size: 22px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 26px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     text-align: left;
     font-size: 18px;
+    line-height: 22px;
   }
 }
 </style>

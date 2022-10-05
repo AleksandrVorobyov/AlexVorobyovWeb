@@ -10,9 +10,6 @@
 import { mapGetters } from "vuex";
 
 export default {
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(["up", "pageBackImg", "nightMode"]),
   },
@@ -43,7 +40,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page__club {
   position: fixed;
   top: 0;
@@ -65,17 +62,21 @@ export default {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: url("https://firebasestorage.googleapis.com/v0/b/myportfolio-92ca1.appspot.com/o/snow-bg.jpg?alt=media&token=2bfb19e2-88fb-4b03-8b35-9dc50127aeb7")
-    top left / cover no-repeat;
+  background: var(--pageBg) top left / cover no-repeat;
 
   @media (min-width: 1170px) {
-    &::before {
+    &::before,
+    &::after {
       position: fixed;
       top: 0px;
-      left: 0%;
       content: "";
       height: 100%;
       width: 150px;
+      z-index: 50;
+    }
+
+    &::before {
+      left: 0%;
       background: -webkit-gradient(
         linear,
         left bottom,
@@ -93,16 +94,10 @@ export default {
         rgba(255, 255, 255, 0) 30%,
         var(--black) 100%
       );
-      z-index: 50;
     }
 
     &::after {
-      position: fixed;
-      top: 0px;
       right: 0%;
-      content: "";
-      height: 100%;
-      width: 150px;
       background: -webkit-gradient(
         linear,
         left bottom,
@@ -120,7 +115,6 @@ export default {
         rgba(255, 255, 255, 0) 30%,
         var(--black) 100%
       );
-      z-index: 50;
     }
   }
 }
@@ -143,7 +137,7 @@ export default {
   z-index: 500;
   transition: opacity 0.5s linear;
 
-  @media (min-width: 720px) {
+  @media (min-width: 768px) {
     animation: rocket 10s linear 1s infinite alternate;
     transform: rotate(-90deg);
     right: 60px;
@@ -153,11 +147,6 @@ export default {
   @media (min-width: 1170px) {
     left: 60px;
     right: auto;
-  }
-
-  @media (min-width: 1400px) {
-    bottom: 80px;
-    left: 40px;
   }
 
   button {
@@ -179,7 +168,7 @@ export default {
     border: 2px solid var(--redCyber);
     cursor: pointer;
 
-    @media (min-width: 720px) {
+    @media (min-width: 768px) {
       display: inline-block;
       width: auto;
       height: auto;
@@ -194,31 +183,32 @@ export default {
     color: var(--redCyber);
   }
 
-  &::before {
+  &::before,
+  &::after {
     position: absolute;
     display: none;
+    content: "";
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &::before {
     bottom: -10px;
     right: -145%;
-    content: "";
     border-left: 36px solid var(--yellowcolor);
     border-top: 36px solid transparent;
     border-bottom: 36px solid transparent;
     border-right: 36px solid transparent;
     transform: translateX(-100%);
     z-index: 10;
-    cursor: pointer;
-
-    @media (min-width: 720px) {
-      display: block;
-    }
   }
 
   &::after {
-    position: absolute;
-    display: none;
     bottom: 0;
     left: -50%;
-    content: "";
     height: 0;
     width: 40px;
     border-bottom: 40px solid var(--redCyber);
@@ -226,11 +216,6 @@ export default {
     border-right: 15px solid transparent;
     transform: rotate(90deg) translate(-5px, -6px);
     z-index: -1;
-    cursor: pointer;
-
-    @media (min-width: 720px) {
-      display: block;
-    }
   }
 }
 </style>

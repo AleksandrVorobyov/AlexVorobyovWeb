@@ -44,8 +44,7 @@ export default {
 
 <style lang="scss">
 .card {
-  width: 100%;
-  max-width: 480px;
+  width: 360px;
   position: relative;
   display: inline-block;
   text-decoration: none;
@@ -65,45 +64,17 @@ export default {
       text-shadow: 1px 1px 2px var(--black), 0 0 1em var(--black);
     }
   }
-
-  @media (min-width: 560px) {
-    width: 480px;
-  }
-
-  @media (min-width: 1170px) {
-    width: 360px;
-  }
 }
 
 .card__img-wrap {
   position: relative;
-  height: 200px;
+  height: 260px;
   width: 100%;
   perspective: 900px;
   z-index: 30;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../assets/img/card/bg/card-bg.jpg") center center / cover no-repeat;
   border-radius: 38px 38px 0 0;
-
-  @media (min-width: 400px) {
-    height: 250px;
-  }
-
-  @media (min-width: 440px) {
-    height: 300px;
-  }
-
-  @media (min-width: 600px) {
-    height: 360px;
-  }
-
-  @media (min-width: 1020px) {
-    height: 280px;
-  }
-
-  @media (min-width: 1170px) {
-    height: 260px;
-  }
 
   img {
     position: absolute;
@@ -112,14 +83,6 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    @media (min-width: 1020px) {
-      height: 280px;
-    }
-
-    @media (min-width: 1170px) {
-      height: 260px;
-    }
   }
 
   figure {
@@ -158,10 +121,17 @@ export default {
 }
 
 .card__text {
-  padding-top: 20px;
+  display: grid;
+  padding: 10px 0;
+  gap: 10px;
   text-align: center;
   border-top: 6px solid var(--redCyber);
   transition: border 0.5s ease-in-out;
+
+  @media (min-width: 768px) {
+    padding: 20px 0;
+    gap: 20px;
+  }
 }
 
 .card__btn {
@@ -185,7 +155,7 @@ export default {
     0 0 40px var(--blueLinkHover), 0 0 60px var(--blueLinkHover);
   border: none;
 
-  @media (min-width: 440px) {
+  @media (min-width: 480px) {
     font-size: 34px;
     line-height: 34px;
   }
@@ -193,31 +163,17 @@ export default {
 
 .card__title {
   font-size: 26px;
+  line-height: 30px;
   font-family: var(--fontRomanBold);
   color: var(--black);
   font-weight: bold;
-
-  @media (min-width: 600px) {
-    font-size: 30px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 26px;
-  }
 }
 
 .card__subtitle {
   font-size: 18px;
+  line-height: 22px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--black);
-
-  @media (min-width: 600px) {
-    font-size: 30px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 20px;
-  }
 }
 </style>

@@ -2,40 +2,48 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
-    contactInfoDesc:
-      "Если вы ищите специалиста по верстке сайтов, front-end разработчика в команду или для работы над проектом —  напишите мне.",
-    contactTableList: [
-      {
-        text: "Email",
-        title: "sasha89253215539@yandex.ru",
-        link: "sasha89253215539@yandex.ru",
-        linkTipy: "mailto:",
+    contact: {
+      title: "Оставьте заявку",
+      neonContactTitle: "<span>К</span>он<span>так</span>т<span>ы</span>",
+      btnSubmit: {
+        type: "submit",
+        text: "Отправить",
+        id: "buttonFormSubmit",
       },
-      {
-        text: "Skype",
-        title: "nevrus2010",
-        link: "nevrus2010?call",
-        linkTipy: "skype:",
-      },
-      {
-        text: "Телефон",
-        title: "+7 (925) 321-55-39",
-        link: "+79253215539",
-        linkTipy: "tel:",
-      },
-      {
-        text: "Адрес",
-        title: "Россия, Москва",
-        link: "#",
-        linkTipy: "",
-      },
-    ],
+      contactInfoDesc:
+        "Если вы ищите специалиста по верстке сайтов, front-end разработчика в команду или для работы над проектом —  напишите мне.",
+      contactTableList: [
+        {
+          text: "Email",
+          title: "sasha89253215539@yandex.ru",
+          link: "sasha89253215539@yandex.ru",
+          linkTipy: "mailto:",
+        },
+        {
+          text: "Skype",
+          title: "nevrus2010",
+          link: "nevrus2010?call",
+          linkTipy: "skype:",
+        },
+        {
+          text: "Телефон",
+          title: "+7 (925) 321-55-39",
+          link: "+79253215539",
+          linkTipy: "tel:",
+        },
+        {
+          text: "Адрес",
+          title: "Россия, Москва",
+          link: "#",
+          linkTipy: "",
+        },
+      ],
+    },
     formAnswers: {
       email: "",
       theme: "",
       text: "",
     },
-    neonContactTitle: "<span>К</span>он<span>так</span>т<span>ы</span>",
     formSuccessNotif: "Заявка успешно отправлена!",
     formDangerNotif: "Ошибка! Проверьте данные!",
     notification: true,
@@ -45,14 +53,8 @@ export default {
       var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
       return pattern.test(state.formAnswers.email);
     },
-    neonContactTitle(state) {
-      return state.neonContactTitle;
-    },
-    contactInfoDesc(state) {
-      return state.contactInfoDesc;
-    },
-    contactTableList(state) {
-      return state.contactTableList;
+    contact(state) {
+      return state.contact;
     },
     formAnswers(state) {
       return state.formAnswers;
@@ -726,26 +728,28 @@ export default {
       }
     },
     contactSectionAnim(state) {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.from('.contact-title', {
-        scrollTrigger: {
-          trigger: '.contact-title',
-          toggleActions: "play pause play pause",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-      });
+      if (window.innerWidth >= 768) {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.contact-title', {
+          scrollTrigger: {
+            trigger: '.contact-title',
+            toggleActions: "play pause play pause",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1.5,
+        });
 
-      gsap.from('.contact-wrap', {
-        scrollTrigger: {
-          trigger: '.contact-wrap',
-          toggleActions: "play pause play pause",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-      });
+        gsap.from('.contact-wrap', {
+          scrollTrigger: {
+            trigger: '.contact-wrap',
+            toggleActions: "play pause play pause",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1.5,
+        });
+      }
     }
   },
 };

@@ -46,40 +46,41 @@ export default {
     },
     actions: {
         timelineSectionAnim() {
-            gsap.registerPlugin(ScrollTrigger);
+            if (window.innerWidth >= 768) {
+                gsap.registerPlugin(ScrollTrigger);
 
-            let timelineItems = gsap.utils.toArray('.timeline__column-item-text')
+                let timelineItems = gsap.utils.toArray('.timeline__row-text')
 
-            gsap.from('.timeline__title', {
-                opacity: 0,
-                ease: "elastic",
-                duration: 1.5,
-                y: 30,
-                scrollTrigger: {
-                    trigger: '.timeline__title',
-                    toggleActions: "play pause play pause",
-                },
-            })
-
-            timelineItems.forEach((item, index) => {
-                gsap.from(item, {
+                gsap.from('.timeline__title', {
                     opacity: 0,
                     ease: "elastic",
                     duration: 1.5,
+                    y: 30,
                     scrollTrigger: {
-                        trigger: item,
+                        trigger: '.timeline__title',
                         toggleActions: "play pause play pause",
                     },
-                    x: () => {
-                        if (index % 2 !== 0) {
-                            return 100
-                        } else {
-                            return -100
-                        }
-                    },
-                });
-            })
+                })
 
+                timelineItems.forEach((item, index) => {
+                    gsap.from(item, {
+                        opacity: 0,
+                        ease: "elastic",
+                        duration: 1.5,
+                        scrollTrigger: {
+                            trigger: item,
+                            toggleActions: "play pause play pause",
+                        },
+                        x: () => {
+                            if (index % 2 !== 0) {
+                                return 100
+                            } else {
+                                return -100
+                            }
+                        },
+                    });
+                })
+            }
         },
     }
 }

@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  name: "",
   props: {
     linkProjectTitle: String,
     linkProjectItem: Array,
@@ -16,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .link-project {
   margin-bottom: 50px;
 }
@@ -25,23 +24,11 @@ export default {
   display: inline-block;
   margin-bottom: 30px;
   font-size: 26px;
+  line-height: 30px;
   font-weight: 700;
   font-family: var(--fontRomanBold);
   color: var(--white);
-  line-height: 1.2;
   border-bottom: 8px solid var(--redCyber);
-
-  @media (min-width: 480px) {
-    font-size: 32px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 44px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 26px;
-  }
 }
 
 .link-project-item {
@@ -72,32 +59,16 @@ export default {
 
 .link-project-item a {
   font-size: 20px;
+  line-height: 24px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--yellowcolor);
   text-decoration: underline;
-  line-height: 1.2;
   transition: 0.3s ease-in-out;
-
-  @media (min-width: 480px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 18px;
-  }
 }
 
 .link-project-item .fa-2x {
-  font-size: 3em;
-
-  @media (min-width: 1170px) {
-    font-size: 2em;
-  }
+  font-size: 2em;
 }
 
 .link-project-item svg {

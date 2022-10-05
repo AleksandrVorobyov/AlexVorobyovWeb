@@ -2,6 +2,75 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
+    portfolio: {
+      neonPortfolioTitle: "По<span>рт</span>фо<span>ли</span>о",
+      btn: {
+        type: "button",
+        id: "portfolioBtn",
+        text: "Открыть все работы",
+        link: "/project"
+      }
+    },
+    portfolioInner: {
+      menu: [
+        {
+          id: "project",
+          class: "checkbox-all",
+          dataMenu: "all",
+          text: "Все работы",
+          labelClass: "checked all",
+          data: 'all',
+        },
+        {
+          id: "html",
+          class: "checkbox-html",
+          dataMenu: "html",
+          text: "HTML/CSS",
+          labelClass: "html",
+          data: 'html',
+        },
+        {
+          id: "less",
+          class: "checkbox-less",
+          dataMenu: "less",
+          text: "HTML/LESS",
+          labelClass: "less",
+          data: 'less',
+        },
+        {
+          id: "scss",
+          class: "checkbox-scss",
+          dataMenu: "scss",
+          text: "HTML/SCSS",
+          labelClass: "scss",
+          data: 'scss',
+        },
+        {
+          id: "pug",
+          class: "checkbox-pug",
+          dataMenu: "pug",
+          text: "PUG/SCSS",
+          labelClass: "pug",
+          data: 'pug',
+        },
+        {
+          id: "js",
+          class: "checkbox-js",
+          dataMenu: "js",
+          text: "JS",
+          labelClass: "js",
+          data: 'js',
+        },
+        {
+          id: "vue",
+          class: "checkbox-vue",
+          dataMenu: "vue",
+          text: "Vue",
+          labelClass: "vue",
+          data: 'vue',
+        },
+      ],
+    },
     portfolioAll: [],
     activeCard: {},
     projectSlide: {
@@ -18,65 +87,6 @@ export default {
       gap: 10,
       fixedHeight: 750,
     },
-    neonPortfolioTitle: "По<span>рт</span>фо<span>ли</span>о",
-    portfolioInnerMenu: [
-      {
-        id: "project",
-        class: "checkbox-all",
-        dataMenu: "all",
-        text: "Все работы",
-        labelClass: "checked all",
-        data: 'all',
-      },
-      {
-        id: "html",
-        class: "checkbox-html",
-        dataMenu: "html",
-        text: "HTML/CSS",
-        labelClass: "html",
-        data: 'html',
-      },
-      {
-        id: "less",
-        class: "checkbox-less",
-        dataMenu: "less",
-        text: "HTML/LESS",
-        labelClass: "less",
-        data: 'less',
-      },
-      {
-        id: "scss",
-        class: "checkbox-scss",
-        dataMenu: "scss",
-        text: "HTML/SCSS",
-        labelClass: "scss",
-        data: 'scss',
-      },
-      {
-        id: "pug",
-        class: "checkbox-pug",
-        dataMenu: "pug",
-        text: "PUG/SCSS",
-        labelClass: "pug",
-        data: 'pug',
-      },
-      {
-        id: "js",
-        class: "checkbox-js",
-        dataMenu: "js",
-        text: "JS",
-        labelClass: "js",
-        data: 'js',
-      },
-      {
-        id: "vue",
-        class: "checkbox-vue",
-        dataMenu: "vue",
-        text: "Vue",
-        labelClass: "vue",
-        data: 'vue',
-      },
-    ],
     localActive: true,
     paginationPrev: "Предыдущий проект",
     paginationNext: "Следующий проект",
@@ -91,6 +101,9 @@ export default {
     portfolioAllFilter: [],
   },
   getters: {
+    portfolio(state) {
+      return state.portfolio;
+    },
     localActive(state) {
       return state.localActive;
     },
@@ -103,11 +116,8 @@ export default {
     projectSlide(state) {
       return state.projectSlide;
     },
-    neonPortfolioTitle(state) {
-      return state.neonPortfolioTitle;
-    },
-    portfolioInnerMenu(state) {
-      return state.portfolioInnerMenu;
+    portfolioInner(state) {
+      return state.portfolioInner;
     },
     paginationPrev(state) {
       return state.paginationPrev;
@@ -211,104 +221,110 @@ export default {
   },
   actions: {
     portfolioSectionAnim() {
-      gsap.registerPlugin(ScrollTrigger);
+      if (window.innerWidth >= 768) {
+        gsap.registerPlugin(ScrollTrigger);
 
-      gsap.to('.portfolio__title', {
-        keyframes: [
-          {
-            opacity: 0,
-            y: 50,
-            duration: 0,
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-          }
-        ],
-        scrollTrigger: {
-          trigger: '.portfolio__title',
-          toggleActions: "play pause play pause",
-        },
-      })
+        gsap.to('.portfolio__title', {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: '.portfolio__title',
+            toggleActions: "play pause play pause",
+          },
+        })
 
-      gsap.to('.portfolio__nav-bottom', {
-        keyframes: [
-          {
-            opacity: 0,
-            y: 50,
-            duration: 0,
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-          }
-        ],
-        scrollTrigger: {
-          trigger: '.portfolio__nav-bottom',
-          toggleActions: "play pause play pause",
-        },
-      })
+        gsap.to('.portfolio__btn', {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: '.portfolio__btn',
+            toggleActions: "play pause play pause",
+          },
+        })
+      }
     },
     portfolioInnerSectionAnim() {
-      gsap.registerPlugin(ScrollTrigger);
+      if (window.innerWidth >= 768) {
+        gsap.registerPlugin(ScrollTrigger);
 
-      gsap.to('.portfolio__title', {
-        keyframes: [
-          {
-            opacity: 0,
-            y: 50,
-            duration: 0,
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-          }
-        ],
-        scrollTrigger: {
-          trigger: '.portfolio__title',
-          toggleActions: "play pause play pause",
-        },
-      })
+        gsap.to('.portfolio__title', {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: '.portfolio__title',
+            toggleActions: "play pause play pause",
+          },
+        })
 
-      gsap.to('.portfolio__nav', {
-        keyframes: [
-          {
-            opacity: 0,
-            y: 50,
-            duration: 0,
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-          }
-        ],
-        scrollTrigger: {
-          trigger: '.portfolio__nav',
-          toggleActions: "play pause play pause",
-        },
-      })
+        gsap.to('.portfolio__nav', {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: '.portfolio__nav',
+            toggleActions: "play pause play pause",
+          },
+        })
+      }
     },
     cardAnim() {
-      gsap.registerPlugin(ScrollTrigger);
-      let allCards = gsap.utils.toArray('.card')
-      gsap.to(allCards, {
-        keyframes: [
-          {
-            opacity: 0,
-            y: 50,
-            duration: 0,
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-          }
-        ],
-        scrollTrigger: {
-          trigger: allCards,
-          start: "-1000",
-          end: "500",
-        },
-      });
+      if (window.innerWidth >= 768) {
+        gsap.registerPlugin(ScrollTrigger);
+        let allCards = gsap.utils.toArray('.card')
+        gsap.to(allCards, {
+          keyframes: [
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0,
+            }, {
+              opacity: 1,
+              y: 0,
+              duration: 1.5,
+            }
+          ],
+          scrollTrigger: {
+            trigger: allCards,
+            start: "-1000",
+            end: "500",
+          },
+        });
+      }
     },
     async loadCards({ state, commit }) {
       const res = await fetch(
@@ -319,10 +335,10 @@ export default {
         item.idx = index
       })
 
-      commit('checkForFilter')
+      await commit('checkForFilter')
 
       if (document.querySelector('.portfolio__nav')) {
-        document.querySelectorAll('.portfolio__nav label').forEach((item) => {
+        await document.querySelectorAll('.portfolio__nav label').forEach((item) => {
           if (item.querySelector('input').getAttribute('data-menu') === state.portfolioInnerFilter) {
             item.classList.add('checked')
           } else {
@@ -330,6 +346,7 @@ export default {
           }
         })
       }
+      return
     },
     async pushInServeActiveCard({ state }) {
       const data = state.activeCard;
@@ -361,7 +378,7 @@ export default {
     },
     dropdownOption({ state, commit }, event) {
       const newDrop = event.target.getAttribute("data-menu");
-      const inner = state.portfolioInnerMenu.find(
+      const inner = state.portfolioInner.find(
         (e) => e.dataMenu === newDrop
       );
       state.dropdownPortfolio.text = inner.text;

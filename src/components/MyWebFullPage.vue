@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .full-page {
   display: block;
   position: fixed;
@@ -45,7 +45,7 @@ export default {
   padding: 10px;
   cursor: zoom-out;
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     padding: 50px;
   }
 

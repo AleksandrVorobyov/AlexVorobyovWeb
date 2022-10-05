@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page__notification {
   display: none;
 }
@@ -28,11 +28,11 @@ export default {
 }
 
 .page__notification-active {
-  background: rgba(104, 255, 104, 0.9);
+  background: var(--notificationSuccess);
 }
 
 .page__notification-danger {
-  background: rgba(255, 67, 67, 0.9);
+  background: var(--notificationError);
 }
 
 .page__notification-active::before,

@@ -13,23 +13,20 @@ aside#sidebar.sidebar
           router-link.sidebar__links-item-link(:to="item.link" @click="burgerActiveMet(), showDialog()")
             span {{ item.text }}
     .sidebar__social
-      my-web-social-icon
+      MyWebSocialIcon
     .sidebar__btn
-      my-web-night-mode
+      MyWebNightMode
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
 import MyWebNightMode from "./parts/MyWebNightMode.vue";
-import { mapGetters } from "vuex";
 
 export default {
   components: {
     MyWebSocialIcon,
     MyWebNightMode,
-  },
-  data() {
-    return {};
   },
   computed: {
     ...mapGetters(["sidebarLinks", "sidebarTitle", "sidebarBg"]),
@@ -53,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sidebar {
   position: fixed;
   top: 200px;
@@ -139,8 +136,8 @@ export default {
   width: 100%;
   background: var(--redCyber50);
   text-decoration: none;
-
   font-size: 26px;
+  line-height: 30px;
   font-family: var(--fontNeon);
   font-weight: 400;
   color: var(--white);
@@ -149,37 +146,7 @@ export default {
 .sidebar__social {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-}
-
-.sidebar__social a {
-  position: relative;
-}
-
-.sidebar__social .fa {
-  font-size: 36px;
-  color: var(--white);
-  text-shadow: 0px 0px 10px var(--redCyber), 0px 0px 20px var(--redCyber),
-    0px 0px 30px var(--redCyber);
-
-  @media (min-width: 400px) {
-    font-size: 48px;
-  }
-}
-
-.sidebar__btn {
-  display: flex;
   justify-content: center;
-}
-
-.sidebar .social-vk::after,
-.sidebar .social-facebook::after,
-.sidebar .social-email::after,
-.sidebar .social-telegram::after,
-.sidebar .social-github::after {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 30px;
 }
 </style>

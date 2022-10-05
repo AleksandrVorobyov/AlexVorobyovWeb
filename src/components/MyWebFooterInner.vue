@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
 import { mapGetters } from "vuex";
+import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
 
 export default {
   components: {
@@ -35,11 +35,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .footer-inner {
   position: relative;
   height: 600px;
-  background: url("../assets/img/footer/bg-footer.png") top center no-repeat;
+  display: flex;
+  justify-content: center;
+  background: var(--footerBgInner) top center no-repeat;
   z-index: 200;
   overflow: hidden;
 
@@ -65,24 +67,23 @@ export default {
 }
 
 .footer-inner-column {
-  height: 600px;
-  margin: auto 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .footer-inner__title {
   margin-bottom: 40px;
   font-size: 26px;
+  line-height: 30px;
   font-weight: 700;
   font-family: var(--fontRomanBold);
   color: var(--white);
-  font-weight: bold;
 
-  @media (min-width: 600px) {
-    font-size: 34px;
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 36px;
   }
 }
 
@@ -90,18 +91,15 @@ export default {
   margin: 0;
   margin-bottom: 40px;
   font-size: 18px;
+  line-height: 22px;
   font-weight: 300;
   font-family: "L850-Slab-Light";
   color: var(--white);
   text-align: center;
-  line-height: 1.5;
 
-  @media (min-width: 400px) {
+  @media (min-width: 768px) {
     font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 30px;
+    line-height: 28px;
   }
 
   a {

@@ -2,10 +2,10 @@
 section.portfolio
   .container
     .portfolio-wrap
-      h3.portfolio__title.neon(v-html="neonPortfolioTitle")
+      h3.portfolio__title.neon(v-html="portfolio.neonPortfolioTitle")
       nav.portfolio__nav
         label(
-          v-for="item in portfolioInnerMenu",
+          v-for="item in portfolioInner",
           :key="item.id",
           :class="item.labelClass",
           v-if="portfolioNavHidden"
@@ -19,7 +19,7 @@ section.portfolio
             :data-menu="item.dataMenu",
             @click="getCheck($event), scrollToTop()"
           )
-          span {{ item.text }}
+          span.portfolio__nav-label-text {{ item.text }}
         .portfolio__dropdown.checked(
           :class="dropdownPortfolio.labelClass",
           v-if="!portfolioNavHidden"
@@ -27,7 +27,7 @@ section.portfolio
           .portfolio__dropdown-active(@click="dropdown($event)") {{ dropdownPortfolio.text }}
           .portfolio__dropdown-list(v-if="!dropHidden")
             .portfolio__dropdown-item(@click="dropdownOption($event)")(
-              v-for="item in portfolioInnerMenu",
+              v-for="item in portfolioInner",
               :key="item.id",
               :class="item.labelClass",
               :data-menu="item.dataMenu"
@@ -50,21 +50,18 @@ section.portfolio
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import MyWebCard from "./parts/MyWebCard.vue";
-import { mapGetters, mapState } from "vuex";
 
 export default {
   components: {
     MyWebCard,
   },
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters([
+      "portfolio",
       "portfolioAll",
-      "neonPortfolioTitle",
-      "portfolioInnerMenu",
+      "portfolioInner",
       "dropdownPortfolio",
       "dropHidden",
       "portfolioNavHidden",
@@ -74,8 +71,8 @@ export default {
   },
 
   methods: {
-    loadCards() {
-      this.$store.dispatch("loadCards");
+    async loadCards() {
+      await this.$store.dispatch("loadCards");
     },
     getCheck(event) {
       this.$store.dispatch("getCheck", event);
@@ -151,8 +148,8 @@ label > [type="radio"]:not(:checked) + span {
   letter-spacing: 3px;
   cursor: pointer;
   color: var(--whiteText);
-  line-height: 30px;
   font-size: 26px;
+  line-height: 30px;
   text-transform: uppercase;
   font-weight: 700;
   border-bottom: 5px solid transparent;
@@ -163,10 +160,6 @@ label > [type="radio"]:not(:checked) + span {
   &:hover {
     color: var(--blueLinkHover);
     border-bottom-color: var(--redCyber);
-  }
-
-  @media (min-width: 400px) {
-    font-size: 34px;
   }
 
   @media (min-width: 1170px) {

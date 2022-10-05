@@ -1,26 +1,38 @@
 <template lang="pug">
-router-link.button-01(:to="link") 
-  span {{ text }}
+button.button(
+  :type="btnType",
+  :class="btnClass",
+  :id="btnId",
+  @click="$emit('clickAction', $event)"
+)
+  span {{ btnText }}
 </template>
-
 <script>
 export default {
   props: {
-    link: String,
-    text: String,
+    btnText: String,
+    btnClass: String,
+    btnType: {
+      required: false,
+      type: String,
+      default: "button",
+    },
+    btnId: String,
   },
+  emits: ["clickAction"],
 };
 </script>
-
-<style lang="scss">
-.button-01, .button-02 {
+<style scoped lang="scss">
+.button {
   position: relative;
   display: inline-block;
-  padding: 20px 40px;
+  padding: 15px 15px;
+  min-width: 200px;
   background-color: var(--redCyber50);
   border-radius: 40px;
   border: 4px solid var(--redCyber);
   font-size: 18px;
+  line-height: 22px;
   font-family: var(--fontNeon);
   color: var(--blueLinkHover);
   font-weight: bold;
@@ -35,6 +47,12 @@ export default {
     box-shadow: 0 0 10px var(--redCyber50), 0 0 20px var(--redCyber50),
       0 0 40px var(--redCyber50), 0 0 80px var(--redCyber50),
       0 0 160px var(--redCyber50);
+  }
+
+  @media (min-width: 1170px) {
+    padding: 20px;
+    font-size: 22px;
+    line-height: 26px;
   }
 
   span {
@@ -88,17 +106,9 @@ export default {
     box-shadow: 100% 0 0 var(--redCyber), 100% 0 0 var(--redCyber);
     transition-delay: 0s, 0.5s, 1s, 1s;
   }
+}
 
-  @media (min-width: 400px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 34px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 22px;
-  }
+.button--inner {
+  filter: hue-rotate(240deg);
 }
 </style>

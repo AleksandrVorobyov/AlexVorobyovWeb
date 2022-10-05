@@ -46,21 +46,21 @@ section.card-post
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import MyWebPagination from "./parts/MyWebPagination.vue";
 import MyWebCardDetals from "./parts/MyWebCardDetals.vue";
 import MyWebCardAbout from "./parts/MyWebCardAbout.vue";
 import MyWebCardLink from "./parts/MyWebCardLink.vue";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import { mapGetters } from "vuex";
 
 export default {
   components: {
+    Splide,
+    SplideSlide,
     MyWebPagination,
     MyWebCardDetals,
     MyWebCardAbout,
     MyWebCardLink,
-    Splide,
-    SplideSlide,
   },
   computed: {
     ...mapGetters([
@@ -116,49 +116,51 @@ export default {
 <style lang="scss">
 .card-post {
   position: relative;
-  padding: 30px 15px;
+  padding: 30px 0;
   overflow: hidden;
   z-index: 200;
 
-  &::before {
-    content: "";
+  &::before,
+  &::after {
     position: absolute;
-    top: -50px;
-    right: 0;
+    content: "";
     height: 50px;
     width: 100%;
+  }
+
+  &::before {
+    top: -50px;
+    right: 0;
     box-shadow: 0px 10px 15px var(--redCyber);
   }
 
   &::after {
-    content: "";
-    position: absolute;
     bottom: -50px;
     left: 0;
-    height: 50px;
-    width: 100%;
     box-shadow: 0px -10px 15px var(--redCyber);
   }
 }
 
 .card-post__nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
   margin-bottom: 40px;
   max-width: 750px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .card-post__nav-title,
 .card-post__nav-desc {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-bottom: 40px;
-  font-size: 28px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
   font-family: var(--fontNeon);
   color: var(--whiteText);
-  font-weight: bold;
-  line-height: 1.2;
   z-index: 4;
 
   &::after {
@@ -174,10 +176,12 @@ export default {
 
   @media (min-width: 480px) {
     font-size: 36px;
+    line-height: 40px;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 1170px) {
     font-size: 48px;
+    line-height: 56px;
 
     &::after {
       bottom: 5px;
@@ -193,26 +197,29 @@ export default {
 
 .card-post__nav-meta span {
   font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
   font-family: var(--fontRomanBold);
   color: var(--whiteText);
-  font-weight: bold;
   padding: 5px 10px;
   margin: 10px;
 
-  @media (min-width: 600px) {
-    font-size: 26px;
+  @media (min-width: 768px) {
+    font-size: 22px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     font-size: 20px;
+    line-height: 24px;
   }
 }
 
 .card-post__content {
   position: relative;
   display: flex;
-  padding: 40px 0;
   flex-direction: column-reverse;
+  margin-bottom: 40px;
 
   @media (min-width: 1170px) {
     flex-direction: row;
@@ -220,6 +227,7 @@ export default {
 }
 
 .card-post__content-desc {
+  width: 100%;
   max-width: 560px;
   margin: auto;
 
@@ -245,7 +253,7 @@ export default {
     width: 100%;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     height: 750px;
   }
 
@@ -267,16 +275,20 @@ export default {
   }
 }
 
-.carousel-project__btn-prev {
+.carousel-project__btn-prev,
+.carousel-project__btn-next {
   position: absolute;
   top: 50%;
-  left: 20px;
   outline: none;
   transform: translate(0%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 25px 5px;
+  padding: 15px 0px;
   border: 5px solid var(--redCyber);
   transition: 0.4s linear;
+
+  @media (min-width: 768px) {
+    padding: 25px 5px;
+  }
 
   svg {
     fill: var(--redCyber);
@@ -284,21 +296,12 @@ export default {
   }
 }
 
-.carousel-project__btn-next {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  outline: none;
-  transform: translate(0%, -50%);
-  background-color: #00000081;
-  padding: 25px 5px;
-  border: 5px solid var(--redCyber);
-  transition: 0.4s linear;
+.carousel-project__btn-prev {
+  left: 20px;
+}
 
-  svg {
-    fill: var(--redCyber);
-    transition: 0.4s linear;
-  }
+.carousel-project__btn-next {
+  right: 20px;
 }
 
 .carousel-project__btn-prev:hover,
@@ -313,7 +316,6 @@ export default {
 
 .card-post__pagination {
   display: flex;
-  margin: 40px 0 80px;
   z-index: 50;
 
   .pagination + .pagination {

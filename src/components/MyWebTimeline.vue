@@ -4,16 +4,13 @@ section#timeline.timeline
     .timeline-wrap
       h3.timeline__title.neon(v-html="neonTimelineTitle") 
       .timeline__column
-        .timeline__column-item(
-          v-for="(item, idx) in timelineItems",
-          :key="item"
-        )
-          .timeline__column-item-img 
+        .timeline__row(v-for="(item, idx) in timelineItems", :key="item")
+          .timeline__row-img 
             .timeline-icon(:class="'timeline-icon_' + (idx + 1)")
-          .timeline__column-item-text
-            h4.timeline__column-title {{ item.title }}
-            p.timeline__column-subtitle {{ item.subtitle }}
-            span.timeline__column-desc {{ item.desc }}
+          .timeline__row-text
+            h4.timeline__row-text-title {{ item.title }}
+            p.timeline__row-text-subtitle {{ item.subtitle }}
+            span.timeline__row-text-desc {{ item.desc }}
 </template>
 <script>
 import { mapGetters } from "vuex";
@@ -32,12 +29,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .timeline {
   position: relative;
-  padding: 120px 15px 150px;
+  padding: 35px 0;
   overflow: hidden;
   z-index: 200;
+
+  @media (min-width: 768px) {
+    padding: 50px 0px;
+  }
+
+  @media (min-width: 1170px) {
+    padding: 75px 0px;
+  }
 
   &::before {
     content: "";
@@ -65,10 +70,11 @@ export default {
 }
 
 .timeline__title {
-  margin-bottom: 150px;
+  margin-bottom: 120px;
   position: relative;
   display: inline-block;
   font-size: 32px;
+  line-height: 36px;
   font-family: var(--fontNeon);
   color: var(--white);
   font-weight: bold;
@@ -87,28 +93,42 @@ export default {
     transition: 0.5s ease-in-out;
   }
 
-  @media (min-width: 400px) {
-    font-size: 40px;
-  }
-
   @media (min-width: 480px) {
-    font-size: 50px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 72px;
+    font-size: 44px;
+    line-height: 48px;
   }
 
   @media (min-width: 1170px) {
     font-size: 64px;
+    line-height: 68px;
+    margin-bottom: 150px;
   }
 }
 
-.timeline__column-item {
+.timeline__column {
+  position: relative;
+  display: grid;
+  gap: 100px;
+}
+
+.timeline__column .timeline__row:last-child .timeline__row-text::after {
+  content: none;
+}
+
+@media (min-width: 1170px) {
+  .timeline__column .timeline__row:nth-child(odd) {
+    justify-content: flex-start;
+  }
+
+  .timeline__column .timeline__row:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+
+.timeline__row {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 150px;
   border-radius: 10px;
 
   &:last-child {
@@ -118,103 +138,71 @@ export default {
   @media (min-width: 1170px) {
     background: transparent;
     border-radius: 0px;
-    height: 122px;
-  }
-
-  @media (min-width: 1260px) {
     justify-content: center;
     padding-left: 0;
-    margin-bottom: 100px;
 
     &::before {
       position: absolute;
       content: "";
       background: var(--white);
       width: 4px;
-      height: 109px;
-      top: 95px;
-    }
-    &:last-child::before {
-      display: none;
-    }
-
-    &:first-child:after {
-      position: absolute;
-      content: "";
-      background: var(--white);
-      width: 4px;
-      height: 57px;
-      top: -75px;
+      height: 100px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 6px;
     }
   }
 }
 
-.timeline__column-item:nth-child(even) .timeline__column-item-img {
+.timeline__row:first-child::after {
   @media (min-width: 1170px) {
-    animation: shadow 3s linear 0s infinite alternate;
+    position: absolute;
+    content: "";
+    background: var(--white);
+    width: 4px;
+    height: 60px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 6px;
   }
 }
 
-.timeline__column-item:nth-child(odd) .timeline__column-item-img {
-  @media (min-width: 1170px) {
-    animation: shadow1 3s linear 0s infinite alternate;
-  }
+.timeline__row:last-child::before {
+  display: none;
 }
 
-.timeline__column-item:nth-child(even) .timeline__column-title {
+.timeline__row:nth-child(even) .timeline__row-text-title {
   @media (min-width: 1170px) {
     animation: border-bottom 3s linear 0s infinite alternate;
   }
 }
 
-.timeline__column-item:nth-child(odd) .timeline__column-title {
+.timeline__row:nth-child(odd) .timeline__row-text-title {
   @media (min-width: 1170px) {
     animation: border-bottom1 3s linear 0s infinite alternate;
   }
 }
 
-.timeline__column
-  .timeline__column-item:nth-child(even)
-  .timeline__column-item-text {
-  right: 0;
-
-  @media (min-width: 1260px) {
-    right: -50px;
-  }
-}
-
-.timeline__column
-  .timeline__column-item:nth-child(odd)
-  .timeline__column-item-text {
-  right: 0;
-
-  @media (min-width: 1260px) {
-    left: -50px;
-  }
-}
-
-.timeline__column-item-text {
-  background: var(--white);
+.timeline__row-text {
+  position: relative;
+  display: grid;
+  gap: 10px;
   padding: 10px;
-  z-index: 3;
-  transition: transform 0.4s linear;
   width: 100%;
+  background: var(--white);
   border-radius: 10px;
+  z-index: 3;
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+  }
 
   @media (min-width: 1170px) {
     border-radius: 5px;
-    max-width: 550px;
-    transform: translate(-50%);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: auto;
-  }
-
-  @media (min-width: 1260px) {
-    max-width: 508px;
-    left: auto;
-    transform: translate(0);
+    max-width: 450px;
+    height: 170px;
   }
 
   &:before {
@@ -251,92 +239,57 @@ export default {
   }
 }
 
-.timeline__column-title {
-  display: inline;
+.timeline__row-text-title {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
   font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
   font-family: var(--fontRomanBold);
   color: var(--black);
-  font-weight: bold;
   border-bottom: 4px solid var(--yellowcolor);
 
-  @media (min-width: 480px) {
-    font-size: 28px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 36px;
-  }
-
-  @media (min-width: 1170px) {
+  @media (min-width: 768px) {
     font-size: 26px;
+    line-height: 30px;
   }
 }
 
-.timeline__column-subtitle {
+.timeline__row-text-subtitle {
   font-size: 18px;
+  line-height: 22px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--black);
-  line-height: 1.2;
-
-  @media (min-width: 480px) {
-    font-size: 22px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 26px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 18px;
-  }
 }
 
-.timeline__column-desc {
-  font-size: 22px;
+.timeline__row-text-desc {
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 700;
   font-family: var(--fontRomanBold);
   color: var(--black);
-
-  @media (min-width: 480px) {
-    font-size: 26px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 20px;
-  }
 }
 
-.timeline__column-item-img {
+.timeline__row-img {
   position: absolute;
-  top: -112px;
+  top: -90px;
   left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 28px;
-  background: linear-gradient(var(--white), var(--white));
+  background: var(--white);
   width: 74px;
   height: 74px;
   z-index: 7;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   box-shadow: 0px 0px 6px #0008;
 
   @media (min-width: 1170px) {
-    top: -95px;
-    box-shadow: 0px 0px 0px #0008;
-  }
-
-  @media (min-width: 1260px) {
-    top: 0;
-  }
-
-  img {
-    height: 60px;
-
-    @media (min-width: 1170px) {
-      height: auto;
-    }
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

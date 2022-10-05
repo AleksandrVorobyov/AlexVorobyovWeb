@@ -28,10 +28,9 @@ export default {
   display: flex;
   justify-content: center;
   z-index: 15;
-  height: 70px;
-  width: 70px;
   right: 60px;
-  top: 150px;
+  top: 60px;
+  padding: 5px;
   cursor: pointer;
   background-color: transparent;
   border-radius: 35%;
@@ -54,26 +53,15 @@ export default {
     transition: 0.5s ease-in-out;
   }
 
-  @media (min-width: 480px) {
-    height: 100px;
-    width: 100px;
-  }
-
   @media (min-width: 1170px) {
+    top: auto;
+    bottom: 100px;
     right: 150px;
-    height: 50px;
-    width: 50px;
   }
 }
 
 .night-sun i {
   font-size: 4em;
-}
-
-@media (min-width: 480px) {
-  .night-sun i {
-    font-size: 6em;
-  }
 }
 
 @media (min-width: 1120px) {

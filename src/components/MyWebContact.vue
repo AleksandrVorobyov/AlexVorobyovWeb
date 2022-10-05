@@ -2,37 +2,39 @@
 section.contact
   canvas#pretty-bg
   .container
-    .contact-title-wrapper
-      h3.contact-title.neon(v-html="neonContactTitle")
     .contact-wrap
-      .contact__info
-        p.contact__info-desc {{ contactInfoDesc }}
-        .contact__info-table
-          ol.contact__info-table-rounded
-            li(v-for="item in contactTableList", :key="item") 
-              .contact__info-table-rounded-row
-                p {{ item.text }}
-                a(:href="item.linkTipy + item.link") {{ item.title }}
-        .contact__info-social.header__bg-social
-          my-web-social-icon
-      my-web-form
+      h3.contact-title.neon(v-html="contact.neonContactTitle")
+      .contact-body
+        .contact__info
+          p.contact__info-desc {{ contact.contactInfoDesc }}
+          .contact__info-table
+            ol.contact__info-table-list
+              li.contact__info-table-list-item(
+                v-for="item in contact.contactTableList",
+                :key="item"
+              ) 
+                p.contact__info-table-list-text {{ item.text }}
+                a.contact__info-table-list-link(
+                  :href="item.linkTipy + item.link"
+                ) {{ item.title }}
+          .contact__info-social.header__bg-social
+            MyWebSocialIcon
+        .contact__form-wrap
+          MyWebForm
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
 import MyWebForm from "./parts/MyWebForm.vue";
-import { mapGetters } from "vuex";
 
 export default {
   components: {
     MyWebSocialIcon,
     MyWebForm,
   },
-  data() {
-    return {};
-  },
   computed: {
-    ...mapGetters(["contactInfoDesc", "contactTableList", "neonContactTitle"]),
+    ...mapGetters(["contact"]),
   },
   methods: {
     createContact() {
@@ -49,23 +51,23 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contact {
   position: relative;
-  padding: 60px 15px;
+  padding: 35px 0;
   background: linear-gradient(#f4f8f980, #f4f8f998),
-    url("../assets/img/contact/01.webp") top left / cover no-repeat;
+    var(--contactBg) top left / cover no-repeat;
   background-blend-mode: hue;
   overflow-x: hidden;
   z-index: 200;
   min-height: 80vh;
 
-  @media (min-width: 600px) {
-    padding: 120px 30px;
+  @media (min-width: 768px) {
+    padding: 50px 0px;
   }
 
   @media (min-width: 1170px) {
-    padding: 120px 15px;
+    padding: 75px 0px;
   }
 }
 
@@ -77,7 +79,7 @@ export default {
   width: 0;
   height: 0;
 
-  @media (min-width: 1260px) {
+  @media (min-width: 1170px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -86,30 +88,28 @@ export default {
   }
 }
 
-.contact-title-wrapper {
-  text-align: center;
-  margin-bottom: 70px;
-}
-
 .contact-title {
   position: relative;
   display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 35px;
   font-size: 32px;
+  line-height: 36px;
   font-family: var(--fontNeon);
   color: var(--white);
   font-weight: bold;
   z-index: 5;
 
-  @media (min-width: 400px) {
-    font-size: 40px;
-  }
-
   @media (min-width: 480px) {
-    font-size: 50px;
+    font-size: 44px;
+    line-height: 48px;
   }
 
-  @media (min-width: 600px) {
-    font-size: 72px;
+  @media (min-width: 1170px) {
+    margin-bottom: 70px;
+    font-size: 64px;
+    line-height: 68px;
   }
 
   &::after {
@@ -124,15 +124,18 @@ export default {
     z-index: -1;
     transition: 0.5s ease-in-out;
   }
-
-  @media (min-width: 1170px) {
-    font-size: 64px;
-  }
 }
 
 .contact-wrap {
+  display: grid;
+}
+
+.contact-body {
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  align-items: center;
 
   @media (min-width: 1170px) {
     flex-direction: row;
@@ -141,73 +144,73 @@ export default {
 
 .contact__info {
   position: relative;
+  display: grid;
+  gap: 20px;
   z-index: 10;
   max-width: 800px;
-  margin: auto;
 
   @media (min-width: 1170px) {
-    margin-right: 50px;
     max-width: auto;
   }
 }
 
 .contact__info-desc {
-  margin-top: 0;
   font-size: 20px;
+  line-height: 24px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--white);
-  line-height: 1.4;
+  line-height: 26px;
   text-align: left;
   text-shadow: 0 0 5px rgb(26, 26, 26);
 
-  @media (min-width: 480px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 30px;
+  @media (min-width: 768px) {
+    font-size: 22px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     font-size: 20px;
+    line-height: 24px;
   }
 }
 
 .contact__info-table {
   z-index: 10;
-
-  @media (min-width: 600px) {
-    margin-left: 15px;
-  }
-
-  @media (min-width: 900px) {
-    margin-left: 0;
-  }
 }
 
-.contact__info-table-rounded {
+.contact__info-table-list {
+  position: relative;
+  display: grid;
+  gap: 20px;
   counter-reset: li;
   list-style: none;
-  font-weight: 400;
-  font-family: var(--fontRomanReg);
-  font-size: 24px;
-  padding: 0;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+
+  @media (min-width: 480px) {
+    max-width: 450px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+  }
 
   @media (min-width: 1170px) {
-    font-size: 14px;
+    max-width: auto;
+    margin: 0;
   }
 }
 
-.contact__info-table-rounded .contact__info-table-rounded-row {
+.contact__info-table-list-item {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 6px 6px 6px 6px;
-  margin: 40px 0;
+  width: 100%;
+  gap: 10px;
+  padding: 20px 15px 15px;
   background: var(--white);
   color: var(--grayBg);
   text-decoration: none;
@@ -215,21 +218,21 @@ export default {
   transition: 0.3s ease-out;
   z-index: 10;
 
-  @media (min-width: 400px) {
-    padding: 6px 32px 6px 32px;
+  @media (min-width: 480px) {
+    padding: 20px 30px;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
+    gap: 0px;
     flex-direction: row;
-    margin: 20px 0;
   }
 }
 
-.contact__info-table-rounded .contact__info-table-rounded-row:hover {
+.contact__info-table-list .contact__info-table-list-item:hover {
   background: var(--lightGrayBg);
 }
 
-.contact__info-table-rounded .contact__info-table-rounded-row:before {
+.contact__info-table-list .contact__info-table-list-item:before {
   content: counter(li);
   counter-increment: li;
   position: absolute;
@@ -248,90 +251,63 @@ export default {
   border-radius: 2em;
   transition: all 0.3s ease-out;
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     left: -1.3em;
     top: 50%;
     transform: translateX(0%);
   }
 }
 
-.contact__info-table-rounded-row p {
+.contact__info-table-list-text {
   font-size: 20px;
+  line-height: 24px;
   font-family: var(--fontRomanBold);
   color: var(--black);
   font-weight: bold;
-  line-height: 1.2;
 
   @media (min-width: 480px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     font-size: 20px;
+    line-height: 24px;
   }
 }
 
-.contact__info-table-rounded-row span {
+.contact__info-table-list-link {
   font-size: 20px;
-  font-family: var(--fontRomanBold);
-  font-weight: bold;
-  line-height: 1.2;
-  color: var(--black);
-
-  @media (min-width: 480px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 20px;
-  }
-}
-
-.contact__info-table-rounded-row a {
-  font-size: 20px;
+  line-height: 24px;
   font-weight: bold;
   font-family: var(--fontRomanBold);
-  color: var(--blueCyber);
-  line-height: 1.2;
+  color: var(--redCyber);
   text-decoration: none;
   transition: all 0.3s ease-out;
 
   @media (min-width: 480px) {
-    font-size: 24px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
-  }
-
-  &:hover {
-    color: var(--redcolor);
+    font-size: 22px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     font-size: 20px;
+    line-height: 24px;
+  }
+
+  &:hover {
+    color: var(--yellowcolor);
   }
 }
 
 .contact__info-social {
+  position: relative;
+  display: flex;
   justify-content: center;
-  margin-bottom: 30px;
   z-index: 5;
 
   @media (min-width: 1170px) {
-    float: right;
+    justify-content: flex-start;
   }
-}
-
-.contact__info-social a {
-  position: relative;
 }
 </style>

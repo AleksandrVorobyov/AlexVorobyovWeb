@@ -10,34 +10,26 @@ import MyWebContact from './modules/MyWebContact'
 import MyWebFooter from './modules/MyWebFooter'
 import MyWebCardBody from './modules/MyWebCardBody'
 import MyWebFullPage from './modules/MyWebFullPage'
-import smoothScroll from 'smoothscroll'
+import MyWebScrollTo from './modules/MyWebScrollTo'
 
 export default createStore({
   state: {
   },
   mutations: {},
   actions: {
-    scrollToTop() {
-      setTimeout(() => {
-        smoothScroll(document.getElementById('navigation'), 100, 1500)
-      }, 300);
-    },
-    scrollToTimeline() {
-      const smoothScrollTimeline = document.getElementById('timeline');
-      smoothScroll(smoothScrollTimeline, 100, 1500)
-    },
   },
   modules: {
-    MyWebNavigationSec: MyWebNavigation,
-    MyWebHeaderSec: MyWebHeader,
-    MyWebSidebarSec: MyWebSidebar,
-    MyWebNightModeSec: MyWebNightMode,
-    MyWebPageBackSec: MyWebPageBack,
-    MyWebPortfolioSec: MyWebPortfolio,
-    MyWebTimelinetSec: MyWebTimeline,
-    MyWebContactSec: MyWebContact,
-    MyWebFooterSec: MyWebFooter,
-    MyWebCardBody: MyWebCardBody,
-    MyWebFullPage: MyWebFullPage,
+    NavigationSec: MyWebNavigation,
+    HeaderSec: MyWebHeader,
+    SidebarSec: MyWebSidebar,
+    NightModeSec: MyWebNightMode,
+    PageBackSec: MyWebPageBack,
+    PortfolioSec: MyWebPortfolio,
+    TimelinetSec: MyWebTimeline,
+    ContactSec: MyWebContact,
+    FooterSec: MyWebFooter,
+    CardBody: MyWebCardBody,
+    FullPage: MyWebFullPage,
+    ScrollTo: MyWebScrollTo,
   }
 })

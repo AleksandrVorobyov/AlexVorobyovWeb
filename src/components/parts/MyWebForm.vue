@@ -3,7 +3,7 @@ form#form-contact.contact__form.wow.animated.fadeInUp(
   data-card="1",
   @submit.prevent="formNotif(), valideFormFunc()"
 )
-  h3.contact__form-title Оставьте заявку
+  h3.contact__form-title {{ contact.title }}
   #email-form-wrap.contact__form-item
     input#email-form.form-input-email(
       type="email",
@@ -30,16 +30,33 @@ form#form-contact.contact__form.wow.animated.fadeInUp(
       v-model="formAnswers.text"
     )
   .contact__form-button
-    button#button-form.button-01(
-      type="submit",
-      name="button-contact",
-      form="form-contact"
-    ) Отправить
+    mainBtn(
+      :btnType="contact.btnSubmit.type",
+      :btnId="contact.btnSubmit.id",
+      :btnText="contact.btnSubmit.text",
+    )
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import mainBtn from "./mainBtn.vue"
 export default {
+  computed: {
+    ...mapGetters([
+      "contact",
+      "formAnswers",
+      "formTheme",
+      "formText",
+      "valideForm",
+      "valideTheme",
+      "validEmail",
+      "validText",
+      "validateEmail",
+    ]),
+  },
+  components: {
+    mainBtn
+  },
   methods: {
     valideFormFunc() {
       this.$store.dispatch("valideFormFunc");
@@ -60,18 +77,6 @@ export default {
       this.$store.commit("clearForm");
     },
   },
-  computed: {
-    ...mapGetters([
-      "formAnswers",
-      "formTheme",
-      "formText",
-      "valideForm",
-      "valideTheme",
-      "validEmail",
-      "validText",
-      "validateEmail",
-    ]),
-  },
   watch: {
     validEmail(newEmail, oldEmail) {
       this.validEmailFunc();
@@ -86,7 +91,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contact__form {
   position: relative;
   display: flex;
@@ -96,23 +101,14 @@ export default {
   border: 5px solid var(--white);
   box-shadow: 0px 10px 50px 0px var(--redCyber);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 15;
   overflow: hidden;
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     padding: 30px;
   }
 
-  @media (min-width: 600px) {
-    padding: 60px;
-  }
-
   @media (min-width: 768px) {
-    margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
     min-width: 500px;
   }
 }
@@ -169,7 +165,7 @@ export default {
 .form-input-theme {
   position: relative;
   width: 100%;
-  padding: 20px 20px;
+  padding: 15px;
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
@@ -180,17 +176,15 @@ export default {
   font-weight: bold;
   transition: ease-in 0.5s;
   z-index: 10;
+  border-radius: 6px;
+
   &:hover,
   &:focus {
     border-bottom: 1px solid var(--yellowcolor);
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     font-size: 22px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
   }
 
   @media (min-width: 1170px) {
@@ -205,16 +199,19 @@ export default {
 .form-textarea-text {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   border: none;
   border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
   font-size: 20px;
+  line-height: 24px;
   font-family: var(--fontRomanBold);
   color: var(--black);
   font-weight: bold;
   transition: ease-in 0.5s;
   z-index: 10;
+  border-radius: 6px;
+
   &:hover,
   &:focus {
     border-bottom: 1px solid var(--yellowcolor);
@@ -224,16 +221,14 @@ export default {
     color: var(--black);
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     font-size: 22px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 28px;
+    line-height: 26px;
   }
 
   @media (min-width: 1170px) {
     font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -253,6 +248,7 @@ export default {
 .contact__form-item.active::before {
   border: 3px solid var(--greenCyber);
 }
+
 .contact__form-item.danger::before {
   border: 3px solid var(--redCyber);
 }
@@ -271,20 +267,20 @@ export default {
 .contact__form input:focus::placeholder {
   color: var(--yellowcolor);
   transition: 0.5s ease-in-out;
-  transform: translateY(-30px);
+  transform: translateY(-60px);
 
   @media (min-width: 1170px) {
-    transform: translateY(-25px);
+    transform: translateY(-60px);
   }
 }
 
 .contact__form textarea:focus::placeholder {
   color: var(--yellowcolor);
   transition: 0.5s ease-in-out;
-  transform: translateY(-30px);
+  transform: translateY(-60px);
 
   @media (min-width: 1170px) {
-    transform: translateY(-25px);
+    transform: translateY(-60px);
   }
 }
 </style>
