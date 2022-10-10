@@ -12,15 +12,15 @@ section.card-post
         ) {{ item.text }}
     .card-post__content
       .card-post__content-desc
-        my-web-card-link(
+        cardLink(
           :linkProjectTitle="activeCard.card.linkProjectTitle",
           :linkProjectItem="activeCard.card.linkProjectItem"
         )
-        my-web-card-about(
+        cardAbout(
           :cardAboutTitle="activeCard.card.cardAboutTitle",
           :cardAboutText="activeCard.card.cardAboutText"
         )
-        my-web-card-detals(
+        cardDetals(
           :detalsTitle="activeCard.card.detalsTitle",
           :detalsDescItems="activeCard.card.detalsDescItems"
         )
@@ -38,37 +38,37 @@ section.card-post
           )
             img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
     .card-post__pagination
-      my-web-pagination(
-        :paginationPrev="paginationPrev",
-        :paginationNext="paginationNext",
-        @clickAction="scrollToTop(), pushInServeActiveCard(), slideUpdate()"
+      pagination(
+        :paginationPrev="pagination.prev.ttl",
+        :paginationNext="pagination.next.ttl",
+        @clickActionPrev="scrollToTop(), pushInServeActiveCard(), slideUpdate(), prevProject()",
+        @clickActionNext="scrollToTop(), pushInServeActiveCard(), slideUpdate(), nextProject()"
       )
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import MyWebPagination from "./parts/MyWebPagination.vue";
-import MyWebCardDetals from "./parts/MyWebCardDetals.vue";
-import MyWebCardAbout from "./parts/MyWebCardAbout.vue";
-import MyWebCardLink from "./parts/MyWebCardLink.vue";
+import pagination from "./parts/pagination.vue";
+import cardDetals from "./parts/cardDetals.vue";
+import cardAbout from "./parts/cardAbout.vue";
+import cardLink from "./parts/cardLink.vue";
 
 export default {
   components: {
     Splide,
     SplideSlide,
-    MyWebPagination,
-    MyWebCardDetals,
-    MyWebCardAbout,
-    MyWebCardLink,
+    pagination,
+    cardDetals,
+    cardAbout,
+    cardLink,
   },
   computed: {
     ...mapGetters([
       "activeCard",
       "projectSlide",
       "localActive",
-      "paginationPrev",
-      "paginationNext",
+      "pagination",
       "slideCardKey",
     ]),
   },
@@ -91,14 +91,20 @@ export default {
     pushInServeActiveCard() {
       this.$store.dispatch("pushInServeActiveCard");
     },
-    slideUpdate() {
-      this.$store.commit("slideUpdate");
-    },
     fullPageAdd(event) {
       this.$store.commit("fullPageAdd", event);
     },
+    slideUpdate() {
+      this.$store.commit("slideUpdate");
+    },
     cardBodyAnim() {
       this.$store.dispatch("cardBodyAnim");
+    },
+    prevProject() {
+      this.$store.dispatch("prevProject");
+    },
+    nextProject() {
+      this.$store.dispatch("nextProject");
     },
   },
   beforeMount() {
@@ -113,7 +119,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card-post {
   position: relative;
   padding: 30px 0;
@@ -245,7 +251,7 @@ export default {
   max-width: 700px;
   width: 100%;
   background: rgba(255, 255, 255, 0.5);
-  box-shadow: 19px 19px 100px 0px rgb(196, 219, 233);
+  box-shadow: 0px 0px 50px rgb(196, 219, 233);
   margin: auto;
   margin-bottom: 50px;
 
@@ -315,12 +321,10 @@ export default {
 }
 
 .card-post__pagination {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   z-index: 50;
-
-  .pagination + .pagination {
-    margin-left: 30px;
-  }
 }
 
 .meta-html {

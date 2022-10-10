@@ -72,24 +72,6 @@ export default {
       ],
     },
     portfolioAll: [],
-    activeCard: {},
-    projectSlide: {
-      perPage: 1,
-      rewind: true,
-      speed: 800,
-      classes: {
-        arrows: "splide__arrows your-class-arrows",
-        arrow: "splide__arrow your-class-arrow",
-        prev: "splide__arrow--prev carousel-project__btn-prev",
-        next: "splide__arrow--next carousel-project__btn-next",
-      },
-      pagination: false,
-      gap: 10,
-      fixedHeight: 750,
-    },
-    localActive: true,
-    paginationPrev: "Предыдущий проект",
-    paginationNext: "Следующий проект",
     dropdownPortfolio: {
       text: "Все работы",
       class: "checkbox-all",
@@ -104,26 +86,11 @@ export default {
     portfolio(state) {
       return state.portfolio;
     },
-    localActive(state) {
-      return state.localActive;
-    },
     portfolioAll(state) {
       return state.portfolioAll;
     },
-    activeCard(state) {
-      return state.activeCard;
-    },
-    projectSlide(state) {
-      return state.projectSlide;
-    },
     portfolioInner(state) {
       return state.portfolioInner;
-    },
-    paginationPrev(state) {
-      return state.paginationPrev;
-    },
-    paginationNext(state) {
-      return state.paginationNext;
     },
     dropdownPortfolio(state) {
       return state.dropdownPortfolio;
@@ -156,42 +123,6 @@ export default {
       cardBg.querySelector(
         ".card__text"
       ).style.borderTop = `6px solid ${background}`;
-    },
-    findCard(state, payload) {
-      const newCard = state.portfolioAll.find(
-        (e) => e.cardId === payload.cardId
-      );
-      state.localActive = false;
-      state.activeCard = newCard;
-    },
-    loadActiveCard(state, payload) {
-      state.activeCard = JSON.parse(localStorage.getItem("activeCard"));
-    },
-    prevProject(state) {
-      const thisCard = state.activeCard.idx;
-      if (thisCard > 0) {
-        const newCard = state.portfolioAll.find(
-          (e) => e.idx === thisCard - 1
-        );
-        return (state.activeCard = newCard);
-      } else {
-        const newCard = state.portfolioAll.find(
-          (e) => e.idx === state.portfolioAll.length - 1
-        );
-        return (state.activeCard = newCard);
-      }
-    },
-    nextProject(state) {
-      const thisCard = state.activeCard.idx;
-      if (state.portfolioAll.length > thisCard + 1) {
-        const newCard = state.portfolioAll.find(
-          (e) => e.idx === thisCard + 1
-        );
-        return (state.activeCard = newCard);
-      } else {
-        const newCard = state.portfolioAll.find((e) => e.idx === 0);
-        return (state.activeCard = newCard);
-      }
     },
     mousedownSlide(state, event) {
       event.target.style.cursor = "grab";
@@ -347,26 +278,6 @@ export default {
         })
       }
       return
-    },
-    async pushInServeActiveCard({ state }) {
-      const data = state.activeCard;
-      const url =
-        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/activeCard/0.json";
-      const responsedel = await fetch(url, {
-        method: "DELETE",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      localStorage.setItem("activeCard", JSON.stringify(data));
     },
     getCheck({ state, commit }, event) {
       state.portfolioInnerFilter = event.target.getAttribute('data-menu');

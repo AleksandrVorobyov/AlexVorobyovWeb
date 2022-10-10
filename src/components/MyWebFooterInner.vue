@@ -11,7 +11,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
+import MyWebSocialIcon from "./parts/socialIcon.vue";
 
 export default {
   components: {
@@ -107,7 +107,7 @@ export default {
   }
 
   a:hover {
-    color: var(--redcolor);
+    color: var(--yellowcolor);
     transition: 0.5s ease-in-out;
   }
 }

@@ -78,6 +78,11 @@ export default {
     getActiveNav({ state }) {
       let link = router.currentRoute.value.fullPath
       let activeLink = state.navLinks.find((e) => e.link === link)
+      if (activeLink === undefined) {
+        link = "/project"
+        activeLink = state.navLinks.find((e) => e.link === link)
+        return document.getElementById(activeLink.id).classList.add("btn-menu--active")
+      }
       return document.getElementById(activeLink.id).classList.add("btn-menu--active")
     }
   },

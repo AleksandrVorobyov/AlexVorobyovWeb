@@ -15,9 +15,9 @@ const routes = [
     children: [
       {
         path: "/project",
-        name: "ProjectBody",
+        name: "ProjectInner",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/ProjectBody.vue"),
+          import(/* webpackChunkName: "about" */ "../views/ProjectInner.vue"),
       },
       {
         path: "/card",

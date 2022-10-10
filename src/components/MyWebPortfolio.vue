@@ -4,7 +4,7 @@ section#portfolio.portfolio
     .portfolio-wrap
       h3.portfolio__title.neon(v-html="portfolio.neonPortfolioTitle")
       .portfolio__card
-        my-web-card(
+        mainCard(
           v-for="item in firstPortfolioCards",
           :key="item",
           :link="item.cardLink",
@@ -27,12 +27,12 @@ section#portfolio.portfolio
 <script>
 import { mapGetters } from "vuex";
 import mainBtn from "./parts/mainBtn.vue";
-import MyWebCard from "./parts/MyWebCard.vue";
+import mainCard from "./parts/mainCard.vue";
 
 export default {
   components: {
     mainBtn,
-    MyWebCard,
+    mainCard,
   },
   computed: {
     ...mapGetters(["portfolio", "portfolioAll"]),
@@ -47,8 +47,8 @@ export default {
     async loadCards() {
       await this.$store.dispatch("loadCards");
     },
-    portfolioSectionAnim() {
-      this.$store.dispatch("portfolioSectionAnim");
+    async portfolioSectionAnim() {
+      await this.$store.dispatch("portfolioSectionAnim");
     },
   },
   mounted() {

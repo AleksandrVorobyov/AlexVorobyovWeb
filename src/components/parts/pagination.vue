@@ -1,11 +1,7 @@
 <template lang="pug">
-button.pagination(
-  @click=" prevProject(), $emit('clickAction')"
-)
+button.pagination(@click="$emit('clickActionPrev')")
   span {{ paginationPrev }}
-button.pagination(
-  @click="nextProject(), $emit('clickAction')"
-)
+button.pagination(@click="$emit('clickActionNext')")
   span {{ paginationNext }}
 </template>
 
@@ -15,19 +11,7 @@ export default {
     paginationPrev: String,
     paginationNext: String,
   },
-  emits:[
-    "clickAction"
-  ],
-  methods: {
-    prevProject() {
-      this.$store.commit("prevProject");
-    },
-    nextProject() {
-      this.$store.commit("nextProject");
-    },
-  },
-  mounted() {
-  }
+  emits: ["clickActionPrev", "clickActionNext"],
 };
 </script>
 
@@ -36,13 +20,12 @@ export default {
   position: relative;
   width: 100%;
   height: 60px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--fontPagination);
   color: var(--white);
   background: rgba(0, 0, 0, 0.4);
   text-decoration: none;
   outline: none;
   text-transform: uppercase;
-  line-height: 60px;
   text-align: center;
   letter-spacing: 2px;
   border: none;
@@ -55,42 +38,38 @@ export default {
 }
 
 .pagination:hover {
-  background: #ec0b36 url("../../assets/img/btn/pixel.png");
+  background: var(--redCyber) var(--paginationBtnBg);
   transition-delay: 0.8s;
   animation: pixelBtn 0.8s steps(8) forwards;
   background-size: 180px;
-  box-shadow: 0px 0px 10px #ec0b36, 0px 0px 20px #ec0b36, 0px 0px 40px #ec0b36;
+  box-shadow: 0px 0px 10px var(--redCyber), 0px 0px 20px var(--redCyber),
+    0px 0px 40px var(--redCyber);
+}
+
+.pagination::before,
+.pagination::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  transition: all 0.4s linear 0.2s;
 }
 
 .pagination::before {
-  position: absolute;
   top: 0;
   left: 0;
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-top: 2px solid #00ffff;
-  border-left: 2px solid #00ffff;
-  transition: all 0.4s linear 0.2s;
+  border-top: 2px solid var(--blueLinkHover);
+  border-left: 2px solid var(--blueLinkHover);
 }
 
 .pagination::after {
-  position: absolute;
   bottom: 0;
   right: 0;
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-bottom: 2px solid aqua;
-  border-right: 2px solid aqua;
-  transition: all 0.4s linear 0.2s;
+  border-bottom: 2px solid var(--blueLinkHover);
+  border-right: 2px solid var(--blueLinkHover);
 }
 
-.pagination:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
+.pagination:hover::before,
 .pagination:hover::after {
   width: 100%;
   height: 100%;

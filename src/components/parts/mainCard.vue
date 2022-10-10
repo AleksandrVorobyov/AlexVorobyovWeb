@@ -28,7 +28,7 @@ export default {
       this.$store.dispatch("pushInServeActiveCard");
     },
     findCard(event) {
-      this.$store.commit("findCard", {
+      this.$store.dispatch("findCard", {
         cardId: event.target.closest(".card").id,
       });
     },

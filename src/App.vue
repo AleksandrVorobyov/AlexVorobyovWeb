@@ -2,20 +2,27 @@
 #page.page
   my-web-preloader
   my-web-page-back
-  my-web-notification
+  notification(v-show="notification.active")
   router-view
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import myWebPageBack from "./components/MyWebPageBack.vue";
 import MyWebPreloader from "./components/MyWebPreloader.vue";
-import MyWebNotification from "./components/parts/MyWebNotification.vue";
+import notification from "./components/parts/notification.vue";
 
 export default {
   components: {
     myWebPageBack,
     MyWebPreloader,
-    MyWebNotification,
+    notification,
+  },
+  computed: {
+    ...mapGetters(["notification"]),
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

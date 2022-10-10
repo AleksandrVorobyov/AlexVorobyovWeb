@@ -13,20 +13,20 @@ aside#sidebar.sidebar
           router-link.sidebar__links-item-link(:to="item.link" @click="burgerActiveMet(), showDialog()")
             span {{ item.text }}
     .sidebar__social
-      MyWebSocialIcon
+      socialIcon
     .sidebar__btn
-      MyWebNightMode
+      nightMode
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
-import MyWebNightMode from "./parts/MyWebNightMode.vue";
+import socialIcon from "./parts/socialIcon.vue";
+import nightMode from "./parts/nightMode.vue";
 
 export default {
   components: {
-    MyWebSocialIcon,
-    MyWebNightMode,
+    socialIcon,
+    nightMode,
   },
   computed: {
     ...mapGetters(["sidebarLinks", "sidebarTitle", "sidebarBg"]),
@@ -95,12 +95,13 @@ export default {
 }
 
 .sidebar__title {
+  margin-bottom: 30px;
   font-size: 40px;
+  line-height: 46px;
   font-family: var(--fontNeon);
   font-weight: 400;
   color: var(--white);
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .sidebar__btn .night-sun {
@@ -111,12 +112,6 @@ export default {
 
 .sidebar__links {
   margin-bottom: 30px;
-}
-
-.sidebar__links-col {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .sidebar__links-item {

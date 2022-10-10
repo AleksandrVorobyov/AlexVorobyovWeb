@@ -8,7 +8,7 @@ export default {
             })
         },
         scrollToTop() {
-                smoothScroll(document.getElementById('navigation'), 100, 1500)
+            smoothScroll(document.getElementById('navigation'), 100, 1500)
         },
         scrollToTimeline() {
             const smoothScrollTimeline = document.getElementById('timeline');

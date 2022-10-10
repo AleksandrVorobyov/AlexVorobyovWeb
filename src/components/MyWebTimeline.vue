@@ -295,7 +295,7 @@ export default {
 
 .timeline-icon {
   display: inline-block;
-  background: url("~@/assets/img/sprite/timeline.png");
+  background: var(--timelineIcon);
   background-repeat: no-repeat;
 }
 

@@ -17,8 +17,8 @@ export default {
     createBg() {
       this.$store.dispatch("createBg");
     },
-    scrollToTop() {
-      this.$store.dispatch("scrollToTop");
+     scrollToTop() {
+       this.$store.dispatch("scrollToTop");
     },
   },
   mounted() {

@@ -38,7 +38,7 @@ section.portfolio
           :key="item",
           :class="item.allMenuClass"
         )
-          my-web-card(
+          mainCard(
             :link="'#'",
             :src="item.cardSrc",
             :alt="item.cardAlt",
@@ -51,11 +51,11 @@ section.portfolio
 
 <script>
 import { mapGetters } from "vuex";
-import MyWebCard from "./parts/MyWebCard.vue";
+import mainCard from "./parts/mainCard.vue";
 
 export default {
   components: {
-    MyWebCard,
+    mainCard,
   },
   computed: {
     ...mapGetters([

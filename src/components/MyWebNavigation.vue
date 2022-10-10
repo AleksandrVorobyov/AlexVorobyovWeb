@@ -1,7 +1,7 @@
 <template lang="pug">
 section#navigation.navigation(ref="topDiv")
   .big-container
-    my-web-night-mode
+    nightMode
     .navigation-wrap
       h1.navigation__logo
         router-link.logo(to="/", @click.native="scrollToTop()") А<span>В</span>
@@ -16,7 +16,7 @@ section#navigation.navigation(ref="topDiv")
               @clickAction="roadToPage(item.link)"
             )
       .navigation__social
-        my-web-social-icon
+        socialIcon
       button#nav-burger-btn.navigation__burger(
         type="button",
         @click="burgerActiveMet(), showDialog()"
@@ -27,17 +27,14 @@ section#navigation.navigation(ref="topDiv")
 <script>
 import { mapGetters } from "vuex";
 import mainBtnMenu from "./parts/mainBtnMenu.vue";
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
-import MyWebNightMode from "./parts/MyWebNightMode.vue";
+import socialIcon from "./parts/socialIcon.vue";
+import nightMode from "./parts/nightMode.vue";
 
 export default {
   components: {
     mainBtnMenu,
-    MyWebSocialIcon,
-    MyWebNightMode,
-  },
-  data() {
-    return {};
+    socialIcon,
+    nightMode,
   },
   computed: {
     ...mapGetters(["navLinks"]),
@@ -63,8 +60,8 @@ export default {
     },
   },
   mounted() {
-    this.navSectionAnim();
     this.getActiveNav();
+    this.navSectionAnim();
   },
 };
 </script>
@@ -252,11 +249,6 @@ export default {
 
 .navigation__menu-list-item + .navigation__menu-list-item {
   margin-left: 35px;
-}
-
-.navigation__menu a {
-  font-size: 22px;
-  z-index: 5;
 }
 
 .navigation__social {

@@ -18,20 +18,20 @@ section.contact
                   :href="item.linkTipy + item.link"
                 ) {{ item.title }}
           .contact__info-social.header__bg-social
-            MyWebSocialIcon
+            socialIcon
         .contact__form-wrap
-          MyWebForm
+          contactForm
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
-import MyWebForm from "./parts/MyWebForm.vue";
+import socialIcon from "./parts/socialIcon.vue";
+import contactForm from "./parts/contactForm.vue";
 
 export default {
   components: {
-    MyWebSocialIcon,
-    MyWebForm,
+    socialIcon,
+    contactForm,
   },
   computed: {
     ...mapGetters(["contact"]),

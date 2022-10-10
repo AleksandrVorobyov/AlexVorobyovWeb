@@ -44,44 +44,38 @@ export default {
       theme: "",
       text: "",
     },
-    formSuccessNotif: "Заявка успешно отправлена!",
-    formDangerNotif: "Ошибка! Проверьте данные!",
-    notification: true,
   },
   getters: {
-    validateEmail(state) {
-      var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-      return pattern.test(state.formAnswers.email);
-    },
     contact(state) {
       return state.contact;
     },
     formAnswers(state) {
       return state.formAnswers;
     },
-    formTheme(state) {
-      return state.formAnswers.theme;
+    validateEmail(state) {
+      var pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+      return pattern.test(state.formAnswers.email);
     },
-    formText(state) {
-      return state.formAnswers.text;
+    validateEmailEmpty(state) {
+      return state.formAnswers.email.length === 0;
+    },
+    valideThemeEmpty(state) {
+      return state.formAnswers.theme.length === 0;
     },
     valideTheme(state) {
       return state.formAnswers.theme.length > 5;
     },
-    validEmail(state) {
-      return state.formAnswers.email;
-    },
     validText(state) {
       return state.formAnswers.text.length > 10;
     },
-    notification(state) {
-      return state.notification;
+    watchEmail(state) {
+      return state.formAnswers.email
     },
-    formSuccessNotif(state) {
-      return state.formSuccessNotif;
+    watchTheme(state) {
+      return state.formAnswers.theme
     },
-    formDangerNotif(state) {
-      return state.formDangerNotif;
+    watchText(state) {
+      return state.formAnswers.text
     },
   },
   mutations: {
@@ -660,25 +654,25 @@ export default {
           });
       }
     },
-    notificationDanger(state) {
-      state.notification = false
-    },
-    notificationSuccess(state) {
-      state.notification = true
-    },
   },
   actions: {
-    valideFormFunc({ commit, getters }) {
-      if (getters.validEmail && getters.valideTheme && getters.validText) {
-        return commit("clearForm");
+    validInput({ state, getters, commit, dispatch }, type) {
+      if (type == "email") {
+        dispatch("validEmailFunc")
+      }
+      if (type == "theme") {
+        dispatch("validThemeFunc")
+      }
+      if (type == "text") {
+        dispatch("validTextFunc")
       }
     },
-    validEmailFunc({ commit, getters }) {
+    validEmailFunc({ state, commit, getters }) {
       const emailFormWrap = document.getElementById("email-form-wrap");
       if (getters.validateEmail) {
         emailFormWrap.classList.remove("danger");
         emailFormWrap.classList.add("active");
-      } else if ((getters.validEmail === "")) {
+      } else if (getters.validateEmailEmpty) {
         emailFormWrap.classList.remove("danger");
         emailFormWrap.classList.remove("active");
       } else {
@@ -686,12 +680,12 @@ export default {
         emailFormWrap.classList.add("danger");
       }
     },
-    validThemeFunc({ commit, getters }) {
+    validThemeFunc({ state, getters }) {
       const themeFormWrap = document.getElementById("theme-form-wrap");
       if (getters.valideTheme) {
         themeFormWrap.classList.remove("danger");
         themeFormWrap.classList.add("active");
-      } else if ((getters.formTheme === "")) {
+      } else if (state.formAnswers.theme === "") {
         themeFormWrap.classList.remove("danger");
         themeFormWrap.classList.remove("active");
       } else {
@@ -699,12 +693,12 @@ export default {
         themeFormWrap.classList.add("danger");
       }
     },
-    validTextFunc({ commit, getters }) {
+    validTextFunc({ state, commit, getters }) {
       const textFormWrap = document.getElementById("text-form-wrap");
       if (getters.validText) {
         textFormWrap.classList.remove("danger");
         textFormWrap.classList.add("active");
-      } else if ((getters.formText === "")) {
+      } else if (state.formAnswers.text === "") {
         textFormWrap.classList.remove("danger");
         textFormWrap.classList.remove("active");
       } else {
@@ -712,19 +706,37 @@ export default {
         textFormWrap.classList.add("danger");
       }
     },
-    formNotif({ commit, getters }) {
-      if (getters.validEmail && getters.valideTheme && getters.validText) {
-        commit('notificationSuccess')
-        document.getElementById('page-notification').classList.add('page__notification-active');
-        setTimeout(() => {
-          document.getElementById('page-notification').classList.remove('page__notification-active');
-        }, 3000);
-      } else {
-        commit('notificationDanger')
-        document.getElementById('page-notification').classList.add('page__notification-danger');
-        setTimeout(() => {
-          document.getElementById('page-notification').classList.remove('page__notification-danger');
-        }, 3000);
+    async validFormContactInput({ state, getters, commit, dispatch }) {
+      try {
+        if (getters.validateEmailEmpty) {
+          throw new SyntaxError(getters.notification.error.formEmailEmpty);
+        }
+        if (!getters.validateEmail) {
+          throw new SyntaxError(getters.notification.error.formEmail);
+        }
+        if (getters.valideThemeEmpty) {
+          throw new SyntaxError(getters.notification.error.formThemeEmpty);
+        }
+        if (!getters.valideTheme) {
+          throw new SyntaxError(getters.notification.error.formTheme);
+        }
+        if (!getters.validText) {
+          throw new SyntaxError(getters.notification.error.formDesc);
+        }
+        return true
+      } catch (err) {
+        await dispatch("getNotificationForm", { type: "error", text: err.message })
+        return false
+      }
+    },
+    async submitMessageForm({ state, getters, commit, dispatch }) {
+      if (await dispatch("validFormContactInput")) {
+        try {
+          await commit("clearForm")
+          await dispatch("getNotificationForm", { type: "success", text: getters.notification.success.form })
+        } catch (err) {
+          await dispatch("getNotificationForm", { type: "error", text: err.message })
+        }
       }
     },
     contactSectionAnim(state) {

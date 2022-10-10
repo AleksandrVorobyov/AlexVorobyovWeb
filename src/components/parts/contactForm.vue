@@ -1,7 +1,7 @@
 <template lang="pug">
-form#form-contact.contact__form.wow.animated.fadeInUp(
+form#form-contact.contact__form(
   data-card="1",
-  @submit.prevent="formNotif(), valideFormFunc()"
+  @submit.prevent="submitMessageForm()"
 )
   h3.contact__form-title {{ contact.title }}
   #email-form-wrap.contact__form-item
@@ -33,59 +33,47 @@ form#form-contact.contact__form.wow.animated.fadeInUp(
     mainBtn(
       :btnType="contact.btnSubmit.type",
       :btnId="contact.btnSubmit.id",
-      :btnText="contact.btnSubmit.text",
+      :btnText="contact.btnSubmit.text"
     )
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import mainBtn from "./mainBtn.vue"
+import mainBtn from "./mainBtn.vue";
 export default {
   computed: {
     ...mapGetters([
       "contact",
       "formAnswers",
-      "formTheme",
-      "formText",
+      "watchEmail",
+      "watchTheme",
+      "watchText",
       "valideForm",
       "valideTheme",
-      "validEmail",
       "validText",
       "validateEmail",
     ]),
   },
   components: {
-    mainBtn
+    mainBtn,
   },
   methods: {
-    valideFormFunc() {
-      this.$store.dispatch("valideFormFunc");
+    async submitMessageForm() {
+      await this.$store.dispatch("submitMessageForm");
     },
-    validEmailFunc() {
-      this.$store.dispatch("validEmailFunc");
-    },
-    validThemeFunc() {
-      this.$store.dispatch("validThemeFunc");
-    },
-    validTextFunc() {
-      this.$store.dispatch("validTextFunc");
-    },
-    formNotif() {
-      this.$store.dispatch("formNotif");
-    },
-    clearForm() {
-      this.$store.commit("clearForm");
+    validInput(type) {
+      this.$store.dispatch("validInput", type);
     },
   },
   watch: {
-    validEmail(newEmail, oldEmail) {
-      this.validEmailFunc();
+    watchEmail() {
+      this.validInput("email");
     },
-    formTheme(newEmail, oldEmail) {
-      this.validThemeFunc();
+    watchTheme() {
+      this.validInput("theme");
     },
-    formText(newEmail, oldEmail) {
-      this.validTextFunc();
+    watchText() {
+      this.validInput("text");
     },
   },
 };
@@ -127,14 +115,13 @@ export default {
 }
 
 .contact__form::before {
-  background: linear-gradient(140deg, #e23d87 30%, #48ecb5);
+  background: var(--bgContactForm);
   z-index: 5;
   clip-path: circle(75% at 15% 45%);
 }
 
 .contact__form::after {
-  background: url("~@/assets/img/contact/cyber-contact-form.jpg") top left /
-    cover no-repeat;
+  background: var(--contactBgForm) top left / cover no-repeat;
   z-index: 1;
   filter: blur(2px);
 }
@@ -162,47 +149,14 @@ export default {
 }
 
 .form-input-email,
-.form-input-theme {
-  position: relative;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-bottom: 1px solid rgb(234, 234, 234);
-  outline: none;
-  font-size: 20px;
-  font-family: var(--fontRomanBold);
-  font-weight: 700;
-  color: var(--black);
-  font-weight: bold;
-  transition: ease-in 0.5s;
-  z-index: 10;
-  border-radius: 6px;
-
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid var(--yellowcolor);
-  }
-
-  @media (min-width: 480px) {
-    font-size: 22px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 20px;
-  }
-
-  &::placeholder {
-    color: var(--black);
-  }
-}
-
+.form-input-theme,
 .form-textarea-text {
   position: relative;
   width: 100%;
   padding: 15px;
   border: none;
-  border-bottom: 1px solid rgb(234, 234, 234);
   outline: none;
+  border-bottom: 1px solid var(--borderContactForm);
   font-size: 20px;
   line-height: 24px;
   font-family: var(--fontRomanBold);
@@ -259,7 +213,7 @@ export default {
   z-index: 10;
   margin-top: 20px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 480px) {
     justify-content: start;
   }
 }

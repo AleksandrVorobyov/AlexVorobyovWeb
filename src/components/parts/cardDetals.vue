@@ -3,7 +3,7 @@
   h4.detals-title {{ detalsTitle }}
   ol.detals-description
     li.detals-description-item(
-      v-for="detalsItem in detalsDescItems",
+      v-for="(detalsItem, index) in detalsDescItems",
       :key="detalsItem"
     )
       p.detals-description-item-text(

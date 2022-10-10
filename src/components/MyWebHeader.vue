@@ -59,7 +59,7 @@ section#header.header
       .header__bg-item
         .header__bg-title.neon(v-html="header.neonHeaderTitleBgSecond")
         .header__bg-social
-          MyWebSocialIcon
+          socialIcon
         a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
 </template>
 
@@ -67,12 +67,12 @@ section#header.header
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import mainBtn from "./parts/mainBtn.vue";
-import MyWebSocialIcon from "./parts/MyWebSocialIcon.vue";
+import socialIcon from "./parts/socialIcon.vue";
 
 export default {
   components: {
     mainBtn,
-    MyWebSocialIcon,
+    socialIcon,
     Splide,
     SplideSlide,
   },
@@ -368,8 +368,8 @@ export default {
   margin-bottom: 50px;
   z-index: 10;
   overflow: hidden;
-  background: linear-gradient(140deg, #e2d13d 30%, #ec6948);
-  box-shadow: 0px 10px 50px 0px var(--redCyber);
+  background: var(--bgHeaderSlide);
+  box-shadow: 0px 0px 50px var(--redCyber);
 
   &::before {
     content: "";
@@ -380,7 +380,7 @@ export default {
     width: 100%;
     pointer-events: none;
     z-index: -10;
-    background: linear-gradient(140deg, #e23d87 30%, #48ecb5);
+    background: var(--bgHeaderSlideBefore);
     z-index: -5;
     clip-path: circle(75% at 15% 45%);
   }
@@ -428,7 +428,6 @@ export default {
   font-family: var(--fontNeon);
   color: var(--white);
   font-weight: 700;
-  text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
 
   @media (min-width: 1170px) {
     margin-bottom: 50px;
@@ -481,7 +480,6 @@ export default {
   font-weight: 400;
   color: var(--white);
   text-decoration: underline;
-  text-shadow: 0px 3px 42.32px rgba(255, 255, 255, 0.004);
   transition: 0.5s ease-in-out;
 
   &:hover {

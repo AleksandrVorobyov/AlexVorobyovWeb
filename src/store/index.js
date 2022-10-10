@@ -11,6 +11,8 @@ import MyWebFooter from './modules/MyWebFooter'
 import MyWebCardBody from './modules/MyWebCardBody'
 import MyWebFullPage from './modules/MyWebFullPage'
 import MyWebScrollTo from './modules/MyWebScrollTo'
+import MyWebNotification from './modules/MyWebNotification'
+import MyWebSocial from './parts/social'
 
 export default createStore({
   state: {
@@ -31,5 +33,7 @@ export default createStore({
     CardBody: MyWebCardBody,
     FullPage: MyWebFullPage,
     ScrollTo: MyWebScrollTo,
+    Notification: MyWebNotification,
+    Social: MyWebSocial,
   }
 })

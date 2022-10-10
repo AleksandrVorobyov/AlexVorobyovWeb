@@ -1,5 +1,5 @@
 <template lang="pug">
-#page-project-body
+#page-project-inner
   main
     my-web-portfolio-inner
   footer
@@ -11,7 +11,7 @@ import MyWebPortfolioInner from "../components/MyWebPortfolioInner.vue";
 import MyWebFooter from "../components/MyWebFooter.vue";
 
 export default {
-  name: "ProjectBody",
+  name: "ProjectInner",
   components: {
     MyWebPortfolioInner,
     MyWebFooter,
