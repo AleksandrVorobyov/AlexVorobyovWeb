@@ -10,7 +10,10 @@ aside#sidebar.sidebar
     .sidebar__links
       ul.sidebar__links-col
         li.sidebar__links-item(v-for="item in sidebarLinks", :key="item") 
-          router-link.sidebar__links-item-link(:to="item.link" @click="burgerActiveMet(), showDialog()")
+          router-link.sidebar__links-item-link(
+            :to="item.link",
+            @click="burgerActiveMet(), showDialog()"
+          )
             span {{ item.text }}
     .sidebar__social
       socialIcon
@@ -33,11 +36,11 @@ export default {
   },
   methods: {
     showDialog() {
-      this.$store.commit('showDialog')
+      this.$store.commit("showDialog");
     },
     burgerActiveMet() {
-      this.$store.commit('burgerActiveMet')
-    }
+      this.$store.commit("burgerActiveMet");
+    },
   },
   mounted() {
     window.addEventListener("scroll", () => {
@@ -104,6 +107,12 @@ export default {
   text-align: center;
 }
 
+.sidebar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .sidebar__btn .night-sun {
   position: relative;
   top: 0;
@@ -144,4 +153,35 @@ export default {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+// -------------night---------------
+.night .sidebar {
+  .sidebar-wrap {
+    background: var(--bgSidebarNight);
+  }
+
+  .sidebar-wrap-bg {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar__title {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+  }
+
+  .sidebar__links-item-link {
+    background: var(--black);
+    font-family: var(--fontRomanBold);
+  }
+
+  .sidebar__links-item {
+    box-shadow: none;
+  }
+
+  .sidebar__social .fa {
+    text-shadow: none;
+  }
+}
+// -------------night---------------
 </style>

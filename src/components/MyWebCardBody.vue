@@ -275,8 +275,11 @@ export default {
   overflow: hidden;
 
   img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     object-fit: cover;
   }
 }
@@ -366,4 +369,72 @@ export default {
 .meta-php {
   background: var(--metaPhp);
 }
+
+// -------------night---------------
+.night .card-post {
+  &::after {
+    display: none;
+  }
+  &::before {
+    display: none;
+  }
+
+  p,
+  h2,
+  h3,
+  h4,
+  svg {
+    color: var(--black);
+    fill: var(--black);
+    border-bottom-color: var(--yellowcolor);
+  }
+
+  a {
+    color: var(--yellowcolor);
+  }
+
+  input {
+    background-color: rgb(37, 37, 37);
+    color: var(--white);
+    border: none;
+  }
+
+  .card-post__nav-title,
+  .card-post__nav-desc {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+
+    &::after {
+      background-color: var(--yellowcolor);
+    }
+  }
+
+  .card-post__content-carousel {
+    background-color: var(--yellowcolor);
+    border: 10px double var(--bgSidebarNight);
+  }
+
+  .carousel-project__btn-next,
+  .carousel-project__btn-prev {
+    border: 5px solid var(--bgSidebarNight);
+    transition: 0.4s linear;
+  }
+
+  .carousel-project__btn-next svg,
+  .carousel-project__btn-prev svg {
+    fill: var(--bgSidebarNight);
+    transition: 0.4s linear;
+  }
+
+  .carousel-project__btn-next:hover svg,
+  .carousel-project__btn-prev:hover svg {
+    fill: var(--yellowcolor);
+  }
+
+  .carousel-project__btn-next:hover,
+  .carousel-project__btn-prev:hover {
+    border: 5px solid var(--yellowcolor);
+  }
+}
+// -------------night---------------
 </style>

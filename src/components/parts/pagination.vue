@@ -34,7 +34,7 @@ export default {
   z-index: 50;
   overflow: hidden;
   cursor: pointer;
-  -webkit-box-reflect: below 10px linear-gradient(transparent, #0002);
+  // -webkit-box-reflect: below 10px linear-gradient(transparent, #0002);
 }
 
 .pagination:hover {
@@ -74,4 +74,15 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+// -------------night---------------
+.night .pagination:hover {
+  background: var(--yellowcolor) var(--paginationBtnBgWhite);
+  transition-delay: 0.8s;
+  animation: pixelBtn 0.8s steps(8) forwards;
+  background-size: 180px;
+  box-shadow: 0px 0px 10px var(--yellowcolor), 0px 0px 20px var(--yellowcolor),
+    0px 0px 40px var(--yellowcolor);
+}
+// -------------night---------------
 </style>

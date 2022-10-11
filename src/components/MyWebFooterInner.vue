@@ -111,4 +111,27 @@ export default {
     transition: 0.5s ease-in-out;
   }
 }
+
+// -------------night---------------
+.night .footer-inner {
+  background: var(--bgSidebarNight);
+  height: 300px;
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    display: none;
+  }
+
+  .footer-inner-column {
+    height: 300px;
+  }
+
+  .footer-inner__title,
+  p {
+    color: var(--black);
+  }
+}
+// -------------night---------------
 </style>

@@ -193,3 +193,12 @@ img {
 .slide-left-enter-active {
   animation: slideInLeft 1s linear;
 }
+
+.night .page::before,
+.night .page::after {
+  content: none;
+}
+
+.night .page__background {
+  display: none;
+}

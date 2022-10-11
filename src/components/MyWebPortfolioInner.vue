@@ -1,11 +1,11 @@
 <template lang="pug">
-section.portfolio
+section#portfolioInner.portfolio
   .container
     .portfolio-wrap
       h3.portfolio__title.neon(v-html="portfolio.neonPortfolioTitle")
       nav.portfolio__nav
         label(
-          v-for="item in portfolioInner",
+          v-for="item in portfolioInner.menu",
           :key="item.id",
           :class="item.labelClass",
           v-if="portfolioNavHidden"
@@ -27,7 +27,7 @@ section.portfolio
           .portfolio__dropdown-active(@click="dropdown($event)") {{ dropdownPortfolio.text }}
           .portfolio__dropdown-list(v-if="!dropHidden")
             .portfolio__dropdown-item(@click="dropdownOption($event)")(
-              v-for="item in portfolioInner",
+              v-for="item in portfolioInner.menu",
               :key="item.id",
               :class="item.labelClass",
               :data-menu="item.dataMenu"
@@ -97,7 +97,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import url("~@/assets/style/portfolio.css");
+
 .portfolio__nav {
   width: 100%;
   display: flex;

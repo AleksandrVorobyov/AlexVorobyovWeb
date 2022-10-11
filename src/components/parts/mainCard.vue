@@ -176,4 +176,32 @@ export default {
   font-family: var(--fontRomanReg);
   color: var(--black);
 }
+
+// -------------night---------------
+.night {
+  .card {
+    border: 4px solid var(--yellowcolor);
+  }
+
+  .card:hover .card__title {
+    color: var(--yellowcolor);
+  }
+
+  .card .card__text {
+    border-top: 4px solid var(--yellowcolor);
+  }
+
+  .card__btn {
+    background: var(--yellowcolor);
+  } 
+
+  .card__img {
+    border-bottom: 2px solid var(--yellowcolor);
+  }
+
+  .neon span {
+    animation: none;
+  }
+}
+// -------------night---------------
 </style>

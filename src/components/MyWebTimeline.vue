@@ -328,4 +328,49 @@ export default {
   width: 40px;
   height: 35px;
 }
+
+// -------------night---------------
+.night .timeline {
+  background: transparent;
+
+  &::after {
+    display: none;
+  }
+  &::before {
+    display: none;
+  }
+
+  .timeline__title {
+    &::after {
+      background-color: var(--yellowcolor);
+    }
+  }
+
+  .timeline__title,
+  .timeline__row-text-title,
+  .timeline__row-text-desc {
+    color: var(--black);
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+  }
+
+  .timeline__row-text-subtitle {
+    color: var(--black);
+  }
+
+  .timeline__row {
+    &::before,
+    &::after {
+      background: var(--bgSidebarNight);
+    }
+  }
+  .timeline__row-text {
+    background: var(--bgSidebarNight);
+    &::before,
+    &::after {
+      background: var(--bgSidebarNight);
+    }
+  }
+}
+// -------------night---------------
 </style>

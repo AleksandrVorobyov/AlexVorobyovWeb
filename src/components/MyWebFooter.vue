@@ -87,4 +87,17 @@ export default {
     line-height: 22px;
   }
 }
+
+// -------------night---------------
+.night .footer {
+  background: var(--bgSidebarNight);
+
+  &::after {
+    display: none;
+  }
+  &::before {
+    display: none;
+  }
+}
+// -------------night---------------
 </style>

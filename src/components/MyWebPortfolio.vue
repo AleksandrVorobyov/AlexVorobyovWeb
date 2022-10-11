@@ -58,100 +58,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.portfolio {
-  position: relative;
-  padding: 35px 0;
-  overflow: hidden;
-  min-height: 80vh;
-  z-index: 200;
-
-  @media (min-width: 768px) {
-    padding: 50px 0px;
-  }
-
-  @media (min-width: 1170px) {
-    padding: 75px 0px;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    height: 50px;
-    width: 100%;
-  }
-
-  &::before {
-    top: -50px;
-    right: 0;
-    box-shadow: 0px 10px 15px var(--redCyber);
-  }
-
-  &::after {
-    bottom: -50px;
-    left: 0;
-    box-shadow: 0px -10px 15px var(--redCyber);
-  }
-}
-
-.portfolio__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--portfolioBgMob) top center/ cover no-repeat;
-  z-index: -1;
-  opacity: 0.8;
-
-  @media (min-width: 768px) {
-    background: linear-gradient(#dfdbdb48, #fa9d9d70),
-      var(--portfolioBgWeb) top center/ cover no-repeat;
-    background-attachment: fixed;
-    background-blend-mode: hue;
-  }
-}
-
-.portfolio-wrap {
-  text-align: center;
-}
-
-.portfolio__title {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 35px;
-  font-size: 32px;
-  line-height: 36px;
-  font-family: var(--fontNeon);
-  color: var(--whiteText);
-  font-weight: bold;
-  z-index: 5;
-
-  &::after {
-    position: absolute;
-    content: "";
-    clear: both;
-    background-color: var(--redCyber);
-    width: 100%;
-    height: 10px;
-    bottom: -7px;
-    left: -3px;
-    z-index: -1;
-    transition: 0.5s ease-in-out;
-  }
-
-  @media (min-width: 480px) {
-    font-size: 44px;
-    line-height: 48px;
-  }
-
-  @media (min-width: 1170px) {
-    margin-bottom: 70px;
-    font-size: 64px;
-    line-height: 68px;
-  }
-}
+<style lang="scss" scoped>
+@import url("~@/assets/style/portfolio.css");
 
 .portfolio__btn {
   position: relative;
@@ -181,4 +89,93 @@ export default {
   justify-content: center;
   margin-bottom: 40px;
 }
+
+// -------------portfolio---------------
+.night .portfolio {
+  &::after {
+    height: 0;
+  }
+  &::before {
+    height: 0;
+  }
+
+  .portfolio__title {
+    &::after {
+      background-color: var(--yellowcolor);
+    }
+  }
+
+  .portfolio__title,
+  .portfolio__nav-item {
+    color: var(--black);
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    transition: 0.5s ease-in-out;
+  }
+
+  .portfolio__nav-item:hover {
+    color: var(--redcolor);
+  }
+}
+
+.night .portfolio__nav {
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label {
+    color: var(--black);
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+
+    &:hover {
+      color: var(--blueLinkHover);
+      border-bottom-color: var(--yellowcolor);
+    }
+  }
+
+  .portfolio__dropdown-active {
+    color: var(--yellowcolor);
+    border-bottom: 5px solid var(--yellowcolor);
+
+    &::before {
+      color: var(--yellowcolor);
+    }
+  }
+
+  .portfolio__dropdown-item {
+    border: 5px solid var(--yellowcolor);
+  }
+
+  .portfolio__dropdown-item + .portfolio__dropdown-item {
+    border-top: 0px solid #000;
+  }
+
+  .checkbox-all:checked + label,
+  .checkbox-html:checked + label,
+  .checkbox-less:checked + label,
+  .checkbox-scss:checked + label,
+  .checkbox-pug:checked + label,
+  .checkbox-js:checked + label {
+    color: var(--blueLinkHover);
+    border-bottom-color: var(--yellowcolor);
+  }
+
+  label > [type="radio"]:checked + span,
+  label > [type="radio"]:not(:checked) + span {
+    color: var(--black);
+    font-family: var(--fontRomanBold);
+    letter-spacing: 1px;
+
+    &:hover {
+      color: var(--blueLinkHover);
+      border-bottom-color: var(--yellowcolor);
+      text-shadow: 0px 0px 5px #313131;
+    }
+  }
+
+  label.checked > [type="radio"] + span {
+    color: var(--blueLinkHover);
+    border-bottom-color: var(--yellowcolor);
+    text-shadow: 0px 0px 5px #313131;
+  }
+}
+// -------------portfolio---------------
 </style>

@@ -111,4 +111,45 @@ export default {
 .button--inner {
   filter: hue-rotate(240deg);
 }
+
+// -------------mainBtn---------------
+.night .page {
+  .button {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    background-color: var(--yellowcolor);
+    border: 4px solid var(--yellowcolor);
+    transition: all 0.4s;
+    color: var(--white);
+
+    &:hover,
+    &:active {
+      opacity: 0.8;
+      box-shadow: none;
+      transition: all 0.4s;
+    }
+
+    &::after,
+    &::before {
+      content: none;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+  }
+
+  .button--inner {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    color: var(--black);
+    border: 4px solid var(--black);
+    transition: all 0.4s;
+    &::after,
+    &::before {
+      content: none;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+  }
+}
+// -------------mainBtn---------------
 </style>

@@ -289,7 +289,7 @@ export default {
     },
     dropdownOption({ state, commit }, event) {
       const newDrop = event.target.getAttribute("data-menu");
-      const inner = state.portfolioInner.find(
+      const inner = state.portfolioInner.menu.find(
         (e) => e.dataMenu === newDrop
       );
       state.dropdownPortfolio.text = inner.text;

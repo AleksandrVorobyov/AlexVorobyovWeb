@@ -55,12 +55,13 @@ export default {
 .detals-description-item-text {
   margin: 0;
   font-size: 18px;
+  line-height: 22px;
   font-weight: 400;
   font-family: var(--fontRomanReg);
   color: var(--white);
-  line-height: 22px;
   text-align: left;
   flex: 1;
+  overflow-wrap: anywhere;
 
   &:last-child {
     max-width: 350px;
@@ -72,4 +73,17 @@ export default {
     }
   }
 }
+
+// -------------night---------------
+.night .detals {
+  .detals-title,
+  .detals-description-item-text {
+    color: var(--black);
+  }
+
+  .detals-title {
+    border-bottom: 8px solid var(--yellowcolor);
+  }
+}
+// -------------night---------------
 </style>

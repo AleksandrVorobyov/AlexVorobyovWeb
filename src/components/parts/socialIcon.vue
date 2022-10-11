@@ -54,4 +54,12 @@ export default {
     color: var(--blueLinkHover);
   }
 }
+
+// -------------social-link---------------
+.night .page {
+  .social-link .fa {
+    text-shadow: 0 0 5px var(--grayText), 0 0 10px var(--grayText);
+  }
+}
+// -------------social-link---------------
 </style>

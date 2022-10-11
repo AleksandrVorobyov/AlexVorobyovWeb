@@ -310,4 +310,53 @@ export default {
     justify-content: flex-start;
   }
 }
+
+// -------------night---------------
+.night .contact {
+  background: linear-gradient(#50505080, #50505080),
+    var(--contactBg) top left / cover no-repeat;
+
+  .contact-title {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+
+    &::after {
+      background-color: var(--yellowcolor);
+    }
+  }
+
+  .contact__form::before {
+    background: var(--bgContactFormWhite);
+  }
+
+  .contact__form::after {
+    background: var(--yellowcolor);
+    filter: blur(0px);
+  }
+
+  .contact-title {
+    color: var(--white);
+  }
+
+  .contact__info-table-list-link {
+    color: var(--blueLinkHover);
+  }
+
+  .contact__info-desc {
+    color: var(--white);
+  }
+
+  .contact__info::after {
+    content: none;
+  }
+
+  .contact__info-table-list .contact__info-table-list-item:before {
+    background: var(--yellowcolor);
+  }
+
+  .contact__form-wrap .contact__form {
+    box-shadow: none;
+  }
+}
+// -------------night---------------
 </style>

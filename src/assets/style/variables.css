@@ -9,7 +9,7 @@
   --lightGrayBg: #f5f5f5;
   --grayBg: #808080;
   --redcolor: #e74c3c;
-  --yellowcolor: #fbdc4d;
+  --yellowcolor: #fada4a;
   --redCyber: #ec0b36;
   --greenCyber: #00ff80;
   --redCyber50: #ec0b3485;
@@ -29,6 +29,7 @@
   --bgHeaderSlide: linear-gradient(140deg, #e2d13d 30%, #ec6948);
   --bgHeaderSlideBefore: linear-gradient(140deg, #e23d87 30%, #48ecb5);
   --bgContactForm: linear-gradient(140deg, #e23d87 30%, #48ecb5);
+  --bgContactFormWhite: linear-gradient(140deg, #8ebbff 30%, #0ee00e);
   --bgSidebarNight: #7e90b9;
 
   --borderContactForm: #eaeaea;
@@ -49,4 +50,5 @@
   --contactBgForm: url("~@/assets/img/contact/cyber-contact-form.jpg");
   --footerBgInner: url("~@/assets/img/footer/bg-footer.png");
   --paginationBtnBg: url("~@/assets/img/btn/pixel.png");
+  --paginationBtnBgWhite: url("~@/assets/img/btn/pixel-yellow.png");
 }

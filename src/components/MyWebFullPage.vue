@@ -55,4 +55,24 @@ export default {
     object-fit: contain;
   }
 }
+
+// -------------night---------------
+.night .full-page {
+  .full-page-wrap {
+    background-color: var(--yellowcolor);
+  }
+
+  .full-page__title h2 span {
+    color: var(--yellowcolor);
+  }
+
+  .full-page__desc {
+    border-bottom-color: var(--yellowcolor);
+  }
+
+  .full-page__img + .full-page__img {
+    border-top-color: var(--yellowcolor);
+  }
+}
+// -------------night---------------
 </style>

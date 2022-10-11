@@ -576,4 +576,104 @@ export default {
 .splide__arrow {
   pointer-events: all;
 }
+
+// -------------header---------------
+.night {
+  .header {
+    background: transparent;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .header__text-subtitle {
+    color: var(--black);
+  }
+
+  .header__text-title {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    color: var(--black);
+
+    &::after {
+      background-color: var(--yellowcolor);
+    }
+  }
+
+  .header__slide {
+    background: var(--yellowcolor);
+    box-shadow: 0px 14px 50px 0px var(--grayBg);
+  }
+
+  .header__slide-btn:hover {
+    box-shadow: 0px 0px 10px var(--grayBg);
+  }
+
+  .header__slide::before {
+    background: var(--bgContactFormWhite);
+  }
+  .header__bg-title,
+  .header__bg-title {
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    color: var(--black);
+  }
+
+  .header__bg-skills li {
+    color: var(--black);
+  }
+
+  .header__bg-email {
+    color: var(--black);
+
+    &:hover {
+      color: var(--blue);
+    }
+
+    &:active {
+      color: var(--redcolor);
+    }
+  }
+
+  .header__bg-img {
+    border: 5px solid var(--yellowcolor);
+    box-shadow: none;
+
+    &::after {
+      background: transparent;
+    }
+    &::before {
+      background: transparent;
+    }
+  }
+
+  .header__bg-item {
+    background-color: var(--bgSidebarNight);
+    border-radius: 5px;
+    padding: 10px;
+
+    @media (min-width: 1170px) {
+      background: transparent;
+    }
+  }
+
+  .header__avatar {
+    background-color: var(--yellowcolor);
+    border: 10px double var(--bgSidebarNight);
+  }
+
+  .header__avatar_css:hover .header__avatar-title,
+  .header__avatar_js:hover .header__avatar-title,
+  .header__avatar_html:hover .header__avatar-title {
+    color: var(--yellowcolor);
+  }
+
+  .header__avatar-title {
+    color: var(--black);
+    font-weight: 400;
+  }
+}
+// -------------header---------------
 </style>

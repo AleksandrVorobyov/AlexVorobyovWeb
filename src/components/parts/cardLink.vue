@@ -74,4 +74,13 @@ export default {
 .link-project-item svg {
   margin-right: 10px;
 }
+
+// -------------night---------------
+.night .link-project {
+  .link-project-title {
+    color: var(--black);
+    border-bottom: 8px solid var(--yellowcolor);
+  }
+}
+// -------------night---------------
 </style>

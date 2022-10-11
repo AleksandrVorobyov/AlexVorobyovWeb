@@ -81,7 +81,7 @@ export default {
     padding: 75px 0px;
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     bottom: -50px;
@@ -186,58 +186,6 @@ export default {
   @media (min-width: 1170px) {
     margin-bottom: 0;
   }
-}
-
-.nav {
-  display: inline-block;
-  position: relative;
-  padding: 15px 30px;
-  font-size: 20px;
-  line-height: 24px;
-  font-family: var(--fontNeon);
-  color: var(--white);
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.5s ease-in-out;
-  background: var(--redCyber);
-  border-radius: 10px;
-  z-index: 5;
-  overflow: hidden;
-
-  &:after {
-    position: absolute;
-    content: "";
-    bottom: 0px;
-    left: 0px;
-    width: 0;
-    height: 7px;
-    background: var(--blueCyber);
-    transition: 0.5s linear;
-  }
-
-  &:hover {
-    color: var(--blueCyber);
-  }
-
-  &:hover:after {
-    width: 100%;
-  }
-
-  &:active:after {
-    width: 100%;
-  }
-}
-
-.router-link-active.nav {
-  color: var(--blueCyber);
-
-  &:after {
-    width: 100%;
-  }
-}
-
-.nav:not(.nav--active):hover:after {
-  max-width: 100%;
 }
 
 .navigation__menu-list {
@@ -354,4 +302,70 @@ export default {
     display: flex;
   }
 }
+
+// -------------navigation---------------
+.night .navigation .navigation__burger {
+  &::before {
+    background: var(--black);
+  }
+
+  &::after {
+    background: var(--black);
+  }
+
+  span::before {
+    background: var(--black);
+  }
+}
+
+.night .navigation__burger {
+  background: var(--bgSidebarNight);
+}
+
+.night .navigation {
+  background: var(--bgSidebarNight);
+
+  &::before {
+    content: none;
+    opacity: 0;
+  }
+
+  .logo {
+    text-shadow: none;
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    color: var(--black);
+
+    &:hover {
+      text-shadow: none;
+    }
+
+    &::after {
+      border-bottom: 7px solid var(--yellowcolor);
+    }
+  }
+
+  .btn-menu {
+    text-shadow: none;
+    font-weight: 700;
+    font-family: var(--fontRomanBold);
+    color: var(--black);
+    background: var(--white);
+
+    &:hover {
+      color: var(--blueLinkHover);
+    }
+
+    &--active {
+      color: var(--blueLinkHover);
+    }
+  }
+}
+
+@media (min-width: 1170px) {
+  .night .navigation .navigation__social {
+    border-bottom: 5px solid var(--yellowcolor);
+  }
+}
+// -------------navigation---------------
 </style>

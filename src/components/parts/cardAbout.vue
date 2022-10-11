@@ -1,7 +1,7 @@
 <template lang="pug">
 .about-project
   h4.about-project__title {{ cardAboutTitle }}
-  p {{ cardAboutText }}
+  p.about-project__text {{ cardAboutText }}
 </template>
 
 <script>
@@ -29,7 +29,7 @@ export default {
   border-bottom: 8px solid var(--redCyber);
 }
 
-.about-project p {
+.about-project__text {
   margin: 0;
   font-size: 18px;
   line-height: 22px;
@@ -37,4 +37,17 @@ export default {
   font-family: var(--fontRomanReg);
   color: var(--white);
 }
+
+// -------------night---------------
+.night .about-project {
+  .about-project__text,
+  .about-project__title {
+    color: var(--black);
+  }
+
+  .about-project__title {
+    border-bottom: 8px solid var(--yellowcolor);
+  }
+}
+// -------------night---------------
 </style>
