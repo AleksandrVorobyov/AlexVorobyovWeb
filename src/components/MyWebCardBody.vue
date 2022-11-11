@@ -12,15 +12,15 @@ section.card-post
         ) {{ item.text }}
     .card-post__content
       .card-post__content-desc
-        cardLink(
+        card-link(
           :linkProjectTitle="activeCard.card.linkProjectTitle",
           :linkProjectItem="activeCard.card.linkProjectItem"
         )
-        cardAbout(
+        card-about(
           :cardAboutTitle="activeCard.card.cardAboutTitle",
           :cardAboutText="activeCard.card.cardAboutText"
         )
-        cardDetals(
+        card-detals(
           :detalsTitle="activeCard.card.detalsTitle",
           :detalsDescItems="activeCard.card.detalsDescItems"
         )
@@ -49,10 +49,10 @@ section.card-post
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import pagination from "./parts/pagination.vue";
-import cardDetals from "./parts/cardDetals.vue";
-import cardAbout from "./parts/cardAbout.vue";
-import cardLink from "./parts/cardLink.vue";
+import pagination from "@/components/parts/MyPagination.vue";
+import cardDetals from "@/components/parts/MyCardDetals.vue";
+import cardAbout from "@/components/parts/MyCardAbout.vue";
+import cardLink from "@/components/parts/MyCardLink.vue";
 
 export default {
   components: {

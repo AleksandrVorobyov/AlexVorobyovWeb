@@ -14,11 +14,11 @@
 
 <script>
 export default {
-  created() {
+  setup() {
     window.onload = function () {
       document.querySelector(".preloader").classList.add("preloader-remove");
     };
-  },
+  }
 };
 </script>
 

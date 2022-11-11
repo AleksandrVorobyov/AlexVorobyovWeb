@@ -4,7 +4,7 @@ section#portfolio.portfolio
     .portfolio-wrap
       h3.portfolio__title.neon(v-html="portfolio.neonPortfolioTitle")
       .portfolio__card
-        mainCard(
+        card(
           v-for="item in firstPortfolioCards",
           :key="item",
           :link="item.cardLink",
@@ -15,7 +15,7 @@ section#portfolio.portfolio
           :card-id="item.cardId"
         )
       .portfolio__btn
-        mainBtn(
+        btn(
           :btnType="portfolio.btn.type",
           :btnId="portfolio.btn.id",
           :btnText="portfolio.btn.text",
@@ -26,14 +26,8 @@ section#portfolio.portfolio
 
 <script>
 import { mapGetters } from "vuex";
-import mainBtn from "./parts/mainBtn.vue";
-import mainCard from "./parts/mainCard.vue";
 
 export default {
-  components: {
-    mainBtn,
-    mainCard,
-  },
   computed: {
     ...mapGetters(["portfolio", "portfolioAll"]),
     firstPortfolioCards() {

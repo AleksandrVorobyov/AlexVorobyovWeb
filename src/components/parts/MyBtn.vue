@@ -9,6 +9,7 @@ button.button(
 </template>
 <script>
 export default {
+  name: "btn",
   props: {
     btnText: String,
     btnClass: String,

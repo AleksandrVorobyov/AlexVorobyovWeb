@@ -6,17 +6,13 @@
       p.footer-inner__subtitle {{ footerInnerSubTitle }}
         a(:href="'mailto:' + footerInnerLink") {{ footerInnerLink }}
       .footer-inner__social.header__bg-social
-        my-web-social-icon
+        social-icon
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import MyWebSocialIcon from "./parts/socialIcon.vue";
 
 export default {
-  components: {
-    MyWebSocialIcon,
-  },
   computed: {
     ...mapGetters([
       "footerInnerTitle",

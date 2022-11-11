@@ -38,7 +38,7 @@ section#portfolioInner.portfolio
           :key="item",
           :class="item.allMenuClass"
         )
-          mainCard(
+          card(
             :link="'#'",
             :src="item.cardSrc",
             :alt="item.cardAlt",
@@ -51,12 +51,8 @@ section#portfolioInner.portfolio
 
 <script>
 import { mapGetters } from "vuex";
-import mainCard from "./parts/mainCard.vue";
 
 export default {
-  components: {
-    mainCard,
-  },
   computed: {
     ...mapGetters([
       "portfolio",

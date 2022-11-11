@@ -8,6 +8,7 @@ button.btn-menu(
 </template>
 <script>
 export default {
+  name: "btn-menu",
   props: {
     btnType: String,
     btnId: String,

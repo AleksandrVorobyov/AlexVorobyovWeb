@@ -30,7 +30,7 @@ form#form-contact.contact__form(
       v-model="formAnswers.text"
     )
   .contact__form-button
-    mainBtn(
+    btn(
       :btnType="contact.btnSubmit.type",
       :btnId="contact.btnSubmit.id",
       :btnText="contact.btnSubmit.text"
@@ -39,7 +39,6 @@ form#form-contact.contact__form(
 
 <script>
 import { mapGetters } from "vuex";
-import mainBtn from "./mainBtn.vue";
 export default {
   computed: {
     ...mapGetters([
@@ -53,9 +52,6 @@ export default {
       "validText",
       "validateEmail",
     ]),
-  },
-  components: {
-    mainBtn,
   },
   methods: {
     async submitMessageForm() {

@@ -7,13 +7,13 @@ section#header.header
         h2.header__text-title.neon(v-html="header.neonHeaderTitleSecond")
         p.header__text-subtitle {{ header.mySkillsSub }}
         .header__text-button
-          mainBtn(
+          btn(
             :btnType="header.headerTextBtn.btnTimeline.type",
             :btnId="header.headerTextBtn.btnTimeline.id",
             :btnText="header.headerTextBtn.btnTimeline.text",
             @clickAction="scrollToTimeline()"
           )
-          mainBtn(
+          btn(
             :btnType="header.headerTextBtn.btnContact.type",
             :btnId="header.headerTextBtn.btnContact.id",
             :btnClass="header.headerTextBtn.btnContact.class",
@@ -50,7 +50,7 @@ section#header.header
           ul
             li(v-for="item in header.mySkills") {{ item }}
         .header__bg-button
-          mainBtn(
+          btn(
             :btnType="header.headerBgBtn.type",
             :btnId="header.headerBgBtn.id",
             :btnText="header.headerBgBtn.text",
@@ -59,20 +59,16 @@ section#header.header
       .header__bg-item
         .header__bg-title.neon(v-html="header.neonHeaderTitleBgSecond")
         .header__bg-social
-          socialIcon
+          social-icon
         a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import mainBtn from "./parts/mainBtn.vue";
-import socialIcon from "./parts/socialIcon.vue";
 
 export default {
   components: {
-    mainBtn,
-    socialIcon,
     Splide,
     SplideSlide,
   },

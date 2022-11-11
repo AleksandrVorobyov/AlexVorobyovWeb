@@ -8,15 +8,13 @@
 
 <script>
 import { mapGetters } from "vuex";
-import myWebPageBack from "./components/MyWebPageBack.vue";
+import MyWebPageBack from "./components/MyWebPageBack.vue";
 import MyWebPreloader from "./components/MyWebPreloader.vue";
-import notification from "./components/parts/notification.vue";
 
 export default {
   components: {
-    myWebPageBack,
+    MyWebPageBack,
     MyWebPreloader,
-    notification,
   },
   computed: {
     ...mapGetters(["notification"]),

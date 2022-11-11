@@ -1,4 +1,5 @@
-module.exports = {
+const { defineConfig } = require("@vue/cli-service");
+module.exports = defineConfig({
     configureWebpack: {
       module: {
         rules: [
@@ -18,4 +19,4 @@ module.exports = {
       }
     },
     publicPath: '/AlexVorobyovWeb/'
-  }
+});

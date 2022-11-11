@@ -1,14 +1,14 @@
 <template lang="pug">
 section#navigation.navigation(ref="topDiv")
   .big-container
-    nightMode
+    night-mode
     .navigation-wrap
       h1.navigation__logo
         router-link.logo(to="/", @click.native="scrollToTop()") А<span>В</span>
       nav.navigation__menu
         ul.navigation__menu-list
           li.navigation__menu-list-item(v-for="item in navLinks", :key="item")
-            mainBtnMenu(
+            btn-menu(
               :btnText="item.text",
               :btnType="item.type",
               :btnId="item.id",
@@ -16,7 +16,7 @@ section#navigation.navigation(ref="topDiv")
               @clickAction="roadToPage(item.link)"
             )
       .navigation__social
-        socialIcon
+        social-icon
       button#nav-burger-btn.navigation__burger(
         type="button",
         @click="burgerActiveMet(), showDialog()"
@@ -26,14 +26,10 @@ section#navigation.navigation(ref="topDiv")
 
 <script>
 import { mapGetters } from "vuex";
-import mainBtnMenu from "./parts/mainBtnMenu.vue";
-import socialIcon from "./parts/socialIcon.vue";
-import nightMode from "./parts/nightMode.vue";
+import nightMode from "./parts/MyNightMode.vue";
 
 export default {
   components: {
-    mainBtnMenu,
-    socialIcon,
     nightMode,
   },
   computed: {

@@ -16,19 +16,17 @@ aside#sidebar.sidebar
           )
             span {{ item.text }}
     .sidebar__social
-      socialIcon
+      social-icon
     .sidebar__btn
-      nightMode
+      night-mode
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import socialIcon from "./parts/socialIcon.vue";
-import nightMode from "./parts/nightMode.vue";
+import nightMode from "./parts/MyNightMode.vue";
 
 export default {
   components: {
-    socialIcon,
     nightMode,
   },
   computed: {

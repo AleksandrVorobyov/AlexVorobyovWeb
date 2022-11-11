@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "card",
   props: ["link", "src", "alt", "title", "text", "cardId"],
   methods: {
     randColor(event) {
