@@ -4,50 +4,44 @@ section#portfolio.portfolio
     .portfolio-wrap
       h3.portfolio__title.neon(v-html="portfolio.neonPortfolioTitle")
       .portfolio__card
-        card(
+        my-card(
           v-for="item in firstPortfolioCards",
           :key="item",
-          :link="item.cardLink",
-          :src="item.cardSrc",
-          :alt="item.cardAlt",
-          :title="item.cardTitle",
-          :text="item.cardText",
-          :card-id="item.cardId"
+          :cardInfo="item"
         )
       .portfolio__btn
-        btn(
-          :btnType="portfolio.btn.type",
-          :btnId="portfolio.btn.id",
-          :btnText="portfolio.btn.text",
+        my-btn(
+          :btnInfo="portfolio.btn",
           @clickAction="roadToPage(portfolio.btn.link)"
         )
   .portfolio__background
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters(["portfolio", "portfolioAll"]),
-    firstPortfolioCards() {
-      return this.portfolioAll.slice(0, 9);
-    },
-  },
-  methods: {
-    async roadToPage(link) {
-      await this.$store.dispatch("roadToPage", link);
-    },
-    async loadCards() {
-      await this.$store.dispatch("loadCards");
-    },
-    async portfolioSectionAnim() {
-      await this.$store.dispatch("portfolioSectionAnim");
-    },
-  },
-  mounted() {
-    this.loadCards();
-    this.portfolioSectionAnim();
+  name: "portfolio-section",
+  setup() {
+    const store = useStore();
+    const loadCards = async () => await store.dispatch("loadCards");
+    const portfolioSectionAnim = async () =>
+      await store.dispatch("portfolioSectionAnim");
+
+    onMounted(() => {
+      loadCards();
+      portfolioSectionAnim();
+    });
+
+    return {
+      portfolio: computed(() => store.getters.portfolio),
+      portfolioAll: computed(() => store.getters.portfolioAll),
+      firstPortfolioCards: computed(() =>
+        store.getters.portfolioAll.slice(0, 9)
+      ),
+      roadToPage: async (link) => await store.dispatch("roadToPage", link),
+    };
   },
 };
 </script>

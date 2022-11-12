@@ -7,6 +7,7 @@ button.pagination(@click="$emit('clickActionNext')")
 
 <script>
 export default {
+  name: "my-pagination",
   props: {
     paginationPrev: String,
     paginationNext: String,

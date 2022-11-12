@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: "my-link-project",
   props: {
     linkProjectTitle: String,
     linkProjectItem: Array,

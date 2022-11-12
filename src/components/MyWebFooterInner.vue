@@ -6,27 +6,28 @@
       p.footer-inner__subtitle {{ footerInnerSubTitle }}
         a(:href="'mailto:' + footerInnerLink") {{ footerInnerLink }}
       .footer-inner__social.header__bg-social
-        social-icon
+        my-social-icon
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters([
-      "footerInnerTitle",
-      "footerInnerSubTitle",
-      "footerInnerLink",
-    ]),
-  },
-  methods: {
-    footerInnerSectionAnim() {
-      this.$store.dispatch("footerInnerSectionAnim");
-    },
-  },
-  mounted() {
-    this.footerInnerSectionAnim();
+  name: "footer-inner-section",
+  setup() {
+    const store = useStore();
+    const footerInnerSectionAnim = () => store.dispatch("footerInnerSectionAnim");
+
+    onMounted(() => {
+      footerInnerSectionAnim();
+    });
+
+    return {
+      footerInnerTitle: computed(() => store.getters.footerInnerTitle),
+      footerInnerSubTitle: computed(() => store.getters.footerInnerSubTitle),
+      footerInnerLink: computed(() => store.getters.footerInnerLink),
+    };
   },
 };
 </script>

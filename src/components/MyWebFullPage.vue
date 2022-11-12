@@ -5,12 +5,14 @@ section.full-page(@click="fullPageRemove($event)")
 </template>
 
 <script>
+import { useStore } from "vuex";
 export default {
-  computed: {},
-  methods: {
-    fullPageRemove(event) {
-      this.$store.commit("fullPageRemove", event);
-    },
+  name: "full-page-section",
+  setup() {
+    const store = useStore();
+    return {
+      fullPageRemove: (event) => store.commit("fullPageRemove", event),
+    };
   },
 };
 </script>

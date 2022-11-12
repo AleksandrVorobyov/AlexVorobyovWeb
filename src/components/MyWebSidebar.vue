@@ -16,37 +16,40 @@ aside#sidebar.sidebar
           )
             span {{ item.text }}
     .sidebar__social
-      social-icon
+      my-social-icon
     .sidebar__btn
       night-mode
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import nightMode from "./parts/MyNightMode.vue";
 
 export default {
+  name: "sidebar-section",
   components: {
     nightMode,
   },
-  computed: {
-    ...mapGetters(["sidebarLinks", "sidebarTitle", "sidebarBg"]),
-  },
-  methods: {
-    showDialog() {
-      this.$store.commit("showDialog");
-    },
-    burgerActiveMet() {
-      this.$store.commit("burgerActiveMet");
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", () => {
-      document.documentElement.style.setProperty(
-        "--scroll-y",
-        `${window.scrollY}px`
-      );
+  setup() {
+    const store = useStore();
+
+    onMounted(() => {
+      window.addEventListener("scroll", () => {
+        document.documentElement.style.setProperty(
+          "--scroll-y",
+          `${window.scrollY}px`
+        );
+      });
     });
+
+    return {
+      sidebarLinks: computed(() => store.getters.sidebarLinks),
+      sidebarTitle: computed(() => store.getters.sidebarTitle),
+      sidebarBg: computed(() => store.getters.sidebarBg),
+      showDialog: () => store.commit("showDialog"),
+      burgerActiveMet: () => store.commit("burgerActiveMet"),
+    };
   },
 };
 </script>

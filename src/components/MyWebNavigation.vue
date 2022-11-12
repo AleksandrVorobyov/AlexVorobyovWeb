@@ -8,15 +8,9 @@ section#navigation.navigation(ref="topDiv")
       nav.navigation__menu
         ul.navigation__menu-list
           li.navigation__menu-list-item(v-for="item in navLinks", :key="item")
-            btn-menu(
-              :btnText="item.text",
-              :btnType="item.type",
-              :btnId="item.id",
-              :btnClass="item.class",
-              @clickAction="roadToPage(item.link)"
-            )
+            my-btn-menu(:btnInfo="item", @clickAction="roadToPage(item.link)")
       .navigation__social
-        social-icon
+        my-social-icon
       button#nav-burger-btn.navigation__burger(
         type="button",
         @click="burgerActiveMet(), showDialog()"
@@ -25,39 +19,32 @@ section#navigation.navigation(ref="topDiv")
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import nightMode from "./parts/MyNightMode.vue";
 
 export default {
+  name: "navigation-section",
   components: {
     nightMode,
   },
-  computed: {
-    ...mapGetters(["navLinks"]),
-  },
-  methods: {
-    async roadToPage(link) {
-      await this.$store.dispatch("roadToPage", link);
-    },
-    getActiveNav() {
-      this.$store.dispatch("getActiveNav");
-    },
-    burgerActiveMet() {
-      this.$store.commit("burgerActiveMet");
-    },
-    showDialog() {
-      this.$store.commit("showDialog");
-    },
-    navSectionAnim() {
-      this.$store.dispatch("navSectionAnim");
-    },
-    scrollToTop() {
-      this.$store.dispatch("scrollToTop");
-    },
-  },
-  mounted() {
-    this.getActiveNav();
-    this.navSectionAnim();
+  setup() {
+    const store = useStore();
+    const navSectionAnim = () => store.dispatch("navSectionAnim");
+    const getActiveNav = () => store.dispatch("getActiveNav");
+
+    onMounted(() => {
+      navSectionAnim();
+      getActiveNav();
+    });
+
+    return {
+      navLinks: computed(() => store.getters.navLinks),
+      roadToPage: async (link) => store.dispatch("roadToPage", link),
+      scrollToTop: () => store.dispatch("scrollToTop"),
+      burgerActiveMet: () => store.commit("burgerActiveMet"),
+      showDialog: () => store.commit("showDialog"),
+    };
   },
 };
 </script>

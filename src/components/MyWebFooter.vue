@@ -7,19 +7,23 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters(["footerTitle", "footerSubTitle"]),
-  },
-  methods: {
-    footerSectionAnim() {
-      this.$store.dispatch("footerSectionAnim");
-    },
-  },
-  mounted() {
-    this.footerSectionAnim();
+  name: "footer-section",
+  setup() {
+    const store = useStore();
+    const footerSectionAnim = () => store.dispatch("footerSectionAnim");
+
+    onMounted(() => {
+      footerSectionAnim();
+    });
+
+    return {
+      footerTitle: computed(() => store.getters.footerTitle),
+      footerSubTitle: computed(() => store.getters.footerSubTitle),
+    };
   },
 };
 </script>

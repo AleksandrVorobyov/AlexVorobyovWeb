@@ -6,11 +6,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
-  name: "notification",
-  computed: {
-    ...mapGetters(["notification"]),
+  name: "my-notification",
+  setup() {
+    const store = useStore();
+    return {
+      notification: computed(() => store.getters.notification),
+    };
   },
 };
 </script>

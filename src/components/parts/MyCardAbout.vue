@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "my-about-project",
   props: {
     cardAboutTitle: String,
     cardAboutText: String,

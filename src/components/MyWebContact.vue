@@ -18,33 +18,35 @@ section.contact
                   :href="item.linkTipy + item.link"
                 ) {{ item.title }}
           .contact__info-social.header__bg-social
-            social-icon
+            my-social-icon
         .contact__form-wrap
           contact-form
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import contactForm from "./parts/MyContactForm.vue";
 
 export default {
+  name: "contact-form-section",
   components: {
     contactForm,
   },
-  computed: {
-    ...mapGetters(["contact"]),
-  },
-  methods: {
-    createContact() {
-      this.$store.commit("createContact");
-    },
-    contactSectionAnim() {
-      this.$store.dispatch("contactSectionAnim");
-    },
-  },
-  mounted() {
-    this.createContact();
-    this.contactSectionAnim();
+  setup() {
+    const store = useStore();
+
+    const contactSectionAnim = () => store.dispatch("contactSectionAnim");
+    const createContact = () => store.commit("createContact");
+
+    onMounted(() => {
+      contactSectionAnim();
+      createContact();
+    });
+
+    return {
+      contact: computed(() => store.getters.contact),
+    };
   },
 };
 </script>

@@ -169,7 +169,7 @@ export default {
           ],
           scrollTrigger: {
             trigger: '.portfolio__title',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
 
@@ -187,7 +187,7 @@ export default {
           ],
           scrollTrigger: {
             trigger: '.portfolio__btn',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
       }
@@ -210,7 +210,7 @@ export default {
           ],
           scrollTrigger: {
             trigger: '.portfolio__title',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
 
@@ -228,7 +228,7 @@ export default {
           ],
           scrollTrigger: {
             trigger: '.portfolio__nav',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
       }

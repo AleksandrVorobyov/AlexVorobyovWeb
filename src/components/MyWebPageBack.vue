@@ -7,34 +7,37 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  computed: {
-    ...mapGetters(["up", "pageBackImg", "nightMode"]),
-  },
-  methods: {
-    createBg() {
-      this.$store.dispatch("createBg");
-    },
-     scrollToTop() {
-       this.$store.dispatch("scrollToTop");
-    },
-  },
-  mounted() {
-    if (!this.nightMode) {
-      this.createBg();
-    }
+  name: "page-back-section",
+  setup() {
+    const store = useStore();
+    const nightMode = computed(() => store.getters.nightMode);
+    const createBg = () => store.dispatch("createBg");
 
-    const pageLink = document.getElementById("page-link");
-    pageLink.style.opacity = "0";
-
-    window.onscroll = function pageLinkScroll() {
-      if (window.pageYOffset > 150) {
-        pageLink.style.opacity = "1";
-      } else {
-        pageLink.style.opacity = "0";
+    onMounted(() => {
+      if (!nightMode.value) {
+        createBg();
       }
+    
+      const pageLink = document.getElementById("page-link");
+      pageLink.style.opacity = "0";
+
+      window.onscroll = () => {
+        if (window.pageYOffset > 150) {
+          pageLink.style.opacity = "1";
+        } else {
+          pageLink.style.opacity = "0";
+        }
+      };
+    });
+
+    return {
+      up: computed(() => store.getters.up),
+      pageBackImg: computed(() => store.getters.pageBackImg),
+      nightMode: nightMode,
+      scrollToTop: () => store.dispatch("scrollToTop"),
     };
   },
 };

@@ -1,44 +1,48 @@
 <template lang="pug">
-.card.white-color(:id="cardId" @mouseenter="randColor($event)")
+.card.white-color(:id="cardInfo.cardId" @mouseenter="randColor($event)")
   .card__img-wrap
     router-link.card__btn(@click="findCard($event), scrollToTop(), pushInServeActiveCard()" :to="'/project/card'") Подробнее
     .card__img
       figure.card__img-front
-        img(v-lazy="{ src: src }", :alt="alt")
+        img(v-lazy="{ src: cardInfo.cardSrc }", :alt="cardInfo.cardAlt")
       figure.card__img-back
-        img(v-lazy="{ src: src }", :alt="alt")
+        img(v-lazy="{ src: cardInfo.cardSrc }", :alt="cardInfo.cardAlt")
   .card__text
-    h4.card__title {{ title }}
-    p.card__subtitle {{ text }}
+    h4.card__title {{ cardInfo.cardTitle }}
+    p.card__subtitle {{ cardInfo.cardText }}
 </template>
 
 <script>
+import { onMounted } from "vue";
+import { useStore } from "vuex";
 export default {
-  name: "card",
-  props: ["link", "src", "alt", "title", "text", "cardId"],
-  methods: {
-    randColor(event) {
-      this.$store.commit("randColor", {
-        item: event.target,
-      });
-    },
-    scrollToTop() {
-      this.$store.dispatch("scrollToTop");
-    },
-    pushInServeActiveCard() {
-      this.$store.dispatch("pushInServeActiveCard");
-    },
-    findCard(event) {
-      this.$store.dispatch("findCard", {
-        cardId: event.target.closest(".card").id,
-      });
-    },
-    cardAnim() {
-      this.$store.dispatch("cardAnim");
+  name: "my-card",
+  props: {
+    cardInfo: {
+      type: Object,
+      required: true,
     },
   },
-  mounted() {
-    this.cardAnim();
+  setup() {
+    const store = useStore();
+    const cardAnim = () => store.dispatch("cardAnim");
+
+    onMounted(() => {
+      cardAnim();
+    });
+
+    return {
+      scrollToTop: () => store.dispatch("scrollToTop"),
+      pushInServeActiveCard: () => store.dispatch("pushInServeActiveCard"),
+      findCard: (e) =>
+        store.dispatch("findCard", {
+          cardId: e.target.closest(".card").id,
+        }),
+      randColor: (e) =>
+        store.commit("randColor", {
+          item: e.target,
+        }),
+    };
   },
 };
 </script>
@@ -194,7 +198,7 @@ export default {
 
   .card__btn {
     background: var(--yellowcolor);
-  } 
+  }
 
   .card__img {
     border-bottom: 2px solid var(--yellowcolor);

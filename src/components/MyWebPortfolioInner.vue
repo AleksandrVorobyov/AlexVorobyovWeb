@@ -38,57 +38,40 @@ section#portfolioInner.portfolio
           :key="item",
           :class="item.allMenuClass"
         )
-          card(
-            :link="'#'",
-            :src="item.cardSrc",
-            :alt="item.cardAlt",
-            :title="item.cardTitle",
-            :text="item.cardText",
-            :card-id="item.cardId"
-          )
+          my-card(:link="'#'", :cardInfo="item")
   .portfolio__background
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters([
-      "portfolio",
-      "portfolioAll",
-      "portfolioInner",
-      "dropdownPortfolio",
-      "dropHidden",
-      "portfolioNavHidden",
-      "portfolioInnerFilter",
-      "portfolioAllFilter",
-    ]),
-  },
+  name: "portfolio-inner-section",
+  setup() {
+    const store = useStore();
+    const loadCards = async () => await store.dispatch("loadCards");
+    const portfolioInnerSectionAnim = () => store.dispatch("portfolioInnerSectionAnim");
 
-  methods: {
-    async loadCards() {
-      await this.$store.dispatch("loadCards");
-    },
-    getCheck(event) {
-      this.$store.dispatch("getCheck", event);
-    },
-    dropdown(event) {
-      this.$store.commit("dropdown", event);
-    },
-    dropdownOption(event) {
-      this.$store.dispatch("dropdownOption", event);
-    },
-    portfolioInnerSectionAnim() {
-      this.$store.dispatch("portfolioInnerSectionAnim");
-    },
-    scrollToTop() {
-      this.$store.dispatch("scrollToTop");
-    },
-  },
-  mounted() {
-    this.loadCards();
-    this.portfolioInnerSectionAnim();
+    onMounted(() => {
+      loadCards();
+      portfolioInnerSectionAnim();
+    });
+
+    return {
+      portfolio: computed(() => store.getters.portfolio),
+      portfolioAll: computed(() => store.getters.portfolioAll),
+      portfolioInner: computed(() => store.getters.portfolioInner),
+      dropdownPortfolio: computed(() => store.getters.dropdownPortfolio),
+      dropHidden: computed(() => store.getters.dropHidden),
+      portfolioNavHidden: computed(() => store.getters.portfolioNavHidden),
+      portfolioInnerFilter: computed(() => store.getters.portfolioInnerFilter),
+      portfolioAllFilter: computed(() => store.getters.portfolioAllFilter),
+      getCheck: (e) => store.dispatch("getCheck", e),
+      dropdown: (e) => store.commit("dropdown", e),
+      dropdownOption: (e) => store.dispatch("dropdownOption", e),
+      scrollToTop: () => store.dispatch("scrollToTop"),
+    };
   },
 };
 </script>

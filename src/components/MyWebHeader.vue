@@ -7,17 +7,12 @@ section#header.header
         h2.header__text-title.neon(v-html="header.neonHeaderTitleSecond")
         p.header__text-subtitle {{ header.mySkillsSub }}
         .header__text-button
-          btn(
-            :btnType="header.headerTextBtn.btnTimeline.type",
-            :btnId="header.headerTextBtn.btnTimeline.id",
-            :btnText="header.headerTextBtn.btnTimeline.text",
+          my-btn(
+            :btnInfo="header.headerTextBtn.btnTimeline",
             @clickAction="scrollToTimeline()"
           )
-          btn(
-            :btnType="header.headerTextBtn.btnContact.type",
-            :btnId="header.headerTextBtn.btnContact.id",
-            :btnClass="header.headerTextBtn.btnContact.class",
-            :btnText="header.headerTextBtn.btnContact.text",
+          my-btn(
+            :btnInfo="header.headerTextBtn.btnContact",
             @clickAction="roadToPage(header.headerTextBtn.btnContact.link)"
           )
       .header__avatar
@@ -50,47 +45,44 @@ section#header.header
           ul
             li(v-for="item in header.mySkills") {{ item }}
         .header__bg-button
-          btn(
-            :btnType="header.headerBgBtn.type",
-            :btnId="header.headerBgBtn.id",
-            :btnText="header.headerBgBtn.text",
+          my-btn(
+            :btnInfo="header.headerBgBtn",
             @clickAction="roadToPage(header.headerBgBtn.link)"
           )
       .header__bg-item
         .header__bg-title.neon(v-html="header.neonHeaderTitleBgSecond")
         .header__bg-social
-          social-icon
+          my-social-icon
         a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 
 export default {
+  name: "header-section",
   components: {
     Splide,
     SplideSlide,
   },
-  computed: {
-    ...mapGetters(["header", "myEmail"]),
-  },
-  methods: {
-    async roadToPage(link) {
-      await this.$store.dispatch("roadToPage", link);
-    },
-    fullPageAdd(event) {
-      this.$store.commit("fullPageAdd", event);
-    },
-    scrollToTimeline() {
-      this.$store.dispatch("scrollToTimeline");
-    },
-    headerSectionAnim() {
-      this.$store.dispatch("headerSectionAnim");
-    },
-  },
-  mounted() {
-    this.headerSectionAnim();
+  setup() {
+    const store = useStore();
+
+    const headerSectionAnim = () => store.dispatch("headerSectionAnim");
+
+    onMounted(() => {
+      headerSectionAnim();
+    });
+
+    return {
+      header: computed(() => store.getters.header),
+      myEmail: computed(() => store.getters.myEmail),
+      roadToPage: async (link) => store.dispatch("roadToPage", link),
+      fullPageAdd: (e) => store.commit("fullPageAdd", e),
+      scrollToTimeline: () => store.dispatch("scrollToTimeline"),
+    };
   },
 };
 </script>

@@ -110,7 +110,7 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: '.header__text',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         });
 
@@ -142,7 +142,7 @@ export default {
           duration: 1.5,
           scrollTrigger: {
             trigger: '.header__avatar',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
 
@@ -152,7 +152,7 @@ export default {
           duration: 1.5,
           scrollTrigger: {
             trigger: '.header__slide',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
 
@@ -162,7 +162,7 @@ export default {
           duration: 1.5,
           scrollTrigger: {
             trigger: '.header__bg-item',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
         })
       }

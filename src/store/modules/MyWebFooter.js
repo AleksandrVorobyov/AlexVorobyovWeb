@@ -32,7 +32,7 @@ export default {
         gsap.from('.footer-wrap', {
           scrollTrigger: {
             trigger: '.footer',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
           opacity: 0,
           y: 50,
@@ -46,7 +46,7 @@ export default {
         gsap.from('.footer-inner-column', {
           scrollTrigger: {
             trigger: '.footer-inner',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
           opacity: 0,
           y: 50,

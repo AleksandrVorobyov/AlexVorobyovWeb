@@ -58,7 +58,7 @@ export default {
                     y: 30,
                     scrollTrigger: {
                         trigger: '.timeline__title',
-                        toggleActions: "play pause play pause",
+                        toggleActions: "play play play pause",
                     },
                 })
 
@@ -69,7 +69,7 @@ export default {
                         duration: 1.5,
                         scrollTrigger: {
                             trigger: item,
-                            toggleActions: "play pause play pause",
+                            toggleActions: "play play play pause",
                         },
                         x: () => {
                             if (index % 2 !== 0) {

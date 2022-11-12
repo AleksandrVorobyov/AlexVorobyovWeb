@@ -8,16 +8,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters(["nightMode", "nightModeOn", "nightModeOff"]),
-  },
-  methods: {
-    nightModeCheck() {
-      this.$store.commit("nightModeCheck");
-    },
+  name: "my-night-mode",
+  setup() {
+    const store = useStore();
+
+    return {
+      nightMode: computed(() => store.getters.nightMode),
+      nightModeOn: computed(() => store.getters.nightModeOn),
+      nightModeOff: computed(() => store.getters.nightModeOff),
+      nightModeCheck: () => store.commit("nightModeCheck"),
+    };
   },
 };
 </script>

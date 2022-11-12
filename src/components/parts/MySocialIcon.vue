@@ -11,11 +11,15 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  name: "social-icon",
-  computed: {
-    ...mapGetters(["social"]),
+  name: "my-social-icon",
+  setup() {
+    const store = useStore();
+    return {
+      social: computed(() => store.getters.social),
+    };
   },
 };
 </script>

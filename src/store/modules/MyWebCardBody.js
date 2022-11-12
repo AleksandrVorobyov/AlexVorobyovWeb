@@ -46,7 +46,7 @@ export default {
         },
     },
     mutations: {
-        loadActiveCard(state, payload) {
+        loadActiveCard(state) {
             state.activeCard = JSON.parse(localStorage.getItem("activeCard"));
         },
         slideUpdate(state) {
@@ -71,7 +71,7 @@ export default {
                     ],
                     scrollTrigger: {
                         trigger: '.card-post__nav',
-                        toggleActions: "play pause play pause",
+                        toggleActions: "play play play pause",
                     },
                 });
                 gsap.to('.card-post__content-desc', {
@@ -88,7 +88,7 @@ export default {
                     ],
                     scrollTrigger: {
                         trigger: '.card-post__content-desc',
-                        toggleActions: "play pause play pause",
+                        toggleActions: "play play play pause",
                     },
                 });
                 gsap.to('.card-post__content-carousel', {
@@ -105,7 +105,7 @@ export default {
                     ],
                     scrollTrigger: {
                         trigger: '.card-post__content-carousel',
-                        toggleActions: "play pause play pause",
+                        toggleActions: "play play play pause",
                     },
                 });
                 gsap.to('.card-post__pagination', {
@@ -122,7 +122,7 @@ export default {
                     ],
                     scrollTrigger: {
                         trigger: '.card-post__pagination',
-                        toggleActions: "play pause play pause",
+                        toggleActions: "play play play pause",
                     },
                 });
             }

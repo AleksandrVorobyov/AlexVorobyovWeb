@@ -2,7 +2,7 @@
 #page.page
   my-web-preloader
   my-web-page-back
-  notification(v-show="notification.active")
+  my-notification(v-show="notification.active")
   router-view
 </template>
 

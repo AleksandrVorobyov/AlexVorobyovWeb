@@ -1,19 +1,19 @@
 <template lang="pug">
 button.btn-menu(
-  :type="btnType",
-  :id="btnId",
-  :class="btnClass",
+  :type="btnInfo.type",
+  :id="btnInfo.id",
+  :class="btnInfo.class",
   @click="$emit('clickAction', $event)"
-) {{ btnText }}
+) {{ btnInfo.text }}
 </template>
 <script>
 export default {
-  name: "btn-menu",
+  name: "my-btn-menu",
   props: {
-    btnType: String,
-    btnId: String,
-    btnClass: String,
-    btnText: String,
+    btnInfo: {
+      type: Object,
+      required: true
+    }
   },
   emits: ["clickAction"],
 };

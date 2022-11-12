@@ -1,24 +1,20 @@
 <template lang="pug">
 button.button(
-  :type="btnType",
-  :class="btnClass",
-  :id="btnId",
+  :type="btnInfo.type",
+  :class="btnInfo.class",
+  :id="btnInfo.id",
   @click="$emit('clickAction', $event)"
 )
-  span {{ btnText }}
+  span {{ btnInfo.text }}
 </template>
 <script>
 export default {
-  name: "btn",
+  name: "my-btn",
   props: {
-    btnText: String,
-    btnClass: String,
-    btnType: {
-      required: false,
-      type: String,
-      default: "button",
+    btnInfo: {
+      type: Object,
+      required: true
     },
-    btnId: String,
   },
   emits: ["clickAction"],
 };

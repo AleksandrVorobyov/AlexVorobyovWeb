@@ -30,47 +30,39 @@ form#form-contact.contact__form(
       v-model="formAnswers.text"
     )
   .contact__form-button
-    btn(
-      :btnType="contact.btnSubmit.type",
-      :btnId="contact.btnSubmit.id",
-      :btnText="contact.btnSubmit.text"
-    )
+    my-btn(:btnInfo="contact.btnSubmit")
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { watch, computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
-  computed: {
-    ...mapGetters([
-      "contact",
-      "formAnswers",
-      "watchEmail",
-      "watchTheme",
-      "watchText",
-      "valideForm",
-      "valideTheme",
-      "validText",
-      "validateEmail",
-    ]),
-  },
-  methods: {
-    async submitMessageForm() {
-      await this.$store.dispatch("submitMessageForm");
-    },
-    validInput(type) {
-      this.$store.dispatch("validInput", type);
-    },
-  },
-  watch: {
-    watchEmail() {
-      this.validInput("email");
-    },
-    watchTheme() {
-      this.validInput("theme");
-    },
-    watchText() {
-      this.validInput("text");
-    },
+  name: "my-form-contact",
+  setup() {
+    const store = useStore();
+    const watchEmail = computed(() => store.getters.watchEmail);
+    const watchTheme = computed(() => store.getters.watchTheme);
+    const watchText = computed(() => store.getters.watchText);
+    const validInput = (type) => store.dispatch("validInput", type);
+
+    watch(watchEmail, () => validInput("email"));
+    watch(watchTheme, () => validInput("theme"));
+    watch(watchText, () => validInput("text"));
+
+    return {
+      contact: computed(() => store.getters.contact),
+      formAnswers: computed(() => store.getters.formAnswers),
+      watchEmail,
+      watchTheme,
+      watchText,
+      valideForm: computed(() => store.getters.valideForm),
+      valideTheme: computed(() => store.getters.valideTheme),
+      validText: computed(() => store.getters.validText),
+      validateEmail: computed(() => store.getters.validateEmail),
+      submitMessageForm: async () => await store.dispatch("submitMessageForm"),
+      validInput,
+    };
   },
 };
 </script>

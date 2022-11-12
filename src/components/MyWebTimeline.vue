@@ -13,18 +13,23 @@ section#timeline.timeline
             span.timeline__row-text-desc {{ item.desc }}
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  computed: {
-    ...mapGetters(["timelineItems", "neonTimelineTitle"]),
-  },
-  methods: {
-    timelineSectionAnim() {
-      this.$store.dispatch("timelineSectionAnim");
-    },
-  },
-  mounted() {
-    this.timelineSectionAnim();
+  name: "timeline-section",
+  setup() {
+    const store = useStore();
+
+    const timelineSectionAnim = () => store.dispatch("timelineSectionAnim");
+
+    onMounted(() => {
+      timelineSectionAnim();
+    });
+
+    return {
+      timelineItems: computed(() => store.getters.timelineItems),
+      neonTimelineTitle: computed(() => store.getters.neonTimelineTitle),
+    };
   },
 };
 </script>

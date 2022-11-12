@@ -745,7 +745,7 @@ export default {
         gsap.from('.contact-title', {
           scrollTrigger: {
             trigger: '.contact-title',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
           opacity: 0,
           y: 50,
@@ -755,7 +755,7 @@ export default {
         gsap.from('.contact-wrap', {
           scrollTrigger: {
             trigger: '.contact-wrap',
-            toggleActions: "play pause play pause",
+            toggleActions: "play play play pause",
           },
           opacity: 0,
           y: 50,

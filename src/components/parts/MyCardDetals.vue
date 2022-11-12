@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "my-detals-project",
   props: {
     detalsTitle: String,
     detalsDescItems: Array,

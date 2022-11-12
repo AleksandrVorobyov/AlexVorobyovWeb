@@ -38,7 +38,7 @@ section.card-post
           )
             img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
     .card-post__pagination
-      pagination(
+      my-pagination(
         :paginationPrev="pagination.prev.ttl",
         :paginationNext="pagination.next.ttl",
         @clickActionPrev="scrollToTop(), pushInServeActiveCard(), slideUpdate(), prevProject()",
@@ -47,7 +47,8 @@ section.card-post
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed, onBeforeMount } from "vue";
+import { useStore } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import pagination from "@/components/parts/MyPagination.vue";
 import cardDetals from "@/components/parts/MyCardDetals.vue";
@@ -55,6 +56,7 @@ import cardAbout from "@/components/parts/MyCardAbout.vue";
 import cardLink from "@/components/parts/MyCardLink.vue";
 
 export default {
+  name: "card-body-section",
   components: {
     Splide,
     SplideSlide,
@@ -63,58 +65,39 @@ export default {
     cardAbout,
     cardLink,
   },
-  computed: {
-    ...mapGetters([
-      "activeCard",
-      "projectSlide",
-      "localActive",
-      "pagination",
-      "slideCardKey",
-    ]),
-  },
-  methods: {
-    loadActiveCard() {
-      this.$store.commit("loadActiveCard");
-    },
-    loadCards() {
-      this.$store.dispatch("loadCards");
-    },
-    mousedownSlide(event) {
-      this.$store.commit("mousedownSlide", event);
-    },
-    mouseupSlide(event) {
-      this.$store.commit("mouseupSlide", event);
-    },
-    scrollToTop() {
-      this.$store.dispatch("scrollToTop");
-    },
-    pushInServeActiveCard() {
-      this.$store.dispatch("pushInServeActiveCard");
-    },
-    fullPageAdd(event) {
-      this.$store.commit("fullPageAdd", event);
-    },
-    slideUpdate() {
-      this.$store.commit("slideUpdate");
-    },
-    cardBodyAnim() {
-      this.$store.dispatch("cardBodyAnim");
-    },
-    prevProject() {
-      this.$store.dispatch("prevProject");
-    },
-    nextProject() {
-      this.$store.dispatch("nextProject");
-    },
-  },
-  beforeMount() {
-    if (this.localActive) {
-      this.loadActiveCard();
-    }
-  },
-  mounted() {
-    this.loadCards();
-    this.cardBodyAnim();
+  setup() {
+    const store = useStore();
+    const loadCards = async () => await store.dispatch("loadCards");
+    const loadActiveCard = () => store.commit("loadActiveCard");
+    const cardBodyAnim = () => store.dispatch("cardBodyAnim");
+    const localActive = computed(() => store.getters.localActive);
+
+    onBeforeMount(() => {
+      if (localActive) {
+        loadActiveCard();
+      }
+    });
+
+    onMounted(() => {
+      loadCards();
+      cardBodyAnim();
+    });
+
+    return {
+      activeCard: computed(() => store.getters.activeCard),
+      projectSlide: computed(() => store.getters.projectSlide),
+      localActive: localActive,
+      pagination: computed(() => store.getters.pagination),
+      slideCardKey: computed(() => store.getters.slideCardKey),
+      mousedownSlide: (e) => store.commit("mousedownSlide", e),
+      mouseupSlide: (e) => store.commit("mouseupSlide", e),
+      fullPageAdd: (e) => store.commit("fullPageAdd", e),
+      slideUpdate: () => store.commit("slideUpdate"),
+      scrollToTop: () => store.dispatch("scrollToTop"),
+      pushInServeActiveCard: () => store.dispatch("pushInServeActiveCard"),
+      prevProject: () => store.dispatch("prevProject"),
+      nextProject: () => store.dispatch("nextProject"),
+    };
   },
 };
 </script>
