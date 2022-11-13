@@ -92,6 +92,10 @@ export default {
       neonHeaderTitleSecond: `Вор<span>обь</span>ев`,
       neonHeaderTitleBgFirst: `Чт<span>о</span> я ум<span>е</span>ю:`,
       neonHeaderTitleBgSecond: `На св<span>язи</span>:`,
+      master: {
+        src: "header/master.jpg",
+        alt: "master"
+      }
     }
   },
   getters: {
@@ -109,12 +113,12 @@ export default {
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: '.header__text',
+            trigger: '.header__info',
             toggleActions: "play play play pause",
           },
         });
 
-        let headerTextItems = gsap.utils.toArray('.header__text > *')
+        let headerTextItems = gsap.utils.toArray('.header__info > *')
         tl.from(headerTextItems[0], {
           opacity: 0,
           y: 100,

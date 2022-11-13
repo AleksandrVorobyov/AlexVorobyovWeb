@@ -2,32 +2,15 @@
 section#header.header
   .container
     .header-wrap
-      .header__text
-        h2.header__text-title.neon(v-html="header.neonHeaderTitleFirst")
-        h2.header__text-title.neon(v-html="header.neonHeaderTitleSecond")
-        p.header__text-subtitle {{ header.mySkillsSub }}
-        .header__text-button
-          my-btn(
-            :btnInfo="header.headerTextBtn.btnTimeline",
-            @clickAction="scrollToTimeline()"
-          )
-          my-btn(
-            :btnInfo="header.headerTextBtn.btnContact",
-            @clickAction="roadToPage(header.headerTextBtn.btnContact.link)"
-          )
-      .header__avatar
-        div(
-          v-for="item in header.mySkillsAvatar",
-          :key="item",
-          :class="item.classItem"
-        )
-          h4.header__avatar-title {{ item.text }}
-          .header__avatar-img
-            img(
-              :src="require('@/assets/img/header/' + item.src)",
-              :alt="item.alt"
-            )
-        img(src="@/assets/img/header/master.jpg", alt="master")
+      my-header-info(
+        :info="header",
+        @clickToTimeline="scrollToTimeline",
+        @clickToPage="roadToPage"
+      )
+      my-header-avatar(
+        :skillsAvatar="header.mySkillsAvatar",
+        :master="header.master"
+      )
   .big-container
     .header__slide
       splide(:options="header.cert")
@@ -38,34 +21,29 @@ section#header.header
         )
           img(:src="require('@/assets/img/' + item.src)", :alt="item.alt")
   .container
-    .header__bg-wrap
-      .header__bg-item
-        .header__bg-title.neon(v-html="header.neonHeaderTitleBgFirst")
-        .header__bg-skills
-          ul
-            li(v-for="item in header.mySkills") {{ item }}
-        .header__bg-button
-          my-btn(
-            :btnInfo="header.headerBgBtn",
-            @clickAction="roadToPage(header.headerBgBtn.link)"
-          )
-      .header__bg-item
-        .header__bg-title.neon(v-html="header.neonHeaderTitleBgSecond")
-        .header__bg-social
-          my-social-icon
-        a.header__bg-email(:href="'mailto:' + myEmail") {{ myEmail }}
+    my-header-bg(
+      :myEmail="myEmail",
+      :headerBg="header",
+      @clickToPage="roadToPage"
+    )
 </template>
 
 <script>
 import { onMounted, computed } from "vue";
 import { useStore } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import MyHeaderAvatar from "@/components/parts/MyHeaderAvatar";
+import MyHeaderInfo from "@/components/parts/MyHeaderInfo";
+import MyHeaderBg from "@/components/parts/MyHeaderBg";
 
 export default {
   name: "header-section",
   components: {
     Splide,
     SplideSlide,
+    MyHeaderAvatar,
+    MyHeaderInfo,
+    MyHeaderBg,
   },
   setup() {
     const store = useStore();
@@ -138,220 +116,10 @@ export default {
   }
 }
 
-.header__text {
-  display: grid;
-  margin: 0 auto;
-  margin-top: 30px;
-  text-align: center;
-
-  @media (min-width: 1170px) {
-    margin-top: 0;
-    text-align: left;
-    max-width: 530px;
-  }
-}
-
-.header__text-title {
-  position: relative;
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  font-size: 48px;
-  line-height: 54px;
-  font-family: var(--fontNeon);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.2;
-  z-index: 3;
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    content: "";
-    clear: both;
-    background: var(--redCyber);
-    width: 10%;
-    height: 10px;
-    bottom: 0px;
-    left: 0;
-    z-index: -1;
-    transition: 0.5s ease-in-out;
-    animation: nameLogo 6s ease-in-out 0s infinite;
-    border-radius: 10px 0;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 64px;
-    line-height: 68px;
-  }
-
-  @media (min-width: 1170px) {
-    font-size: 90px;
-    line-height: 98px;
-    margin: 0 0 20px;
-  }
-}
-
-.header__text-subtitle {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 400;
-  font-family: var(--fontRomanReg);
-  color: var(--white);
-
-  @media (min-width: 1170px) {
-    margin-bottom: 30px;
-    font-size: 24px;
-    line-height: 28px;
-  }
-}
-
-.header__text-button {
-  display: grid;
-  grid-template-columns: 200px;
-  justify-content: center;
-  gap: 30px;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 250px 250px;
-    gap: 60px;
-  }
-
-  @media (min-width: 1170px) {
-    justify-content: flex-start;
-  }
-}
-
-.header__avatar {
-  position: relative;
-  box-shadow: 10px 14px 16px -3px rgba(34, 60, 80, 0.18);
-  height: 280px;
-  width: 280px;
-  border-radius: 50%;
-  z-index: 5;
-  border: 10px double var(--redCyber);
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 auto;
-
-  @media (min-width: 480px) {
-    height: 320px;
-    width: 320px;
-  }
-
-  @media (min-width: 768px) {
-    height: 430px;
-    width: 430px;
-  }
-
-  img {
-    object-fit: cover;
-    object-position: top;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.header__avatar_html,
-.header__avatar_css,
-.header__avatar_js {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  transition: 0.5s linear;
-
-  @media (min-width: 480px) {
-    height: 140px;
-    width: 140px;
-  }
-
-  @media (min-width: 1170px) {
-    &:hover {
-      transform: translateY(-15px);
-
-      .avatar__title {
-        color: var(--redCyber);
-        text-shadow: 1px 1px 2px #000000;
-      }
-    }
-  }
-}
-
-.header__avatar_js:hover {
-  @media (min-width: 1170px) {
-    transform: translate(-50%, -15px);
-  }
-}
-
-.header__avatar_html {
-  top: -90px;
-  left: -25px;
-
-  @media (min-width: 480px) {
-    top: -100px;
-  }
-
-  @media (min-width: 768px) {
-    left: 0px;
-  }
-}
-
-.header__avatar_css {
-  top: -90px;
-  right: -25px;
-
-  @media (min-width: 480px) {
-    top: -100px;
-  }
-
-  @media (min-width: 768px) {
-    right: 0px;
-  }
-}
-
-.header__avatar_js {
-  top: -130px;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  @media (min-width: 480px) {
-    top: -140px;
-  }
-}
-
-.header__avatar-title {
-  font-family: var(--fontRomanBold);
-  text-align: center;
-  color: var(--white);
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: 0.5s linear;
-}
-
-.header__avatar-img {
-  width: 120px;
-  height: 120px;
-
-  @media (min-width: 480px) {
-    height: 140px;
-    width: 140px;
-  }
-
-  img {
-    border-radius: 0;
-  }
-}
-
 .header__slide {
   position: relative;
   width: 100%;
-  padding: 50px;
+  padding: 15px;
   border-radius: 15px;
   margin-bottom: 50px;
   z-index: 10;
@@ -372,112 +140,14 @@ export default {
     z-index: -5;
     clip-path: circle(75% at 15% 45%);
   }
+
+  @media (min-width: 480px) {
+    padding: 50px;
+  }
 }
 
 .header__slide .splide__slide {
   cursor: zoom-in;
-}
-
-.header__bg-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column-reverse;
-
-  @media (min-width: 1170px) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-
-.header__bg-item {
-  background-color: rgba(23, 115, 141, 0.25);
-  border-radius: 10px;
-  padding: 15px;
-
-  @media (min-width: 1170px) {
-    background: transparent;
-    border-radius: 5px;
-    padding: 10px;
-  }
-}
-
-.header__bg-item:last-child {
-  margin-bottom: 30px;
-
-  @media (min-width: 1170px) {
-    margin-bottom: 0;
-  }
-}
-
-.header__bg-title {
-  margin-bottom: 30px;
-  font-size: 32px;
-  line-height: 36px;
-  font-family: var(--fontNeon);
-  color: var(--white);
-  font-weight: 700;
-
-  @media (min-width: 1170px) {
-    margin-bottom: 50px;
-    font-size: 40px;
-    line-height: 44px;
-  }
-}
-
-.header__bg-skills ul {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 30px;
-  list-style-type: none;
-
-  li {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 400;
-    font-family: var(--fontRomanReg);
-    color: var(--white);
-    text-shadow: 0px 3px 10px rgba(255, 255, 255, 0.4);
-
-    @media (min-width: 1170px) {
-      font-size: 24px;
-      line-height: 28px;
-    }
-  }
-}
-
-.header__bg-button {
-  display: flex;
-
-  @media (min-width: 480px) {
-    margin-left: 20px;
-  }
-
-  @media (min-width: 1170px) {
-    margin-left: 0;
-  }
-}
-
-.header__bg-social {
-  margin-bottom: 30px;
-}
-
-.header__bg-email {
-  font-size: 24px;
-  line-height: 28px;
-  font-family: var(--fontRomanReg);
-  font-weight: 400;
-  color: var(--white);
-  text-decoration: underline;
-  transition: 0.5s ease-in-out;
-
-  &:hover {
-    color: var(--yellowcolor);
-  }
-
-  &:focus,
-  &:active {
-    color: var(--redcolor);
-  }
 }
 
 .header__slide-row-btn {
@@ -500,9 +170,12 @@ export default {
   border: none;
   border-radius: 6px;
   outline: none;
-  background: rgba(0, 0, 0, 1) !important;
   opacity: 0.6;
   transition: opacity 0.3s ease-in 0s, box-shadow 0.3s ease-in 0.3s;
+
+  @media (min-width: 480px) {
+    background: rgba(0, 0, 0, 1) !important;
+  }
 
   &::before {
     position: absolute;
@@ -512,8 +185,12 @@ export default {
     content: "";
     width: 4px;
     height: 30px;
-    background: var(--white);
+    background: var(--grayText);
     pointer-events: none;
+
+    @media (min-width: 480px) {
+      background: var(--white);
+    }
   }
 
   &::after {
@@ -524,13 +201,22 @@ export default {
     content: "";
     width: 4px;
     height: 30px;
-    background: var(--white);
+    background: var(--grayText);
     pointer-events: none;
+
+    @media (min-width: 480px) {
+      background: var(--white);
+    }
   }
 }
 
 .splide__arrow--next.header__slide-btn-next {
-  right: -40px;
+  right: 5px;
+
+  @media (min-width: 480px) {
+    right: -40px;
+  }
+
   &::before {
     transform: translateX(-50%) rotate(-45deg);
   }
@@ -541,7 +227,12 @@ export default {
 }
 
 .splide__arrow--prev.header__slide-btn-prev {
-  left: -40px;
+  left: 5px;
+
+  @media (min-width: 480px) {
+    left: -40px;
+  }
+
   &::before {
     transform: translateX(-50%) rotate(45deg);
   }
@@ -553,8 +244,10 @@ export default {
 
 .header__slide-btn:hover {
   opacity: 1;
-  box-shadow: 0px 0px 10px var(--redCyber), 0px 0px 20px var(--redCyber),
-    0px 0px 30px var(--redCyber);
+  @media (min-width: 480px) {
+    box-shadow: 0px 0px 10px var(--redCyber), 0px 0px 20px var(--redCyber),
+      0px 0px 30px var(--redCyber);
+  }
 }
 
 .splide__arrows {
@@ -565,7 +258,7 @@ export default {
   pointer-events: all;
 }
 
-// -------------header---------------
+// -------------night---------------
 .night {
   .header {
     background: transparent;
@@ -573,20 +266,6 @@ export default {
     &::before,
     &::after {
       display: none;
-    }
-  }
-
-  .header__text-subtitle {
-    color: var(--black);
-  }
-
-  .header__text-title {
-    font-weight: 700;
-    font-family: var(--fontRomanBold);
-    color: var(--black);
-
-    &::after {
-      background-color: var(--yellowcolor);
     }
   }
 
@@ -602,66 +281,6 @@ export default {
   .header__slide::before {
     background: var(--bgContactFormWhite);
   }
-  .header__bg-title,
-  .header__bg-title {
-    font-weight: 700;
-    font-family: var(--fontRomanBold);
-    color: var(--black);
-  }
-
-  .header__bg-skills li {
-    color: var(--black);
-  }
-
-  .header__bg-email {
-    color: var(--black);
-
-    &:hover {
-      color: var(--blue);
-    }
-
-    &:active {
-      color: var(--redcolor);
-    }
-  }
-
-  .header__bg-img {
-    border: 5px solid var(--yellowcolor);
-    box-shadow: none;
-
-    &::after {
-      background: transparent;
-    }
-    &::before {
-      background: transparent;
-    }
-  }
-
-  .header__bg-item {
-    background-color: var(--bgSidebarNight);
-    border-radius: 5px;
-    padding: 10px;
-
-    @media (min-width: 1170px) {
-      background: transparent;
-    }
-  }
-
-  .header__avatar {
-    background-color: var(--yellowcolor);
-    border: 10px double var(--bgSidebarNight);
-  }
-
-  .header__avatar_css:hover .header__avatar-title,
-  .header__avatar_js:hover .header__avatar-title,
-  .header__avatar_html:hover .header__avatar-title {
-    color: var(--yellowcolor);
-  }
-
-  .header__avatar-title {
-    color: var(--black);
-    font-weight: 400;
-  }
 }
-// -------------header---------------
+// -------------night---------------
 </style>

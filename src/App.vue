@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import MyWebPageBack from "./components/MyWebPageBack.vue";
 import MyWebPreloader from "./components/MyWebPreloader.vue";
 
@@ -16,11 +17,14 @@ export default {
     MyWebPageBack,
     MyWebPreloader,
   },
-  computed: {
-    ...mapGetters(["notification"]),
-  },
-  mounted() {
-    window.scrollTo(0, 0);
+  setup() {
+    const store = useStore();
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
+    return {
+      notification: computed(() => store.getters.notification),
+    };
   },
 };
 </script>

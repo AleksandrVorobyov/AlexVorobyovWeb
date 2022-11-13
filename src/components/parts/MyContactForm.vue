@@ -75,7 +75,7 @@ export default {
   padding: 15px;
   max-width: 550px;
   border: 5px solid var(--white);
-  box-shadow: 0px 10px 50px 0px var(--redCyber);
+  box-shadow: 0px 0px 20px 0px var(--redCyber);
   border-radius: 10px;
   z-index: 15;
   overflow: hidden;
@@ -86,6 +86,7 @@ export default {
 
   @media (min-width: 768px) {
     min-width: 500px;
+    box-shadow: 0px 10px 50px 0px var(--redCyber);
   }
 }
 
