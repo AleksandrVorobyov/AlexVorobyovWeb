@@ -13,7 +13,7 @@ export default {
   props: {
     btnInfo: {
       type: Object,
-      required: true
+      required: true,
     },
   },
   emits: ["clickAction"],
@@ -41,9 +41,13 @@ export default {
 
   &:hover {
     transition-delay: 1.5s;
-    box-shadow: 0 0 10px var(--redCyber50), 0 0 20px var(--redCyber50),
-      0 0 40px var(--redCyber50), 0 0 80px var(--redCyber50),
-      0 0 160px var(--redCyber50);
+    box-shadow: 0 0 10px var(--redCyber50), 0 0 20px var(--redCyber50);
+
+    @media (min-width: 480px) {
+      box-shadow: 0 0 10px var(--redCyber50), 0 0 20px var(--redCyber50),
+        0 0 40px var(--redCyber50), 0 0 80px var(--redCyber50),
+        0 0 160px var(--redCyber50);
+    }
   }
 
   @media (min-width: 1170px) {

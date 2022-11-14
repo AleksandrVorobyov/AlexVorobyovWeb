@@ -41,8 +41,8 @@ section.card-post
       my-pagination(
         :paginationPrev="pagination.prev.ttl",
         :paginationNext="pagination.next.ttl",
-        @clickActionPrev="scrollToTop(), pushInServeActiveCard(), slideUpdate(), prevProject()",
-        @clickActionNext="scrollToTop(), pushInServeActiveCard(), slideUpdate(), nextProject()"
+        @clickActionPrev="prevProject()",
+        @clickActionNext="nextProject()"
       )
 </template>
 
@@ -92,11 +92,8 @@ export default {
       mousedownSlide: (e) => store.commit("mousedownSlide", e),
       mouseupSlide: (e) => store.commit("mouseupSlide", e),
       fullPageAdd: (e) => store.commit("fullPageAdd", e),
-      slideUpdate: () => store.commit("slideUpdate"),
-      scrollToTop: () => store.dispatch("scrollToTop"),
-      pushInServeActiveCard: () => store.dispatch("pushInServeActiveCard"),
-      prevProject: () => store.dispatch("prevProject"),
       nextProject: () => store.dispatch("nextProject"),
+      prevProject: () => store.dispatch("prevProject"),
     };
   },
 };

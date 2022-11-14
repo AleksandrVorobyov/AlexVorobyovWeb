@@ -3,11 +3,13 @@
 .page__background
   canvas#snow
 #page-link.page__link
-  button(@click="scrollToTop()", v-html="up")
+  button(@click="scrollToTop()")
+    span(v-if="upWeb") Вверх
+    img(v-else, src="@/assets/img/svg/up-arrow.svg")
 </template>
 
 <script>
-import { onMounted, computed } from "vue";
+import { onMounted, computed, ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "page-back-section",
@@ -15,12 +17,19 @@ export default {
     const store = useStore();
     const nightMode = computed(() => store.getters.nightMode);
     const createBg = () => store.dispatch("createBg");
+    const upFunc = () => store.commit("up");
 
     onMounted(() => {
       if (!nightMode.value) {
         createBg();
       }
-    
+
+      upFunc();
+
+      window.addEventListener("resize", () => {
+        upFunc();
+      });
+
       const pageLink = document.getElementById("page-link");
       pageLink.style.opacity = "0";
 
@@ -34,10 +43,10 @@ export default {
     });
 
     return {
-      up: computed(() => store.getters.up),
       pageBackImg: computed(() => store.getters.pageBackImg),
       nightMode: nightMode,
       scrollToTop: () => store.dispatch("scrollToTop"),
+      upWeb: computed(() => store.getters.upWeb),
     };
   },
 };

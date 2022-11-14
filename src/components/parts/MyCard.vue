@@ -1,7 +1,7 @@
 <template lang="pug">
 .card.white-color(:id="cardInfo.cardId" @mouseenter="randColor($event)")
   .card__img-wrap
-    router-link.card__btn(@click="findCard($event), scrollToTop(), pushInServeActiveCard()" :to="'/project/card'") Подробнее
+    button.card__btn(@click="openCard($event, '/project/card')") Подробнее
     .card__img
       figure.card__img-front
         img(v-lazy="{ src: cardInfo.cardSrc }", :alt="cardInfo.cardAlt")
@@ -26,18 +26,26 @@ export default {
   setup() {
     const store = useStore();
     const cardAnim = () => store.dispatch("cardAnim");
+    const roadToPage = async (link) => await store.dispatch("roadToPage", link);
+    const pushInServeActiveCard = async () =>
+      await store.dispatch("pushInServeActiveCard");
+    const findCard = (e) =>
+      store.dispatch("findCard", {
+        cardId: e.target.closest(".card").id,
+      });
+
+    const openCard = async (event, link) => {
+      await findCard(event);
+      await pushInServeActiveCard();
+      await roadToPage(link);
+    };
 
     onMounted(() => {
       cardAnim();
     });
 
     return {
-      scrollToTop: () => store.dispatch("scrollToTop"),
-      pushInServeActiveCard: () => store.dispatch("pushInServeActiveCard"),
-      findCard: (e) =>
-        store.dispatch("findCard", {
-          cardId: e.target.closest(".card").id,
-        }),
+      openCard,
       randColor: (e) =>
         store.commit("randColor", {
           item: e.target,

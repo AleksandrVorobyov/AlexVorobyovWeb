@@ -4,6 +4,7 @@ export default {
     state: {
         slideCardKey: 0,
         activeCard: {},
+        urlActiveCard: "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/activeCard/0.json",
         localActive: true,
         pagination: {
             prev: {
@@ -31,6 +32,9 @@ export default {
     getters: {
         slideCardKey(state) {
             return state.slideCardKey;
+        },
+        urlActiveCard(state) {
+            return state.urlActiveCard;
         },
         activeCard(state) {
             return state.activeCard;
@@ -128,57 +132,64 @@ export default {
             }
         },
         findCard({ state, getters }, payload) {
-            const newCard = getters.portfolioAll.find(
+            state.localActive = false;
+            state.activeCard = getters.portfolioAll.find(
                 (e) => e.cardId === payload.cardId
             );
-            state.localActive = false;
-            state.activeCard = newCard;
         },
-        prevProject({ state, getters }) {
+        searchPrevProject({ state, getters }) {
             const thisCard = state.activeCard.idx;
             if (thisCard > 0) {
-                const newCard = getters.portfolioAll.find(
+                return (state.activeCard = getters.portfolioAll.find(
                     (e) => e.idx === thisCard - 1
-                );
-                return (state.activeCard = newCard);
+                ));
             } else {
-                const newCard = getters.portfolioAll.find(
+                return (state.activeCard = getters.portfolioAll.find(
                     (e) => e.idx === getters.portfolioAll.length - 1
-                );
-                return (state.activeCard = newCard);
+                ));
             }
         },
-        nextProject({ state, getters }) {
+        searchNextProject({ state, getters }) {
             const thisCard = state.activeCard.idx;
             if (getters.portfolioAll.length > thisCard + 1) {
-                const newCard = getters.portfolioAll.find(
+                return (state.activeCard = getters.portfolioAll.find(
                     (e) => e.idx === thisCard + 1
-                );
-                return (state.activeCard = newCard);
+                ));
             } else {
-                const newCard = getters.portfolioAll.find((e) => e.idx === 0);
-                return (state.activeCard = newCard);
+                return (state.activeCard = getters.portfolioAll.find((e) => e.idx === 0));
             }
         },
-        async pushInServeActiveCard({ state }) {
+        async pushInServeActiveCard({ state, dispatch }) {
             const data = state.activeCard;
-            const url =
-                "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/activeCard/0.json";
-            const responsedel = await fetch(url, {
-                method: "DELETE",
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            const response = await fetch(url, {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
+            const url = state.urlActiveCard
+
+            await dispatch("workWithBackendData", { method: "DELETE", url: url, body: JSON.stringify(data) })
+            await dispatch("workWithBackendData", { method: "POST", url: url, body: JSON.stringify(data) })
+
             localStorage.setItem("activeCard", JSON.stringify(data));
         },
+        async nextProject({ state, getters, commit, dispatch }) {
+            await dispatch("searchNextProject");
+            await dispatch("pushInServeActiveCard");
+            await commit("slideUpdate");
+            await dispatch("scrollToTop");
+        },
+        async prevProject({ state, getters, commit, dispatch }) {
+            await dispatch("searchPrevProject");
+            await dispatch("pushInServeActiveCard");
+            await commit("slideUpdate");
+            await dispatch("scrollToTop");
+        },
+        async workWithBackendData({}, { method, url, body = null }) {
+            const headers = {
+                'Content-Type': 'application/json'
+            }
+
+            return await fetch(url, {
+                method: method,
+                headers: headers,
+                body: body
+            }).then(res => res.json())
+        }
     }
 }

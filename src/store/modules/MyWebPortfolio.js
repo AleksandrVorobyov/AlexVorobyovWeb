@@ -9,7 +9,8 @@ export default {
         id: "portfolioBtn",
         text: "Открыть все работы",
         link: "/project"
-      }
+      },
+      cardsUrl: "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
     },
     portfolioInner: {
       menu: [
@@ -257,13 +258,12 @@ export default {
         });
       }
     },
-    async loadCards({ state, commit }) {
-      const res = await fetch(
-        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
-      );
-      state.portfolioAll = await res.json();
-      state.portfolioAll.forEach((item, index) => {
-        item.idx = index
+    async loadCards({ state, commit, dispatch }) {
+      await dispatch("workWithBackendData", { method: "GET", url: state.portfolio.cardsUrl }).then((data) => {
+        state.portfolioAll = data;
+        state.portfolioAll.forEach((item, index) => {
+          item.idx = index
+        })
       })
 
       await commit('checkForFilter')
@@ -277,7 +277,6 @@ export default {
           }
         })
       }
-      return
     },
     getCheck({ state, commit }, event) {
       state.portfolioInnerFilter = event.target.getAttribute('data-menu');

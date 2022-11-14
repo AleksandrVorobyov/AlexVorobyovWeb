@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 export default {
   state: {
-    up: "Вверх",
     pageBackImg: [
       {
         src: "01.png",
@@ -29,20 +28,24 @@ export default {
         speed: "6",
       },
     ],
+    upWeb: true
   },
   getters: {
-    up(state) {
-      if (window.screen.width >= 720) {
-        return state.up = "Вверх";
-      } else {
-        return state.up = "&#8657;"
-      }
-    },
     pageBackImg(state) {
       return state.pageBackImg;
     },
+    upWeb(state) {
+      return state.upWeb;
+    },
   },
-  mutations: {},
+  mutations: {
+    up(state) {
+      if (window.screen.width >= 768) {
+        return state.upWeb = true;
+      }
+      return state.upWeb = false;
+    },
+  },
   actions: {
     createBg(state) {
       if (window.screen.width >= 1024) {
@@ -57,7 +60,7 @@ export default {
           img2 = new Image(100, 100),
           mouseProps = { x: cw / 2, y: cw / 2 },
           particles = [],
-          Particle = function(index) {
+          Particle = function (index) {
             this.index = index;
             this.img = [img, img2][index % 2];
             this.x = this.y = this.progress = this.opacity = this.scale = 1;
@@ -69,7 +72,7 @@ export default {
             var rot = -rand(3, 5);
             if (index % 3 == 0) rot = -rot;
 
-            this.draw = function() {
+            this.draw = function () {
               var offsetX = -(mouseProps.x - cw / 2) * (this.size / 1000),
                 offsetY = -(mouseProps.y - ch / 2) * (this.size / 1000),
                 size = this.size * this.scale;
@@ -91,7 +94,7 @@ export default {
                 x: rand(-p.size / 2, cw + p.size),
                 y: rand(-p.size / 2, ch + p.size),
                 progress: 0,
-                scale: function(i) {
+                scale: function (i) {
                   return p.index % 2 == 0 ? 0.8 : rand(2.5, 5);
                 },
               },
@@ -99,12 +102,12 @@ export default {
                 duration: p.dur,
                 x: "+=" + String(rand(-100, 100)),
                 y: "+=" + String(rand(-50, 50)),
-                scale: function(i) {
+                scale: function (i) {
                   return p.index % 2 == 0 ? rand(2.5, 5) : 0.8;
                 },
                 progress: 1,
                 ease: "power4.in",
-                onComplete: function() {
+                onComplete: function () {
                   setParticle(p, true);
                 },
               },
@@ -132,7 +135,7 @@ export default {
           setParticle(particles[i]);
         }
 
-        gsap.ticker.add(function() {
+        gsap.ticker.add(function () {
           ctx.globalAlpha = 1;
           ctx.globalCompositeOperation = "source-over";
           ctx.drawImage(bg, 0, 0, cw, ch);
@@ -140,7 +143,7 @@ export default {
           for (var i = 0; i < n; i++) particles[i].draw();
         });
 
-        window.addEventListener("mousemove", function(e) {
+        window.addEventListener("mousemove", function (e) {
           gsap.to(mouseProps, {
             duration: 3,
             x: e.clientX,

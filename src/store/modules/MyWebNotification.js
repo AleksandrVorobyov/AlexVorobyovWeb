@@ -41,24 +41,24 @@ export default {
     mutations: {
     },
     actions: {
-        getNotificationForm({ state, getters, commit, dispatch }, { type, text }) {
+        getNotificationForm({ state, dispatch }, { type, text }) {
             if (type === "error") {
                 state.notification.main.title = text
                 state.notification.main.icon = state.formError.icon
                 state.notification.main.class = state.formError.class
-                state.notification.active = !state.notification.active;
-                setTimeout(() => {
-                    state.notification.active = !state.notification.active
-                }, 3000);
+                dispatch("watchNotification")
             } else {
                 state.notification.main.title = text
                 state.notification.main.icon = state.formSuccess.icon
                 state.notification.main.class = state.formSuccess.class
-                state.notification.active = !state.notification.active;
-                setTimeout(() => {
-                    state.notification.active = !state.notification.active
-                }, 3000);
+                dispatch("watchNotification")
             }
         },
+        watchNotification({ state }) {
+            state.notification.active = !state.notification.active;
+            setTimeout(() => {
+                state.notification.active = !state.notification.active
+            }, 3000);
+        }
     }
 }
