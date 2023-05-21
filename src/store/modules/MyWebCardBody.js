@@ -159,14 +159,17 @@ export default {
                 return (state.activeCard = getters.portfolioAll.find((e) => e.idx === 0));
             }
         },
-        async pushInServeActiveCard({ state, dispatch }) {
-            const data = state.activeCard;
-            const url = state.urlActiveCard
+        pushInServeActiveCard({ state, dispatch }) {
+            dispatch("workWithBackendData", {
+              method: "PUT",
+              url: state.urlActiveCard,
+              body: state.activeCard,
+            });
 
-            await dispatch("workWithBackendData", { method: "DELETE", url: url, body: JSON.stringify(data) })
-            await dispatch("workWithBackendData", { method: "POST", url: url, body: JSON.stringify(data) })
-
-            localStorage.setItem("activeCard", JSON.stringify(data));
+            localStorage.setItem(
+              "activeCard",
+              JSON.stringify(state.activeCard)
+            );
         },
         async nextProject({ state, getters, commit, dispatch }) {
             await dispatch("searchNextProject");
@@ -186,10 +189,10 @@ export default {
             }
 
             return await fetch(url, {
-                method: method,
-                headers: headers,
-                body: body
-            }).then(res => res.json())
+              method: method,
+              headers: headers,
+              body: body ? JSON.stringify(body) : body,
+            }).then((res) => res.json());
         }
     }
 }

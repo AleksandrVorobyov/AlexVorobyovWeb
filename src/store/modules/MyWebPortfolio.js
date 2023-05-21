@@ -8,9 +8,10 @@ export default {
         type: "button",
         id: "portfolioBtn",
         text: "Открыть все работы",
-        link: "/project"
+        link: "/project",
       },
-      cardsUrl: "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json"
+      cardsUrl:
+        "https://myportfolio-92ca1-default-rtdb.europe-west1.firebasedatabase.app/cardsAll.json",
     },
     portfolioInner: {
       menu: [
@@ -20,7 +21,7 @@ export default {
           dataMenu: "all",
           text: "Все работы",
           labelClass: "checked all",
-          data: 'all',
+          data: "all",
         },
         {
           id: "html",
@@ -28,7 +29,7 @@ export default {
           dataMenu: "html",
           text: "HTML/CSS",
           labelClass: "html",
-          data: 'html',
+          data: "html",
         },
         {
           id: "less",
@@ -36,7 +37,7 @@ export default {
           dataMenu: "less",
           text: "HTML/LESS",
           labelClass: "less",
-          data: 'less',
+          data: "less",
         },
         {
           id: "scss",
@@ -44,7 +45,7 @@ export default {
           dataMenu: "scss",
           text: "HTML/SCSS",
           labelClass: "scss",
-          data: 'scss',
+          data: "scss",
         },
         {
           id: "pug",
@@ -52,7 +53,7 @@ export default {
           dataMenu: "pug",
           text: "PUG/SCSS",
           labelClass: "pug",
-          data: 'pug',
+          data: "pug",
         },
         {
           id: "js",
@@ -60,7 +61,7 @@ export default {
           dataMenu: "js",
           text: "JS",
           labelClass: "js",
-          data: 'js',
+          data: "js",
         },
         {
           id: "vue",
@@ -68,7 +69,7 @@ export default {
           dataMenu: "vue",
           text: "Vue",
           labelClass: "vue",
-          data: 'vue',
+          data: "vue",
         },
       ],
     },
@@ -101,9 +102,9 @@ export default {
     },
     portfolioNavHidden(state) {
       if (window.screen.width >= 1170) {
-        return state.portfolioNavHidden = true
+        return (state.portfolioNavHidden = true);
       } else {
-        return state.portfolioNavHidden = false
+        return (state.portfolioNavHidden = false);
       }
     },
     portfolioInnerFilter(state) {
@@ -135,120 +136,118 @@ export default {
       state.dropHidden = !state.dropHidden;
     },
     checkForFilter(state) {
-      state.portfolioAllFilter = []
-
-      if (state.portfolioInnerFilter != 'all') {
-        state.portfolioAll.forEach((item) => {
-          let thisItem = item;
-          item.allMenuClass.forEach((elem) => {
-            if (elem === state.portfolioInnerFilter) {
-              state.portfolioAllFilter.push(thisItem)
-            }
-          })
-        })
+      if (state.portfolioInnerFilter != "all") {
+       state.portfolioAllFilter = [...state.portfolioAll].filter((item) => {
+         return item.allMenuClass.includes(state.portfolioInnerFilter);
+       });
       } else {
-        state.portfolioAllFilter = state.portfolioAll
+        state.portfolioAllFilter = state.portfolioAll;
       }
-    }
+    },
   },
   actions: {
     portfolioSectionAnim() {
       if (window.innerWidth >= 768) {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.portfolio__title', {
+        gsap.to(".portfolio__title", {
           keyframes: [
             {
               opacity: 0,
               y: 50,
               duration: 0,
-            }, {
+            },
+            {
               opacity: 1,
               y: 0,
               duration: 1.5,
-            }
+            },
           ],
           scrollTrigger: {
-            trigger: '.portfolio__title',
+            trigger: ".portfolio__title",
             toggleActions: "play play play pause",
           },
-        })
+        });
 
-        gsap.to('.portfolio__btn', {
+        gsap.to(".portfolio__btn", {
           keyframes: [
             {
               opacity: 0,
               y: 50,
               duration: 0,
-            }, {
+            },
+            {
               opacity: 1,
               y: 0,
               duration: 1.5,
-            }
+            },
           ],
           scrollTrigger: {
-            trigger: '.portfolio__btn',
+            trigger: ".portfolio__btn",
             toggleActions: "play play play pause",
           },
-        })
+        });
       }
     },
     portfolioInnerSectionAnim() {
       if (window.innerWidth >= 768) {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.portfolio__title', {
+        gsap.to(".portfolio__title", {
           keyframes: [
             {
               opacity: 0,
               y: 50,
               duration: 0,
-            }, {
+            },
+            {
               opacity: 1,
               y: 0,
               duration: 1.5,
-            }
+            },
           ],
           scrollTrigger: {
-            trigger: '.portfolio__title',
+            trigger: ".portfolio__title",
             toggleActions: "play play play pause",
           },
-        })
+        });
 
-        gsap.to('.portfolio__nav', {
+        gsap.to(".portfolio__nav", {
           keyframes: [
             {
               opacity: 0,
               y: 50,
               duration: 0,
-            }, {
+            },
+            {
               opacity: 1,
               y: 0,
               duration: 1.5,
-            }
+            },
           ],
           scrollTrigger: {
-            trigger: '.portfolio__nav',
+            trigger: ".portfolio__nav",
             toggleActions: "play play play pause",
           },
-        })
+        });
       }
     },
     cardAnim() {
       if (window.innerWidth >= 768) {
         gsap.registerPlugin(ScrollTrigger);
-        let allCards = gsap.utils.toArray('.card')
+        let allCards = gsap.utils.toArray(".card");
         gsap.to(allCards, {
           keyframes: [
             {
               opacity: 0,
               y: 50,
               duration: 0,
-            }, {
+            },
+            {
               opacity: 1,
               y: 0,
               duration: 1.5,
-            }
+            },
           ],
           scrollTrigger: {
             trigger: allCards,
@@ -259,32 +258,45 @@ export default {
       }
     },
     async loadCards({ state, commit, dispatch }) {
-      await dispatch("workWithBackendData", { method: "GET", url: state.portfolio.cardsUrl }).then((data) => {
+      await dispatch("workWithBackendData", {
+        method: "GET",
+        url: state.portfolio.cardsUrl,
+      }).then((data) => {
         state.portfolioAll = data;
         state.portfolioAll.forEach((item, index) => {
-          item.idx = index
-        })
-      })
+          item.idx = index;
+        });
+      });
 
-      await commit('checkForFilter')
+      await commit("checkForFilter");
 
-      if (document.querySelector('.portfolio__nav')) {
-        await document.querySelectorAll('.portfolio__nav label').forEach((item) => {
-          if (item.querySelector('input').getAttribute('data-menu') === state.portfolioInnerFilter) {
-            item.classList.add('checked')
-          } else {
-            item.classList.remove('checked')
-          }
-        })
+      if (document.querySelector(".portfolio__nav")) {
+        await document
+          .querySelectorAll(".portfolio__nav label")
+          .forEach((item) => {
+            if (
+              item.querySelector("input").getAttribute("data-menu") ===
+              state.portfolioInnerFilter
+            ) {
+              item.classList.add("checked");
+            } else {
+              item.classList.remove("checked");
+            }
+          });
       }
     },
     getCheck({ state, commit }, event) {
-      state.portfolioInnerFilter = event.target.getAttribute('data-menu');
-      document.querySelectorAll('.portfolio__nav label').forEach((item) => {
-        item.classList.remove('checked')
-      })
-      event.target.closest('label').classList.add('checked')
-      commit('checkForFilter')
+      state.portfolioInnerFilter = event.target.getAttribute("data-menu");
+      document.querySelectorAll(".portfolio__nav label").forEach((item) => {
+        item.classList.remove("checked");
+      });
+      event.target.closest("label").classList.add("checked");
+      new Promise((resolve, reject) => {
+        state.portfolioAllFilter = null;
+        resolve();
+      }).then(() => {
+        commit("checkForFilter");
+      });
     },
     dropdownOption({ state, commit }, event) {
       const newDrop = event.target.getAttribute("data-menu");
@@ -296,7 +308,7 @@ export default {
       state.dropdownPortfolio.labelClass = inner.labelClass;
       state.dropHidden = !state.dropHidden;
       state.portfolioInnerFilter = inner.dataMenu;
-      commit('checkForFilter')
+      commit("checkForFilter");
     },
   },
 };
